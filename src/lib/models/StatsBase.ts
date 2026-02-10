@@ -10,11 +10,12 @@ export const viewStatsChar = (charStats: Character) => {
         const stat: Stat = new Stat();
         const exceptionStats: number[] = [AttributeID.ENERGY_RATE, AttributeID.ANOMALY_MAST, AttributeID.IMPACT];
         const idAux: AttrValues = exceptionStats.includes(Number(id)) ? <AttrValues>(Number(id) + 1) : <AttrValues>+id;
+        console.log("ID: " + idAux + " Value: " + value);
 
         if (!Object.values(Stats).includes(idAux))
             return;
 
-        if ((charStats.discSet.sumStats[idAux] === 0) && (charStats.wengine[idAux] === 0))
+        if ((charStats.discSet.sumStats[idAux] === 0) && (charStats.wengine[idAux] === 0) && (idAux !== AttributeID.SHEER))
             return;
 
         stat.id = <AttrValues>+id;
@@ -75,6 +76,7 @@ export class StatsBase implements BasicStatsObject {
     [AttributeID.ICE_DMG]: number = 0.0;
     [AttributeID.ELEC_DMG]: number = 0.0;
     [AttributeID.ETHER_DMG]: number = 0.0;
+    [AttributeID.SHEER]: number = 0.0;
     [AttributeID.SHIELD_EFFECT]: number = 0.0;
 }
 

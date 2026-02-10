@@ -37,7 +37,6 @@ export class ServiceHoyolab {
         const lvl = avatar.level;
         const skillSet = this.getSkillSet(avatar.skills);
 
-        console.log(name_code);
         return new CharacterBuilder(
             name_code,
             lvl,

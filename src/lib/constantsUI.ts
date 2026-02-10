@@ -30,6 +30,7 @@ export const ICON_FROM_STAT_MAPPING: { [id: number]: string } = {
     [AttributeID.ICE_DMG]: "IconIce.webp",
     [AttributeID.ELEC_DMG]: "IconElectric.webp",
     [AttributeID.ETHER_DMG]: "IconEther.webp",
+    [AttributeID.SHEER]: "IconSheer.webp",
 }
 
 export const ICON_FROM_WEAPON_MAPPING: { [id: number]: string } = {

@@ -31,6 +31,7 @@ export type BasicStatsObject = {
     [AttributeID.ICE_DMG]: number
     [AttributeID.ELEC_DMG]: number
     [AttributeID.ETHER_DMG]: number
+    [AttributeID.SHEER]: number
     [AttributeID.SHIELD_EFFECT]: number
 }
 
