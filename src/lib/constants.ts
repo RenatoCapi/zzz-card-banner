@@ -35,40 +35,6 @@ export const AttributeID = {
 export type AttrKeys = keyof typeof AttributeID
 export type AttrValues = (typeof AttributeID)[AttrKeys]
 
-export const CharacterID = {
-    CORIN: "1061",
-    QINGYI: "1251",
-    JANE: "1261",
-    SOUKAKU: "1131",
-    BILLY: "1081",
-    GRACE: "1181",
-    ANBY: "1011",
-    NICOLE: "1031",
-    PIPER: "1281",
-    NEKOMATA: "1021",
-    ZHUYUAN: "1241",
-    LYCAON: "1141",
-    ANTON: "1111",
-    SOLDIER_11: "1041",
-    BEN: "1121",
-    RINA: "1211",
-    LUCY: "1151",
-    KOLEDA: "1101",
-    SETH: "1271",
-    BURNICE: "1171",
-    ELLEN: "1191",
-    CEASAR: "1071",
-    LIGHTER: "1161",
-    YANAGI: "1221",
-    MIYABI: "1091",
-    HARUMASA: "1201",
-    ASTRA: "1311",
-    EVELYN: "1321",
-    SOLDIER_0: "1381",
-    PULCHRA: "1351",
-    TRIGGER: "1361",
-}
-
 export const Stats: AttrValues[] = [
     AttributeID.HP,
     AttributeID.HP_P,
@@ -128,10 +94,16 @@ export const DiscSetID = {
     THUNDER_METAL: 32400,
     POLAR_METAL: 32500,
     FANGED_METAL: 32600,
-    ASTRAL_VOICE: 32800,
     BLADE_SONG: 32700,
+    ASTRAL_VOICE: 32800,
     SHADOW_HARMONY: 32900,
     PHAETHONS_MELODY: 33000,
+    YUNKUI: 33100,
+    SUMMIT: 33200,
+    DAWN_BLOOM: 33300,
+    MOON_LIGHT: 33400,
+    WATER_BALLAD: 33500,
+    SHINING_ARIA: 33600,
 }
 
 export const HOYO_2P_DISCSET: { [id: number]: number[] } = {
@@ -153,6 +125,13 @@ export const HOYO_2P_DISCSET: { [id: number]: number[] } = {
     [DiscSetID.BLADE_SONG]: [AttributeID.CRIT_DMG, 16.0],
     [DiscSetID.SHADOW_HARMONY]: [AttributeID.ATK_P, 0.0],
     [DiscSetID.PHAETHONS_MELODY]: [AttributeID.ANOMALY_MAST, 8.0],
+    [DiscSetID.YUNKUI]: [AttributeID.HP_P, 10.0],
+    [DiscSetID.SUMMIT]: [AttributeID.NONE, 6.0],
+    [DiscSetID.DAWN_BLOOM]: [AttributeID.NONE, 15.0],
+    [DiscSetID.MOON_LIGHT]: [AttributeID.ENERGY_P, 20.0],
+    [DiscSetID.WATER_BALLAD]: [AttributeID.PHYS_DMG, 10.0],
+    [DiscSetID.SHINING_ARIA]: [AttributeID.ETHER_DMG, 10.0],
+
 }
 
 export const HOYO_DISC_SUB_RATE: { [id: number]: number } = {
@@ -239,6 +218,7 @@ export const WeaponTypeID = {
     ANOMALY: 3,
     SUPPORT: 4,
     DEFENSE: 5,
+    RUPTURE: 6,
 }
 
 export const HitTypeID = {
@@ -264,6 +244,11 @@ export const CampID = {
     HSOS6: 6,
     NEPS: 7,
     STARS: 8,
+    MOCKINGBIRD: 9,
+    YUNKUI: 10,
+    SPOOK: 11,
+    KRAMPUS: 12,
+    ANGELS: 13,
 }
 
 export const HOYO_SkillID = {
