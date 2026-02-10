@@ -31,7 +31,7 @@ const CharProfile = ({ char }: { char: Character }) => {
                     <img src={Assets.getElement(charMetadata.elementId)} className="h-11 drop-shadow-white" />
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 
