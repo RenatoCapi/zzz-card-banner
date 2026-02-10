@@ -29,6 +29,7 @@ export const AttributeID = {
     ICE_DMG: 31703,
     ELEC_DMG: 31803,
     ETHER_DMG: 31903,
+    SHEER: 43001,
     SHIELD_EFFECT: 99999,
 } as const
 
@@ -36,6 +37,7 @@ export type AttrKeys = keyof typeof AttributeID
 export type AttrValues = (typeof AttributeID)[AttrKeys]
 
 export const Stats: AttrValues[] = [
+    AttributeID.NONE,
     AttributeID.HP,
     AttributeID.HP_P,
     AttributeID.HP_FLAT,
@@ -66,6 +68,7 @@ export const Stats: AttrValues[] = [
     AttributeID.ELEC_DMG,
     AttributeID.ETHER_DMG,
     AttributeID.SHIELD_EFFECT,
+    AttributeID.SHEER,
 ]
 
 export const HOYO_MAP_SUB = {
@@ -176,7 +179,8 @@ export const StatsToReadableShort: { [id: number]: string } = {
     [AttributeID.FIRE_DMG]: "Fire",
     [AttributeID.ICE_DMG]: "Ice",
     [AttributeID.ELEC_DMG]: "Electric",
-    [AttributeID.ETHER_DMG]: "Ether"
+    [AttributeID.ETHER_DMG]: "Ether",
+    [AttributeID.SHEER]: "Sheer",
 }
 
 
@@ -209,7 +213,8 @@ export const StatsToReadableMin: { [id: number]: string } = {
     [AttributeID.FIRE_DMG]: "FIRE",
     [AttributeID.ICE_DMG]: "ICE",
     [AttributeID.ELEC_DMG]: "ELEC",
-    [AttributeID.ETHER_DMG]: "ETHER"
+    [AttributeID.ETHER_DMG]: "ETHER",
+    [AttributeID.SHEER]: "SHEER"
 }
 
 export const WeaponTypeID = {

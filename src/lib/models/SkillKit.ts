@@ -37,11 +37,9 @@ export class SkillCalc {
             const skillCalculated = skill;
 
             skillCalculated.subSkills = skill.subSkills.map((subSkill) => {
-                console.log(subSkill.name);
 
                 subSkill.hitsData = subSkill.hitsData.map((hitData) => {
                     hitData.dmgPecent = this.mountSkillMult(hitData, skill.level);
-                    console.log(hitData.name + ": " + hitData.dmgPecent + "%");
                     return hitData;
                 });
 
@@ -51,7 +49,6 @@ export class SkillCalc {
             this.skillKit[id] = skillCalculated;
         });
 
-        console.log(this.skillKit);
         return this.skillKit;
     }
 
@@ -63,7 +60,6 @@ export class SkillCalc {
             return this.subSkillMult(hitData.params[json.Skill], lvl);
         });
 
-        console.log("formula: " + resultado.replace("}", ""));
         return eval(resultado.replace("}", ""));
     }
 

@@ -14,6 +14,7 @@ export const DECIMAL_STATS: AttrValues[] = [
     AttributeID.ANOMALY_PROF,
     AttributeID.ANOMALY_PROF_SUB,
     AttributeID.ANOMALY_MAST,
+    AttributeID.SHEER,
 ]
 
 export const FLAT_STATS: AttrValues[] = [

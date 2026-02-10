@@ -1,4 +1,4 @@
-import { AttributeID, AttrValues } from "../constants";
+import { AttributeID, AttrValues, WeaponTypeID } from "../constants";
 import { BasicStatsObject } from "../types/basic_stats_object";
 import { CharMetadata } from "./CharMetadata";
 import { DiscSet } from "./DiscSet";
@@ -31,15 +31,22 @@ export class Character extends StatsBase {
     }
 
     public sumSecondaryStats(attrID: AttrValues) {
-        if (attrID === 0 || attrID === 99999) return;
+        if (attrID === AttributeID.NONE || attrID === AttributeID.SHIELD_EFFECT) return;
         this[attrID] = this.charBase[attrID] + this.wengine[attrID] + this.discSet.sumStats[attrID];
     }
 
     public sumMainStat(attrFlatId: AttrValues) {
+        if (attrFlatId === AttributeID.NONE || attrFlatId === AttributeID.SHIELD_EFFECT || attrFlatId === AttributeID.SHEER) return;
         const attrPercId = <AttrValues>(attrFlatId + 1);
         const base = this.charBase[attrFlatId] + this.wengine[attrFlatId];
         const perc = this.charBase[attrPercId] + this.wengine[attrPercId] + this.discSet.sumStats[attrPercId];
         this[attrFlatId] = (base * (1 + perc / 100)) + this.discSet.sumStats[attrFlatId];
+    }
+
+    public sumSheerStat() {
+        if (+this.charMetadata.weapon === WeaponTypeID.RUPTURE) {
+            this[AttributeID.SHEER] = this[AttributeID.ATK] * 0.3 + this[AttributeID.HP] * 0.1;
+        }
     }
 
     public calcAllStats() {
@@ -59,6 +66,7 @@ export class Character extends StatsBase {
         this.sumSecondaryStats(AttributeID.ICE_DMG);
         this.sumSecondaryStats(AttributeID.ELEC_DMG);
         this.sumSecondaryStats(AttributeID.ETHER_DMG);
+        this.sumSheerStat();
     }
 
     public print() {
