@@ -25,7 +25,7 @@ export const ExternalLayout: React.FC = () => {
                 <div className="flex items-center h-[60px] min-w-full bg-gradient-to-r from-amber-600 to-orange-950 rounded-t-md ">
                     <MenuButton />
                     <span className='block text-[38px] font-["paybooc"] text-stone-100 mx-4'>
-                        Capiroto ZZZ Card Build
+                        Capi ZZZ Card Build
                     </span>
                 </div>
                 <Tabs show={sidebar} />

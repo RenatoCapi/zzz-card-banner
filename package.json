@@ -2,7 +2,7 @@
     "name": "anomaly-front",
     "private": true,
     "version": "0.2.6.0",
-    "homepage": "https://belzebul.github.io/zzz-card-banner/",
+    "homepage": "https://renatocapi.github.io/zzz-card-banner/",
     "type": "module",
     "scripts": {
         "predeploy": "npm run build",
