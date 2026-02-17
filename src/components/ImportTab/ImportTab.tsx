@@ -14,7 +14,7 @@ const ImportTab = () => {
                 <span className="self-start text-2xl my-8">First method:</span>
                 <span>
                     Use
-                    <a className="text-blue-500" href="https://github.com/Belzebul/HOYOLAB_ZZZ_scraper/releases" target="_blank"> this scraper </a>
+                    <a className="text-blue-500" href="https://github.com/RenatoCapi/HOYOLAB_ZZZ_scraper/releases" target="_blank"> this scraper </a>
                     for get your all characters and run with this infos:
                 </span>
                 <img className="my-8" src={Assets.getTutorialAllChars()} />
