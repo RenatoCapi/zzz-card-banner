@@ -4,7 +4,7 @@ import { Stat } from "./models/DiscSet";
 import char_data from "../data/base_data_characters.json";
 import discset_data from "../data/base_discset_data.json";
 import wengine_data from "../data/base_wengine_data.json";
-import { ICON_FROM_CAMP_MAPPING, ICON_FROM_ELEMENT_MAPPING, ICON_FROM_SKILL_MAPPING, ICON_FROM_STAT_MAPPING, ICON_FROM_WEAPON_MAPPING } from "./constantsUI";
+import { ICON_FROM_ELEMENT_MAPPING, ICON_FROM_SKILL_MAPPING, ICON_FROM_STAT_MAPPING } from "./constantsUI";
 import { dataDiscSetsMeta as DataDiscSetsMeta } from "./types/discs_metadata";
 import { Hakushin_data } from "./types/hakushin_types";
 import { WengineMetadata } from "./types/wengine_metadata";
@@ -43,7 +43,7 @@ export class Assets {
     static getWeapon(id: string) {
         if (!id) return Assets.getBlank();
 
-        return Assets.getImageUrl(`/icon/weaponType/${ICON_FROM_WEAPON_MAPPING[+id]}`);
+        return Assets.getImageUrl(`/icon/weaponType/IconWeapon${id}.webp`);
     }
 
     static getElement(elementid: string) {
@@ -52,7 +52,7 @@ export class Assets {
 
     static getCamp(camp: string) {
         if (!camp) return Assets.getBlank();
-        return Assets.getImageUrl(`/icon/camp/${ICON_FROM_CAMP_MAPPING[+camp]}`);
+        return Assets.getImageUrl(`/icon/camp/IconCamp${camp}.webp`);
     }
 
     static getWEngine(id: string) {
@@ -84,6 +84,5 @@ export class Assets {
                 return Assets.getImageUrl(`/icon/role/${icon_file_name}`)
             }
         }
-        //return Assets.getImageUrl(`/icon/role/${ICON_FROM_ROLE_MAPPING[id]}`)
     }
 }
