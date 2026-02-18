@@ -1,8 +1,8 @@
-import { AttrValues, HOYO_2P_DISCSET } from "../constants"
-import { StatsBase } from "./StatsBase"
+import { HOYO_2P_DISCSET } from "../constants"
+import { StatsBase, StatsBaseKeys } from "./StatsBase"
 
 export class Stat {
-    id: AttrValues = 0
+    id: StatsBaseKeys = 0
     value: number = 0
 }
 
@@ -38,7 +38,7 @@ export class DiscSet {
 
         Object.entries(this.disc_sets_bonus).forEach(([disc_id, numSet]) => {
             if (numSet >= 2) {
-                const statId = <AttrValues>HOYO_2P_DISCSET[+disc_id][0];
+                const statId = <StatsBaseKeys>HOYO_2P_DISCSET[+disc_id][0];
                 this.sumStats[statId] += HOYO_2P_DISCSET[+disc_id][1];
             }
         })

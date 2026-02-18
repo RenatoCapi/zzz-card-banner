@@ -36,7 +36,6 @@ export class Character extends StatsBase {
     }
 
     public sumMainStat(attrFlatId: AttrValues) {
-        if (attrFlatId === AttributeID.NONE || attrFlatId === AttributeID.SHIELD_EFFECT || attrFlatId === AttributeID.SHEER) return;
         const attrPercId = <AttrValues>(attrFlatId + 1);
         const base = this.charBase[attrFlatId] + this.wengine[attrFlatId];
         const perc = this.charBase[attrPercId] + this.wengine[attrPercId] + this.discSet.sumStats[attrPercId];
@@ -45,7 +44,7 @@ export class Character extends StatsBase {
 
     public sumSheerStat() {
         if (+this.charMetadata.weapon === WeaponTypeID.RUPTURE) {
-            this[AttributeID.SHEER] = this[AttributeID.ATK] * 0.3 + this[AttributeID.HP] * 0.1;
+            this[AttributeID.SHEER_FORCE] = this[AttributeID.ATK] * 0.3 + this[AttributeID.HP] * 0.1;
         }
     }
 

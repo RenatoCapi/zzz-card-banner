@@ -1,5 +1,5 @@
 {
-  "33500": {
+  "335": {
     "icon": "SuitWhiteWaterBallad.webp",
     "EN": {
       "name": "White Water Ballad",
@@ -22,7 +22,7 @@
       "desc4": "装備者が任意の<color=#FFFFFF>「エーテルベール」</color>効果を受けている時、自身の会心率+10%。<color=#FFFFFF>「エーテルベール」</color>終了後でも、この効果は15秒継続する。装備者が<color=#FFFFFF>[強攻]</color>メンバーの場合、<color=#FFFFFF>「エーテルベール」</color>を展開、または<color=#FFFFFF>「エーテルベール」</color>の継続時間を延長した際、自身の会心率+10%、攻撃力+10%、継続時間30秒、重複して発動すると継続時間が更新される。"
     }
   },
-  "31900": {
+  "319": {
     "icon": "SuitProtoPunk.webp",
     "EN": {
       "name": "Proto Punk",
@@ -45,7 +45,7 @@
       "desc4": "任意のメンバーが<color=#FFFFFF>『パリィ支援』</color>または<color=#FFFFFF>『回避支援』</color>を発動した時、メンバー全員の与ダメージ+15%、継続時間10秒。同じパッシブ効果は重ね掛け不可。"
     }
   },
-  "33600": {
+  "336": {
     "icon": "SuitShiningAria.webp",
     "EN": {
       "name": "Shining Aria",
@@ -68,7 +68,7 @@
       "desc4": "装備者の<color=#FFFFFF>『通常攻撃』</color>が敵に命中した時、自身の異常マスタリー+36Pt、継続時間8秒、重複して発動すると継続時間が更新される。フィールド上の敵がブレイク状態になった時、装備者の与ダメージ+25%、継続時間18秒、重複して発動すると継続時間が更新される。"
     }
   },
-  "31300": {
+  "313": {
     "icon": "SuitFreedomBlues.webp",
     "EN": {
       "name": "Freedom Blues",
@@ -91,7 +91,7 @@
       "desc4": "<color=#FFFFFF>『強化特殊スキル』</color>が敵に命中すると、装備者の属性に応じてターゲットの対応する状態異常蓄積耐性-20%、継続時間8秒。同属性での重ね掛けは不可。"
     }
   },
-  "31600": {
+  "316": {
     "icon": "SuitSwingJazz.webp",
     "EN": {
       "name": "Swing Jazz",
@@ -114,7 +114,7 @@
       "desc4": "<color=#FFFFFF>『連携スキル』</color>または<color=#FFFFFF>『終結スキル』</color>発動時、メンバー全員の与ダメージ+15%、継続時間12秒。同じパッシブ効果は重ね掛け不可。"
     }
   },
-  "32700": {
+  "327": {
     "icon": "SuitBranch&BladeSong.webp",
     "EN": {
       "name": "Branch & Blade Song",
@@ -137,7 +137,7 @@
       "desc4": "異常掌握が115Pt以上の時、装備者の会心ダメージ+30%。任意のメンバーが敵に<color=#98EFF0>[凍結]</color>効果を付与した時、または<color=#98EFF0>[砕氷]</color>効果を発動した時、装備者の会心率+12%、継続時間15秒。"
     }
   },
-  "31100": {
+  "311": {
     "icon": "SuitPufferElectro.webp",
     "EN": {
       "name": "Puffer Electro",
@@ -160,7 +160,7 @@
       "desc4": "<color=#FFFFFF>『終結スキル』</color>の与ダメージ+20%。<color=#FFFFFF>『終結スキル』</color>発動時、装備者の攻撃力+15%、継続時間12秒。"
     }
   },
-  "33200": {
+  "332": {
     "icon": "SuitKingoftheSummit.webp",
     "EN": {
       "name": "King of the Summit",
@@ -183,7 +183,7 @@
       "desc4": "装備者が[撃破]メンバーの場合、<color=#FFFFFF>『強化特殊スキル』</color>または<color=#FFFFFF>『連携スキル』</color>発動時、メンバー全員の会心ダメージ+15%。装備者の会心率が50%以上の場合、会心ダメージがさらに+15%、継続時間15秒、重複して発動すると継続時間が更新される。同じパッシブ効果は重ね掛け不可。"
     }
   },
-  "33400": {
+  "334": {
     "icon": "SuitMoonlightLullaby.webp",
     "EN": {
       "name": "Moonlight Lullaby",
@@ -206,7 +206,7 @@
       "desc4": "装備者が[支援]メンバーの場合、<color=#FFFFFF>『強化特殊スキル』</color>または<color=#FFFFFF>『終結スキル』</color>を発動すると、メンバー全員の与ダメージ+18%、継続時間25秒、重複して発動すると継続時間が更新される。同じパッシブ効果は重ね掛け不可。"
     }
   },
-  "31200": {
+  "312": {
     "icon": "SuitShockstarDisco.webp",
     "EN": {
       "name": "Shockstar Disco",
@@ -229,7 +229,7 @@
       "desc4": "<color=#FFFFFF>『通常攻撃』</color>、<color=#FFFFFF>『ダッシュ攻撃』</color>、<color=#FFFFFF>『回避反撃』</color>がメインターゲットに与えるブレイク値+20%。"
     }
   },
-  "32800": {
+  "328": {
     "icon": "SuitAstralVoice.webp",
     "EN": {
       "name": "Astral Voice",
@@ -252,7 +252,7 @@
       "desc4": "任意のメンバーが<color=#FFFFFF>『クイック支援』</color>で出場した時、メンバー全員が<color=#FFFFFF>「天籟」</color>を1重獲得する。最大3重まで重ね掛け可能、継続時間15秒、重複して発動すると継続時間が更新される。<color=#FFFFFF>「天籟」</color>1重につき、<color=#FFFFFF>『クイック支援』</color>で出場したメンバーの与ダメージ+8%、同じパッシブ効果は重ね掛け不可。"
     }
   },
-  "33100": {
+  "331": {
     "icon": "SuitYunkuiTales.webp",
     "EN": {
       "name": "Yunkui Tales",
@@ -275,7 +275,7 @@
       "desc4": "<color=#FFFFFF>『強化特殊スキル』</color>、<color=#FFFFFF>『連携スキル』</color>、<color=#FFFFFF>『終結スキル』</color>を発動時、会心率+4%。この効果は最大3重まで重ね掛け可能、継続時間15秒。重複して発動すると継続時間が更新される。重数が3重に達している場合、与える透徹ダメージ+10%。"
     }
   },
-  "32400": {
+  "324": {
     "icon": "SuitThunderMetal.webp",
     "EN": {
       "name": "Thunder Metal",
@@ -298,7 +298,7 @@
       "desc4": "フィールド上に<color=#2EB6FF>[感電]</color>状態の敵がいる時、装備者の攻撃力+28%。"
     }
   },
-  "32900": {
+  "329": {
     "icon": "SuitShadow.webp",
     "EN": {
       "name": "Shadow Harmony",
@@ -321,7 +321,7 @@
       "desc4": "<color=#FFFFFF>『追加攻撃』</color>または<color=#FFFFFF>『ダッシュ攻撃』</color>が敵に命中した時、与えたダメージが装備者の属性と一致している場合、バフ効果を1重獲得する、1回のスキルにおいて1回のみ発動可能。バフ効果1重につき、装備者の攻撃力+4%、会心率+4%。最大3重まで重ね掛け可能、継続時間15秒、重複して発動すると継続時間が更新される。"
     }
   },
-  "33300": {
+  "333": {
     "icon": "SuitDawnsBloom.webp",
     "EN": {
       "name": "Dawn's Bloom",
@@ -344,7 +344,7 @@
       "desc4": "<color=#FFFFFF>『通常攻撃』</color>の与ダメージ+20%。装備者が[強攻]メンバーの場合、<color=#FFFFFF>『強化特殊スキル』</color>または<color=#FFFFFF>『終結スキル』</color>を発動すると、<color=#FFFFFF>『通常攻撃』</color>の与ダメージが追加で+20%、継続時間25秒、重複して発動すると継続時間が更新される。"
     }
   },
-  "31500": {
+  "315": {
     "icon": "SuitSoulRock.webp",
     "EN": {
       "name": "Soul Rock",
@@ -367,7 +367,7 @@
       "desc4": "敵の攻撃を受け、かつHPが減少した時、装備者の被ダメージ-40%、継続時間2.5秒。15秒に1回のみ発動可能。"
     }
   },
-  "32500": {
+  "325": {
     "icon": "SuitPolarMetal.webp",
     "EN": {
       "name": "Polar Metal",
@@ -390,7 +390,7 @@
       "desc4": "<color=#FFFFFF>『通常攻撃』</color>と<color=#FFFFFF>『ダッシュ攻撃』</color>の与ダメージ+20%。任意のメンバーが敵に<color=#98EFF0>[凍結]</color>効果を付与した時、または<color=#98EFF0>[砕氷]</color>効果を発動した時、この効果がさらに+20%、継続時間12秒。"
     }
   },
-  "32600": {
+  "326": {
     "icon": "SuitFangedMetal.webp",
     "EN": {
       "name": "Fanged Metal",
@@ -413,7 +413,7 @@
       "desc4": "任意のメンバーが敵に<color=#F0D12B>[強撃]</color>効果を付与した時、装備者がターゲットに与えるダメージ+35%、継続時間12秒。"
     }
   },
-  "31800": {
+  "318": {
     "icon": "SuitChaosJazz.webp",
     "EN": {
       "name": "Chaos Jazz",
@@ -436,7 +436,7 @@
       "desc4": "<color=#FF5521>炎属性ダメージ</color>および<color=#2EB6FF>電気属性ダメージ</color>+15%。控えにいる時、<color=#FFFFFF>『強化特殊スキル』</color>と<color=#FFFFFF>『支援攻撃』</color>の与ダメージ+20%。出場した後も効果は5秒継続する。この効果継続は7.5秒に1回のみ発動可能。"
     }
   },
-  "33000": {
+  "330": {
     "icon": "SuitSavior.webp",
     "EN": {
       "name": "Phaethon's Melody",
@@ -459,7 +459,7 @@
       "desc4": "任意のメンバーが<color=#FFFFFF>『強化特殊スキル』</color>を発動した時、装備者の異常マスタリー+45Pt、継続時間8秒。<color=#FFFFFF>『強化特殊スキル』</color>を発動したエージェントが装備者本人でない場合、装備者による<color=#FE437E>エーテル属性ダメージ</color>+25%。"
     }
   },
-  "31400": {
+  "314": {
     "icon": "SuitHormonePunk.webp",
     "EN": {
       "name": "Hormone Punk",
@@ -482,7 +482,7 @@
       "desc4": "接敵状態かつ操作中のメンバーになった時、装備者の攻撃力+25%、継続時間10秒。20秒に1回のみ発動可能。"
     }
   },
-  "32200": {
+  "322": {
     "icon": "SuitInfernoMetal.webp",
     "EN": {
       "name": "Inferno Metal",
@@ -505,7 +505,7 @@
       "desc4": "<color=#FF5521>[熱傷]</color>状態の敵に攻撃が命中した時、装備者の会心率+28%、継続時間8秒。"
     }
   },
-  "31000": {
+  "310": {
     "icon": "SuitWoodpeckerElectro.webp",
     "EN": {
       "name": "Woodpecker Electro",
@@ -528,7 +528,7 @@
       "desc4": "<color=#FFFFFF>『通常攻撃』</color>、<color=#FFFFFF>『回避反撃』</color>または<color=#FFFFFF>『強化特殊スキル』</color>が敵に命中し、なおかつ会心が出た時、それぞれ装備者にバフ効果を1重与える。バフ効果1重につき、装備者の攻撃力+9%、継続時間6秒。バフ効果の継続時間はスキルごとに計算される。"
     }
   },
-  "32300": {
+  "323": {
     "icon": "SuitChaosMetal.webp",
     "EN": {
       "name": "Chaotic Metal",

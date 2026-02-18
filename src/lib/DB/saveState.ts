@@ -7,27 +7,27 @@ export const SaveState = {
             activeCharacter: DB.getActiveChar(),
         }
         console.log('Saved state');
-        const stateString = JSON.stringify(state)
-        localStorage.state = stateString
+        const stateString = JSON.stringify(state);
+        localStorage.state = stateString;
 
-        return stateString
+        return stateString;
     },
     load: () => {
         try {
             const state = localStorage.state
             if (state) {
-                const parsed = JSON.parse(state)
+                const parsed = JSON.parse(state);
                 console.log('Loaded SaveState');
-                DB.setStore(parsed)
-                return true
+                DB.setStore(parsed);
+                return true;
             }
 
             console.log('No SaveState found')
-            return false
+            return false;
         } catch (e) {
             console.error('Error loading state', e)
-            // localStorage.clear()
-            return false
+            // localStorage.clear();
+            return false;
         }
     },
 }

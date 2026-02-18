@@ -1,12 +1,12 @@
 import gameData from "../../data/base_data_characters.json"
-import { AttributeID, AttrValues, ElementTypeID, HOYO_SkillID } from "../constants"
+import { AttributeID, ElementTypeID, HOYO_SkillID } from "../constants"
 import { Character } from "../models/Character"
 import { CharMetadata } from "../models/CharMetadata"
 import { HitData, SkillCalc, SkillKit, SubSkill } from "../models/SkillKit"
-import { StatsBase } from "../models/StatsBase"
+import { StatsBase, StatsBaseKeys } from "../models/StatsBase"
 import { BasicStatsObject } from "../types/basic_stats_object"
-import { Avatar, DamageParam, Hakushin_data as HakushinData, SkillHaku } from "../types/hakushin_types"
-import { DECIMAL_STATS } from "../Utils"
+import { Avatar, DamageParam, Hakushin_data, Hakushin_data as HakushinData, SkillHaku } from "../types/hakushin_types"
+import { TRUNCATE_STATS } from "../Utils"
 
 
 export class CharacterBuilder {
@@ -14,11 +14,13 @@ export class CharacterBuilder {
     lvl: number
     char_raw: Avatar
 
-    constructor(name: string, lvl: number, skillKit: SkillKit) {
+    constructor(id: number, lvl: number, skillKit: SkillKit) {
         this.lvl = lvl;
         this.character = new Character();
+        this.character.name = (<Hakushin_data>gameData)[id].Name;
+        console.log(this.character.name);
         this.character.skillKit = skillKit;
-        this.char_raw = new ServiceHakushin().getChar(name);
+        this.char_raw = new ServiceHakushin().getChar(this.character.name);
     }
 
     public build() {
@@ -44,6 +46,7 @@ export class CharacterBuilder {
         const base_char: BasicStatsObject = new StatsBase();
         const stats = this.char_raw.Stats;
         const lvl_range = this.get_lvl_range();
+        console.log(stats);
         base_char[AttributeID.ATK] = this.calc_stat_growth(stats.Attack, stats.AttackGrowth, this.char_raw.Level[lvl_range].Attack);
         base_char[AttributeID.HP] = this.calc_stat_growth(stats.HpMax, stats.HpGrowth, this.char_raw.Level[lvl_range].HpMax) + 1;
         base_char[AttributeID.DEF] = this.calc_stat_growth(stats.Defence, stats.DefenceGrowth, this.char_raw.Level[lvl_range].Defence);
@@ -132,9 +135,9 @@ export class CharacterBuilder {
 
         for (const stat in core_stats) {
             let value: number = core_stats[stat].Value;
-            const prop = <AttrValues>core_stats[stat].Prop;
+            const prop = <StatsBaseKeys>core_stats[stat].Prop;
 
-            if (!(Object.values(DECIMAL_STATS).includes(prop))) {
+            if (!(Object.values(TRUNCATE_STATS).includes(prop))) {
                 value /= 100;
             }
 

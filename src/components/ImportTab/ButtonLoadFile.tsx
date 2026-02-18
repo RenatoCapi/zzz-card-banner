@@ -1,7 +1,11 @@
 import { useState } from "react";
 import DB from "../../lib/DB/db";
 import { SaveState } from "../../lib/DB/saveState";
+import { ServiceEnka } from "../../lib/importer/enka_parser";
 import { ServiceHoyolab } from "../../lib/importer/hoyolab_parser";
+import { Character } from "../../lib/models/Character";
+import { AvatarEnka, EnkaData } from "../../lib/types/enka_types";
+import { HoyolabData } from "../../lib/types/hoyolab_types";
 import TooltipBox from "../TooltipBox";
 
 
@@ -16,13 +20,23 @@ const ButtonImportFile = () => {
         }, 2000);
     };
 
-    const loadData = (hoyolabJson: any) => {
-        const arrAux = Array.isArray(hoyolabJson) ? hoyolabJson : [hoyolabJson];
+    const loadData = (json: any) => {
+        const arrAux = Array.isArray(json) ? json : [json];
+        let charAux: Character;
+        if ("PlayerInfo" in arrAux[0]) {
+            const jsonEnka = arrAux[0] as EnkaData;
+            const EnkaAvatarList = jsonEnka.PlayerInfo.ShowcaseDetail.AvatarList;
+            EnkaAvatarList.forEach((value: AvatarEnka) => {
+                charAux = new ServiceEnka(value).buildCharacter();
+                DB.setCharacter(charAux);
+            })
+        } else if ("data" in arrAux[0]) {
+            arrAux.forEach((value: HoyolabData) => {
+                charAux = new ServiceHoyolab(value).buildCharacter();
+                DB.setCharacter(charAux);
+            })
+        }
 
-        arrAux.forEach((value) => {
-            const charAux = new ServiceHoyolab(value).buildCharacter();
-            DB.setCharacter(charAux);
-        })
 
         SaveState.save();
     }

@@ -13,16 +13,16 @@ export const ICON_FROM_STAT_MAPPING: { [id: number]: string } = {
     [AttributeID.DEF_P]: "prop-def-icon.png",
     [AttributeID.DEF_FLAT]: "prop-def-icon.png",
     [AttributeID.CRIT_RATE]: "prop-crit-rate-icon.png",
-    [AttributeID.CRIT_RATE_SUB]: "prop-crit-rate-icon.png",
+    [AttributeID.CRIT_RATE_FLAT]: "prop-crit-rate-icon.png",
     [AttributeID.CRIT_DMG]: "prop-crit-dmg-icon.png",
-    [AttributeID.CRIT_DMG_SUB]: "prop-crit-dmg-icon.png",
+    [AttributeID.CRIT_DMG_FLAT]: "prop-crit-dmg-icon.png",
     [AttributeID.PEN]: "prop-pen-ratio-icon.png",
     [AttributeID.PEN_P]: "prop-pen-value-icon.png",
     [AttributeID.PEN_FLAT]: "prop-pen-ratio-icon.png",
     [AttributeID.ENERGY_RATE]: "prop-energy-regen-icon.png",
     [AttributeID.ENERGY_P]: "prop-energy-regen-icon.png",
     [AttributeID.ANOMALY_PROF]: "prop-anomaly-proficiency-icon.png",
-    [AttributeID.ANOMALY_PROF_SUB]: "prop-anomaly-proficiency-icon.png",
+    [AttributeID.ANOMALY_PROF_FLAT]: "prop-anomaly-proficiency-icon.png",
     [AttributeID.ANOMALY_MAST]: "prop-anomaly-mastery-icon.png",
     [AttributeID.ANOMALY_MAST_P]: "prop-anomaly-mastery-icon.png",
     [AttributeID.PHYS_DMG]: "IconPhysical.webp",
@@ -30,7 +30,7 @@ export const ICON_FROM_STAT_MAPPING: { [id: number]: string } = {
     [AttributeID.ICE_DMG]: "IconIce.webp",
     [AttributeID.ELEC_DMG]: "IconElectric.webp",
     [AttributeID.ETHER_DMG]: "IconEther.webp",
-    [AttributeID.SHEER]: "IconSheer.webp",
+    [AttributeID.SHEER_FORCE]: "IconSheer.webp",
 }
 
 export const ICON_FROM_ELEMENT_MAPPING: { [id: number]: string } = {

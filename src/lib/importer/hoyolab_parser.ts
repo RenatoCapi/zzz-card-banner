@@ -19,8 +19,8 @@ export class ServiceHoyolab {
             return new Character();
 
         const avatar: Avatar = this.json_hoyo.data.avatar_list[0];
-        const serviceWengide = new ServiceWengine(avatar.weapon);
-        const servicoDiscset: ServiceDiscset = new ServiceDiscset(avatar.equip);
+        const serviceWengide = new ServiceHoyolabWengine(avatar.weapon);
+        const servicoDiscset: ServiceHoyolabDiscset = new ServiceHoyolabDiscset(avatar.equip);
 
         const character: Character = this.getCharacterBaseData(avatar);
         character.setWengine(serviceWengide.load_engine());
@@ -33,13 +33,11 @@ export class ServiceHoyolab {
     }
 
     private getCharacterBaseData(avatar: Avatar) {
-        const name_code = avatar.name_mi18n;
-        const lvl = avatar.level;
         const skillSet = this.getSkillSet(avatar.skills);
 
         return new CharacterBuilder(
-            name_code,
-            lvl,
+            avatar.id,
+            avatar.level,
             skillSet
         ).build();
     }
@@ -57,7 +55,7 @@ export class ServiceHoyolab {
     }
 }
 
-export class ServiceWengine {
+class ServiceHoyolabWengine {
     json_wengine: Weapon | undefined | null;
     constructor(json: Weapon | undefined | null) {
         this.json_wengine = json;
@@ -83,7 +81,7 @@ export class ServiceWengine {
     }
 }
 
-export class ServiceDiscset {
+class ServiceHoyolabDiscset {
     json_equip: Equip[] | undefined;
 
     constructor(json: Equip[] | undefined) {
@@ -101,7 +99,7 @@ export class ServiceDiscset {
         for (const equip of equips) {
             const suit: Suit = equip.equip_suit;
             if (suit.own > 1)
-                discSet.disc_sets_bonus[suit.suit_id] = suit.own;
+                discSet.disc_sets_bonus[Math.floor(suit.suit_id / 100)] = suit.own;
 
             discs[equip.equipment_type] = this.buildDisc(equip);
         }
@@ -114,7 +112,7 @@ export class ServiceDiscset {
         disc.lvl = equip.level;
         disc.pos = equip.equipment_type;
         disc.rarity = equip.rarity;
-        disc.equipset_id = equip.equip_suit.suit_id;
+        disc.equipset_id = Math.floor(equip.equip_suit.suit_id / 100);
 
         const main_stats: Stat = new Stat();
         main_stats.id = <AttrValues>fixPropertyId(equip.main_properties[0].property_id);
