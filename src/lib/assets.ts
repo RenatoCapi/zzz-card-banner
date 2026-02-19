@@ -17,7 +17,11 @@ export class Assets {
     }
 
     private static getImageUrl(name: string) {
-        return new URL(this.BASE_PATH + `/assets${name}`, import.meta.url).href
+        return new URL(this.BASE_PATH + `/assets${name}`, import.meta.url).href;
+    }
+
+    public static getEnkaLogo() {
+        return Assets.getImageUrl('/misc/Enka_logo.png');
     }
 
     public static getStatIcon(stat: Stat) {
