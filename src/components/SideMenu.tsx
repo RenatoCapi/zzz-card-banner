@@ -13,7 +13,7 @@ const SideMenu = ({ show }: SideMenuProps) => {
             <div className="flex flex-col gap-1 p-2 w-full h-full">
                 <Link to={BASE_PATH + "/"} className="side-menu-button">Characters</Link>
                 <Link to={BASE_PATH + "/import"} className="side-menu-button">Import</Link>
-                {/*<Link to={BASE_PATH + "/calc"} className="side-menu-button">Calc</Link>*/}
+                <Link to={BASE_PATH + "/calc"} className="side-menu-button">Calc</Link>
             </div>
         </div>
     )

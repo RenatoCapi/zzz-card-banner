@@ -3,12 +3,13 @@ import wengineLabelsData from "../../data/base_wengine_data.json";
 import { AttributeID, AttrValues, ENKA_RARITY, EnkaRarityKey } from "../constants";
 import { Character } from "../models/Character";
 import { Disc, DiscSet, Stat } from "../models/DiscSet";
-import { SkillKit } from "../models/SkillKit";
+import { MySkillKit } from "../models/SkillKit2nd";
 import { WEngine } from "../models/WEngine";
 import { AvatarEnka as EnkaAvatar, EnkaData, EquippedEnka, PropertyEnka, SkillLevelEnka, Weapon } from "../types/enka_types";
 import { EnkaWEngineData } from "../types/enka_wengine_types";
+import { DataSkill } from "../types/my_char_data_types";
 import { fixPropertyId, TRUNCATE_STATS } from "../Utils";
-import { CharacterBuilder } from "./hakushin_parser";
+import { CharacterBuilder } from "./my_data_type_parser";
 
 const rarityScale = {
     4: 0.2,
@@ -52,20 +53,20 @@ export class ServiceEnka {
         ).build();
     }
 
-    private getSkillSet(enkaSkills: SkillLevelEnka[]): SkillKit {
-        let skillSet: SkillKit = {} as SkillKit;
+    private getSkillSet(enkaSkills: SkillLevelEnka[]): MySkillKit {
+        let skillSet: MySkillKit = {} as MySkillKit;
         enkaSkills.map((skill) => {
             skillSet[skill.Index] = {
                 level: skill.Level,
                 SkillId: skill.Index,
-                subSkills: [],
+                data: {} as DataSkill
             };
         });
         return skillSet;
     }
 
 
-    //development test
+    //in development, it need a API
     public async loadAgentData(): Promise<EnkaData> {
         return fetch(`https://enka.network/api/zzz/uid/${this.agent_UID}`)
             .then(response => response.json())

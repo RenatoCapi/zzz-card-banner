@@ -2,7 +2,7 @@ import gameData from "../../data/base_data_characters.json"
 import { AttributeID, ElementTypeID, HOYO_SkillID } from "../constants"
 import { Character } from "../models/Character"
 import { CharMetadata } from "../models/CharMetadata"
-import { HitData, SkillCalc, SkillKit, SubSkill } from "../models/SkillKit"
+import { HitData, SkillKit, SubSkill } from "../models/SkillKit"
 import { StatsBase, StatsBaseKeys } from "../models/StatsBase"
 import { BasicStatsObject } from "../types/basic_stats_object"
 import { Avatar, DamageParam, Hakushin_data, Hakushin_data as HakushinData, SkillHaku } from "../types/hakushin_types"
@@ -19,7 +19,7 @@ export class CharacterBuilder {
         this.character = new Character();
         this.character.name = (<Hakushin_data>gameData)[id].Name;
         console.log(this.character.name);
-        this.character.skillKit = skillKit;
+        //this.character.skillKit = skillKit;
         this.char_raw = new ServiceHakushin().getChar(this.character.name);
     }
 
@@ -62,15 +62,15 @@ export class CharacterBuilder {
     }
 
     private setSkillsMetadata() {
-        let skillKit: SkillKit = this.character.skillKit;
+        // let skillKit: SkillKit = this.character.skillKit;
 
-        skillKit[HOYO_SkillID.BASIC].subSkills = this.loadBasicAtkSkill(this.char_raw.Skill.Basic);
-        skillKit[HOYO_SkillID.DODGE].subSkills = this.loadSubSkills(this.char_raw.Skill.Dodge);
-        skillKit[HOYO_SkillID.ASSIST].subSkills = this.loadSubSkills(this.char_raw.Skill.Assist);
-        skillKit[HOYO_SkillID.SPECIAL].subSkills = this.loadSubSkills(this.char_raw.Skill.Special);
-        skillKit[HOYO_SkillID.CHAIN].subSkills = this.loadSubSkills(this.char_raw.Skill.Chain);
+        // skillKit[HOYO_SkillID.BASIC].subSkills = this.loadBasicAtkSkill(this.char_raw.Skill.Basic);
+        // skillKit[HOYO_SkillID.DODGE].subSkills = this.loadSubSkills(this.char_raw.Skill.Dodge);
+        // skillKit[HOYO_SkillID.ASSIST].subSkills = this.loadSubSkills(this.char_raw.Skill.Assist);
+        // skillKit[HOYO_SkillID.SPECIAL].subSkills = this.loadSubSkills(this.char_raw.Skill.Special);
+        // skillKit[HOYO_SkillID.CHAIN].subSkills = this.loadSubSkills(this.char_raw.Skill.Chain);
 
-        this.character.skillKit = new SkillCalc(skillKit).calcAllSkillsMult();
+        // this.character.skillKit = new SkillCalc(skillKit).calcAllSkillsMult();
     }
 
     private loadSubSkills(skill: SkillHaku) {

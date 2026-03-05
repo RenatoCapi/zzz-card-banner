@@ -28,7 +28,7 @@ export class Assets {
         return Assets.getImageUrl(`/icon/property/${ICON_FROM_STAT_MAPPING[stat.id]}`)
     }
 
-    public static getCharacterAvatarById(id: string) {
+    public static getCharacterAvatarById(id: number) {
         return Assets.getImageUrl(`/image/avatar_cinema/${id}.webp`)
     }
 

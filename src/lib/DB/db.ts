@@ -33,7 +33,7 @@ export const DB = {
     setCharacters: (x: Character[]) => {
         const charactersById: Record<string, Character> = {};
         for (const character of x) {
-            charactersById[character.name] = character;
+            charactersById[character.id] = character;
         }
 
         const newCharacterArray = [...x]

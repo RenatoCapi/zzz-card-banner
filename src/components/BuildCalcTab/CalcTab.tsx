@@ -1,7 +1,6 @@
 import { useState } from "react";
 import DB from "../../lib/DB/db";
 import { Character } from "../../lib/models/Character";
-import { SkillCalc } from "../../lib/models/SkillKit";
 
 
 
@@ -27,7 +26,8 @@ const SelectChar = () => {
         console.clear();
         const char = DB.getCharacterById(event.target.value);
         console.log(char.name);
-        new SkillCalc(char.skillKit).calcAllSkillsMult();
+        console.log(char.skillKit)
+        //new SkillCalc(char.skillKit).calcAllSkillsMult();
         setSelectedOption(event.target.value);
     };
 

@@ -14,14 +14,14 @@ const CharProfile = ({ char }: { char: Character }) => {
     const CharTitle = () => (
         <div className="absolute flex h-18 w-auto gap-3 z-30">
             <img src={Assets.getRarity(charMetadata.rarity)} className="w-16" />
-            <span className="text-[38px] py-0.5 leading-none drop-shadow-primary"> {char.name} </span>
+            <span className="text-[38px] py-0.5 w-[208px] leading-none drop-shadow-primary"> {captalizeFirstLetter(char.name)} </span>
             <span className="text-[24px] py-2 drop-shadow-primary"> Lv.{char.lvl} </span>
         </div>
     );
 
     return (
         <div className="card-primary w-[420px] h-[750px]">
-            <img alt={char.name} src={Assets.getCharacterAvatarById(char.name)} className="absolute max-w-none top-0 -left-6 h-[750px] z-10 opacity-65" />
+            <img alt={char.name} src={Assets.getCharacterAvatarById(char.id)} className="absolute max-w-none top-0 -left-6 h-[750px] z-10 opacity-65" />
             <div className="relative w-full h-full">
                 <CharTitle />
                 <CinemaPreview charMovie={char.rank} />
@@ -33,6 +33,10 @@ const CharProfile = ({ char }: { char: Character }) => {
             </div>
         </div>
     )
+}
+
+const captalizeFirstLetter = (text: string) => {
+    return text.toLowerCase().replace(/(^|\s)\S/g, (match) => match.toUpperCase());
 }
 
 export default CharProfile

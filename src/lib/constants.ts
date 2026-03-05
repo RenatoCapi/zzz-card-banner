@@ -68,33 +68,22 @@ export const AttributeID = {
 export type AttrKeys = keyof typeof AttributeID
 export type AttrValues = (typeof AttributeID)[AttrKeys]
 
-export const Stats: AttrValues[] = [
-    AttributeID.NONE,
-    AttributeID.HP,
+export const Stats: AttrValues[] = Object.values(AttributeID)
+
+
+export const StatsFloatNumber: AttrValues[] = [
     AttributeID.HP_P,
-    AttributeID.HP_FLAT,
-    AttributeID.ATK,
     AttributeID.ATK_P,
-    AttributeID.ATK_FLAT,
-    AttributeID.IMPACT,
     AttributeID.IMPACT_P,
-    AttributeID.SHEER_FORCE,
-    AttributeID.SHEER_FORCE_FLAT,
-    AttributeID.DEF,
     AttributeID.DEF_P,
-    AttributeID.DEF_FLAT,
     AttributeID.CRIT_RATE,
     AttributeID.CRIT_RATE_FLAT,
     AttributeID.CRIT_DMG,
     AttributeID.CRIT_DMG_FLAT,
     AttributeID.PEN,
     AttributeID.PEN_P,
-    AttributeID.PEN_FLAT,
     AttributeID.ENERGY_RATE,
     AttributeID.ENERGY_P,
-    AttributeID.ANOMALY_PROF,
-    AttributeID.ANOMALY_PROF_FLAT,
-    AttributeID.ANOMALY_MAST,
     AttributeID.ANOMALY_MAST_P,
     AttributeID.PHYS_DMG,
     AttributeID.PHYS_DMG_FLAT,
@@ -106,11 +95,7 @@ export const Stats: AttrValues[] = [
     AttributeID.ELEC_DMG_FLAT,
     AttributeID.ETHER_DMG,
     AttributeID.ETHER_DMG_FLAT,
-    AttributeID.ADRENALINE_ACC,
     AttributeID.ADRENALINE_ACC_P,
-    AttributeID.ADRENALINE_ACC_FLAT,
-    AttributeID.SHEER_DMG_BONUS,
-    AttributeID.SHEER_DMG_BONUS_FLAT,
     AttributeID.SHIELD_EFFECT,
 ]
 

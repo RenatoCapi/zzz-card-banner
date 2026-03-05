@@ -1,11 +1,12 @@
 import { AttributeID, AttrValues } from '../constants'
 import { Character } from '../models/Character'
 import { Disc, DiscSet, Stat } from '../models/DiscSet'
-import { SkillKit } from '../models/SkillKit'
+import { MySkillKit } from '../models/SkillKit2nd'
 import { WEngine } from '../models/WEngine'
 import { Avatar, Equip, HoyolabData, Property, Skill, Suit, Weapon } from '../types/hoyolab_types'
+import { DataSkill } from '../types/my_char_data_types'
 import { fixPropertyId, readValue } from '../Utils'
-import { CharacterBuilder } from './hakushin_parser'
+import { CharacterBuilder } from './my_data_type_parser'
 
 
 export class ServiceHoyolab {
@@ -27,8 +28,9 @@ export class ServiceHoyolab {
         character.setDiscSet(servicoDiscset.buildDiscSet());
         character.rank = avatar.rank;
         character.id = avatar.id;
-        character.name = avatar.name_mi18n;
         character.calcAllStats();
+
+        console.log(character)
         return character;
     }
 
@@ -43,15 +45,15 @@ export class ServiceHoyolab {
     }
 
     private getSkillSet(skills: Skill[]) {
-        let skillSet: SkillKit = {};
+        let skillKit: MySkillKit = {};
         skills.map((skill) => {
-            skillSet[skill.skill_type] = {
+            skillKit[skill.skill_type] = {
                 level: skill.level,
                 SkillId: skill.skill_type,
-                subSkills: [],
+                data: {} as DataSkill,
             };
         });
-        return skillSet;
+        return skillKit;
     }
 }
 
