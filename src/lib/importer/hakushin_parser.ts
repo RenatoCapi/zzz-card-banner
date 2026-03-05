@@ -18,7 +18,6 @@ export class CharacterBuilder {
         this.lvl = lvl;
         this.character = new Character();
         this.character.name = (<Hakushin_data>gameData)[id].Name;
-        console.log(this.character.name);
         //this.character.skillKit = skillKit;
         this.char_raw = new ServiceHakushin().getChar(this.character.name);
     }
@@ -46,7 +45,6 @@ export class CharacterBuilder {
         const base_char: BasicStatsObject = new StatsBase();
         const stats = this.char_raw.Stats;
         const lvl_range = this.get_lvl_range();
-        console.log(stats);
         base_char[AttributeID.ATK] = this.calc_stat_growth(stats.Attack, stats.AttackGrowth, this.char_raw.Level[lvl_range].Attack);
         base_char[AttributeID.HP] = this.calc_stat_growth(stats.HpMax, stats.HpGrowth, this.char_raw.Level[lvl_range].HpMax) + 1;
         base_char[AttributeID.DEF] = this.calc_stat_growth(stats.Defence, stats.DefenceGrowth, this.char_raw.Level[lvl_range].Defence);

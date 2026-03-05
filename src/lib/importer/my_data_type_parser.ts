@@ -18,7 +18,6 @@ export class CharacterBuilder {
 
         this.character.skillKit = skillKit;
         this.char_raw = new ServiceMyDataType().getChar(id.toString());
-
     }
 
     public build() {
@@ -57,10 +56,8 @@ export class CharacterBuilder {
 
         const attrId1 = <AttrValues>+core_stats[1][0]
         const attrId2 = <AttrValues>+core_stats[0][0]
-        console.log(core_stats)
         if (StatsFloatNumber.includes(attrId1)) {
             core_stats[1][1] /= 10000;
-            console.log(core_stats[1][1])
         }
 
         this.character.charBase[attrId1] += core_stats[1][1] * growth_attr1
@@ -71,8 +68,6 @@ export class CharacterBuilder {
         const charMetadata = new CharMetadata();
         //TODO refactor rarity's ID and multi hitType
         this.character.name = this.char_raw.name;
-        console.log(this.character.name)
-
         charMetadata.rarity = this.char_raw.rarity === "3" ? "A" : "S";
         charMetadata.weapon = this.char_raw.weaponType;
         charMetadata.elementId = this.char_raw.ElementType;
@@ -94,7 +89,8 @@ export class CharacterBuilder {
 
     private calc_stat_growth(stat: DataGrowthStat, lvl: number): number {
         const asc_stat = Math.trunc((lvl - 1) / 10) * stat.asc
-        return Math.floor(stat.base + (this.lvl - 1) * (stat.growth / 10000)) + asc_stat;
+        return Math.round(stat.base + (this.lvl - 1) * (stat.growth / 10000) + asc_stat);
+
     }
 
 

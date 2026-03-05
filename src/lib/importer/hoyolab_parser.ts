@@ -30,7 +30,6 @@ export class ServiceHoyolab {
         character.id = avatar.id;
         character.calcAllStats();
 
-        console.log(character)
         return character;
     }
 

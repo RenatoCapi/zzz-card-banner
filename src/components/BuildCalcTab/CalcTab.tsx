@@ -25,8 +25,6 @@ const SelectChar = () => {
     const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         console.clear();
         const char = DB.getCharacterById(event.target.value);
-        console.log(char.name);
-        console.log(char.skillKit)
         //new SkillCalc(char.skillKit).calcAllSkillsMult();
         setSelectedOption(event.target.value);
     };

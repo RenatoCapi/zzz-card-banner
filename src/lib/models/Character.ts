@@ -35,16 +35,16 @@ export class Character extends StatsBase {
         this[attrID] = this.charBase[attrID] + this.wengine[attrID] + this.discSet.sumStats[attrID];
     }
 
-    public sumMainStat(attrFlatId: AttrValues) {
-        const attrPercId = <AttrValues>(attrFlatId + 1);
-        const base = this.charBase[attrFlatId] + this.wengine[attrFlatId];
+    public sumMainStat(attrId: AttrValues) {
+        const attrPercId = <AttrValues>(attrId + 1);
+        const base = this.charBase[attrId] + this.wengine[attrId];
         const perc = this.charBase[attrPercId] + this.wengine[attrPercId] + this.discSet.sumStats[attrPercId];
-        this[attrFlatId] = (base * (1 + perc / 100)) + this.discSet.sumStats[attrFlatId];
+        this[attrId] = Math.floor((base * (1 + perc / 100)) + this.discSet.sumStats[attrId]);
     }
 
     public sumSheerStat() {
         if (+this.charMetadata.weapon === WeaponTypeID.RUPTURE) {
-            this[AttributeID.SHEER_FORCE] = this[AttributeID.ATK] * 0.3 + this[AttributeID.HP] * 0.1;
+            this[AttributeID.SHEER_FORCE] = Math.floor(this[AttributeID.ATK] * 0.3 + this[AttributeID.HP] * 0.1);
         }
     }
 

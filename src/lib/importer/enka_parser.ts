@@ -34,7 +34,6 @@ export class ServiceEnka {
 
 
         const character: Character = this.getCharacterBaseData(this.enkaAvatar);
-        console.log(this.enkaAvatar.Weapon);
         character.setWengine(ServiceEnkaWengine.load_engine(<Weapon>this.enkaAvatar.Weapon));
         character.setDiscSet(ServiceDiscset.buildDiscSet(<EquippedEnka[]>this.enkaAvatar.EquippedList));
         character.rank = this.enkaAvatar.TalentLevel;
@@ -145,7 +144,6 @@ class ServiceDiscset {
             mainStat.value /= 100;
         }
 
-        console.log(enkaRarity);
         disc.main_stats = mainStat;
 
         disc.substats = this.buildStats(equip.Equipment.RandomPropertyList);

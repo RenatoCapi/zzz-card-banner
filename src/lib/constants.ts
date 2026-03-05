@@ -39,7 +39,6 @@ export const AttributeID = {
     ANOMALY_MAST_P: 31402,
     ANOMALY_MAST_FLAT: 31403,
 
-
     PHYS_DMG: 31501,
     PHYS_DMG_FLAT: 31503,
 
@@ -181,7 +180,7 @@ export const HOYO_2P_DISCSET: { [id: number]: number[] } = {
     [DiscSetID.ASTRAL_VOICE]: [AttributeID.ATK_P, 10.0],
     [DiscSetID.BLADE_SONG]: [AttributeID.CRIT_DMG, 16.0],
     [DiscSetID.SHADOW_HARMONY]: [AttributeID.ATK_P, 0.0],
-    [DiscSetID.PHAETHONS_MELODY]: [AttributeID.ANOMALY_MAST, 8.0],
+    [DiscSetID.PHAETHONS_MELODY]: [AttributeID.ANOMALY_MAST_P, 8.0],
     [DiscSetID.YUNKUI]: [AttributeID.HP_P, 10.0],
     [DiscSetID.SUMMIT]: [AttributeID.NONE, 6.0],
     [DiscSetID.DAWN_BLOOM]: [AttributeID.NONE, 15.0],

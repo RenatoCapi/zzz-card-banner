@@ -25,7 +25,7 @@ export const precisionRound = (num: number, precision = 5) => {
 
 export const isFlat = (stat: Stat) => {
     if (Object.values(TRUNCATE_STATS).includes(stat.id))
-        return Math.floor(stat.value);
+        return Math.round(stat.value);
 
     if (stat.id === AttributeID.ENERGY_RATE)
         return precisionRound(stat.value, 2);
@@ -35,7 +35,7 @@ export const isFlat = (stat: Stat) => {
 
 
 export const truncate10ths = (value: number) => {
-    return Math.floor(value * 10) / 10;
+    return Math.round(value * 10) / 10;
 }
 
 export const readValue = (value: string) => {
