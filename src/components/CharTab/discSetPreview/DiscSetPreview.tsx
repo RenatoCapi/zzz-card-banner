@@ -18,6 +18,10 @@ type DiscProp = {
 
 
 const DiscSetPreview = ({ discSet }: DiscSetProp) => {
+    if (discSet === undefined) {
+        return (<div className="flex w-[428px] gap-2 flex-wrap"></div>)
+    }
+
     return (
         <div className="flex w-[428px] gap-2 flex-wrap">
             <DiscCard disc={discSet.discs[1]} />
