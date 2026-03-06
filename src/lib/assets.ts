@@ -1,12 +1,10 @@
 
 import { Stat } from "./models/DiscSet";
 
-import char_data from "../data/base_data_characters.json";
 import discset_data from "../data/base_discset_data.json";
 import wengine_data from "../data/base_wengine_data.json";
 import { ICON_FROM_ELEMENT_MAPPING, ICON_FROM_SKILL_MAPPING, ICON_FROM_STAT_MAPPING } from "./constantsUI";
 import { dataDiscSetsMeta as DataDiscSetsMeta } from "./types/discs_metadata";
-import { Hakushin_data } from "./types/hakushin_types";
 import { WengineMetadata } from "./types/wengine_metadata";
 
 export class Assets {
@@ -79,14 +77,6 @@ export class Assets {
     }
 
     static getRole(id: number) {
-        const hakushinData: Hakushin_data = <Hakushin_data>char_data;
-        if (hakushinData[id] !== undefined) {
-            const matches = hakushinData[id].Icon.match(/\d+/g);
-            if (matches) {
-                const iconID = matches[0];
-                const icon_file_name = `IconRoleSelect${iconID}.webp`;
-                return Assets.getImageUrl(`/icon/role/${icon_file_name}`)
-            }
-        }
+        return Assets.getImageUrl(`/icon/role/${id}.webp`)
     }
 }

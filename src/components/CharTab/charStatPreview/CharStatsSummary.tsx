@@ -7,7 +7,9 @@ import { viewStats, viewStatsChar } from "../../../lib/models/StatsBase";
 import { dataDiscSetsMeta as DataDiscSetsMeta } from "../../../lib/types/discs_metadata";
 import StatRow from "./StatRow";
 
-const CharStatSummary = ({ char }: { char: Character }) => {
+const CharStatSummary = ({ char }: { char: Character | null }) => {
+    if(!char) char = new Character();
+    
     const { wengine } = char;
     const total_stats = viewStatsChar(char)
     const wengine_stats = viewStats(wengine)

@@ -4,7 +4,6 @@ export const SaveState = {
     save: () => {
         const state = {
             charactersById: DB.getCharactersById(),
-            activeCharacter: DB.getActiveChar(),
         }
         console.log('Saved state');
         const stateString = JSON.stringify(state);
