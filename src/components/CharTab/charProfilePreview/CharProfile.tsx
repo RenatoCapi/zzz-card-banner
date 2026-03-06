@@ -5,16 +5,16 @@ import { CinemaPreview } from "./CinemaSvg";
 
 
 const CharProfile = ({ char }: { char: Character }) => {
-    const { charMetadata } = char;
-
     if (!char.name) {
         return (<div className="card-primary w-[420px] h-[750px]" />);
     }
 
+    const { charMetadata } = char;
+
     const CharTitle = () => (
         <div className="absolute flex h-18 w-auto gap-3 z-30">
             <img src={Assets.getRarity(charMetadata.rarity)} className="w-16" />
-            <span className="text-[38px] py-0.5 w-[208px] leading-none drop-shadow-primary"> {captalizeFirstLetter(char.name)} </span>
+            <span className="text-[38px] py-0.5 w-[208px] leading-none drop-shadow-primary capitalize"> {char.name.toLowerCase()} </span>
             <span className="text-[24px] py-2 drop-shadow-primary"> Lv.{char.lvl} </span>
         </div>
     );
@@ -33,10 +33,6 @@ const CharProfile = ({ char }: { char: Character }) => {
             </div>
         </div>
     )
-}
-
-const captalizeFirstLetter = (text: string) => {
-    return text.toLowerCase().replace(/(^|\s)\S/g, (match) => match.toUpperCase());
 }
 
 export default CharProfile

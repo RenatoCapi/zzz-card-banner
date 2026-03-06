@@ -8,7 +8,7 @@ import { Character } from "../../lib/models/Character";
 const CalcTab = () => {
 
     return (
-        <div className="w-full flex-col">
+        <div className="w-full flex-col h-[890px] p-2">
             <div className="flex flex-row mx-2 mt-2 max-w-[1150px] self-center overflow-x-auto scrollbar-thin">
                 <div className="flex min-h-[800px]">
                     <SelectChar />
