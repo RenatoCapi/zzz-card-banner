@@ -1,75 +1,71 @@
-import { ParamValue } from "../types/hakushin_types"
 
-export interface SkillKit {
+import { DataComplexHit, DataMultiplier, DataSkill, HitMap } from "../types/my_char_data_types";
+
+export interface MySkillKit {
     [id: string]: Skill
 }
 
 export type Skill = {
     level: number,
     SkillId: number,
-    subSkills: SubSkill[]
+    data: DataSkill,
 }
 
-export type SubSkill = {
-    name: string,
-    hitsData: HitData[],
+interface CalculatedHitMap {
+    [skillId: string]: {
+        [subskillId: string]: {
+            [complexHitId: string]: {
+                dmg: number
+                daze: number
+                anomalyBuildup: number
+                miasmaDepletion: number
+            }
+        }
+    }
 }
 
-//esse tipo terá que ser modificado caso precisarmos do stunRatio
-export type HitData = {
-    name: string,
-    desc: string,
-    dmgPecent: number,
-    anomalyType: number,
-    params: { [key: string]: ParamValue },
+// interface CalculatedHit {
+//     skillId: string
+//     subskillId: string
+//     complexHitId: string
+//     dmg: number
+//     daze: number
+//     anomalyBuildup: number
+//     miasmaDepletion: number
+// }
+
+export function subSkillMult(complexSkill: DataComplexHit, lvl: number) {
+    return String((complexSkill.dmg.base + complexSkill.dmg.growth * (lvl - 1)) / 10000);
 }
 
-export class SkillCalc {
-    skillKit: SkillKit
-    dictSkillsMult = {}
+class Skillkit {
+    dataSkillKit: MySkillKit
+    hitMap: HitMap
+    calculatedHits: CalculatedHitMap = {}
 
-    constructor(skillKit: SkillKit) {
-        this.skillKit = skillKit;
+    constructor(dataSkillKit: MySkillKit, hitMap: HitMap) {
+        this.dataSkillKit = dataSkillKit
+        this.hitMap = hitMap
+        this.calcAllComplexHits()
     }
 
-    public calcAllSkillsMult() {
-        Object.entries(this.skillKit).forEach(([id, skill]) => {
-            const skillCalculated = skill;
-
-            skillCalculated.subSkills = skill.subSkills.map((subSkill) => {
-
-                subSkill.hitsData = subSkill.hitsData.map((hitData) => {
-                    hitData.dmgPecent = this.mountSkillMult(hitData, skill.level);
-                    return hitData;
-                });
-
-                return subSkill;
-            });
-
-            this.skillKit[id] = skillCalculated;
-        });
-
-        return this.skillKit;
+    private calcAllComplexHits() {
+        Object.entries(this.dataSkillKit).forEach(([skillId, skill]) => {
+            Object.entries(skill.data.subSkills).forEach(([subSkillId, subSkill]) => {
+                Object.entries(subSkill).forEach(([dataComplexId, dataComplex]) => {
+                    this.calculatedHits[skillId][subSkillId][dataComplexId] = {
+                        dmg: this.calcMultPerLvl(dataComplex.dmg, skill.level),
+                        daze: this.calcMultPerLvl(dataComplex.daze, skill.level),
+                        anomalyBuildup: 0,
+                        miasmaDepletion: 0,
+                    }
+                })
+            })
+        })
     }
 
-    private mountSkillMult(hitData: HitData, lvl: number) {
-        const captureTxtInBraces = /\{(.*?)\}/g;
 
-        const resultado = hitData.desc.replace(captureTxtInBraces, (_match, capture) => {
-            const json = JSON.parse(this.fixJson(capture));
-            return this.subSkillMult(hitData.params[json.Skill], lvl);
-        });
-
-        return eval(resultado.replace("}", ""));
-    }
-
-    private fixJson(jsonBroken: string) {
-        const fixCurlyBrackets = "{" + jsonBroken.replace("{", "") + "}";
-        const fixQuotationMark = fixCurlyBrackets.replace('Skill', '"Skill"').replace('Prop', '"Prop"');
-        return fixQuotationMark;
-    }
-
-    private subSkillMult(paramValue: ParamValue, lvl: number) {
-        return String((paramValue.Main + paramValue.Growth * (lvl - 1)) / 100);
+    calcMultPerLvl(dataMult: DataMultiplier, lvl: number) {
+        return (dataMult.base + (dataMult.growth * (lvl - 1))) / 10000
     }
 }

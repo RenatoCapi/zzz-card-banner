@@ -1,7 +1,7 @@
 import { AttributeID, AttrValues } from '../constants'
 import { Character } from '../models/Character'
 import { Disc, DiscSet, Stat } from '../models/DiscSet'
-import { MySkillKit } from '../models/SkillKit2nd'
+import { MySkillKit } from '../models/SkillKit'
 import { WEngine } from '../models/WEngine'
 import { Avatar, Equip, HoyolabData, Property, Skill, Suit, Weapon } from '../types/hoyolab_types'
 import { DataSkill } from '../types/my_char_data_types'

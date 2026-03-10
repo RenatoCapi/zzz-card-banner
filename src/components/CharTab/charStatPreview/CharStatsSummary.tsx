@@ -8,15 +8,16 @@ import { dataDiscSetsMeta as DataDiscSetsMeta } from "../../../lib/types/discs_m
 import StatRow from "./StatRow";
 
 const CharStatSummary = ({ char }: { char: Character | null }) => {
-    if(!char) char = new Character();
-    
+    if (!char) char = new Character();
+
     const { wengine } = char;
-    const total_stats = viewStatsChar(char)
-    const wengine_stats = viewStats(wengine)
-    const wengine_icon = Assets.getWEngine(wengine.id)
-    const wengine_rarity = Assets.getRarity(wengine.rarity)
-    const camp = Assets.getCamp(char.charMetadata.camp)
-    const disc_set_bonus = char.discSet.disc_sets_bonus
+    const total_stats = viewStatsChar(char);
+    const wengine_stats = viewStats(wengine);
+    const wengine_icon = Assets.getWEngine(wengine.id);
+    const wengine_rarity = Assets.getRarity(wengine.rarity);
+    const camp = Assets.getCamp(char.charMetadata.camp);
+    const disc_set_bonus = Object.entries(char.discSet.disc_sets_bonus)
+        .filter(value => (value[1] === 2 || value[1] === 4));
     const wengine_lvl = (wengine.lvl === -1) ? "" : "Lv." + wengine.lvl;
     const wengine_stars = (wengine.star === 0) ? "" : "R" + wengine.star;
     const discs_meta: DataDiscSetsMeta = discset_data;
@@ -62,7 +63,7 @@ const CharStatSummary = ({ char }: { char: Character | null }) => {
                 </div>
             </div>
             <div key='bonusSets' className="w-[275px] px-[10px] self-center">
-                {Object.entries(disc_set_bonus).map(([id, value]) =>
+                {disc_set_bonus.map(([id, value]) =>
                     <div key={id} className="flex flex-row justify-between px-2 self-stretch">
                         <span className="text-[15px]">{discs_meta[+id].EN.name}</span>
                         <div className="flex border border-dashed box-border clear-both opacity-15 grow my-auto mx-[10px] " />

@@ -1,4 +1,4 @@
-import { lazy, MouseEvent, Suspense, useRef } from "react"
+import { lazy, Suspense, useRef } from "react"
 import { Assets } from "../../lib/assets"
 import DB from "../../lib/DB/db"
 import { Character } from "../../lib/models/Character.ts"
@@ -8,7 +8,7 @@ import DiscSetPreview from "./discSetPreview/DiscSetPreview.tsx"
 import { useCharacterTabStore } from "./useCharacterTabStore.ts"
 
 const CharacterTabController = {
-    buttonClickedListener: (e: MouseEvent, char: Character) => {
+    buttonClickedListener: (char: Character) => {
         useCharacterTabStore.getState().setFocusCharacter(char.id.toString())
     },
 
@@ -22,7 +22,7 @@ const CharTab = () => {
             <div className="flex flex-row mx-2 mt-2 max-w-[1150px] self-center overflow-x-auto scrollbar-thin over">
                 {Object.values(DB.getCharactersById()).reverse().map((value, jsx_index) => (
                     <div key={jsx_index}>
-                        <button type="button" onClick={(e) => CharacterTabController.buttonClickedListener(e, value)}>
+                        <button type="button" onClick={() => CharacterTabController.buttonClickedListener(value)}>
                             <img src={Assets.getRole(value.id)} className="w-auto h-[80px] max-w-none" />
                         </button>
                     </div>

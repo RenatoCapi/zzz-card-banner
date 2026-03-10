@@ -13,8 +13,13 @@ export interface DataCharType {
     growthStat: { [key: string]: DataGrowthStat };
     staticStats: { [key: string]: number };
     skillKit: { [key: string]: DataSkill };
-    hitMap: { [key: string]: DataSimpleHit };
+    hitMap: HitMap;
     coreSkill: DataCoreSkill;
+}
+
+export interface HitMap {
+    [key: string]: DataSimpleHit
+
 }
 
 export interface DataCoreSkill {

@@ -1,19 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { SaveState } from "../lib/DB/saveState";
 import Tabs from "./Tabs";
+import { useAppStore } from "./UseAppStore";
 
 SaveState.load()
 
 export const ExternalLayout: React.FC = () => {
-    const [sidebar, setSidebar] = useState(false);
-
-    const showSidebar = () => {
-        setSidebar(!sidebar);
-    };
-
     const MenuButton = () => {
-        return sidebar ? (
+        const { sidebarState } = useAppStore();
+        const showSidebar = useAppStore((state) => state.reverseSidebarState)
+        return sidebarState ? (
             <FiX className={`size-14 p-2 mx-2 active:animate-spin cursor-pointer`} onClick={showSidebar} />
         ) : (
             <FiMenu className={`size-14 p-2 mx-2 active:animate-spin cursor-pointer`} onClick={showSidebar} />
@@ -28,7 +25,7 @@ export const ExternalLayout: React.FC = () => {
                         Capi ZZZ Card Build
                     </span>
                 </div>
-                <Tabs show={sidebar} />
+                <Tabs />
             </div>
         </div>
     )

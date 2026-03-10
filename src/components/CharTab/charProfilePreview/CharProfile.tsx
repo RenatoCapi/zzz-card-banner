@@ -12,10 +12,10 @@ const CharProfile = ({ char }: { char: Character }) => {
     const { charMetadata } = char;
 
     const CharTitle = () => (
-        <div className="absolute flex h-18 w-auto gap-3 z-30">
-            <img src={Assets.getRarity(charMetadata.rarity)} className="w-16" />
-            <span className="text-[38px] py-0.5 w-[208px] leading-none drop-shadow-primary capitalize"> {char.name.toLowerCase()} </span>
-            <span className="text-[24px] py-2 drop-shadow-primary"> Lv.{char.lvl} </span>
+        <div className="absolute flex h-18 w-auto gap-2 z-30">
+            <img src={Assets.getRarity(charMetadata.rarity)} className="w-16 h-16" />
+            <span className="text-[36px] py-0.5 w-[220px] leading-none drop-shadow-primary capitalize"> {char.name.toLowerCase()} </span>
+            <span className="py-[7px] drop-shadow-primary"> Lv.<span className="text-[24px]">{char.lvl} </span></span>
         </div>
     );
 

@@ -1,7 +1,7 @@
 import gameData from "../../data/game_data.json";
 import { Character } from "../models/Character";
 import { CharMetadata } from "../models/CharMetadata";
-import { MySkillKit } from "../models/SkillKit2nd";
+import { MySkillKit } from "../models/SkillKit";
 import { StatsBase } from "../models/StatsBase";
 import { BasicStatsObject } from "../types/basic_stats_object";
 import { DataCharMap, DataCharType, DataGrowthStat } from "../types/my_char_data_types";

@@ -3,7 +3,7 @@ import wengineLabelsData from "../../data/base_wengine_data.json";
 import { AttributeID, AttrValues, ENKA_RARITY, EnkaRarityKey } from "../constants";
 import { Character } from "../models/Character";
 import { Disc, DiscSet, Stat } from "../models/DiscSet";
-import { MySkillKit } from "../models/SkillKit2nd";
+import { MySkillKit } from "../models/SkillKit";
 import { WEngine } from "../models/WEngine";
 import { AvatarEnka as EnkaAvatar, EnkaData, EquippedEnka, PropertyEnka, SkillLevelEnka, Weapon } from "../types/enka_types";
 import { EnkaWEngineData } from "../types/enka_wengine_types";
@@ -118,6 +118,7 @@ class ServiceDiscset {
             } else {
                 discSet.disc_sets_bonus[disc_set_id] = 1;
             }
+            console.log(discSet.disc_sets_bonus)
 
             discs[equip.Slot] = this.buildDisc(equip);
         }

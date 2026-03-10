@@ -23,12 +23,12 @@ const DiscSetPreview = ({ discSet }: DiscSetProp) => {
     }
 
     return (
-        <div className="flex w-[428px] gap-2 flex-wrap">
+        <div className="flex flex-col w-[428px] h-[751px] gap-2 flex-wrap">
             <DiscCard disc={discSet.discs[1]} />
-            <DiscCard disc={discSet.discs[6]} />
             <DiscCard disc={discSet.discs[2]} />
-            <DiscCard disc={discSet.discs[5]} />
             <DiscCard disc={discSet.discs[3]} />
+            <DiscCard disc={discSet.discs[6]} />
+            <DiscCard disc={discSet.discs[5]} />
             <DiscCard disc={discSet.discs[4]} />
         </div>
     )
@@ -127,7 +127,7 @@ const numUpgrades = (stat: Stat) => {
 
 export const idDOMcustom = (idString: string) => {
     const hoverItems = document.querySelectorAll("." + idString);
-
+    console.log(hoverItems)
     hoverItems.forEach(item => {
         item.addEventListener("mouseenter", () => {
             hoverItems.forEach((el) => {

@@ -9,14 +9,30 @@ const CalcTab = () => {
 
     return (
         <div className="w-full flex-col h-[890px] p-2">
-            <div className="flex flex-row mx-2 mt-2 max-w-[1150px] self-center overflow-x-auto scrollbar-thin">
-                <div className="flex min-h-[800px]">
-                    <SelectChar />
+            <div className="w-full flex-col">
+                <div className="flex m-auto w-fit gap-2 bg-stone-900 rounded-2xl">
+                    <div className="flex relative gap-2 mx-10 my-2 bg-stone-900 rounded-2xl">
+                        <div className="h-[850px] my-2">
+                            <div className="flex bg-stone-950 shadow-inner border-2 border-stone-800 border-opacity-75 rounded-xl">
+                                <div className="flex m-5 bg-stone-950 rounded-lg border-2 border-stone-700 h-fit hover:border-stone-900 transition duration-300">
+                                    <label className="p-2">Phaeton&#126;&#35;</label>
+                                    <input type="text" className="p-2 w-[600px] rounded-md bg-stone-950 focus:outline-none" />
+                                </div>
+                                <div className="h-[400px]">
+
+                                </div>
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
+
 
 
 const SelectChar = () => {
