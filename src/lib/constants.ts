@@ -293,6 +293,14 @@ export const ElementTypeID = {
     ETHER: 205,
 }
 
+export const ElementTypeToAttr = {
+    [ElementTypeID.PHYSICAL]: AttributeID.PHYS_DMG,
+    [ElementTypeID.FIRE]: AttributeID.FIRE_DMG,
+    [ElementTypeID.ICE]: AttributeID.ICE_DMG,
+    [ElementTypeID.ELECTRIC]: AttributeID.ELEC_DMG,
+    [ElementTypeID.ETHER]: AttributeID.ETHER_DMG,
+}
+
 export const CampID = {
     CUNNING: 1,
     VICTORIA: 2,

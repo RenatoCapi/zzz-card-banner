@@ -1,7 +1,7 @@
 import gameData from "../../data/game_data.json";
 import { Character } from "../models/Character";
 import { CharMetadata } from "../models/CharMetadata";
-import { MySkillKit } from "../models/SkillKit";
+import { MySkillKit as SkillDict } from "../models/SkillKit";
 import { StatsBase } from "../models/StatsBase";
 import { BasicStatsObject } from "../types/basic_stats_object";
 import { DataCharMap, DataCharType, DataGrowthStat } from "../types/my_char_data_types";
@@ -12,11 +12,11 @@ export class CharacterBuilder {
     lvl: number
     char_raw: DataCharType
 
-    constructor(id: number, lvl: number, skillKit: MySkillKit) {
+    constructor(id: number, lvl: number, skillDict: SkillDict) {
         this.lvl = lvl;
         this.character = new Character();
 
-        this.character.skillKit = skillKit;
+        this.character.skillKit.skillDict = skillDict;
         this.char_raw = new ServiceMyDataType().getChar(id.toString());
     }
 
@@ -46,7 +46,7 @@ export class CharacterBuilder {
 
 
     private setCoreStatsBase() {
-        const core_lvl = this.character.skillKit[HOYO_SkillID.CORE].level;
+        const core_lvl = this.character.skillKit.skillDict[HOYO_SkillID.CORE].level;
 
         if (core_lvl === 1) return;
 
@@ -79,10 +79,11 @@ export class CharacterBuilder {
 
 
     private setSkillsMetadata() {
-        let skillKit: MySkillKit = this.character.skillKit;
         Object.entries(this.char_raw.skillKit).forEach(([key, value]) => {
-            skillKit[+key].data = value
+            this.character.skillKit.skillDict[+key].data = value
         });
+        this.character.skillKit.hitMap = this.char_raw.hitMap
+
     }
 
 
@@ -92,9 +93,6 @@ export class CharacterBuilder {
         return Math.round(stat.base + (this.lvl - 1) * (stat.growth / 10000) + asc_stat);
 
     }
-
-
-
 }
 
 export class ServiceMyDataType {
@@ -115,5 +113,4 @@ export class ServiceMyDataType {
             this.charBase[new_key] = this.json[key];
         });
     }
-
 }

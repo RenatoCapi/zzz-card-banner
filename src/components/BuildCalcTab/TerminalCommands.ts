@@ -1,13 +1,16 @@
-const commands = {
+export const commands = {
     "add": [
         "mainDPS",
         "teammate",
-        "skill"
     ],
     "remove": [
-        "DPS",
+        "mainDPS",
         "teammate",
-        "skill"
     ],
 }
 
+export type CommandsKeys = keyof typeof commands;
+
+export class TerminalCommands {
+
+}

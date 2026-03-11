@@ -25,7 +25,7 @@ const CharProfile = ({ char }: { char: Character }) => {
             <div className="relative w-full h-full">
                 <CharTitle />
                 <CinemaPreview charMovie={char.rank} />
-                <CharSkillSetPreview skillSet={char.skillKit} />
+                <CharSkillSetPreview skillSet={char.skillKit.skillDict} />
                 <div className="flex items-end absolute bottom-0 right-0 h-11 gap-2 z-30">
                     <img src={Assets.getWeapon(charMetadata.weapon)} className="h-8 drop-shadow-white" />
                     <img src={Assets.getElement(charMetadata.elementId)} className="h-11 drop-shadow-white" />

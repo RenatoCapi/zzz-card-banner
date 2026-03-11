@@ -1,5 +1,5 @@
 
-import { DataComplexHit, DataMultiplier, DataSkill, HitMap } from "../types/my_char_data_types";
+import { DataMultiplier, DataSkill, HitMap } from "../types/my_char_data_types";
 
 export interface MySkillKit {
     [id: string]: Skill
@@ -11,46 +11,33 @@ export type Skill = {
     data: DataSkill,
 }
 
-interface CalculatedHitMap {
+export interface CalculatedHitMap {
     [skillId: string]: {
         [subskillId: string]: {
-            [complexHitId: string]: {
-                dmg: number
-                daze: number
-                anomalyBuildup: number
-                miasmaDepletion: number
-            }
+            [complexHitId: string]: CalculatedHit
         }
     }
 }
 
-// interface CalculatedHit {
-//     skillId: string
-//     subskillId: string
-//     complexHitId: string
-//     dmg: number
-//     daze: number
-//     anomalyBuildup: number
-//     miasmaDepletion: number
-// }
-
-export function subSkillMult(complexSkill: DataComplexHit, lvl: number) {
-    return String((complexSkill.dmg.base + complexSkill.dmg.growth * (lvl - 1)) / 10000);
+export interface CalculatedHit {
+    dmg: number
+    daze: number
+    anomalyBuildup: number
+    miasmaDepletion: number
 }
 
-class Skillkit {
-    dataSkillKit: MySkillKit
+export class Skillkit {
+    skillDict: MySkillKit
     hitMap: HitMap
     calculatedHits: CalculatedHitMap = {}
 
     constructor(dataSkillKit: MySkillKit, hitMap: HitMap) {
-        this.dataSkillKit = dataSkillKit
+        this.skillDict = dataSkillKit
         this.hitMap = hitMap
-        this.calcAllComplexHits()
     }
 
-    private calcAllComplexHits() {
-        Object.entries(this.dataSkillKit).forEach(([skillId, skill]) => {
+    calcAllComplexHits() {
+        Object.entries(this.skillDict).forEach(([skillId, skill]) => {
             Object.entries(skill.data.subSkills).forEach(([subSkillId, subSkill]) => {
                 Object.entries(subSkill).forEach(([dataComplexId, dataComplex]) => {
                     this.calculatedHits[skillId][subSkillId][dataComplexId] = {

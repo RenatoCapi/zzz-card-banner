@@ -1,32 +1,31 @@
-import { WeaponTypeID } from '../constants';
-import { DataComplexHit } from '../types/my_char_data_types';
+import { ElementTypeToAttr, WeaponTypeID } from '../constants';
 import { AttributeID } from './../constants';
 import { Character } from './Character';
-import { SkillKit } from './SkillKit';
+import { CalculatedHit } from './SkillKit';
 
 export class Environment {
-    mainDPS: Character
-    rotationList: DataComplexHit[] = []
+    mainDPS: Character = new Character()
+    rotationList: CalculatedHit[] = []
+    dps = 0.0
     //teammates:Character[]
-
-    constructor(mainDPS: Character) {
-        this.mainDPS = mainDPS
-    }
 
     addHit(skillID: string, subSkillID: string, complexHitID: string) {
         this.rotationList.push(
-            this.mainDPS.skillKit[skillID].data.subSkills[subSkillID][complexHitID]
+            this.mainDPS.skillKit.calculatedHits[skillID][subSkillID][complexHitID]
         )
     }
 
     calcRotation() {
         let mainStats;
         if (this.mainDPS.charMetadata.weapon === WeaponTypeID.RUPTURE.toString()) {
-            mainStats = AttributeID.SHEER_FORCE
+            mainStats = AttributeID.SHEER_FORCE;
         } else {
-            mainStats = AttributeID.ATK
+            mainStats = AttributeID.ATK;
         }
-        const dmg = this.rotationList.reduce((acc, value) => acc + SkillKit.calcMultPerLvl(value.), 0);
+        const elementId = ElementTypeToAttr[+this.mainDPS.charMetadata.elementId];
+        const skillMult = this.rotationList.reduce((acc, value) => acc + value.dmg, 0);
 
+        //TODO other calc layers
+        this.dps = this.mainDPS[mainStats] * skillMult * (1 + this.mainDPS[AttributeID.CRIT_RATE] * this.mainDPS[AttributeID.CRIT_DMG]) * (1 + this.mainDPS[elementId])
     }
 }
