@@ -1,7 +1,7 @@
 export class CharMetadata {
-    weapon: string = ""
-    elementId: string = ""
-    camp: string = ""
-    rarity: string = ""
-    hitType: string = ""
+    weapon: number = 0
+    elementId: number = 0
+    camp: number = 0
+    rarity: number = 0
+    hitType: number = 0
 }

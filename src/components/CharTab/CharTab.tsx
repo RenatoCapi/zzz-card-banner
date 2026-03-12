@@ -9,7 +9,7 @@ import { useCharacterTabStore } from "./useCharacterTabStore.ts"
 
 const CharacterTabController = {
     buttonClickedListener: (char: Character) => {
-        useCharacterTabStore.getState().setFocusCharacter(char.id.toString())
+        useCharacterTabStore.getState().setFocusCharacter(char.id)
     },
 
 }

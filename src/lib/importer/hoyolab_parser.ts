@@ -1,7 +1,7 @@
-import { AttributeID, AttrValues } from '../constants'
+import { AttributeID, AttrValues, RarityID, RarityTypeID } from '../constants'
 import { Character } from '../models/Character'
 import { Disc, DiscSet, Stat } from '../models/DiscSet'
-import { MySkillKit } from '../models/SkillKit'
+import { SkillDict } from '../models/SkillKit'
 import { WEngine } from '../models/WEngine'
 import { Avatar, Equip, HoyolabData, Property, Skill, Suit, Weapon } from '../types/hoyolab_types'
 import { DataSkill } from '../types/my_char_data_types'
@@ -44,7 +44,7 @@ export class ServiceHoyolab {
     }
 
     private getSkillSet(skills: Skill[]) {
-        let skillKit: MySkillKit = {};
+        let skillKit: SkillDict = {};
         skills.map((skill) => {
             skillKit[skill.skill_type] = {
                 level: skill.level,
@@ -67,11 +67,11 @@ class ServiceHoyolabWengine {
         if (this.json_wengine === undefined || this.json_wengine === null)
             return wengine;
 
-        wengine.id = String(this.json_wengine.id);
+        wengine.id = this.json_wengine.id;
         wengine.name = this.json_wengine.name;
         wengine.lvl = this.json_wengine.level;
         wengine.star = this.json_wengine.star;
-        wengine.rarity = this.json_wengine.rarity;
+        wengine.rarity = RarityID[<RarityTypeID>this.json_wengine.rarity];
 
         wengine[AttributeID.ATK] = +this.json_wengine.main_properties[0].base;
         const second_stats = this.json_wengine.properties[0];
@@ -112,7 +112,7 @@ class ServiceHoyolabDiscset {
         const disc: Disc = new Disc();
         disc.lvl = equip.level;
         disc.pos = equip.equipment_type;
-        disc.rarity = equip.rarity;
+        disc.rarity = RarityID[equip.rarity as RarityTypeID];
         disc.equipset_id = Math.floor(equip.equip_suit.suit_id / 100);
 
         const main_stats: Stat = new Stat();

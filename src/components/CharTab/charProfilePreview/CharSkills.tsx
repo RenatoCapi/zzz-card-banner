@@ -1,9 +1,9 @@
 import { Assets } from "../../../lib/assets";
 import { HOYO_SkillID } from "../../../lib/constants";
 import DB from "../../../lib/DB/db";
-import { MySkillKit } from "../../../lib/models/SkillKit";
+import { SkillDict } from "../../../lib/models/SkillKit";
 
-const CharSkillSetPreview = ({ skillSet }: { skillSet: MySkillKit }) => {
+const CharSkillSetPreview = ({ skillSet }: { skillSet: SkillDict }) => {
 
     return (
         <div className="flex flex-col absolute bottom-14 right-0 w-10 gap-3 z-30 drop-shadow-xl">
@@ -34,14 +34,15 @@ const SkillPreview = ({ lvl, skillId }: SkillPreviewProps) => {
 }
 
 
-const getSkillLvl = (skillSet: MySkillKit, id: number) => {
+const getSkillLvl = (skillSet: SkillDict, id: number) => {
+    console.log(skillSet)
     if (id in skillSet)
         return skillSet[id].level.toString();
 
     return "0";
 }
 
-const getCoreLvl = (skillSet: MySkillKit, id: number) => {
+const getCoreLvl = (skillSet: SkillDict, id: number) => {
     try {
         if (!(id in skillSet))
             return "";

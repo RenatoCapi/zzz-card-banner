@@ -1,43 +1,59 @@
 import { useState } from "react";
 import DB from "../../lib/DB/db";
 import { Character } from "../../lib/models/Character";
-import { Environment } from "../../lib/models/Environment";
-import { commands, CommandsKeys } from "./TerminalCommands";
+import { commands, CommandsKeys, TerminalCommands } from "./TerminalCommands";
 
 
 const CalcTab = () => {
-    const env = new Environment();
-    const [suggestions, setSuggestions] = useState([""])
+    const terminal = new TerminalCommands();
+    const [suggestions, setSuggestions] = useState([""]);
+    const [suggPos, setSuggPos] = useState("");
+    const [selectInstruction, setSelectInstruction] = useState("");
+    const primaryOptions = Object.keys(commands);
+    let selectParam = "";
 
 
     const handleChange = (event: any) => {
-        const pattern = /(\w+)/g;
-        const groups = event.target.value.toLowerCase().match(pattern);
-        setSuggestions([""])
+        const fullLineGroups: string[] = event.target.value.toLowerCase().match(/(\S+)/g);
+        setSuggestions([""]);
+        console.log(event)
 
-        if (!groups) {
+        if (!fullLineGroups) {
             return;
         }
 
-        const primaryOptions = Object.keys(commands);
-        setSuggestions(primaryOptions.filter(option => option.toLowerCase().includes(groups[0])))
-        console.log(suggestions)
-
-        if (!Object.keys(commands).includes(groups[0])) {
-            return;
+        if (fullLineGroups.length === 1) {
+            if (!checkCommand(fullLineGroups[0], primaryOptions, "")) return;
         }
 
-        const commandprimary: CommandsKeys = groups[0];
-        console.log(commands[commandprimary])
+        if (fullLineGroups.length === 2) {
+            const secondOptions = Object.values(commands[fullLineGroups[0] as CommandsKeys]);
+            if (!checkCommand(fullLineGroups[1], secondOptions, fullLineGroups[0] + "I")) return;
+            // console.log(secondOptions);
+            // const secondWord = fullLineGroups[1];
+            // setSuggestions(secondOptions.filter(option => option.toLowerCase().includes(secondWord)));
+            // setSuggPos(selectInstruction + "I")
+            // if (!secondOptions.includes(secondWord)) {
+            //     selectParam = "";
+            //     return;
+            // }
 
-        if (!commands[commandprimary].includes(groups[1])) {
-            return;
+            // selectParam = secondWord;
+            // console.log(suggestions);
         }
+    }
 
-        console.log(groups[1])
+    const checkCommand = (word: string, options: string[], pos: string) => {
+        console.log(options);
+        setSuggestions(options.filter(option => option.toLowerCase().includes(word)));
+        setSuggPos(pos);
+        if (options.includes(word)) {
+            setSelectInstruction(word)
+            return true;
 
-
-
+        }
+        setSelectInstruction("");
+        return false;
     }
 
     return (
@@ -51,10 +67,16 @@ const CalcTab = () => {
                                     <label className="p-2">Phaeton&#126;&#35;</label>
                                     <div>
                                         <input type="text" className="p-2 w-[600px] rounded-md bg-stone-950 focus:outline-none" onChange={handleChange} />
-                                        <div className="absolute flex -bottom-6 border border-stone-600 mx-2">
-                                            {suggestions.map((sugg) => (
-                                                <div>{sugg}</div>
+
+                                        <div className="absolute flex top-11 p-2">
+                                            {Array.from(suggPos).map((value) => (
+                                                <span className="opacity-0">{value}</span>
                                             ))}
+                                            <div className="flex-col border border-stone-600">
+                                                {suggestions.map((sugg, index) => (
+                                                    <div key={index}>{sugg}</div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -1,9 +1,9 @@
 import wengineEnkaData from "../../data/base_enkadata_wengine.json";
 import wengineLabelsData from "../../data/base_wengine_data.json";
-import { AttributeID, AttrValues, ENKA_RARITY, EnkaRarityKey } from "../constants";
+import { AttributeID, AttrValues } from "../constants";
 import { Character } from "../models/Character";
 import { Disc, DiscSet, Stat } from "../models/DiscSet";
-import { MySkillKit } from "../models/SkillKit";
+import { SkillDict } from "../models/SkillKit";
 import { WEngine } from "../models/WEngine";
 import { AvatarEnka as EnkaAvatar, EnkaData, EquippedEnka, PropertyEnka, SkillLevelEnka, Weapon } from "../types/enka_types";
 import { EnkaWEngineData } from "../types/enka_wengine_types";
@@ -52,8 +52,8 @@ export class ServiceEnka {
         ).build();
     }
 
-    private getSkillSet(enkaSkills: SkillLevelEnka[]): MySkillKit {
-        let skillSet: MySkillKit = {} as MySkillKit;
+    private getSkillSet(enkaSkills: SkillLevelEnka[]): SkillDict {
+        let skillSet: SkillDict = {} as SkillDict;
         enkaSkills.map((skill) => {
             skillSet[skill.Index] = {
                 level: skill.Level,
@@ -90,11 +90,11 @@ class ServiceEnkaWengine {
             return wengine;
 
         const wengineMetaData = this.json_enkadata_wengine[weapon.Id];
-        wengine.id = weapon.Id.toString();
+        wengine.id = weapon.Id;
         wengine.name = wengineDataObject[weapon.Id].EN;
         wengine.lvl = weapon.Level;
         wengine.star = weapon.UpgradeLevel;
-        wengine.rarity = ENKA_RARITY[wengineMetaData.Rarity as EnkaRarityKey];
+        wengine.rarity = wengineMetaData.Rarity;
 
         const weapon_coef_growth = 1 + 0.1568166666666667 * weapon.Level + 0.8922 * weapon.BreakLevel;
         wengine[AttributeID.ATK] = wengineMetaData.MainStat.PropertyValue * weapon_coef_growth;
@@ -132,7 +132,7 @@ class ServiceDiscset {
         disc.lvl = equip.Equipment.Level;
         disc.pos = equip.Slot;
         const enkaRarity = Math.floor(equip.Equipment.Id / 10) % 10;
-        disc.rarity = ENKA_RARITY[enkaRarity as EnkaRarityKey];
+        disc.rarity = enkaRarity;
         disc.equipset_id = Math.floor(equip.Equipment.Id / 100);
 
         const mainProperty = equip.Equipment.MainPropertyList[0];

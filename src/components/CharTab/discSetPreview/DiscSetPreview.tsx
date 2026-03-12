@@ -38,7 +38,7 @@ const DiscCard = ({ disc }: DiscProp) => {
     if (!disc)
         disc = new Disc();
 
-    const url = Assets.getDiscSetById(String(disc.equipset_id))
+    const url = Assets.getDiscSetById(disc.equipset_id)
 
     return (
         <div className="card-primary w-[210px] h-[245px] p-6" >
@@ -127,7 +127,6 @@ const numUpgrades = (stat: Stat) => {
 
 export const idDOMcustom = (idString: string) => {
     const hoverItems = document.querySelectorAll("." + idString);
-    console.log(hoverItems)
     hoverItems.forEach(item => {
         item.addEventListener("mouseenter", () => {
             hoverItems.forEach((el) => {

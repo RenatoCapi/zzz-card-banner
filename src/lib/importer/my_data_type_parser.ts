@@ -1,7 +1,7 @@
 import gameData from "../../data/game_data.json";
 import { Character } from "../models/Character";
 import { CharMetadata } from "../models/CharMetadata";
-import { MySkillKit as SkillDict } from "../models/SkillKit";
+import { SkillDict } from "../models/SkillKit";
 import { StatsBase } from "../models/StatsBase";
 import { BasicStatsObject } from "../types/basic_stats_object";
 import { DataCharMap, DataCharType, DataGrowthStat } from "../types/my_char_data_types";
@@ -17,7 +17,7 @@ export class CharacterBuilder {
         this.character = new Character();
 
         this.character.skillKit.skillDict = skillDict;
-        this.char_raw = new ServiceMyDataType().getChar(id.toString());
+        this.char_raw = new ServiceMyDataType().getChar(id);
     }
 
     public build() {
@@ -68,11 +68,11 @@ export class CharacterBuilder {
         const charMetadata = new CharMetadata();
         //TODO refactor rarity's ID and multi hitType
         this.character.name = this.char_raw.name;
-        charMetadata.rarity = this.char_raw.rarity === "3" ? "A" : "S";
-        charMetadata.weapon = this.char_raw.weaponType;
-        charMetadata.elementId = this.char_raw.ElementType;
-        charMetadata.hitType = this.char_raw.hitType[0];
-        charMetadata.camp = this.char_raw.camp;
+        charMetadata.rarity = +this.char_raw.rarity;
+        charMetadata.weapon = +this.char_raw.weaponType;
+        charMetadata.elementId = +this.char_raw.ElementType;
+        charMetadata.hitType = +this.char_raw.hitType[0];
+        charMetadata.camp = +this.char_raw.camp;
         this.character.charMetadata = charMetadata;
 
     }
@@ -103,7 +103,7 @@ export class ServiceMyDataType {
         this.json = <DataCharMap>gameData;
     }
 
-    public getChar(id: string) {
+    public getChar(id: number) {
         return this.json[id]
     }
 

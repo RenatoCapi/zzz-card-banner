@@ -326,13 +326,13 @@ export const HOYO_SkillID = {
     ASSIST: 6,
 }
 
-export const ENKA_RARITY = {
-    2: "B",
-    3: "A",
-    4: "S",
+export const RarityID = {
+    "B": 2,
+    "A": 3,
+    "S": 4,
 }
 
-export type EnkaRarityKey = keyof typeof ENKA_RARITY
+export type RarityTypeID = keyof typeof RarityID
 
 export const ATTACKS_KEYS = {
     BASIC: "Basic", // basic attack

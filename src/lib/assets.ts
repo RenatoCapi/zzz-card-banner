@@ -30,38 +30,38 @@ export class Assets {
         return Assets.getImageUrl(`/image/avatar_cinema/${id}.webp`)
     }
 
-    public static getDiscSetById(id: string) {
-        if (id === '0') return Assets.getBlank();
+    public static getDiscSetById(id: number) {
+        if (!id) return Assets.getBlank();
 
         const discs_meta: DataDiscSetsMeta = discset_data;
-        return Assets.getImageUrl(`/icon/disc/${discs_meta[+id]['icon']}`)
+        return Assets.getImageUrl(`/icon/disc/${discs_meta[id]['icon']}`)
     }
 
-    public static getRarity(id: string) {
+    public static getRarity(id: number) {
         if (!id) return Assets.getBlank();
         return Assets.getImageUrl(`/icon/rarity/rarity${id}.webp`)
     }
 
-    static getWeapon(id: string) {
+    static getWeapon(id: number) {
         if (!id) return Assets.getBlank();
 
         return Assets.getImageUrl(`/icon/weaponType/IconWeapon${id}.webp`);
     }
 
-    static getElement(elementid: string) {
+    static getElement(elementid: number) {
         return Assets.getImageUrl(`/icon/property/${ICON_FROM_ELEMENT_MAPPING[+elementid]}`);
     }
 
-    static getCamp(camp: string) {
+    static getCamp(camp: number) {
         if (!camp) return Assets.getBlank();
         return Assets.getImageUrl(`/icon/camp/IconCamp${camp}.webp`);
     }
 
-    static getWEngine(id: string) {
+    static getWEngine(id: number) {
         if (!id) return Assets.getBlank();
 
         const wengine_meta: WengineMetadata = wengine_data;
-        return Assets.getImageUrl(`/icon/wengine/${wengine_meta[+id]['icon']}.webp`)
+        return Assets.getImageUrl(`/icon/wengine/${wengine_meta[id]['icon']}.webp`)
     }
 
     static getSkill(id: number) {

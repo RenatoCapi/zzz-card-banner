@@ -1,7 +1,7 @@
 
 import { DataMultiplier, DataSkill, HitMap } from "../types/my_char_data_types";
 
-export interface MySkillKit {
+export interface SkillDict {
     [id: string]: Skill
 }
 
@@ -27,11 +27,11 @@ export interface CalculatedHit {
 }
 
 export class Skillkit {
-    skillDict: MySkillKit
+    skillDict: SkillDict
     hitMap: HitMap
     calculatedHits: CalculatedHitMap = {}
 
-    constructor(dataSkillKit: MySkillKit, hitMap: HitMap) {
+    constructor(dataSkillKit: SkillDict, hitMap: HitMap) {
         this.skillDict = dataSkillKit
         this.hitMap = hitMap
     }

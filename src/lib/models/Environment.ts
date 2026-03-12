@@ -4,10 +4,10 @@ import { Character } from './Character';
 import { CalculatedHit } from './SkillKit';
 
 export class Environment {
-    mainDPS: Character = new Character()
-    rotationList: CalculatedHit[] = []
-    dps = 0.0
-    //teammates:Character[]
+    mainDPS: Character = new Character();
+    rotationList: CalculatedHit[] = [];
+    dps = 0.0;
+    //teammates:Character[];
 
     addHit(skillID: string, subSkillID: string, complexHitID: string) {
         this.rotationList.push(
@@ -17,7 +17,7 @@ export class Environment {
 
     calcRotation() {
         let mainStats;
-        if (this.mainDPS.charMetadata.weapon === WeaponTypeID.RUPTURE.toString()) {
+        if (this.mainDPS.charMetadata.weapon === WeaponTypeID.RUPTURE) {
             mainStats = AttributeID.SHEER_FORCE;
         } else {
             mainStats = AttributeID.ATK;

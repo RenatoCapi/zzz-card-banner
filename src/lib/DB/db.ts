@@ -3,7 +3,6 @@ import { Character } from "../models/Character";
 
 const state = {
     characters: [],
-    metadata: {},
     activeCharacter: Character,
 }
 
@@ -12,26 +11,23 @@ window.store = create((set) => ({
     charactersById: {},
     activeCharacter: new Character(),
 
-    setCharacters: (x) => set(() => ({ characters: x })),
-    setCharactersById: (x) => set(() => ({ charactersById: x })),
+    setCharacters: (x: Character[]) => set(() => ({ characters: x })),
+    setCharactersById: (x: Record<number, Character>) => set(() => ({ charactersById: x })),
     setActiveCharacter: (x) => set(() => ({ activeCharacter: x })),
 }))
 
 export const DB = {
-    getMetadata: () => state.metadata,
-    setMetadata: (x: any) => state.metadata = x,
-
     getCharacters: () => window.store.getState().characters,
-    getCharacterById: (id: string) => window.store.getState().charactersById[id],
+    getCharacterById: (id: number) => window.store.getState().charactersById[id],
 
     getCharactersById: () => window.store.getState().charactersById,
-    setCharactersById: (x: Record<string, Character>) => { window.store.getState().setCharactersById(x) },
+    setCharactersById: (x: Record<number, Character>) => { window.store.getState().setCharactersById(x) },
 
     setActiveChar: (x: Character) => { window.store.getState().setActiveCharacter(x) },
     getActiveChar: () => window.store.getState().activeCharacter,
 
     setCharacters: (x: Character[]) => {
-        const charactersById: Record<string, Character> = {};
+        const charactersById: Record<number, Character> = {};
         for (const character of x) {
             charactersById[character.id] = character;
         }
@@ -55,7 +51,7 @@ export const DB = {
     },
     getState: () => window.store.getState(),
 
-    setStore: (x: { charactersById: Record<string, Character>, activeCharacter: Character }) => {
+    setStore: (x: { charactersById: Record<number, Character>, activeCharacter: Character }) => {
         //const dbCharacters = DB.getMetadata().characters
         DB.setActiveChar(x.activeCharacter)
         DB.setCharactersById(x.charactersById)

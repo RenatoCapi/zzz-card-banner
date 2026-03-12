@@ -39,7 +39,7 @@ export class Character extends StatsBase {
         const attrPercId = <AttrValues>(attrId + 1);
         const base = this.charBase[attrId] + this.wengine[attrId];
         const perc = this.charBase[attrPercId] + this.wengine[attrPercId] + this.discSet.sumStats[attrPercId];
-        this[attrId] = Math.floor((base * (1 + perc / 100)) + this.discSet.sumStats[attrId]);
+        this[attrId] = (base * (1 + perc / 100)) + this.discSet.sumStats[attrId];
     }
 
     public sumSheerStat() {

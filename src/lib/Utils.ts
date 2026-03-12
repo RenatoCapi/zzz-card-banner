@@ -27,9 +27,10 @@ export const isFlat = (stat: Stat) => {
     if (Object.values(TRUNCATE_STATS).includes(stat.id))
         return Math.round(stat.value);
 
-    if (stat.id === AttributeID.ENERGY_RATE)
-        return precisionRound(stat.value, 2);
 
+    if (stat.id === AttributeID.ENERGY_RATE) {
+        return precisionRound(stat.value, 2);
+    }
     return truncate10ths(stat.value).toFixed(1) + "%";
 }
 
