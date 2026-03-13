@@ -2,14 +2,14 @@ import DB from "../../lib/DB/db";
 import { Environment } from "../../lib/models/Environment";
 
 export const commands = {
-    "add": [
-        "mainDPS",
-        "teammate",
-    ],
-    "remove": [
-        "mainDPS",
-        "teammate",
-    ],
+    "add": {
+        "mainDPS": DB.getCharactersById(),
+        "teammate": DB.getCharactersById(),
+    },
+    "remove": {
+        "mainDPS": DB.getCharactersById(),
+        "teammate": DB.getCharactersById(),
+    },
 }
 
 export type CommandsKeys = keyof typeof commands;
@@ -19,11 +19,7 @@ export class TerminalCommands {
     charsDict: Record<string, number> = {}
     possibleValues: string[] = []
 
-    constructor() {
-        this.loadChars()
-    }
-
-
+    //transformar em singleton
 
     addMainDPS(name: string): string {
         if (this.env.mainDPS)
@@ -52,9 +48,9 @@ export class TerminalCommands {
         this.env = new Environment()
     }
 
-    private loadChars() {
-        DB.getCharacters().forEach((char) => {
-            this.charsDict[char.name] = char.id;
-        })
+    loadChars() {
+        Object.values(DB.getCharactersById()).forEach((char) => {
+            this.charsDict[char.name.toLowerCase()] = char.id;
+        });
     }
 }

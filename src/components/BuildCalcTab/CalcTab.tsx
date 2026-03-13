@@ -2,19 +2,24 @@ import { useState } from "react";
 import DB from "../../lib/DB/db";
 import { Character } from "../../lib/models/Character";
 import { commands, CommandsKeys, TerminalCommands } from "./TerminalCommands";
+import { useCalcTabStore } from "./UseCalcStore";
 
 
 const CalcTab = () => {
     const terminal = new TerminalCommands();
-    const [suggestions, setSuggestions] = useState([""]);
-    const [suggPos, setSuggPos] = useState("");
+    const suggestions = useCalcTabStore((state) => state.suggestions)
+    const suggPos = useCalcTabStore((state) => state.chainInstructions);
     const [selectInstruction, setSelectInstruction] = useState("");
     const primaryOptions = Object.keys(commands);
     let selectParam = "";
 
 
     const handleChange = (event: any) => {
-        const fullLineGroups: string[] = event.target.value.toLowerCase().match(/(\S+)/g);
+        const fullLineGroups: string[] = event.target.value.match(/(\S+)/g);
+        //const lastCommand: string[] = event.target.value.match(/(\S)$/);
+
+        checkAllCommand(fullLineGroups);
+
         setSuggestions([""]);
         console.log(event)
 
@@ -28,24 +33,44 @@ const CalcTab = () => {
 
         if (fullLineGroups.length === 2) {
             const secondOptions = Object.values(commands[fullLineGroups[0] as CommandsKeys]);
-            if (!checkCommand(fullLineGroups[1], secondOptions, fullLineGroups[0] + "I")) return;
-            // console.log(secondOptions);
-            // const secondWord = fullLineGroups[1];
-            // setSuggestions(secondOptions.filter(option => option.toLowerCase().includes(secondWord)));
-            // setSuggPos(selectInstruction + "I")
-            // if (!secondOptions.includes(secondWord)) {
-            //     selectParam = "";
-            //     return;
-            // }
+            if (!checkCommand(fullLineGroups[1], secondOptions, fullLineGroups[0] + " ")) return;
+        }
 
-            // selectParam = secondWord;
-            // console.log(suggestions);
+        if (fullLineGroups.length === 3) {
+            terminal.loadChars();
+            const thirdOptions = Object.keys(terminal.charsDict);
+
+            console.log(thirdOptions)
+            if (!checkCommand(fullLineGroups[2], thirdOptions, fullLineGroups[0] + " " + fullLineGroups[1] + " ")) return;
         }
     }
 
+    const checkAllCommand = (fullLineGroups: string[]) => {
+        let dataAux: any = commands;
+        let keysAux: string[] = [];
+        useCalcTabStore.getState().setSuggestions([]);
+
+        fullLineGroups.forEach((word) => {
+            if (Object.keys(dataAux).includes(word)) {
+                keysAux.push(word);
+                dataAux = dataAux[word];
+                return;
+            }
+
+            const suggestions = Object.keys(dataAux).filter(option => option.startsWith(word));
+
+            useCalcTabStore.getState().setSuggestions(suggestions);
+        });
+
+        useCalcTabStore.getState().setChainInstructions(keysAux);
+    }
+
+    //add 
+
+
     const checkCommand = (word: string, options: string[], pos: string) => {
         console.log(options);
-        setSuggestions(options.filter(option => option.toLowerCase().includes(word)));
+        setSuggestions(options.filter(option => option.startsWith(word)));
         setSuggPos(pos);
         if (options.includes(word)) {
             setSelectInstruction(word)
@@ -65,14 +90,11 @@ const CalcTab = () => {
                             <div className="flex bg-stone-950 shadow-inner border-2 border-stone-800 border-opacity-75 rounded-xl">
                                 <div className="relative flex m-5 bg-stone-950 rounded-lg border-2 border-stone-700 h-fit hover:border-stone-900 transition duration-300">
                                     <label className="p-2">Phaeton&#126;&#35;</label>
-                                    <div>
+                                    <div className="relative flex flex-col">
                                         <input type="text" className="p-2 w-[600px] rounded-md bg-stone-950 focus:outline-none" onChange={handleChange} />
-
-                                        <div className="absolute flex top-11 p-2">
-                                            {Array.from(suggPos).map((value) => (
-                                                <span className="opacity-0">{value}</span>
-                                            ))}
-                                            <div className="flex-col border border-stone-600">
+                                        <div className="absolute flex p-2 top-0 g-2">
+                                            <div className="text-green-600 h-[26px] shadow-md bg-opacity-0">{suggPos}</div>
+                                            <div className="relative flex-col border top-10 border-stone-600">
                                                 {suggestions.map((sugg, index) => (
                                                     <div key={index}>{sugg}</div>
                                                 ))}
