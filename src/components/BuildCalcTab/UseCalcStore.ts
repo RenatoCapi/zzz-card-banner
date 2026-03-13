@@ -3,11 +3,11 @@ import { Environment } from './../../lib/models/Environment';
 type CalcTabStore = {
     environment: Environment,
     suggestions: string[],
-    lastInstruction: string,
+    rawInstruction: string,
     chainInstructions: string[],
 
     setSuggestions: (values: string[]) => void,
-    setLastInstruction: (instruction: string) => void,
+    setRawInstruction: (instruction: string) => void,
     addInstruction: (instruction: string) => void,
     setChainInstructions: (instructions: string[]) => void,
 }
@@ -15,15 +15,16 @@ type CalcTabStore = {
 export const useCalcTabStore = create<CalcTabStore>()((set) => ({
     environment: new Environment(),
     suggestions: [],
-    lastInstruction: "",
+    rawInstruction: "",
     chainInstructions: [],
+
     setSuggestions: (values) =>
         set(() => {
             return { suggestions: values }
         }),
-    setLastInstruction: (value) =>
+    setRawInstruction: (value) =>
         set(() => {
-            return { lastInstruction: value }
+            return { rawInstruction: value }
         }),
     addInstruction: (instruction) =>
         set((state) => (
