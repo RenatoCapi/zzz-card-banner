@@ -7,6 +7,8 @@ import { useAppStore } from "./UseAppStore";
 SaveState.load()
 
 export const ExternalLayout: React.FC = () => {
+
+
     const MenuButton = () => {
         const { sidebarState } = useAppStore();
         const showSidebar = useAppStore((state) => state.reverseSidebarState)
@@ -16,6 +18,8 @@ export const ExternalLayout: React.FC = () => {
             <FiMenu className={`size-14 p-2 mx-2 active:animate-spin cursor-pointer`} onClick={showSidebar} />
         );
     }
+
+
     return (
         <div className="block bg-neutral-950 box-border min-w-full min-h-screen max-h-screen rounded-md overflow-x-scroll overflow-y-scroll scrollbar-thin">
             <div className="flex flex-col box-border rounded-md min-h-full min-w-fit w-full">

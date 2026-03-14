@@ -1,22 +1,23 @@
 import { create } from 'zustand';
-import { Environment } from './../../lib/models/Environment';
+import { Character } from '../../lib/models/Character';
 type CalcTabStore = {
-    environment: Environment,
     suggestions: string[],
     rawInstruction: string,
     chainInstructions: string[],
+    mainDPS: Character,
 
     setSuggestions: (values: string[]) => void,
     setRawInstruction: (instruction: string) => void,
     addInstruction: (instruction: string) => void,
     setChainInstructions: (instructions: string[]) => void,
+    setMainDPS: (char: Character) => void,
 }
 
 export const useCalcTabStore = create<CalcTabStore>()((set) => ({
-    environment: new Environment(),
     suggestions: [],
     rawInstruction: "",
     chainInstructions: [],
+    mainDPS: new Character(),
 
     setSuggestions: (values) =>
         set(() => {
@@ -33,5 +34,9 @@ export const useCalcTabStore = create<CalcTabStore>()((set) => ({
     setChainInstructions: (instructions) =>
         set(() => {
             return { chainInstructions: instructions }
+        }),
+    setMainDPS: (char) =>
+        set(() => {
+            return { mainDPS: char }
         }),
 }))

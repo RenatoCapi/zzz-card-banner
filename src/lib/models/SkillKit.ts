@@ -43,6 +43,7 @@ export class Skillkit {
                     this.calculatedHits[skillId][subSkillId][dataComplexId] = {
                         dmg: this.calcMultPerLvl(dataComplex.dmg, skill.level),
                         daze: this.calcMultPerLvl(dataComplex.daze, skill.level),
+                        //TODO 
                         anomalyBuildup: 0,
                         miasmaDepletion: 0,
                     }

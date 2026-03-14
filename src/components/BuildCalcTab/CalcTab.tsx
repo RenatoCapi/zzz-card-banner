@@ -1,77 +1,74 @@
-import { useState } from "react";
+import { Assets } from "../../lib/assets";
 import DB from "../../lib/DB/db";
-import { Character } from "../../lib/models/Character";
 import { TerminalCommands } from "./TerminalCommands";
 import { useCalcTabStore } from "./UseCalcStore";
 
 
-const CalcTab = () => {
+const TerminalLabel = () => {
+    const { chainInstructions, rawInstruction, suggestions } = useCalcTabStore();
+    const { setChainInstructions, setRawInstruction, setSuggestions, addInstruction, setMainDPS } = useCalcTabStore();
     const terminal = new TerminalCommands();
-    const suggestions = useCalcTabStore(s => s.suggestions);
-    const suggPos = useCalcTabStore(s => s.chainInstructions);
-    const rawInstruction = useCalcTabStore((s) => s.rawInstruction);
-
-
-    const handleInput = (event: any) => {
-        const fullLineGroups: string[] = event.target.value.match(/(\S+)/g);
-        useCalcTabStore.getState().setRawInstruction(event.target.value);
-        checkAllCommand(fullLineGroups);
-    }
+    terminal.loadCommands();
 
     const handleKeyDown = (event: any) => {
-        if (event.key === "Tab") {
 
+
+        if (event.key === "Tab") {
             event.preventDefault();
-            const sugg = useCalcTabStore.getState().suggestions;
-            if (!sugg.length)
+            if (!suggestions.length)
                 return;
 
-            const commandChain = useCalcTabStore.getState().chainInstructions;
-            useCalcTabStore.getState().setRawInstruction([...commandChain, sugg[0]].join(" ") + " ")
-            useCalcTabStore.getState().setSuggestions([]);
+            addInstruction(suggestions[0]);
+            const instructions = useCalcTabStore.getState().chainInstructions;
+            setRawInstruction(instructions.join(" ") + " ")
+            setSuggestions([]);
         }
 
         if (event.key === "Enter") {
             event.preventDefault();
             try {
-                const chainInstructions = useCalcTabStore.getState().chainInstructions;
-                const commands: any = terminal.getCommands();
-                console.log(chainInstructions);
-                const charId = commands[chainInstructions[0]][chainInstructions[1]][chainInstructions[2]];
+                const instructions = useCalcTabStore.getState().chainInstructions;
+                const charId = terminal.commands[instructions[0]][instructions[1]][instructions[2]];
                 terminal.env.mainDPS = DB.getCharacterById(charId);
-                console.log(terminal.env.mainDPS.name + " adicionado!")
+                setMainDPS(terminal.env.mainDPS);
+                console.log(terminal);
             } catch (e) {
                 console.log(e);
             }
         }
     }
 
-    const checkAllCommand = (fullLineGroups: string[]) => {
-        console.log(terminal.getCommands());
-        let dataAux: any = terminal.getCommands();
-        let keysAux: string[] = [];
-        useCalcTabStore.getState().setSuggestions([]);
+    const handleInput = (event: any) => {
+        const fullLineGroups: string[] = event.target.value.match(/(\S+)/g);
+        setRawInstruction(event.target.value);
+        checkAllCommand(fullLineGroups);
+    }
 
-        if (!fullLineGroups) {
-            useCalcTabStore.getState().setChainInstructions([]);
+    const checkAllCommand = (fullLineGroups: string[]) => {
+        let dataAux: any = terminal.commands;
+        let keysAux: string[] = [];
+        setSuggestions([]);
+
+        if (!fullLineGroups || !fullLineGroups.length) {
+            setChainInstructions([]);
             return;
         }
 
+        console.log("input");
         fullLineGroups.forEach((word) => {
             if (Object.keys(dataAux).includes(word)) {
                 keysAux.push(word);
                 dataAux = dataAux[word];
-                console.log(dataAux)
                 return;
             }
 
             const suggestions = Object.keys(dataAux).filter(
                 option => option.startsWith(word)
             );
-            useCalcTabStore.getState().setSuggestions(suggestions);
+            setSuggestions(suggestions);
         });
 
-        useCalcTabStore.getState().setChainInstructions(keysAux);
+        setChainInstructions(keysAux);
     }
 
     const DropdownSuggs = () => {
@@ -88,62 +85,56 @@ const CalcTab = () => {
     }
 
 
-
     return (
-        <div className="w-full flex-col h-[890px] p-2">
-            <div className="w-full flex-col">
-                <div className="flex m-auto w-fit gap-2 bg-stone-900 rounded-2xl">
-                    <div className="flex relative gap-2 mx-10 my-2 bg-stone-900 rounded-2xl">
-                        <div className="h-[850px] my-2">
-                            <div className="flex bg-stone-950 shadow-inner border-2 border-stone-800 border-opacity-75 rounded-xl">
-                                <div className="relative flex m-5 bg-stone-950 rounded-lg border-2 border-stone-700 h-fit hover:border-stone-900 transition duration-300">
-                                    <label className="p-2">Phaeton&#126;&#35;</label>
-                                    <div className="relative flex flex-col">
-                                        <input type="text" className="p-2 w-[600px] rounded-md bg-stone-950 focus:outline-none" onInput={handleInput} value={rawInstruction} onKeyDown={handleKeyDown} />
-                                        <div className="absolute flex p-2 top-0 g-2">
-                                            <div className="text-opacity-0 h-[26px] shadow-md rounded-md bg-green-500/70 z-30">{suggPos.join(" ") + " "}</div>
-                                            <DropdownSuggs />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="h-[400px]">
-
-                                </div>
-                            </div>
-                            <div>
-
-                            </div>
-                        </div>
+        <div className="div-input-calc">
+            <label className="p-2">Phaeton&#126;&#35;</label>
+            <div className="relative flex flex-col">
+                <input type="text" className="p-2 w-[600px] rounded-md bg-stone-950 focus:outline-none" onInput={handleInput} value={rawInstruction} onKeyDown={handleKeyDown} />
+                <div className="absolute flex p-2 top-0 g-2">
+                    <div className="text-black/0 h-[26px] shadow-md rounded-md bg-green-500/70 z-30">
+                        {chainInstructions.join(" ") + " "}
                     </div>
+                    <DropdownSuggs />
                 </div>
             </div>
         </div>
     )
 }
 
-
-
-const SelectChar = () => {
-    const [selectedOption, setSelectedOption] = useState<string>('');
-
-    const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        console.clear();
-        // const char = DB.getCharacterById(event.target.value);
-        // new SkillCalc(char.skillKit).calcAllSkillsMult();
-        setSelectedOption(event.target.value);
-    };
+const MainDPSpfp = () => {
+    const { mainDPS } = useCalcTabStore();
+    if (mainDPS.id === 0)
+        return (<></>);
 
     return (
-        <div>
-            <label htmlFor="dropdown">Escolha uma opção:</label>
-            <select id="dropdown" value={selectedOption} onChange={handleSelectChange}>
-                {Object.values(DB.getCharactersById()).map((char: Character) => (
-                    <option key={char.id} value={char.id}>{char.name}</option>
-                ))}
-            </select>
-            <p>Opção selecionada: {selectedOption}</p>
-        </div>
-    );
+        <img src={Assets.getRole(mainDPS.id)} className="w-auto h-32 max-w-none" />
+    )
 }
+
+const CalcTab = () => {
+
+    return (
+        <div className="w-full flex-col h-[890px] p-2">
+
+            <div className="flex m-auto w-fit gap-2 bg-stone-900 rounded-2xl">
+                <div className="flex relative gap-2 mx-10 my-2 bg-stone-900 rounded-2xl">
+                    <div className="relative h-[840px] my-2">
+                        <div className="flex flex-col bg-stone-950 shadow-inner border-2 border-stone-800 border-opacity-75 rounded-xl">
+                            <TerminalLabel />
+                            <div className="h-[400px]">
+
+                            </div>
+                        </div>
+                        <div className="absolute size-32 bottom-4 left-0">
+                            <MainDPSpfp />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    )
+}
+
 
 export default CalcTab

@@ -5,22 +5,26 @@ import { CinemaPreview } from "./CinemaSvg";
 
 
 const CharProfile = ({ char }: { char: Character }) => {
+    const cardStyle = `card-primary w-[420px] h-[750px]`;
+
     if (!char.name) {
-        return (<div className="card-primary w-[420px] h-[750px]" />);
+        return (<div className={cardStyle} />);
     }
 
     const { charMetadata } = char;
 
     const CharTitle = () => (
         <div className="absolute flex h-18 w-auto gap-2 z-30">
-            <img src={Assets.getRarity(charMetadata.rarity)} className="w-16 h-16" />
-            <span className="text-[36px] py-0.5 w-[220px] leading-none drop-shadow-primary capitalize"> {char.name.toLowerCase()} </span>
-            <span className="py-[7px] drop-shadow-primary"> Lv.<span className="text-[24px]">{char.lvl} </span></span>
+            <img src={Assets.getRarity(charMetadata.rarity)} className="size-16" />
+            <span className="py-0.5 w-[220px]">
+                <h1>{char.name.toLowerCase()}</h1>
+            </span>
+            <span className="py-[9px] drop-shadow-primary"> Lv.<span className="text-2xl">{char.lvl} </span></span>
         </div>
     );
 
     return (
-        <div className="card-primary w-[420px] h-[750px]">
+        <div className={cardStyle}>
             <img alt={char.name} src={Assets.getCharacterAvatarById(char.id)} className="absolute max-w-none top-0 -left-6 h-[750px] z-10 opacity-65" />
             <div className="relative w-full h-full">
                 <CharTitle />

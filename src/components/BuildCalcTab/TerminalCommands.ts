@@ -6,22 +6,9 @@ export class TerminalCommands {
     env: Environment = new Environment();
     charsDict: Record<string, number> = {}
     possibleValues: string[] = []
+    commands: any = {}
 
     constructor() {
-        this.loadChars();
-    }
-
-    getCommands() {
-        return {
-            "add": {
-                "mainDPS": this.charsDict,
-                "teammate": this.charsDict,
-            },
-            "remove": {
-                "mainDPS": this.charsDict,
-                "teammate": this.charsDict,
-            },
-        }
     }
 
     addMainDPS(name: string): string {
@@ -55,5 +42,22 @@ export class TerminalCommands {
         Object.values(DB.getCharactersById()).forEach((char) => {
             this.charsDict[char.name.toLowerCase().replace(" ", "-")] = char.id;
         });
+    }
+    loadCommands() {
+        const charsDict: Record<string, number> = {}
+        Object.values(DB.getCharactersById()).forEach((char) => {
+            charsDict[char.name.toLowerCase().replace(" ", "-")] = char.id;
+        });
+
+        this.commands = {
+            "add": {
+                "mainDPS": charsDict,
+                "teammate": charsDict,
+            },
+            "remove": {
+                "mainDPS": charsDict,
+                "teammate": charsDict,
+            },
+        }
     }
 }

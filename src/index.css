@@ -7,7 +7,9 @@
         font-family: "zzz";
         font-stretch: 90%;
         white-space: nowrap;
-        src: local("Mont Heavy"), url(./fonts/ZZZ_FR.ttf) format("truetype");
+        src:
+            local("Mont Heavy"),
+            url(./fonts/ZZZ_FR.ttf) format("truetype");
     }
 
     @font-face {
@@ -20,8 +22,8 @@
     }
 
     :root {
-        font-family: "paybooc", Impact, Haettenschweiler, "Arial Narrow Bold",
-            sans-serif;
+        font-family:
+            "paybooc", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
         line-height: 1.5;
         font-weight: 400;
 
@@ -41,8 +43,16 @@
 }
 
 @layer components {
+    h1 {
+        @apply text-4xl leading-none drop-shadow-primary capitalize;
+    }
+
     .card-primary {
         @apply relative overflow-hidden border border-solid rounded-xl border-stone-700 bg-stone-800 transition-all duration-500 hover:border-opacity-15 bg-opacity-60 border-opacity-50 shadow-xl p-7;
+    }
+
+    .div-input-calc {
+        @apply relative flex m-5 bg-stone-950 rounded-lg border-2 border-stone-700 h-fit hover:border-stone-900 transition duration-300;
     }
 
     .divider-base {

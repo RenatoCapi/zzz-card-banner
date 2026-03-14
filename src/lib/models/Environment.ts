@@ -26,6 +26,6 @@ export class Environment {
         const skillMult = this.rotationList.reduce((acc, value) => acc + value.dmg, 0);
 
         //TODO other calc layers
-        this.dps = this.mainDPS[mainStats] * skillMult * (1 + this.mainDPS[AttributeID.CRIT_RATE] * this.mainDPS[AttributeID.CRIT_DMG]) * (1 + this.mainDPS[elementId])
+        this.dps = this.mainDPS[mainStats] * skillMult * (1 + this.mainDPS[AttributeID.CRIT_RATE] * this.mainDPS[AttributeID.CRIT_DMG]) * (1 + this.mainDPS[elementId]);
     }
 }
