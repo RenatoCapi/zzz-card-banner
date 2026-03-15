@@ -326,6 +326,15 @@ export const HOYO_SkillID = {
     ASSIST: 6,
 }
 
+export const SkillReadable = {
+    [HOYO_SkillID.BASIC]: "Basic",
+    [HOYO_SkillID.SPECIAL]: "Special",
+    [HOYO_SkillID.DODGE]: "Dodge",
+    [HOYO_SkillID.CHAIN]: "Chain",
+    [HOYO_SkillID.CORE]: "Core",
+    [HOYO_SkillID.ASSIST]: "Assist",
+}
+
 export const RarityID = {
     "B": 2,
     "A": 3,

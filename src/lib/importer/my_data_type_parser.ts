@@ -80,13 +80,11 @@ export class CharacterBuilder {
 
     private setSkillsMetadata() {
         Object.entries(this.char_raw.skillKit).forEach(([key, value]) => {
-            this.character.skillKit.skillDict[+key].data = value
+            this.character.skillKit.skillDict[+key].data = value;
         });
-        this.character.skillKit.hitMap = this.char_raw.hitMap
-
+        this.character.skillKit.hitMap = this.char_raw.hitMap;
+        this.character.skillKit.calcAllComplexHits();
     }
-
-
 
     private calc_stat_growth(stat: DataGrowthStat, lvl: number): number {
         const asc_stat = Math.trunc((lvl - 1) / 10) * stat.asc

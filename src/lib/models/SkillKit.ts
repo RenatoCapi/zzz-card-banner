@@ -1,5 +1,7 @@
+import { DataSkill } from './../types/my_char_data_types';
 
-import { DataMultiplier, DataSkill, HitMap } from "../types/my_char_data_types";
+import { SkillReadable } from "../constants";
+import { DataCoreSkill, DataMultiplier, HitMap } from "../types/my_char_data_types";
 
 export interface SkillDict {
     [id: string]: Skill
@@ -8,7 +10,7 @@ export interface SkillDict {
 export type Skill = {
     level: number,
     SkillId: number,
-    data: DataSkill,
+    data: DataSkill | DataCoreSkill,
 }
 
 export interface CalculatedHitMap {
@@ -32,28 +34,34 @@ export class Skillkit {
     calculatedHits: CalculatedHitMap = {}
 
     constructor(dataSkillKit: SkillDict, hitMap: HitMap) {
-        this.skillDict = dataSkillKit
-        this.hitMap = hitMap
+        this.skillDict = dataSkillKit;
+        this.hitMap = hitMap;
     }
 
     calcAllComplexHits() {
         Object.entries(this.skillDict).forEach(([skillId, skill]) => {
-            Object.entries(skill.data.subSkills).forEach(([subSkillId, subSkill]) => {
-                Object.entries(subSkill).forEach(([dataComplexId, dataComplex]) => {
-                    this.calculatedHits[skillId][subSkillId][dataComplexId] = {
-                        dmg: this.calcMultPerLvl(dataComplex.dmg, skill.level),
-                        daze: this.calcMultPerLvl(dataComplex.daze, skill.level),
-                        //TODO 
-                        anomalyBuildup: 0,
-                        miasmaDepletion: 0,
-                    }
+            this.calculatedHits[SkillReadable[+skillId]] = {}
+            if ("subSkills" in skill.data) {
+                Object.entries(skill.data.subSkills).forEach(([subSkillId, subSkill]) => {
+                    this.calculatedHits[SkillReadable[+skillId]][subSkillId.toString()] = {};
+                    Object.entries(subSkill).forEach(([dataComplexId, dataComplex]) => {
+                        this.calculatedHits[SkillReadable[+skillId]][subSkillId.toString()][dataComplexId] = {
+                            dmg: this.calcMultPerLvl(dataComplex.dmg, skill.level),
+                            daze: this.calcMultPerLvl(dataComplex.daze, skill.level),
+                            //TODO 
+                            anomalyBuildup: 0,
+                            miasmaDepletion: 0,
+                        }
+                    })
+
                 })
-            })
+            } else {
+                delete this.calculatedHits[SkillReadable[+skillId]]
+            }
         })
     }
 
-
     calcMultPerLvl(dataMult: DataMultiplier, lvl: number) {
-        return (dataMult.base + (dataMult.growth * (lvl - 1))) / 10000
+        return (dataMult.base + (dataMult.growth * (lvl - 1))) / 10000;
     }
 }

@@ -5,12 +5,12 @@ import { useCalcTabStore } from "./UseCalcStore";
 
 
 const MainDPSpfp = () => {
-    const { mainDPS } = useCalcTabStore();
-    if (mainDPS.id === 0)
+    const { terminal } = useCalcTabStore();
+    if (terminal.env.mainDPS.id === 0)
         return (<></>);
 
     return (
-        <img src={Assets.getRole(mainDPS.id)} className="w-auto h-32 max-w-none" />
+        <img src={Assets.getRole(terminal.env.mainDPS.id)} className="w-auto h-32 max-w-none" />
     )
 }
 

@@ -4,7 +4,7 @@ import { Disc, DiscSet, Stat } from '../models/DiscSet'
 import { SkillDict } from '../models/SkillKit'
 import { WEngine } from '../models/WEngine'
 import { Avatar, Equip, HoyolabData, Property, Skill, Suit, Weapon } from '../types/hoyolab_types'
-import { DataSkill } from '../types/my_char_data_types'
+import { DataCoreSkill, DataSkill } from '../types/my_char_data_types'
 import { fixPropertyId, readValue } from '../Utils'
 import { CharacterBuilder } from './my_data_type_parser'
 
@@ -46,12 +46,21 @@ export class ServiceHoyolab {
     private getSkillSet(skills: Skill[]) {
         let skillKit: SkillDict = {};
         skills.map((skill) => {
-            skillKit[skill.skill_type] = {
-                level: skill.level,
-                SkillId: skill.skill_type,
-                data: {} as DataSkill,
-            };
+            if (skill.skill_type !== 5) {
+                skillKit[skill.skill_type] = {
+                    level: skill.level,
+                    SkillId: skill.skill_type,
+                    data: {} as DataSkill,
+                };
+            } else {
+                skillKit[skill.skill_type] = {
+                    level: skill.level,
+                    SkillId: skill.skill_type,
+                    data: {} as DataCoreSkill,
+                };
+            }
         });
+
         return skillKit;
     }
 }

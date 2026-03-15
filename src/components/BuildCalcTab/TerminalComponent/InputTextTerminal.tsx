@@ -1,42 +1,29 @@
 import { KeyboardEvent, SyntheticEvent } from "react";
-import DB from "../../../lib/DB/db";
-import { TerminalCommands } from "../TerminalCommands";
-import { useCalcTabStore } from "../UseCalcStore";
+import { CalcTabController, useCalcTabStore } from "../UseCalcStore";
+
+type KeyDown = (event: KeyboardEvent<HTMLInputElement>) => void;
 
 export const TerminalLabel = () => {
-    const { chainInstructions, setChainInstructions } = useCalcTabStore();
     const { rawInstruction, setRawInstruction } = useCalcTabStore();
     const { suggestions, setSuggestions } = useCalcTabStore();
-    const { addInstruction, setMainDPS } = useCalcTabStore();
-
-    const terminal = new TerminalCommands();
+    const { chainInstructions, setChainInstructions } = useCalcTabStore();
+    const { terminal } = useCalcTabStore();
     terminal.loadCommands();
 
     const keyDownTabEvent = (event: KeyboardEvent<HTMLInputElement>) => {
         event.preventDefault();
+
+        // TODO apertar tab sem nada daria a lista de todos os comandos/parametros possíveis
         if (!suggestions.length)
             return;
 
-        addInstruction(suggestions[0]);
-        const instructions = useCalcTabStore.getState().chainInstructions;
-        setRawInstruction(instructions.join(" ") + " ")
-        setSuggestions([]);
+        CalcTabController.addInstruction(suggestions[0]);
     }
 
     const keyDownEnterEvent = (event: KeyboardEvent<HTMLInputElement>) => {
         event.preventDefault();
-        try {
-            const instructions = useCalcTabStore.getState().chainInstructions;
-            const charId = terminal.commands[instructions[0]][instructions[1]][instructions[2]];
-            terminal.env.mainDPS = DB.getCharacterById(charId);
-            setMainDPS(terminal.env.mainDPS);
-            console.log(terminal);
-        } catch (e) {
-            console.log(e);
-        }
+        CalcTabController.executeInstruction();
     }
-
-    type KeyDown = (event: KeyboardEvent<HTMLInputElement>) => void;
 
     const EventMap: { [id: string]: KeyDown } = {
         "Tab": keyDownTabEvent,
@@ -49,21 +36,26 @@ export const TerminalLabel = () => {
     }
 
     const handleInput = (event: SyntheticEvent<HTMLInputElement>) => {
-        if (!(event.target instanceof HTMLInputElement))
+        if (!(event.target instanceof HTMLInputElement)) {
+
             return;
+        }
 
         const inputValue = (event.target as HTMLInputElement).value;
         const fullLineGroups = inputValue.match(/(\S+)/g);
 
-        if (!fullLineGroups)
+        if (!fullLineGroups) {
+            setRawInstruction("");
             return;
+        }
 
         setRawInstruction(inputValue);
         checkAllCommand(fullLineGroups);
     }
 
     const checkAllCommand = (fullLineGroups: string[]) => {
-        let dataAux: any = terminal.commands;
+        let dataAux: any = useCalcTabStore.getState().terminal.commands;
+        console.log(dataAux);
         let keysAux: string[] = [];
         setSuggestions([]);
 
@@ -72,7 +64,6 @@ export const TerminalLabel = () => {
             return;
         }
 
-        console.log("input");
         fullLineGroups.forEach((word) => {
             if (Object.keys(dataAux).includes(word)) {
                 keysAux.push(word);

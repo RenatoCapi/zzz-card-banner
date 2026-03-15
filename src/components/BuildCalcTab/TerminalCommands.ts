@@ -26,11 +26,9 @@ export class TerminalCommands {
 
         this.env.addHit(hitId[0], hitId[1], hitId[2]);
         this.env.calcRotation();
-        console.log(this.env.dps);
+        console.log(this.env.mainDPS);
     }
     add(param: string) {
-
-
         this.env.mainDPS = DB.getCharacterById(this.charsDict[param]);
     }
 
@@ -58,6 +56,11 @@ export class TerminalCommands {
                 "mainDPS": charsDict,
                 "teammate": charsDict,
             },
+            "hit": {}
         }
+    }
+
+    loadHits() {
+        this.commands["hit"] = this.env.mainDPS.skillKit.calculatedHits;
     }
 }
