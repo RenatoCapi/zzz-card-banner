@@ -40,16 +40,23 @@ export class Skillkit {
 
     calcAllComplexHits() {
         Object.entries(this.skillDict).forEach(([skillId, skill]) => {
-            this.calculatedHits[SkillReadable[+skillId]] = {}
+            const skill_name = SkillReadable[+skillId];
+            this.calculatedHits[skill_name] = {}
 
             if ("subSkills" in skill.data) {
                 Object.entries(skill.data.subSkills).forEach(([subSkillId, subSkill]) => {
-                    const newSubId = subSkillId.toLowerCase().replace(/\s/g, "-");
-                    this.calculatedHits[SkillReadable[+skillId]][newSubId] = {};
+                    let newSubId = subSkillId.toLowerCase().replace(/\s/g, "-");
+                    const subSkillPattern = new RegExp(skill_name + "-attack:-", "g");
+                    newSubId = newSubId.replace(subSkillPattern, "");
+                    newSubId = newSubId.replace(/stats/g, "")
+                    this.calculatedHits[skill_name][newSubId] = {};
 
                     Object.entries(subSkill).forEach(([dataComplexId, dataComplex]) => {
-                        const newComplexId = dataComplexId.toLowerCase().replace(/\s/g, "-");
-                        this.calculatedHits[SkillReadable[+skillId]][newSubId][newComplexId] = {
+                        let newComplexId = dataComplexId.toLowerCase().replace(/\s/g, "-");
+                        if (subSkillId === dataComplexId)
+                            newComplexId = "attack";
+
+                        this.calculatedHits[skill_name][newSubId][newComplexId] = {
                             dmg: this.calcMultPerLvl(dataComplex.dmg, skill.level),
                             daze: this.calcMultPerLvl(dataComplex.daze, skill.level),
                             //TODO 
@@ -60,7 +67,7 @@ export class Skillkit {
 
                 })
             } else {
-                delete this.calculatedHits[SkillReadable[+skillId]]
+                delete this.calculatedHits[skill_name]
             }
         })
 

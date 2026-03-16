@@ -7,7 +7,7 @@ export class Environment {
     mainDPS: Character = new Character();
     rotationList: CalculatedHit[] = [];
     dps = 0.0;
-    //teammates:Character[];
+    teammates: Character[] = [];
 
     addHit(skillID: string, subSkillID: string, complexHitID: string) {
         this.rotationList.push(

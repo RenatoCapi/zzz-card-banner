@@ -1,9 +1,11 @@
 import DB from "../../lib/DB/db";
+import { Character } from "../../lib/models/Character";
 import { Environment } from "../../lib/models/Environment";
+import { useCalcTabStore } from "./UseCalcStore";
 
 
-export class TerminalCommands {
-    static #instance: TerminalCommands
+export class TerminalCmd {
+    static #instance: TerminalCmd
 
     env: Environment = new Environment();
     charsDict: Record<string, number> = {}
@@ -13,26 +15,69 @@ export class TerminalCommands {
     private constructor() {
     }
 
-    public static get instance(): TerminalCommands {
-        if (!TerminalCommands.#instance) {
-            TerminalCommands.#instance = new TerminalCommands();
-            TerminalCommands.#instance.loadCommands();
-            console.log(TerminalCommands.#instance.commands);
+    public static get instance(): TerminalCmd {
+        if (!TerminalCmd.#instance) {
+            TerminalCmd.#instance = new TerminalCmd();
+            TerminalCmd.#instance.loadCommands();
+            TerminalCmd.#instance.env = new Environment();
         }
 
-        return TerminalCommands.#instance;
+        return TerminalCmd.#instance;
     }
 
-    addMainDPS(name: string): string {
-        if (this.env.mainDPS)
-            return "remove the current mainDPS."
+    executeCommand(instructions: string[]) {
+        const commandsFunctions: { [id: string]: (param: string[]) => string } = {
+            "add": TerminalCmd.#instance.add,
+        }
 
-        this.env.mainDPS = DB.getCharacterById(this.charsDict[name]);
-        return this.addMainDPS.name + " added!";
+        const useCalc = useCalcTabStore.getState();
+        const [cmd, ...param]: string[] = instructions;
+
+        const rowResponse = commandsFunctions[cmd](param);
+        const formatedString = rowResponse.charAt(0).toUpperCase() + rowResponse.slice(1);
+        useCalc.setLoghistory([formatedString, ...useCalc.logHistory]);
+        useCalc.setLabelText("");
+        useCalc.setChainInstructions([]);
+        console.log(useCalc.possibleCommands);
+    }
+
+    add(param: string[]): string {
+        const addMap: { [id: string]: (char: Character) => string } = {
+            "mainDPS": TerminalCmd.#instance.addMainDPS,
+            "teammate": TerminalCmd.#instance.addTeammate,
+        }
+
+        const [param1, name] = param;
+        const char = DB.getCharacterById(TerminalCmd.#instance.charsDict[name])
+        return addMap[param1](char);
+    }
+
+    addMainDPS(char: Character) {
+        if (TerminalCmd.#instance.env.mainDPS.id !== 0) {
+            return "it's need remove the current mainDPS first.";
+        }
+
+        TerminalCmd.#instance.env.mainDPS = char;
+        TerminalCmd.#instance.loadHits();
+
+        useCalcTabStore.getState().setMainDPSId(char.id);
+        useCalcTabStore.getState().setPossibleCommands(TerminalCmd.#instance.commands);
+
+        return char.name.toLowerCase() + " was added as main DPS!";
+    }
+
+    addTeammate(char: Character) {
+        if (TerminalCmd.#instance.env.teammates.length >= 2) {
+            return "it's need remove at least one teammate first.";
+        }
+
+        TerminalCmd.#instance.env.teammates.push(char);
+        useCalcTabStore.getState().setTeammatesId([...useCalcTabStore.getState().teammatesId, char.id]);
+        return char.name.toLowerCase() + " was added as teammate!";
     }
 
     addhit(hitId: string[]) {
-        if (this.env.mainDPS) {
+        if (!this.env.mainDPS.id) {
             return "Choosen a mainDPS first!";
         }
 
@@ -40,18 +85,9 @@ export class TerminalCommands {
         this.env.calcRotation();
         console.log(this.env.mainDPS);
     }
-    add(param: string) {
-        this.env.mainDPS = DB.getCharacterById(this.charsDict[param]);
-    }
 
     clear() {
-        this.env = new Environment()
-    }
-
-    loadChars() {
-        Object.values(DB.getCharactersById()).forEach((char) => {
-            this.charsDict[char.name.toLowerCase().replace(" ", "-")] = char.id;
-        });
+        this.env = new Environment();
     }
 
     loadCommands() {
@@ -60,7 +96,8 @@ export class TerminalCommands {
             charsDict[char.name.toLowerCase().replace(" ", "-")] = char.id;
         });
 
-        this.commands = {
+        TerminalCmd.#instance.charsDict = charsDict;
+        TerminalCmd.#instance.commands = {
             "add": {
                 "mainDPS": charsDict,
                 "teammate": charsDict,

@@ -1,6 +1,5 @@
 import { create } from 'zustand';
-import DB from '../../lib/DB/db';
-import { TerminalCommands } from './TerminalCommands';
+import { TerminalCmd } from './TerminalCommands';
 type CalcTabStore = {
     suggestions: string[],
     labelText: string,
@@ -8,6 +7,7 @@ type CalcTabStore = {
     mainDPSId: number,
     teammatesId: number[],
     possibleCommands: any,
+    logHistory: string[],
 
     setSuggestions: (values: string[]) => void,
     setLabelText: (instruction: string) => void,
@@ -15,6 +15,7 @@ type CalcTabStore = {
     setMainDPSId: (char: number) => void,
     setTeammatesId: (team: number[]) => void,
     setPossibleCommands: (commandsMap: any) => void,
+    setLoghistory: (log: string[]) => void,
 }
 
 export const useCalcTabStore = create<CalcTabStore>()((set) => ({
@@ -24,6 +25,7 @@ export const useCalcTabStore = create<CalcTabStore>()((set) => ({
     mainDPSId: 0,
     teammatesId: [],
     possibleCommands: {},
+    logHistory: [],
 
     setSuggestions: x => set(() => ({ suggestions: x })),
     setLabelText: x => set(() => ({ labelText: x })),
@@ -31,6 +33,7 @@ export const useCalcTabStore = create<CalcTabStore>()((set) => ({
     setMainDPSId: x => set(() => ({ mainDPSId: x })),
     setTeammatesId: x => set(() => ({ teammatesId: x })),
     setPossibleCommands: x => set(() => ({ possibleCommands: x })),
+    setLoghistory: x => set(() => ({ logHistory: x })),
 }))
 
 export const CalcTabController = {
@@ -45,20 +48,18 @@ export const CalcTabController = {
     },
     executeInstruction: () => {
         try {
-            const terminal = TerminalCommands.instance;
+            const terminal = TerminalCmd.instance;
+
             const instructions = useCalcTabStore.getState().chainInstructions;
-            const charId = terminal.commands[instructions[0]][instructions[1]][instructions[2]];
-            if (!charId)
-                return;
 
-            terminal.env.mainDPS = DB.getCharacterById(charId);
-            terminal.loadHits();
+            terminal.executeCommand(instructions);
 
-            useCalcTabStore.getState().setPossibleCommands(terminal.commands);
-            useCalcTabStore.getState().setMainDPSId(charId);
-            console.log(useCalcTabStore.getState().possibleCommands);
         } catch (e) {
             console.log(e);
         }
+    },
+    addLogRow: (row: string) => {
+        const state = () => useCalcTabStore.getState();
+        state().setLoghistory([...state().logHistory, row])
     }
 }
