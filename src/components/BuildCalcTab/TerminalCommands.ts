@@ -3,12 +3,24 @@ import { Environment } from "../../lib/models/Environment";
 
 
 export class TerminalCommands {
+    static #instance: TerminalCommands
+
     env: Environment = new Environment();
     charsDict: Record<string, number> = {}
     possibleValues: string[] = []
     commands: any = {}
 
-    constructor() {
+    private constructor() {
+    }
+
+    public static get instance(): TerminalCommands {
+        if (!TerminalCommands.#instance) {
+            TerminalCommands.#instance = new TerminalCommands();
+            TerminalCommands.#instance.loadCommands();
+            console.log(TerminalCommands.#instance.commands);
+        }
+
+        return TerminalCommands.#instance;
     }
 
     addMainDPS(name: string): string {
@@ -41,6 +53,7 @@ export class TerminalCommands {
             this.charsDict[char.name.toLowerCase().replace(" ", "-")] = char.id;
         });
     }
+
     loadCommands() {
         const charsDict: Record<string, number> = {}
         Object.values(DB.getCharactersById()).forEach((char) => {

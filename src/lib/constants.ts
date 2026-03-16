@@ -327,12 +327,12 @@ export const HOYO_SkillID = {
 }
 
 export const SkillReadable = {
-    [HOYO_SkillID.BASIC]: "Basic",
-    [HOYO_SkillID.SPECIAL]: "Special",
-    [HOYO_SkillID.DODGE]: "Dodge",
-    [HOYO_SkillID.CHAIN]: "Chain",
-    [HOYO_SkillID.CORE]: "Core",
-    [HOYO_SkillID.ASSIST]: "Assist",
+    [HOYO_SkillID.BASIC]: "basic",
+    [HOYO_SkillID.SPECIAL]: "special",
+    [HOYO_SkillID.DODGE]: "dodge",
+    [HOYO_SkillID.CHAIN]: "chain",
+    [HOYO_SkillID.CORE]: "core",
+    [HOYO_SkillID.ASSIST]: "assist",
 }
 
 export const RarityID = {

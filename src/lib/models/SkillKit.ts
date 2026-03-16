@@ -41,11 +41,15 @@ export class Skillkit {
     calcAllComplexHits() {
         Object.entries(this.skillDict).forEach(([skillId, skill]) => {
             this.calculatedHits[SkillReadable[+skillId]] = {}
+
             if ("subSkills" in skill.data) {
                 Object.entries(skill.data.subSkills).forEach(([subSkillId, subSkill]) => {
-                    this.calculatedHits[SkillReadable[+skillId]][subSkillId.toString()] = {};
+                    const newSubId = subSkillId.toLowerCase().replace(/\s/g, "-");
+                    this.calculatedHits[SkillReadable[+skillId]][newSubId] = {};
+
                     Object.entries(subSkill).forEach(([dataComplexId, dataComplex]) => {
-                        this.calculatedHits[SkillReadable[+skillId]][subSkillId.toString()][dataComplexId] = {
+                        const newComplexId = dataComplexId.toLowerCase().replace(/\s/g, "-");
+                        this.calculatedHits[SkillReadable[+skillId]][newSubId][newComplexId] = {
                             dmg: this.calcMultPerLvl(dataComplex.dmg, skill.level),
                             daze: this.calcMultPerLvl(dataComplex.daze, skill.level),
                             //TODO 
@@ -59,6 +63,8 @@ export class Skillkit {
                 delete this.calculatedHits[SkillReadable[+skillId]]
             }
         })
+
+        console.log(this.calculatedHits);
     }
 
     calcMultPerLvl(dataMult: DataMultiplier, lvl: number) {

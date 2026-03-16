@@ -3,14 +3,13 @@ import { TerminalLabel } from "./TerminalComponent/InputTextTerminal";
 import { useCalcTabStore } from "./UseCalcStore";
 
 
-
 const MainDPSpfp = () => {
-    const { terminal } = useCalcTabStore();
-    if (terminal.env.mainDPS.id === 0)
+    const { mainDPSId } = useCalcTabStore();
+    if (!mainDPSId)
         return (<></>);
 
     return (
-        <img src={Assets.getRole(terminal.env.mainDPS.id)} className="w-auto h-32 max-w-none" />
+        <img src={Assets.getRole(mainDPSId)} className="w-auto h-32 max-w-none" />
     )
 }
 

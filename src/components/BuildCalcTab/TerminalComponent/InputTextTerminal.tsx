@@ -1,14 +1,19 @@
 import { KeyboardEvent, SyntheticEvent } from "react";
+import { TerminalCommands } from "../TerminalCommands";
 import { CalcTabController, useCalcTabStore } from "../UseCalcStore";
 
 type KeyDown = (event: KeyboardEvent<HTMLInputElement>) => void;
 
 export const TerminalLabel = () => {
-    const { rawInstruction, setRawInstruction } = useCalcTabStore();
-    const { suggestions, setSuggestions } = useCalcTabStore();
-    const { chainInstructions, setChainInstructions } = useCalcTabStore();
-    const { terminal } = useCalcTabStore();
-    terminal.loadCommands();
+    const {
+        labelText, setLabelText,
+        suggestions, setSuggestions,
+        chainInstructions, setChainInstructions,
+        setPossibleCommands
+    } = useCalcTabStore();
+
+    const possibleCommands = useCalcTabStore(s => s.possibleCommands);
+
 
     const keyDownTabEvent = (event: KeyboardEvent<HTMLInputElement>) => {
         event.preventDefault();
@@ -45,17 +50,19 @@ export const TerminalLabel = () => {
         const fullLineGroups = inputValue.match(/(\S+)/g);
 
         if (!fullLineGroups) {
-            setRawInstruction("");
+            setLabelText("");
             return;
         }
 
-        setRawInstruction(inputValue);
+        setLabelText(inputValue);
         checkAllCommand(fullLineGroups);
     }
 
     const checkAllCommand = (fullLineGroups: string[]) => {
-        let dataAux: any = useCalcTabStore.getState().terminal.commands;
-        console.log(dataAux);
+        if (Object.keys(possibleCommands).length === 0)
+            setPossibleCommands(TerminalCommands.instance.commands);
+
+        let dataAux: any = possibleCommands;
         let keysAux: string[] = [];
         setSuggestions([]);
 
@@ -72,7 +79,7 @@ export const TerminalLabel = () => {
             }
 
             const suggestions = Object.keys(dataAux).filter(
-                option => option.startsWith(word)
+                option => option.match(word)
             );
             setSuggestions(suggestions);
         });
@@ -97,7 +104,7 @@ export const TerminalLabel = () => {
         <div className="div-input-calc">
             <label className="p-2">Phaeton&#126;&#35;</label>
             <div className="relative flex flex-col">
-                <input type="text" className="p-2 w-[600px] rounded-md bg-stone-950 focus:outline-none" onInput={(handleInput)} value={rawInstruction} onKeyDown={handleKeyDown} />
+                <input type="text" className="p-2 w-[600px] rounded-md bg-stone-950 focus:outline-none" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} />
                 <div className="absolute flex p-2 top-0 g-2">
                     <div className="text-black/0 h-[26px] shadow-md rounded-md bg-green-500/70 z-30">
                         {chainInstructions.join(" ") + " "}
