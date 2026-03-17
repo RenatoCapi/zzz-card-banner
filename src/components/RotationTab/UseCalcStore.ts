@@ -1,38 +1,50 @@
 import { create } from 'zustand';
-import { TerminalCmd } from './TerminalCommands';
+import { logMsgCode, TerminalCmd } from './TerminalCommands';
 type CalcTabStore = {
-    suggestions: string[],
     labelText: string,
+    possibleCommands: any,
     chainInstructions: string[],
+    suggestions: string[],
+    suggestionFocus: number,
+
     mainDPSId: number,
     teammatesId: number[],
-    possibleCommands: any,
-    logHistory: string[],
 
-    setSuggestions: (values: string[]) => void,
+    logHistory: logMsgCode[]
+
     setLabelText: (instruction: string) => void,
+    setPossibleCommands: (commandsMap: any) => void,
     setChainInstructions: (instructions: string[]) => void,
+    setSuggestions: (values: string[]) => void,
+    setSuggestionFocus: (suggestionFocus: number) => void,
+
     setMainDPSId: (char: number) => void,
     setTeammatesId: (team: number[]) => void,
-    setPossibleCommands: (commandsMap: any) => void,
-    setLoghistory: (log: string[]) => void,
+
+    setLoghistory: (log: logMsgCode[]) => void,
 }
 
 export const useCalcTabStore = create<CalcTabStore>()((set) => ({
-    suggestions: [],
     labelText: "",
+    possibleCommands: {},
     chainInstructions: [],
+    suggestions: [],
+    suggestionFocus: 0,
+
     mainDPSId: 0,
     teammatesId: [],
-    possibleCommands: {},
+
     logHistory: [],
 
-    setSuggestions: x => set(() => ({ suggestions: x })),
     setLabelText: x => set(() => ({ labelText: x })),
+    setPossibleCommands: x => set(() => ({ possibleCommands: x })),
     setChainInstructions: x => set(() => ({ chainInstructions: x })),
+    setSuggestions: x => set(() => ({ suggestions: x })),
+    setSuggestionFocus: x => set(() => ({ suggestionFocus: x })),
+
     setMainDPSId: x => set(() => ({ mainDPSId: x })),
     setTeammatesId: x => set(() => ({ teammatesId: x })),
-    setPossibleCommands: x => set(() => ({ possibleCommands: x })),
+
     setLoghistory: x => set(() => ({ logHistory: x })),
 }))
 
@@ -40,11 +52,12 @@ export const CalcTabController = {
     initTerminal: () => {
     },
     addInstruction: (instruction: string) => {
-        const state = () => useCalcTabStore.getState();
-        state().setChainInstructions([...state().chainInstructions, instruction])
-        const instructions = state().chainInstructions;
-        state().setLabelText(instructions.join(" ") + " ");
-        state().setSuggestions([]);
+        const state = useCalcTabStore.getState();
+        state.setChainInstructions([...state.chainInstructions, instruction])
+        const instructions = useCalcTabStore.getState().chainInstructions;
+        state.setLabelText(instructions.join(" ") + " ");
+        state.setSuggestions([]);
+        state.setSuggestionFocus(0);
     },
     executeInstruction: () => {
         try {
@@ -58,8 +71,11 @@ export const CalcTabController = {
             console.log(e);
         }
     },
-    addLogRow: (row: string) => {
-        const state = () => useCalcTabStore.getState();
-        state().setLoghistory([...state().logHistory, row])
+    moveSuggestionFocus: (newIndex: number) => {
+        useCalcTabStore.getState().setSuggestionFocus(newIndex);
+    },
+    resetSuggestions: () => {
+        useCalcTabStore.getState().setSuggestionFocus(0);
+        useCalcTabStore.getState().setSuggestions([]);
     }
 }

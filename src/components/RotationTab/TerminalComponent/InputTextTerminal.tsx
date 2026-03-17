@@ -1,40 +1,57 @@
 import { KeyboardEvent, SyntheticEvent } from "react";
 import { TerminalCmd } from "../TerminalCommands";
-import { CalcTabController, useCalcTabStore } from "../UseCalcStore";
+import { CalcTabController as RotationTabController, useCalcTabStore } from "../UseCalcStore";
 
 type KeyDown = (event: KeyboardEvent<HTMLInputElement>) => void;
+
+type EventMapType = { [id: string]: KeyDown }
 
 export const TerminalLabel = () => {
     const {
         labelText, setLabelText,
         suggestions, setSuggestions,
         chainInstructions, setChainInstructions,
-        setPossibleCommands
+        setPossibleCommands,
+        suggestionFocus, setSuggestionFocus,
     } = useCalcTabStore();
 
     const possibleCommands = useCalcTabStore(s => s.possibleCommands);
 
 
-    const keyDownTabEvent = (event: KeyboardEvent<HTMLInputElement>) => {
+    const keyDownTab = (event: KeyboardEvent<HTMLInputElement>) => {
         event.preventDefault();
 
-        // TODO apertar tab sem nada daria a lista de todos os comandos/parametros possíveis
         if (!suggestions.length) {
             mountSuggestions(chainInstructions);
             return;
         }
 
-        CalcTabController.addInstruction(suggestions[0]);
+        RotationTabController.addInstruction(suggestions[suggestionFocus]);
     }
 
-    const keyDownEnterEvent = (event: KeyboardEvent<HTMLInputElement>) => {
+    const keyDownEnter = (event: KeyboardEvent<HTMLInputElement>) => {
         event.preventDefault();
-        CalcTabController.executeInstruction();
+        RotationTabController.executeInstruction();
     }
 
-    const EventMap: { [id: string]: KeyDown } = {
-        "Tab": keyDownTabEvent,
-        "Enter": keyDownEnterEvent,
+    const keyDownArrowUp = (event: KeyboardEvent<HTMLInputElement>) => {
+        event.preventDefault();
+        const prevIndex = Math.max(suggestionFocus - 1, 0)
+        setSuggestionFocus(prevIndex);
+
+    }
+
+    const keyDownArrowDown = (event: KeyboardEvent<HTMLInputElement>) => {
+        event.preventDefault();
+        const nextIndex = Math.min(suggestionFocus + 1, suggestions.length - 1)
+        setSuggestionFocus(nextIndex);
+    }
+
+    const EventMap: EventMapType = {
+        "Tab": keyDownTab,
+        "Enter": keyDownEnter,
+        "ArrowUp": keyDownArrowUp,
+        "ArrowDown": keyDownArrowDown,
     }
 
     const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -44,7 +61,6 @@ export const TerminalLabel = () => {
 
     const handleInput = (event: SyntheticEvent<HTMLInputElement>) => {
         if (!(event.target instanceof HTMLInputElement)) {
-
             return;
         }
 
@@ -66,7 +82,7 @@ export const TerminalLabel = () => {
 
         let dataAux: any = possibleCommands;
         let keysAux: string[] = [];
-        setSuggestions([]);
+        RotationTabController.resetSuggestions();
 
         if (!fullLineGroups || !fullLineGroups.length) {
             setChainInstructions([]);
@@ -111,18 +127,7 @@ export const TerminalLabel = () => {
         setSuggestions(Object.keys(dataAux));
     }
 
-    const DropdownSuggestions = () => {
-        if (!suggestions.length)
-            return (<></>);
 
-        return (
-            <div className="relative flex-col border top-10 border-stone-600 overflow-hidden max-h-[400px] bg-stone-950/80">
-                {suggestions.map((sugg, index) => (
-                    <div key={index}>{sugg}</div>
-                ))}
-            </div>
-        );
-    }
 
     return (
         <div className="div-input-calc">
@@ -130,7 +135,7 @@ export const TerminalLabel = () => {
             <div className="relative flex flex-col">
                 <input type="text" className="p-2 w-[600px] rounded-md bg-stone-950 focus:outline-none" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} />
                 <div className="absolute flex p-2 top-0 g-2">
-                    <div className="text-black/0 h-[26px] shadow-md rounded-md bg-lime-400/70 z-30">
+                    <div className="text-black/0 h-[26px] shadow-md rounded-md bg-lime-400/60 z-30">
                         {chainInstructions.join(" ") + " "}
                     </div>
                     <DropdownSuggestions />
@@ -138,4 +143,25 @@ export const TerminalLabel = () => {
             </div>
         </div>
     )
+}
+
+
+const DropdownSuggestions = () => {
+    const { suggestions, suggestionFocus } = useCalcTabStore();
+
+    const styleBase = `px-1`;
+    const isFocus = (index: number) => (
+        styleBase + (suggestionFocus === index ? ` bg-stone-600` : ` `)
+    );
+
+    if (!suggestions.length)
+        return (<></>);
+
+    return (
+        <div className="relative flex-col border top-10 z-30 border-stone-600 overflow-hidden max-h-[400px] bg-stone-950/80 ">
+            {suggestions.map((sugg, index) => (
+                <div key={index} className={isFocus(index)}>{sugg}</div>
+            ))}
+        </div>
+    );
 }

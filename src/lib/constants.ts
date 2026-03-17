@@ -357,3 +357,4 @@ export const ATTACKS_KEYS = {
 }
 
 export type SkillIDKey = keyof typeof HOYO_SkillID
+
