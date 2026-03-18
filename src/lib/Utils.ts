@@ -72,3 +72,11 @@ export const filterSuggestionsList = (word: string, fullList: string[]) => {
 
     return [...new Set([...suggStartWith, ...suggMatch])];
 }
+
+export const capitalized = (msg: string) => {
+    return msg.charAt(0).toUpperCase() + msg.slice(1);
+}
+
+export const formatKey = (key: string) => {
+    return key.toLowerCase().replace(" ", "-")
+}

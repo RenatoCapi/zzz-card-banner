@@ -1,7 +1,7 @@
 import { KeyboardEvent, RefObject, SyntheticEvent, useEffect, useRef } from "react";
 import { filterSuggestionsList } from "../../lib/Utils";
 import { TerminalCmd } from "./TerminalCommands";
-import { CalcTabController as RotationTabController, useCalcTabStore } from "./UseCalcStore";
+import { CalcTabController, CalcTabController as RotationTabController, useCalcTabStore } from "./UseCalcStore";
 
 type KeyDown = (event: KeyboardEvent<HTMLInputElement>) => void;
 
@@ -62,16 +62,16 @@ export const TerminalInputText = () => {
     }
 
     const handleInput = (event: SyntheticEvent<HTMLInputElement>) => {
-
         if (!(event.target instanceof HTMLInputElement)) {
             return;
         }
+
         const inputValue = (event.target as HTMLInputElement).value;
         const fullLineGroups = inputValue.match(/(\S+)/g);
 
         if (!fullLineGroups) {
-            setLabelText("");
-            setChainInstructions([]);
+            CalcTabController.resetSuggestions();
+            CalcTabController.resetInputText();
             return;
         }
 
@@ -88,18 +88,22 @@ export const TerminalInputText = () => {
             return;
         }
 
-        let dataAux: any = possibleCommands;
+
+
+        let commandLayer: any = possibleCommands;
         let keysAux: string[] = [];
         RotationTabController.resetSuggestions();
 
         fullLineGroups.forEach((word) => {
-            if (Object.keys(dataAux).includes(word)) {
+            commandLayer = (typeof commandLayer === "function") ? commandLayer() : commandLayer;
+
+            if (Object.keys(commandLayer).includes(word)) {
                 keysAux.push(word);
-                dataAux = dataAux[word];
+                commandLayer = commandLayer[word];
                 return;
             }
 
-            setSuggestions(filterSuggestionsList(word, dataAux));
+            setSuggestions(filterSuggestionsList(word, commandLayer));
         });
 
         setChainInstructions(keysAux);
@@ -114,7 +118,8 @@ export const TerminalInputText = () => {
 
         chainInstructions.forEach((word) => {
             keysAux.push(word);
-            dataAux = dataAux[word];
+
+            dataAux = typeof dataAux[word] === "function" ? dataAux[word]() : dataAux[word];
         })
 
         setSuggestions(Object.keys(dataAux));
@@ -129,7 +134,7 @@ export const TerminalInputText = () => {
         <div className="div-input-calc">
             <label className="p-2 text-cyan-400">Phaeton&#126;&#35;</label>
             <div className="relative flex flex-col">
-                <input type="text" className="p-2 w-[600px] rounded-md justify-center bg-stone-950 focus:outline-none" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} ref={inputRef} />
+                <input type="text" spellCheck="false" className="p-2 w-[600px] rounded-md justify-center bg-stone-950 focus:outline-none no" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} ref={inputRef} />
                 <div className="absolute flex top-10 left-1">
                     <ValidGreenBox />
                     <DropdownSuggestionsBox inputRef={inputRef} />
@@ -146,7 +151,7 @@ const ValidGreenBox = () => {
         return (<></>);
     }
     return (
-        <div className="text-black/0 h-[21px] relative -top-[31px] left-[2px] shadow-md rounded-md bg-lime-400/50 z-30 p-0.5">
+        <div className="green-box -top-[31px] left-[2px] p-0.5 z-30">
             {chainInstructions.join(" ") + " "}
         </div>
     );

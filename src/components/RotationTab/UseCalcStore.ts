@@ -10,7 +10,9 @@ type CalcTabStore = {
     mainDPSId: number,
     teammatesId: number[],
 
-    logHistory: logMsgCode[]
+    logHistory: logMsgCode[],
+
+    dps: number,
 
     setLabelText: (instruction: string) => void,
     setPossibleCommands: (commandsMap: any) => void,
@@ -22,6 +24,8 @@ type CalcTabStore = {
     setTeammatesId: (team: number[]) => void,
 
     setLoghistory: (log: logMsgCode[]) => void,
+
+    setDps: (dps: number) => void,
 }
 
 export const useCalcTabStore = create<CalcTabStore>()((set) => ({
@@ -36,6 +40,8 @@ export const useCalcTabStore = create<CalcTabStore>()((set) => ({
 
     logHistory: [],
 
+    dps: 0,
+
     setLabelText: x => set(() => ({ labelText: x })),
     setPossibleCommands: x => set(() => ({ possibleCommands: x })),
     setChainInstructions: x => set(() => ({ chainInstructions: x })),
@@ -46,6 +52,8 @@ export const useCalcTabStore = create<CalcTabStore>()((set) => ({
     setTeammatesId: x => set(() => ({ teammatesId: x })),
 
     setLoghistory: x => set(() => ({ logHistory: x })),
+
+    setDps: x => set(() => ({ dps: x })),
 }))
 
 export const CalcTabController = {

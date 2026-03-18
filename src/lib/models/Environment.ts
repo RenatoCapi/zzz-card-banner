@@ -9,7 +9,8 @@ export class Environment {
     dps = 0.0;
     teammates: Character[] = [];
 
-    addHit(skillID: string, subSkillID: string, complexHitID: string) {
+    addHit(param: string[]) {
+        const [skillID, subSkillID, complexHitID] = param;
         this.rotationList.push(
             this.mainDPS.skillKit.calculatedHits[skillID][subSkillID][complexHitID]
         )
@@ -22,10 +23,17 @@ export class Environment {
         } else {
             mainStats = AttributeID.ATK;
         }
-        const elementId = ElementTypeToAttr[+this.mainDPS.charMetadata.elementId];
+        const elementId = ElementTypeToAttr[this.mainDPS.charMetadata.elementId];
         const skillMult = this.rotationList.reduce((acc, value) => acc + value.dmg, 0);
 
         //TODO other calc layers
-        this.dps = this.mainDPS[mainStats] * skillMult * (1 + this.mainDPS[AttributeID.CRIT_RATE] * this.mainDPS[AttributeID.CRIT_DMG]) * (1 + this.mainDPS[elementId]);
+        console.log(this.mainDPS);
+        this.dps =
+            this.mainDPS[mainStats] *
+            skillMult / 100 *
+            (1 + this.mainDPS[AttributeID.CRIT_RATE] / 100 * this.mainDPS[AttributeID.CRIT_DMG] / 100) *
+            (1 + this.mainDPS[elementId] / 100);
+
+        return this.dps;
     }
 }
