@@ -1,22 +1,24 @@
-import { KeyboardEvent, SyntheticEvent } from "react";
-import { TerminalCmd } from "../TerminalCommands";
-import { CalcTabController as RotationTabController, useCalcTabStore } from "../UseCalcStore";
+import { KeyboardEvent, RefObject, SyntheticEvent, useEffect, useRef } from "react";
+import { filterSuggestionsList } from "../../lib/Utils";
+import { TerminalCmd } from "./TerminalCommands";
+import { CalcTabController as RotationTabController, useCalcTabStore } from "./UseCalcStore";
 
 type KeyDown = (event: KeyboardEvent<HTMLInputElement>) => void;
 
-type EventMapType = { [id: string]: KeyDown }
+export type EventKeyMapType = { [id: string]: KeyDown }
 
-export const TerminalLabel = () => {
+export const TerminalInputText = () => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
     const {
         labelText, setLabelText,
         suggestions, setSuggestions,
         chainInstructions, setChainInstructions,
-        setPossibleCommands,
         suggestionFocus, setSuggestionFocus,
+        setPossibleCommands,
     } = useCalcTabStore();
 
     const possibleCommands = useCalcTabStore(s => s.possibleCommands);
-
 
     const keyDownTab = (event: KeyboardEvent<HTMLInputElement>) => {
         event.preventDefault();
@@ -47,7 +49,7 @@ export const TerminalLabel = () => {
         setSuggestionFocus(nextIndex);
     }
 
-    const EventMap: EventMapType = {
+    const EventMap: EventKeyMapType = {
         "Tab": keyDownTab,
         "Enter": keyDownEnter,
         "ArrowUp": keyDownArrowUp,
@@ -60,34 +62,35 @@ export const TerminalLabel = () => {
     }
 
     const handleInput = (event: SyntheticEvent<HTMLInputElement>) => {
+
         if (!(event.target instanceof HTMLInputElement)) {
             return;
         }
-
         const inputValue = (event.target as HTMLInputElement).value;
         const fullLineGroups = inputValue.match(/(\S+)/g);
 
         if (!fullLineGroups) {
             setLabelText("");
+            setChainInstructions([]);
             return;
         }
 
         setLabelText(inputValue);
-        checkAllCommand(fullLineGroups);
+        checkCommandLine(fullLineGroups);
     }
 
-    const checkAllCommand = (fullLineGroups: string[]) => {
+    const checkCommandLine = (fullLineGroups: string[]) => {
         if (Object.keys(possibleCommands).length === 0)
             setPossibleCommands(TerminalCmd.instance.commands);
+
+        if (!fullLineGroups.length) {
+            setChainInstructions([]);
+            return;
+        }
 
         let dataAux: any = possibleCommands;
         let keysAux: string[] = [];
         RotationTabController.resetSuggestions();
-
-        if (!fullLineGroups || !fullLineGroups.length) {
-            setChainInstructions([]);
-            return;
-        }
 
         fullLineGroups.forEach((word) => {
             if (Object.keys(dataAux).includes(word)) {
@@ -96,17 +99,7 @@ export const TerminalLabel = () => {
                 return;
             }
 
-            const suggStartWith = Object.keys(dataAux).filter(
-                option => option.startsWith(word)
-            );
-
-            const suggMatch = Object.keys(dataAux).filter(
-                option => option.match(word)
-            );
-
-            const suggs = [...new Set([...suggStartWith, ...suggMatch])]
-
-            setSuggestions(suggs);
+            setSuggestions(filterSuggestionsList(word, dataAux));
         });
 
         setChainInstructions(keysAux);
@@ -127,40 +120,59 @@ export const TerminalLabel = () => {
         setSuggestions(Object.keys(dataAux));
     }
 
+    useEffect(() => {
+        inputRef.current?.focus();
+    }, []);
 
 
     return (
         <div className="div-input-calc">
-            <label className="p-2">Phaeton&#126;&#35;</label>
+            <label className="p-2 text-cyan-400">Phaeton&#126;&#35;</label>
             <div className="relative flex flex-col">
-                <input type="text" className="p-2 w-[600px] rounded-md bg-stone-950 focus:outline-none" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} />
-                <div className="absolute flex p-2 top-0 g-2">
-                    <div className="text-black/0 h-[26px] shadow-md rounded-md bg-lime-400/60 z-30">
-                        {chainInstructions.join(" ") + " "}
-                    </div>
-                    <DropdownSuggestions />
+                <input type="text" className="p-2 w-[600px] rounded-md justify-center bg-stone-950 focus:outline-none" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} ref={inputRef} />
+                <div className="absolute flex top-10 left-1">
+                    <ValidGreenBox />
+                    <DropdownSuggestionsBox inputRef={inputRef} />
                 </div>
             </div>
         </div>
     )
 }
 
+const ValidGreenBox = () => {
+    const { chainInstructions } = useCalcTabStore();
 
-const DropdownSuggestions = () => {
+    if (!chainInstructions.length) {
+        return (<></>);
+    }
+    return (
+        <div className="text-black/0 h-[21px] relative -top-[31px] left-[2px] shadow-md rounded-md bg-lime-400/50 z-30 p-0.5">
+            {chainInstructions.join(" ") + " "}
+        </div>
+    );
+}
+
+
+const DropdownSuggestionsBox = ({ inputRef }: { inputRef: RefObject<HTMLInputElement> }) => {
     const { suggestions, suggestionFocus } = useCalcTabStore();
 
-    const styleBase = `px-1`;
+    const styleBase = ` px-[2px] cursor-pointer hover:bg-stone-800/70`;
     const isFocus = (index: number) => (
-        styleBase + (suggestionFocus === index ? ` bg-stone-600` : ` `)
+        (suggestionFocus === index ? `bg-stone-600/70` : ``) + styleBase
     );
+
+    const clickHandler = (sugg: string) => {
+        RotationTabController.addInstruction(sugg);
+        inputRef.current?.focus();
+    }
 
     if (!suggestions.length)
         return (<></>);
 
     return (
-        <div className="relative flex-col border top-10 z-30 border-stone-600 overflow-hidden max-h-[400px] bg-stone-950/80 ">
+        <div className="relative flex-col top-0.5 z-30 border-2 border-stone-600/70 overflow-hidden max-h-[400px] bg-stone-950/80 ">
             {suggestions.map((sugg, index) => (
-                <div key={index} className={isFocus(index)}>{sugg}</div>
+                <div key={index} className={isFocus(index)} onClick={() => clickHandler(sugg)}>{sugg}</div>
             ))}
         </div>
     );

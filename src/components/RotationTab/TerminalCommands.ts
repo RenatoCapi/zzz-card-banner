@@ -11,6 +11,7 @@ export const MSG_CODE = {
 export type logMsgCode = {
     "code": number,
     "msg": string,
+    "cmd"?: string,
 }
 
 export class TerminalCmd {
@@ -45,6 +46,7 @@ export class TerminalCmd {
         const rowResponse = commandsFunctions[cmd](param);
         const formatedString = rowResponse["msg"].charAt(0).toUpperCase() + rowResponse["msg"].slice(1);
         rowResponse["msg"] = formatedString;
+        rowResponse["cmd"] = useCalc.labelText;
         useCalc.setLoghistory([rowResponse, ...useCalc.logHistory]);
         useCalc.setLabelText("");
         useCalc.setChainInstructions([]);

@@ -53,19 +53,15 @@ export const CalcTabController = {
     },
     addInstruction: (instruction: string) => {
         const state = useCalcTabStore.getState();
-        state.setChainInstructions([...state.chainInstructions, instruction])
+        state.setChainInstructions([...state.chainInstructions, instruction]);
         const instructions = useCalcTabStore.getState().chainInstructions;
         state.setLabelText(instructions.join(" ") + " ");
-        state.setSuggestions([]);
-        state.setSuggestionFocus(0);
+        CalcTabController.resetSuggestions();
     },
     executeInstruction: () => {
         try {
-            const terminal = TerminalCmd.instance;
-
             const instructions = useCalcTabStore.getState().chainInstructions;
-
-            terminal.executeCommand(instructions);
+            TerminalCmd.instance.executeCommand(instructions);
 
         } catch (e) {
             console.log(e);
@@ -77,5 +73,9 @@ export const CalcTabController = {
     resetSuggestions: () => {
         useCalcTabStore.getState().setSuggestionFocus(0);
         useCalcTabStore.getState().setSuggestions([]);
+    },
+    resetInputText: () => {
+        useCalcTabStore.getState().setLabelText("");
+        useCalcTabStore.getState().setChainInstructions([]);
     }
 }

@@ -60,3 +60,15 @@ export const fixPropertyId = (propertyId: AttrValues) => {
 
     return propertyId;
 }
+
+export const filterSuggestionsList = (word: string, fullList: string[]) => {
+    const suggStartWith = Object.keys(fullList).filter(
+        option => option.startsWith(word)
+    );
+
+    const suggMatch = Object.keys(fullList).filter(
+        option => option.match(word)
+    );
+
+    return [...new Set([...suggStartWith, ...suggMatch])];
+}

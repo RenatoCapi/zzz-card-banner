@@ -48,11 +48,11 @@
     }
 
     .card-primary {
-        @apply relative overflow-hidden border border-solid rounded-xl border-stone-700 bg-stone-800 transition-all duration-500 hover:border-opacity-15 bg-opacity-60 border-opacity-50 shadow-xl p-7;
+        @apply relative overflow-hidden border border-solid rounded-xl border-stone-600/70 bg-stone-800/60 transition-all duration-500 hover:border-opacity-15 shadow-xl p-7;
     }
 
     .div-input-calc {
-        @apply relative flex m-5 bg-stone-950 rounded-lg border-2 border-stone-700 h-fit hover:border-stone-900 transition duration-300;
+        @apply relative flex m-3 bg-stone-950 rounded-lg border-2 border-stone-700 h-fit hover:border-stone-900 transition duration-300;
     }
 
     .divider-base {
