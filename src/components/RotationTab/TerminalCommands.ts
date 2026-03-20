@@ -1,5 +1,4 @@
 import DB from "../../lib/DB/db";
-import { Character } from "../../lib/models/Character";
 import { Environment } from "../../lib/models/Environment";
 import { capitalized, formatKey, precisionRound } from "../../lib/Utils";
 import { CalcTabController, useCalcTabStore } from "./UseCalcStore";
@@ -15,17 +14,6 @@ export type logMsgCode = {
     "cmd"?: string,
 }
 
-type CommandType = {
-    "add": AddType
-    "remove": () => Record<string, number>
-    "hit": any
-}
-
-type AddType = {
-    "mainDPS": () => Record<string, number>
-    "teammate": () => Record<string, number>
-}
-
 const msgToTerminal = (code: number, msg: string): logMsgCode => ({
     "code": code,
     "msg": msg,
@@ -39,7 +27,8 @@ export class TerminalCmd {
     addableChars: Record<string, number> = {}
     removableChars: Record<string, number> = {}
     hits: Record<string, number> = {}
-    commands: CommandType = {} as CommandType
+    possibleCommands: { [id: string]: any | (() => Record<string, number>) } = {}
+    commandsMaps: { [id: string]: (param: string[]) => logMsgCode } = {}
 
     private constructor() { }
 
@@ -54,23 +43,19 @@ export class TerminalCmd {
     }
 
     executeCommand(instructions: string[]) {
-        const commandsFunctions: { [id: string]: (param: string[]) => logMsgCode } = {
-            "add": TerminalCmd.#instance.add,
-            "remove": TerminalCmd.#instance.remove,
-            "hit": TerminalCmd.#instance.addhit,
-        }
+        const instance = TerminalCmd.#instance;
         let rowResponse: logMsgCode;
 
         const useCalc = useCalcTabStore.getState();
-        const [cmd, ...param]: string[] = instructions;
+        const [cmd]: string[] = instructions;
 
-        if (!Object.keys(commandsFunctions).includes(cmd)) {
+        if (!Object.keys(instance.commandsMaps).includes(cmd)) {
             rowResponse = msgToTerminal(MSG_CODE.ERROR, "Invalid command!")
             useCalc.setLoghistory([rowResponse, ...useCalc.logHistory]);
             return;
         }
 
-        rowResponse = commandsFunctions[cmd](param);
+        rowResponse = instance.commandsMaps[cmd](instructions);
         rowResponse["msg"] = capitalized(rowResponse["msg"]);
         rowResponse["cmd"] = useCalc.labelText;
         useCalc.setLoghistory([rowResponse, ...useCalc.logHistory]);
@@ -79,98 +64,61 @@ export class TerminalCmd {
         CalcTabController.resetSuggestions();
     }
 
-    add(param: string[]): logMsgCode {
-        const addMap: { [id: string]: (char: Character) => logMsgCode } = {
-            "mainDPS": TerminalCmd.#instance.addMainDPS,
-            "teammate": TerminalCmd.#instance.addTeammate,
-        }
-
-        const [param1, name] = param;
-
-        if (!Object.keys(addMap).includes(param1)) {
-            return msgToTerminal(MSG_CODE.ERROR, "Invalid parameter!");
-        }
-
-        if (!Object.keys(TerminalCmd.#instance.addableChars).includes(name)) {
-            console.log(name);
-            console.log(TerminalCmd.#instance.addableChars);
-            return msgToTerminal(MSG_CODE.ERROR, "Invalid character!");
-        }
-
-        const char = DB.getCharacterById(TerminalCmd.#instance.addableChars[name]);
-        return addMap[param1](char);
-    }
-
-    addMainDPS(char: Character) {
+    add(instructions: string[]): logMsgCode {
         const instance = TerminalCmd.#instance;
-        if (instance.env.mainDPS.id !== 0) {
-            return msgToTerminal(
-                MSG_CODE.ERROR,
-                "you need to remove the current main DPS first."
-            );
+        const [, ...param] = instructions;
+        const [name] = param;
+
+        if (Object.keys(instance.env.teammates).length >= 3) {
+            return msgToTerminal(MSG_CODE.ERROR,
+                "you need to remove at least one teammate first!");
         }
 
-        instance.env.mainDPS = char;
-        instance.loadHits();
-        instance.removableChars[formatKey(char.name)] =
-            instance.addableChars[formatKey(char.name)];
-
-        delete instance.addableChars[formatKey(char.name)];
-
-        useCalcTabStore.getState().setMainDPSId(char.id);
-        useCalcTabStore.getState().setPossibleCommands(instance.commands);
-        return msgToTerminal(
-            MSG_CODE.SUCCESS,
-            char.name.toLowerCase() + " was added as main DPS."
-        );
-    }
-
-    addTeammate(char: Character) {
-        const instance = TerminalCmd.#instance;
-        if (instance.env.teammates.length >= 2) {
-            return msgToTerminal(
-                MSG_CODE.ERROR,
-                "you need to remove at least one teammate first!"
-            );
+        if (!Object.keys(instance.addableChars).includes(name)) {
+            console.log(instance.addableChars);
+            return msgToTerminal(MSG_CODE.ERROR, "invalid character!");
         }
 
-        instance.removableChars[formatKey(char.name)] =
-            instance.addableChars[formatKey(char.name)];
+        const char = DB.getCharacterById(instance.addableChars[name]);
+        instance.env.teammates[name] = char;
+        instance.loadHits(name);
+        instance.commandsMaps[name] = instance.addhit;
 
-        delete instance.addableChars[formatKey(char.name)];
-        instance.env.teammates.push(char);
+        instance.removableChars[name] = instance.addableChars[name];
+        delete instance.addableChars[name];
+
         useCalcTabStore.getState().setTeammatesId(
             [...useCalcTabStore.getState().teammatesId, char.id]
         );
+
         return msgToTerminal(
             MSG_CODE.SUCCESS,
             char.name.toLowerCase() + " was added as teammate."
         );
     }
 
-    remove(param: string[]): logMsgCode {
+    remove(instructions: string[]): logMsgCode {
         const instance = TerminalCmd.#instance;
+        const [, ...param] = instructions;
         const [name] = param;
 
-        if (!Object.keys(instance.removableChars).includes(name)) {
+        if (
+            !Object.keys(instance.removableChars).includes(name)
+            || !Object.keys(instance.env.teammates).includes(name)
+        ) {
             return msgToTerminal(MSG_CODE.ERROR, "Invalid character!");
         }
-
-        if (instance.env.mainDPS.id === instance.removableChars[name]) {
-            instance.env.mainDPS = new Character();
-            useCalcTabStore.getState().setMainDPSId(0);
-        } else {
-            instance.env.teammates = instance.env.teammates
-                .filter(char => char.id !== instance.removableChars[name]);
-
-            useCalcTabStore.getState().setTeammatesId(
-                instance.env.teammates.map(char => char.id)
-            );
-        }
+        const charId = instance.env.teammates[name].id;
+        useCalcTabStore.getState().setTeammatesId(
+            useCalcTabStore.getState().teammatesId.filter(id => id !== charId)
+        );
 
         instance.addableChars[name] = instance.removableChars[name];
-        delete instance.removableChars[name];
 
+        delete instance.env.teammates[name];
+        delete instance.removableChars[name];
+        delete instance.commandsMaps[name];
+        delete instance.possibleCommands[name];
 
         return msgToTerminal(
             MSG_CODE.SUCCESS,
@@ -179,14 +127,16 @@ export class TerminalCmd {
     }
 
     addhit(hitId: string[]) {
+        const [charName] = hitId;
         const instance = TerminalCmd.#instance;
 
-        if (!instance.env.mainDPS.id) {
-            return msgToTerminal(MSG_CODE.ERROR, "Choosen a mainDPS first!");
+        console.log(hitId);
+        if (!instance.env.teammates[charName].id) {
+            return msgToTerminal(MSG_CODE.ERROR, "Choosen a character first!");
         }
         try {
             instance.env.addHit(hitId);
-            useCalcTabStore.getState().setDps(precisionRound(instance.env.calcRotation(), 2));
+            useCalcTabStore.getState().setDps(precisionRound(instance.env.calcAllRotation(), 2));
             console.log(instance.env.dps);
             return msgToTerminal(MSG_CODE.SUCCESS, hitId.join(" ") + " added.");
         } catch (e) {
@@ -201,23 +151,27 @@ export class TerminalCmd {
 
     loadCommands() {
         const charsDict: Record<string, number> = {}
+        const instance = TerminalCmd.#instance;
+
         Object.values(DB.getCharactersById()).forEach((char) => {
             charsDict[formatKey(char.name)] = char.id;
         });
 
-        TerminalCmd.#instance.charsDict = charsDict;
-        TerminalCmd.#instance.addableChars = charsDict;
-        TerminalCmd.#instance.commands = {
-            "add": {
-                "mainDPS": () => TerminalCmd.#instance.addableChars,
-                "teammate": () => TerminalCmd.#instance.addableChars,
-            },
-            "remove": () => TerminalCmd.#instance.removableChars,
-            "hit": TerminalCmd.#instance.hits,
+        instance.charsDict = charsDict;
+        instance.addableChars = charsDict;
+        instance.possibleCommands = {
+            "add": () => instance.addableChars,
+            "remove": () => instance.removableChars,
+        }
+
+        instance.commandsMaps = {
+            "add": instance.add,
+            "remove": instance.remove,
         }
     }
 
-    loadHits() {
-        this.commands["hit"] = this.env.mainDPS.skillKit.calculatedHits;
+    loadHits(charName: string) {
+        const instance = TerminalCmd.#instance;
+        instance.possibleCommands[charName] = instance.env.teammates[charName].skillKit.calculatedHits;
     }
 }

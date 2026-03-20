@@ -56,11 +56,16 @@ export class Skillkit {
                         if (subSkillId === dataComplexId)
                             newComplexId = "attack";
 
+                        const simpleHitId = Object.keys(this.hitMap).find(
+                            hitId => hitId === dataComplex.hitID[0]
+                        );
+                        const buildup = simpleHitId ? this.hitMap[simpleHitId].anomalyBuildup : 0;
+
                         this.calculatedHits[skill_name][newSubId][newComplexId] = {
                             dmg: this.calcMultPerLvl(dataComplex.dmg, skill.level),
                             daze: this.calcMultPerLvl(dataComplex.daze, skill.level),
                             //TODO 
-                            anomalyBuildup: 0,
+                            anomalyBuildup: buildup,
                             miasmaDepletion: 0,
                         }
                     })

@@ -3,36 +3,53 @@ import { AttributeID } from './../constants';
 import { Character } from './Character';
 import { CalculatedHit } from './SkillKit';
 
+type RotationType = ({ charName: string } & CalculatedHit)
+
 export class Environment {
-    mainDPS: Character = new Character();
-    rotationList: CalculatedHit[] = [];
+    rotationList: (RotationType)[] = [];
+    teammates: { [charName: string]: Character } = {};
     dps = 0.0;
-    teammates: Character[] = [];
 
     addHit(param: string[]) {
-        const [skillID, subSkillID, complexHitID] = param;
-        this.rotationList.push(
-            this.mainDPS.skillKit.calculatedHits[skillID][subSkillID][complexHitID]
-        )
+        const [charid, skillID, subSkillID, complexHitID] = param;
+        const char = this.teammates[charid];
+
+        if (!char) return;
+
+        this.rotationList.push({
+            charName: charid,
+            ...char.skillKit.calculatedHits[skillID][subSkillID][complexHitID]
+        });
+
+        console.log(this.rotationList);
     }
 
-    calcRotation() {
-        let mainStats;
-        if (this.mainDPS.charMetadata.weapon === WeaponTypeID.RUPTURE) {
-            mainStats = AttributeID.SHEER_FORCE;
-        } else {
-            mainStats = AttributeID.ATK;
-        }
-        const elementId = ElementTypeToAttr[this.mainDPS.charMetadata.elementId];
-        const skillMult = this.rotationList.reduce((acc, value) => acc + value.dmg, 0);
+    calcAllRotation() {
+        this.rotationList.forEach(({ charName, dmg, anomalyBuildup }) => {
+            const char: Character = this.teammates[charName];
+            let mainStats;
 
-        //TODO other calc layers
-        console.log(this.mainDPS);
-        this.dps =
-            this.mainDPS[mainStats] *
-            skillMult / 100 *
-            (1 + this.mainDPS[AttributeID.CRIT_RATE] / 100 * this.mainDPS[AttributeID.CRIT_DMG] / 100) *
-            (1 + this.mainDPS[elementId] / 100);
+            if (char.charMetadata.weapon === WeaponTypeID.RUPTURE) {
+                mainStats = AttributeID.SHEER_FORCE;
+            } else {
+                mainStats = AttributeID.ATK;
+            }
+
+            const elementId = ElementTypeToAttr[char.charMetadata.elementId];
+            const elementDmgMult = (anomalyBuildup) ? (1 + char[elementId] / 100) : 1;
+            //const elementDmgMult = 1 + char[elementId] / 100;
+            this.dps =
+                char[mainStats] *
+                dmg / 100 *
+                (1 + char[AttributeID.CRIT_RATE] / 100 * char[AttributeID.CRIT_DMG] / 100) *
+                elementDmgMult;
+
+            const resultString = `main_stats (${char[mainStats]}) * skill_dmg% (${dmg} / 100) *` +
+                ` crit_avg ((1 + (${char[AttributeID.CRIT_RATE]}% * ${char[AttributeID.CRIT_DMG]}%)))` +
+                ` * anomalyDmg% (${elementDmgMult})`;
+
+            console.log(resultString);
+        });
 
         return this.dps;
     }

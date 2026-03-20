@@ -36,21 +36,19 @@ const CharTab = () => {
         const selectedCharacter = useCharacterTabStore((s) => s.selectedCharacter);
         return (
             <div className="flex relative gap-2 m-2 bg-stone-900 rounded-2xl">
-                <Suspense>
-                    <div ref={refToImage} className="flex gap-2 p-2 bg-stone-900 rounded-2xl">
-                        <div className="flex gap-2 bg-stone-900 rounded-2xl">
-                            <CharProfile char={selectedCharacter} />
-                        </div>
-
-                        <div className="flex flex-col">
-                            <CharStatSummary char={selectedCharacter} />
-                        </div>
-
-                        <div className="flex flex-col">
-                            <DiscSetPreview discSet={selectedCharacter.discSet} />
-                        </div>
+                <div ref={refToImage} className="flex gap-2 p-2 bg-stone-900 rounded-2xl">
+                    <div className="flex gap-2 bg-stone-900 rounded-2xl">
+                        <CharProfile char={selectedCharacter} />
                     </div>
-                </Suspense>
+
+                    <div className="flex flex-col">
+                        <CharStatSummary char={selectedCharacter} />
+                    </div>
+
+                    <div className="flex flex-col">
+                        <DiscSetPreview discSet={selectedCharacter.discSet} />
+                    </div>
+                </div>
                 <div className="flex absolute flex-row gap-2 m-auto w-fit z-50 right-1/2 translate-x-1/2 pr-2
                           opacity-30 delay-200 duration-500 ease-in-out hover:opacity-90">
                     <Suspense>

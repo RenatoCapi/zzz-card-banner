@@ -81,7 +81,7 @@ export const TerminalInputText = () => {
 
     const checkCommandLine = (fullLineGroups: string[]) => {
         if (Object.keys(possibleCommands).length === 0)
-            setPossibleCommands(TerminalCmd.instance.commands);
+            setPossibleCommands(TerminalCmd.instance.possibleCommands);
 
         if (!fullLineGroups.length) {
             setChainInstructions([]);
@@ -111,7 +111,7 @@ export const TerminalInputText = () => {
 
     const mountSuggestions = (chainInstructions: string[]) => {
         if (Object.keys(possibleCommands).length === 0)
-            setPossibleCommands(TerminalCmd.instance.commands);
+            setPossibleCommands(TerminalCmd.instance.possibleCommands);
 
         let dataAux: any = possibleCommands;
         let keysAux: string[] = [];

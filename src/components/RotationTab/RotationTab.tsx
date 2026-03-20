@@ -5,7 +5,6 @@ import { useCalcTabStore } from "./UseCalcStore";
 
 const RotationTab = () => {
     const { dps } = useCalcTabStore();
-    console.log(dps);
 
     return (
         <div className="w-full flex-col p-2">
@@ -25,7 +24,6 @@ const RotationTab = () => {
                             <span className="card-primary"></span>
                         </div>
                         <div className="flex flex-row items-end m-2">
-                            <MainDPSPfp />
                             <TeammatePfp />
                         </div>
                     </div>
@@ -71,7 +69,7 @@ const TeammatePfp = () => {
     return (
         <>
             {teammatesId.map((id, index) => (
-                <img key={index} src={Assets.getRole(id)} className="w-auto h-24 max-w-none" />
+                <img key={index} src={Assets.getRole(id)} className="w-auto h-[104px] max-w-none" />
             ))}
         </>
 
