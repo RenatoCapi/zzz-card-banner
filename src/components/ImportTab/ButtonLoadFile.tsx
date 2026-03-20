@@ -70,7 +70,7 @@ const ButtonImportFile = () => {
     }
 
     return (
-        <label className="flex relative z-50 justify-center my-4 ">
+        <label className="flex relative justify-center my-4 ">
             <TooltipBox msg={msg} active={active} />
             <input type="file" onChange={useImportFile} accept="application/json" className="block w-full button-base file:h-full file:opacity-90 file:border-hidden" title="json load" />
         </label>

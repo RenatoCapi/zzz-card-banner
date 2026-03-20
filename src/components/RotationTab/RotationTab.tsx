@@ -8,7 +8,7 @@ const RotationTab = () => {
     console.log(dps);
 
     return (
-        <div className="w-full flex-col h-max p-2">
+        <div className="w-full flex-col p-2">
             <div className="flex m-auto w-fit gap-2 bg-stone-900 rounded-2xl">
                 <div className="flex relative gap-2 m-2 bg-stone-900 rounded-2xl">
                     <div className="relative grid grid-rows-4 gap-2 h-[840px] my-2 ">

@@ -84,12 +84,13 @@
         -webkit-text-stroke-color: #000000cc;
         paint-order: stroke fill;
     }
-    .side-menu-button {
-        @apply hover:bg-stone-700 focus:bg-stone-800 w-full p-1 rounded-sm;
-    }
 
     .side-menu-content {
-        @apply flex bg-stone-900 items-start text-[17px] transition-all duration-500 overflow-hidden z-40;
+        @apply inline-block overflow-hidden h-screen bg-stone-900 py-2 text-[17px] transition-all duration-500  rounded-tr-2xl  z-50;
+    }
+
+    .side-menu-button {
+        @apply block hover:bg-stone-700 focus:bg-stone-800 w-full p-1 rounded-sm float-left text-left;
     }
 
     .hover-stats {
