@@ -193,9 +193,6 @@ export class TerminalCmd {
             return msgToTerminal(MSG_CODE.ERROR, "invalid Skill!");
         }
 
-
-
-
     }
 
     clear() {

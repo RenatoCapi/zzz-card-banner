@@ -31,7 +31,6 @@ const RotationTab = () => {
                     </div>
                 </div>
             </div>
-
         </div >
     )
 }
@@ -80,3 +79,4 @@ const TeammatePfp = () => {
 }
 
 export default RotationTab
+

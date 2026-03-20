@@ -21,7 +21,7 @@ export const ExternalLayout: React.FC = () => {
 
 
     return (
-        <div className="block bg-neutral-950 box-border min-w-full min-h-screen max-h-screen rounded-md overflow-x-scroll overflow-y-scroll scrollbar-thin">
+        <div className="block bg-neutral-950 box-border min-w-full min-h-screen max-h-screen rounded-md overflow-auto scrollbar-thin">
             <div className="flex flex-col box-border rounded-md min-h-full min-w-fit w-full">
                 <div className="flex items-center h-[56px] min-w-full bg-gradient-to-r from-amber-600 to-orange-950 rounded-t-md ">
                     <MenuButton />

@@ -15,9 +15,7 @@
     @font-face {
         font-family: "paybooc";
         font-weight: 400;
-        white-space: nowrap;
         font-weight: bold;
-        text-shadow: 2px 2px 6px #000000;
         src: url(./fonts/paybooc-Bold.woff);
     }
 
@@ -30,12 +28,18 @@
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.85);
         background-color: #242424;
-        scrollbar-width: none;
+        scrollbar-width: thin;
 
         font-synthesis: none;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+
+        --scrollbar-thumb: oklch(70.9% 0.01 56.259 / 0.7);
+        --scrollbar-track: oklch(21.6% 0.006 56.043 / 0.2);
+        --scrollbar-thumb-radius: 4px;
+        --scrollbar-track-radius: 4px;
+        --scrollbar-corner-radius: 4px;
 
         --color-cinema-yellow: #fff000;
         --color-cinema-gray: #b1b1b1;
@@ -48,7 +52,7 @@
     }
 
     .card-primary {
-        @apply relative overflow-hidden border border-solid rounded-xl border-stone-600/70 bg-stone-800/60 transition-all duration-500 hover:border-stone-600/15 shadow-xl p-7;
+        @apply relative overflow-hidden border border-solid rounded-xl border-stone-700/70 bg-stone-800/60 transition-all duration-500 hover:border-stone-600/15 shadow-xl p-7;
     }
 
     .div-input-calc {
@@ -95,22 +99,21 @@
 
 @layer utilities {
     .scrollbar::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
     }
 
     .scrollbar::-webkit-scrollbar-track {
         border-radius: 100vh;
-        background: #101010;
+        background: transparent;
     }
 
     .scrollbar::-webkit-scrollbar-thumb {
-        background: #78716c;
-        border-radius: 100vh;
-        border: 1px solid #1c1917;
+        border-radius: 4px;
+        /* border: 1px solid #1c1917; */
     }
 
     .scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #44403c;
+        background: oklch(70.9% 0.01 56.259 / 0.5);
     }
 }

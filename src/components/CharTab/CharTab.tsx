@@ -19,13 +19,11 @@ const CharTab = () => {
 
     const MenuChars = () => {
         return (
-            <div className="flex flex-row mx-2 mt-2 max-w-[1150px] self-center overflow-x-auto scrollbar-thin over">
+            <div className="flex flex-row mx-2 mt-1 max-w-[1150px] self-center overflow-x-auto scrollbar-thin over pb-[2px]">
                 {Object.values(DB.getCharactersById()).reverse().map((value, jsx_index) => (
-                    <div key={jsx_index}>
-                        <button type="button" onClick={() => CharacterTabController.buttonClickedListener(value)}>
-                            <img src={Assets.getRole(value.id)} className="w-auto h-[80px] max-w-none" />
-                        </button>
-                    </div>
+                    <button key={jsx_index} type="button" onClick={() => CharacterTabController.buttonClickedListener(value)}>
+                        <img src={Assets.getRole(value.id)} className="w-auto h-[80px] max-w-none" />
+                    </button>
                 ))}
             </div>
         );
@@ -74,7 +72,7 @@ const CharTab = () => {
     return (
         <div className="w-full flex-col">
             <div className="flex m-auto w-fit">
-                <div className="flex flex-col items-start">
+                <div className="flex flex-col items-start mt-2">
                     <MenuChars />
                     <ContentChar />
                 </div>
