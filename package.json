@@ -1,7 +1,7 @@
 {
     "name": "anomaly-front",
     "private": true,
-    "version": "0.2.6.1",
+    "version": "0.2.6.2",
     "homepage": "https://renatocapi.github.io/zzz-card-banner/",
     "type": "module",
     "scripts": {

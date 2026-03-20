@@ -1,11 +1,6 @@
 import { create } from "zustand";
 import { Character } from "../models/Character";
 
-const state = {
-    characters: [],
-    activeCharacter: Character,
-}
-
 window.store = create((set) => ({
     characters: [],
     charactersById: {},

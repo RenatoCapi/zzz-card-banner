@@ -51,16 +51,6 @@ const LogHistoryLabel = () => {
     );
 }
 
-const MainDPSPfp = () => {
-    const { mainDPSId } = useCalcTabStore();
-    if (!mainDPSId)
-        return (<></>);
-
-    return (
-        <img src={Assets.getRole(mainDPSId)} className="w-auto size-32 max-w-none" />
-    )
-}
-
 const TeammatePfp = () => {
     const { teammatesId } = useCalcTabStore();
     if (teammatesId.length === 0)

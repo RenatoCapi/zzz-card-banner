@@ -7,7 +7,7 @@ import { SkillDict } from "../models/SkillKit";
 import { WEngine } from "../models/WEngine";
 import { AvatarEnka as EnkaAvatar, EnkaData, EquippedEnka, PropertyEnka, SkillLevelEnka, Weapon } from "../types/enka_types";
 import { EnkaWEngineData } from "../types/enka_wengine_types";
-import { DataSkill } from "../types/my_char_data_types";
+import { DataCoreSkill, DataSkill } from "../types/my_char_data_types";
 import { fixPropertyId, TRUNCATE_STATS } from "../Utils";
 import { CharacterBuilder } from "./my_data_type_parser";
 
@@ -55,11 +55,19 @@ export class ServiceEnka {
     private getSkillSet(enkaSkills: SkillLevelEnka[]): SkillDict {
         let skillSet: SkillDict = {} as SkillDict;
         enkaSkills.map((skill) => {
-            skillSet[skill.Index] = {
-                level: skill.Level,
-                SkillId: skill.Index,
-                data: {} as DataSkill
-            };
+            if (skill.Index !== 5) {
+                skillSet[skill.Index] = {
+                    level: skill.Level,
+                    SkillId: skill.Index,
+                    data: {} as DataSkill
+                };
+            } else {
+                skillSet[skill.Index] = {
+                    level: skill.Level,
+                    SkillId: skill.Index,
+                    data: {} as DataCoreSkill
+                };
+            }
         });
         return skillSet;
     }
