@@ -14,6 +14,12 @@ export type logMsgCode = {
     "cmd"?: string,
 }
 
+export type logHitType = {
+    "char": string,
+    "hit": string,
+    "dmg": number
+}
+
 const msgToTerminal = (code: number, msg: string): logMsgCode => ({
     "code": code,
     "msg": msg,
@@ -127,17 +133,21 @@ export class TerminalCmd {
     }
 
     addhit(hitId: string[]) {
-        const [charName] = hitId;
+        const [charName, ...param] = hitId;
         const instance = TerminalCmd.#instance;
 
-        console.log(hitId);
         if (!instance.env.teammates[charName].id) {
             return msgToTerminal(MSG_CODE.ERROR, "Choosen a character first!");
         }
+
         try {
-            instance.env.addHit(hitId);
+            const dmg = instance.env.addHitDmg(hitId);
             useCalcTabStore.getState().setDps(precisionRound(instance.env.calcAllRotation(), 2));
             console.log(instance.env.dps);
+            const hitLog: logHitType = { char: charName, hit: param.join(" "), dmg: dmg }
+            useCalcTabStore.getState().setRotationList(
+                [hitLog, ...useCalcTabStore.getState().rotationList]
+            );
             return msgToTerminal(MSG_CODE.SUCCESS, hitId.join(" ") + " added.");
         } catch (e) {
             return msgToTerminal(MSG_CODE.ERROR, "invalid Skill!");

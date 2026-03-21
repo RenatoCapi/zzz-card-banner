@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { logMsgCode, TerminalCmd } from './TerminalCommands';
+import { logHitType, logMsgCode, TerminalCmd } from './TerminalCommands';
 type CalcTabStore = {
     labelText: string,
     possibleCommands: any,
@@ -7,10 +7,9 @@ type CalcTabStore = {
     suggestions: string[],
     suggestionFocus: number,
 
-    mainDPSId: number,
     teammatesId: number[],
-
     logHistory: logMsgCode[],
+    rotationList: logHitType[],
 
     dps: number,
 
@@ -20,10 +19,9 @@ type CalcTabStore = {
     setSuggestions: (values: string[]) => void,
     setSuggestionFocus: (suggestionFocus: number) => void,
 
-    setMainDPSId: (char: number) => void,
     setTeammatesId: (team: number[]) => void,
-
     setLoghistory: (log: logMsgCode[]) => void,
+    setRotationList: (list: logHitType[]) => void,
 
     setDps: (dps: number) => void,
 }
@@ -35,10 +33,9 @@ export const useCalcTabStore = create<CalcTabStore>()((set) => ({
     suggestions: [],
     suggestionFocus: 0,
 
-    mainDPSId: 0,
     teammatesId: [],
-
     logHistory: [],
+    rotationList: [],
 
     dps: 0,
 
@@ -48,17 +45,14 @@ export const useCalcTabStore = create<CalcTabStore>()((set) => ({
     setSuggestions: x => set(() => ({ suggestions: x })),
     setSuggestionFocus: x => set(() => ({ suggestionFocus: x })),
 
-    setMainDPSId: x => set(() => ({ mainDPSId: x })),
     setTeammatesId: x => set(() => ({ teammatesId: x })),
-
     setLoghistory: x => set(() => ({ logHistory: x })),
+    setRotationList: x => set(() => ({ rotationList: x })),
 
     setDps: x => set(() => ({ dps: x })),
 }))
 
 export const CalcTabController = {
-    initTerminal: () => {
-    },
     addInstruction: (instruction: string) => {
         const state = useCalcTabStore.getState();
         state.setChainInstructions([...state.chainInstructions, instruction]);
@@ -74,9 +68,6 @@ export const CalcTabController = {
         } catch (e) {
             console.log(e);
         }
-    },
-    moveSuggestionFocus: (newIndex: number) => {
-        useCalcTabStore.getState().setSuggestionFocus(newIndex);
     },
     resetSuggestions: () => {
         useCalcTabStore.getState().setSuggestionFocus(0);

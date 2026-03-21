@@ -10,18 +10,19 @@ export class Environment {
     teammates: { [charName: string]: Character } = {};
     dps = 0.0;
 
-    addHit(param: string[]) {
+    addHitDmg(param: string[]): number {
         const [charid, skillID, subSkillID, complexHitID] = param;
         const char = this.teammates[charid];
 
-        if (!char) return;
-
+        if (!char) return 0;
+        const calcHit = char.skillKit.calculatedHits[skillID][subSkillID][complexHitID];
         this.rotationList.push({
             charName: charid,
-            ...char.skillKit.calculatedHits[skillID][subSkillID][complexHitID]
+            ...calcHit
         });
 
         console.log(this.rotationList);
+        return calcHit.dmg;
     }
 
     calcAllRotation() {

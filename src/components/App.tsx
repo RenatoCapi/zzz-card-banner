@@ -46,7 +46,7 @@ export const ExternalLayout: React.FC = () => {
 
     return (
         <div className="block bg-neutral-950 box-border min-w-full min-h-screen max-h-screen rounded-md overflow-auto scrollbar-thin">
-            <div className="flex flex-col box-border rounded-md min-h-full min-w-fit w-full">
+            <div className="flex flex-col rounded-md min-h-[calc(100dvh-12px)] min-w-fit h-full w-full">
                 <SideMenu />
                 <div className="flex items-center h-12 min-w-full bg-gradient-to-r from-amber-600 to-orange-950 rounded-t-md ">
                     <span className='text-[34px] font-["paybooc"] text-stone-100 mx-4 sticky left-16'>
