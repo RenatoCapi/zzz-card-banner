@@ -105,10 +105,10 @@ class ServiceEnkaWengine {
         wengine.rarity = wengineMetaData.Rarity;
 
         const weapon_coef_growth = 1 + 0.1568166666666667 * weapon.Level + 0.8922 * weapon.BreakLevel;
-        wengine[AttributeID.ATK] = wengineMetaData.MainStat.PropertyValue * weapon_coef_growth;
+        wengine.stats[AttributeID.ATK] = wengineMetaData.MainStat.PropertyValue * weapon_coef_growth;
 
         const second_stats_id = fixPropertyId(<AttrValues>wengineMetaData.SecondaryStat.PropertyId);
-        wengine[second_stats_id] = wengineMetaData.SecondaryStat.PropertyValue / 100 * (1 + 0.3 * weapon.BreakLevel);
+        wengine.stats[second_stats_id] = wengineMetaData.SecondaryStat.PropertyValue / 100 * (1 + 0.3 * weapon.BreakLevel);
 
         return wengine;
     }

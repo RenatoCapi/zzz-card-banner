@@ -26,6 +26,7 @@ export class Environment {
     }
 
     calcAllRotation() {
+        this.dps = 0;
         this.rotationList.forEach(({ charName, dmg, anomalyBuildup }) => {
             const char: Character = this.teammates[charName];
             let mainStats;
@@ -39,7 +40,7 @@ export class Environment {
             const elementId = ElementTypeToAttr[char.charMetadata.elementId];
             const elementDmgMult = (anomalyBuildup) ? (1 + char[elementId] / 100) : 1;
             //const elementDmgMult = 1 + char[elementId] / 100;
-            this.dps =
+            this.dps +=
                 char[mainStats] *
                 dmg / 100 *
                 (1 + char[AttributeID.CRIT_RATE] / 100 * char[AttributeID.CRIT_DMG] / 100) *

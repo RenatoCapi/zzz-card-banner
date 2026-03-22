@@ -12,7 +12,7 @@ const CharStatSummary = ({ char }: { char: Character | null }) => {
 
     const { wengine } = char;
     const total_stats = viewStatsChar(char);
-    const wengine_stats = viewStats(wengine);
+    const wengine_stats = viewStats(wengine.stats);
     const wengine_icon = Assets.getWEngine(wengine.id);
     const wengine_rarity = Assets.getRarity(wengine.rarity);
     const camp = Assets.getCamp(char.charMetadata.camp);

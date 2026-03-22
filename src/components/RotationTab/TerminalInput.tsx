@@ -90,15 +90,16 @@ export const TerminalInputText = () => {
 
 
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let commandLayer: any = possibleCommands;
-        let keysAux: string[] = [];
+        const instructionsAux: string[] = [];
         RotationTabController.resetSuggestions();
 
         fullLineGroups.forEach((word) => {
             commandLayer = (typeof commandLayer === "function") ? commandLayer() : commandLayer;
 
             if (Object.keys(commandLayer).includes(word)) {
-                keysAux.push(word);
+                instructionsAux.push(word);
                 commandLayer = commandLayer[word];
                 return;
             }
@@ -106,21 +107,30 @@ export const TerminalInputText = () => {
             setSuggestions(filterSuggestionsList(word, commandLayer));
         });
 
-        setChainInstructions(keysAux);
+        setChainInstructions(instructionsAux);
     }
 
     const mountSuggestions = (chainInstructions: string[]) => {
+        console.log(chainInstructions);
+
         if (Object.keys(possibleCommands).length === 0)
             setPossibleCommands(TerminalCmd.instance.possibleCommands);
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let dataAux: any = possibleCommands;
-        let keysAux: string[] = [];
+        const keysAux: string[] = [];
 
         chainInstructions.forEach((word) => {
             keysAux.push(word);
 
             dataAux = typeof dataAux[word] === "function" ? dataAux[word]() : dataAux[word];
-        })
+        });
+
+        // eslint-disable-next-line no-prototype-builtins
+        if (dataAux.hasOwnProperty("dmg")) {
+            setSuggestions([]);
+            return;
+        }
 
         setSuggestions(Object.keys(dataAux));
     }
@@ -158,7 +168,7 @@ const ValidGreenBox = () => {
 }
 
 
-const DropdownSuggestionsBox = ({ inputRef }: { inputRef: RefObject<HTMLInputElement> }) => {
+const DropdownSuggestionsBox = ({ inputRef }: { inputRef: RefObject<HTMLInputElement | null> }) => {
     const { suggestions, suggestionFocus } = useCalcTabStore();
 
     const styleBase = ` px-[2px] cursor-pointer hover:bg-stone-800/70`;
@@ -168,7 +178,8 @@ const DropdownSuggestionsBox = ({ inputRef }: { inputRef: RefObject<HTMLInputEle
 
     const clickHandler = (sugg: string) => {
         RotationTabController.addInstruction(sugg);
-        inputRef.current?.focus();
+        if (inputRef.current)
+            inputRef.current.focus();
     }
 
     if (!suggestions.length)

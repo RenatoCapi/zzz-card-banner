@@ -82,10 +82,10 @@ class ServiceHoyolabWengine {
         wengine.star = this.json_wengine.star;
         wengine.rarity = RarityID[<RarityTypeID>this.json_wengine.rarity];
 
-        wengine[AttributeID.ATK] = +this.json_wengine.main_properties[0].base;
+        wengine.stats[AttributeID.ATK] = +this.json_wengine.main_properties[0].base;
         const second_stats = this.json_wengine.properties[0];
         const attrId = fixPropertyId(second_stats.property_id);
-        wengine[attrId] = readValue(second_stats.base);
+        wengine.stats[attrId] = readValue(second_stats.base);
 
         return wengine;
     }

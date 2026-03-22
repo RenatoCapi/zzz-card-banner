@@ -2,8 +2,9 @@ import { toPng } from "html-to-image";
 import { RefObject, useState } from "react";
 import TooltipBox from "../TooltipBox";
 
-const ButtonDownload = (props: { refDiv: RefObject<HTMLDivElement>, name: string }) => {
-    const current = props.refDiv.current
+const ButtonDownload = (props: { refDiv: RefObject<HTMLDivElement | null>, charName: string }) => {
+    const { refDiv } = props;
+    const current = refDiv ? refDiv.current : null;
 
     const [msg, setMsg] = useState("");
     const [active, setActive] = useState(false);
@@ -24,7 +25,7 @@ const ButtonDownload = (props: { refDiv: RefObject<HTMLDivElement>, name: string
         toPng(current, { cacheBust: false })
             .then(async (dataUrl) => {
                 const link = document.createElement("a");
-                link.download = props.name + ".png";
+                link.download = props.charName + ".png";
                 link.href = dataUrl;
                 link.click();
                 setMsg("Downloaded!");

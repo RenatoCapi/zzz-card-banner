@@ -2,8 +2,9 @@ import { toPng } from "html-to-image";
 import { RefObject, useState } from "react";
 import TooltipBox from "../TooltipBox";
 
-const ButtonToPng = (props: { refDiv: RefObject<HTMLDivElement> }) => {
-    const current = props.refDiv.current;
+const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null> | null) }) => {
+    const { refDiv } = props;
+    const current = refDiv ? refDiv.current : null;
 
     const [msg, setMsg] = useState("");
     const [active, setActive] = useState(false);
@@ -22,8 +23,8 @@ const ButtonToPng = (props: { refDiv: RefObject<HTMLDivElement> }) => {
 
         toPng(current, { cacheBust: false })
             .then(async (dataUrl) => {
-                let data = await fetch(dataUrl)
-                let blob = await data.blob()
+                const data = await fetch(dataUrl)
+                const blob = await data.blob()
                 navigator.clipboard.write([
                     new ClipboardItem({
                         [blob.type]: blob,

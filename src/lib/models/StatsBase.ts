@@ -2,6 +2,7 @@ import { AttributeID, AttrValues, Stats } from "../constants";
 import { BasicStatsObject } from "../types/basic_stats_object";
 import { Character } from "./Character";
 import { Stat } from "./DiscSet";
+import { WengineStatsType } from "./WEngine";
 
 export const viewStatsChar = (charStats: Character) => {
     let stats: Stat[] = [];
@@ -14,7 +15,7 @@ export const viewStatsChar = (charStats: Character) => {
         if (!Object.values(Stats).includes(idAux))
             return;
 
-        if ((charStats.discSet.sumStats[idAux] === 0) && (charStats.wengine[idAux] === 0) && (idAux !== AttributeID.SHEER_FORCE))
+        if ((charStats.discSet.sumStats[idAux] === 0) && (idAux !== AttributeID.SHEER_FORCE))
             return;
 
         stat.id = <AttrValues>+id;
@@ -26,10 +27,10 @@ export const viewStatsChar = (charStats: Character) => {
     return stats;
 }
 
-export const viewStats = (statsBase: StatsBase): Stat[] => {
+export const viewStats = (wengineStats: WengineStatsType): Stat[] => {
     let stats: Stat[] = [];
 
-    Object.entries(statsBase).forEach(([id, value]) => {
+    Object.entries(wengineStats).forEach(([id, value]) => {
         const stat: Stat = new Stat();
         if (!Object.values(Stats).includes(<AttrValues>+id))
             return;

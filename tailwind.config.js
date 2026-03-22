@@ -5,18 +5,7 @@ export default {
     "./src/main.tsx",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      dropShadow: {
-        'white': '2px 2px 8px rgba(170, 170, 170, 0.7)',
-        'primary': '1px 1px 6px rgba(0, 0, 0, 0.5)',
-      },
-      fill: {
-        'cinema-on': 'var(--color-cinema-yellow)',
-        'cinema-off': 'var(--color-cinema-gray)',
-      }
-    },
-  },
+  theme: {},
   plugins: [
     require('tailwind-scrollbar')
   ],

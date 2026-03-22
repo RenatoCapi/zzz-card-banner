@@ -2,14 +2,19 @@ import DB from "./db";
 
 export const SaveState = {
     save: () => {
-        const state = {
-            charactersById: DB.getCharactersById(),
+        try {
+            const state = {
+                charactersById: DB.getCharactersById(),
+            }
+            console.log('Saved state');
+            const stateString = JSON.stringify(state);
+            localStorage.state = stateString;
+            return stateString;
+        } catch (e) {
+            console.error('Error saving state ', e)
+            // localStorage.clear();
+            return e;
         }
-        console.log('Saved state');
-        const stateString = JSON.stringify(state);
-        localStorage.state = stateString;
-
-        return stateString;
     },
     load: () => {
         try {
@@ -24,7 +29,7 @@ export const SaveState = {
             console.log('No SaveState found')
             return false;
         } catch (e) {
-            console.error('Error loading state', e)
+            console.error('Error loading state ', e)
             // localStorage.clear();
             return false;
         }

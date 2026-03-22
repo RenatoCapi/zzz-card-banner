@@ -7,15 +7,14 @@ const RotationTab = () => {
     const { dps } = useCalcTabStore();
 
     return (
-        <div className="w-full flex-col box-border p-2 pb-0 min-h-full">
-            <div className="flex m-auto w-fit h-full gap-2 bg-stone-900 rounded-2xl">
-                <div className="flex relative gap-2 m-2 bg-stone-900 rounded-2xl">
+        <div className="relative w-full box-border p-2 pb-0 min-h-full">
+            <div className="relative flex m-auto w-fit h-full gap-2 bg-stone-900 rounded-2xl z-10">
+                <div className="relative flex gap-2 m-2 bg-stone-900 rounded-2xl">
                     <div className="relative grid grid-rows-4 gap-2 h-[840px] my-2 ">
                         <div className="relative h-full row-span-2 mx-2 bg-stone-950 shadow-inner border-2 border-stone-800/75 rounded-xl ">
                             <TerminalInputText />
                             <div className="grid grid-cols-2 h-[calc(100%-70px)]">
                                 <LogHistoryLabel />
-                                <LogRotationList />
                             </div>
                         </div>
 
@@ -32,6 +31,7 @@ const RotationTab = () => {
                     </div>
                 </div>
             </div>
+            <LogRotationList />
         </div >
     )
 }
@@ -40,10 +40,10 @@ const LogRotationList = () => {
     const { rotationList } = useCalcTabStore();
 
     return (
-        <div className="flex flex-col items-end mr-4 pb-1 h-full overflow-auto scrollbar-thin">
+        <div className="absolute top-0 right-0 flex flex-col items-end mr-4 pb-1 h-full overflow-auto scrollbar-thin opacity-70 z-0">
             {rotationList.map(({ char, hit, dmg }, index) => (
                 <div key={index} className="flex flex-row items-end h-fit gap-2 ">
-                    <div className="flex flex-col py-1 items-end">
+                    <div className="flex flex-col py-1 items-end opacity-70">
                         <div className="text-stone-200/50 text-[11px] ">{char}</div>
                         <div className="text-stone-200/80 text-[14px]">{hit}</div>
                     </div>

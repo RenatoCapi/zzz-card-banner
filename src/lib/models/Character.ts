@@ -30,15 +30,15 @@ export class Character extends StatsBase {
         this.discSet = discSet;
     }
 
-    public sumSecondaryStats(attrID: AttrValues) {
-        if (attrID === AttributeID.NONE || attrID === AttributeID.SHIELD_EFFECT) return;
-        this[attrID] = this.charBase[attrID] + this.wengine[attrID] + this.discSet.sumStats[attrID];
+    public sumSecondaryStats(attrId: AttrValues) {
+        if (attrId === AttributeID.NONE || attrId === AttributeID.SHIELD_EFFECT) return;
+        this[attrId] = this.charBase[attrId] + this.getWengineStat(attrId); + this.discSet.sumStats[attrId];
     }
 
     public sumMainStat(attrId: AttrValues) {
         const attrPercId = <AttrValues>(attrId + 1);
-        const base = this.charBase[attrId] + this.wengine[attrId];
-        const perc = this.charBase[attrPercId] + this.wengine[attrPercId] + this.discSet.sumStats[attrPercId];
+        const base = this.charBase[attrId] + this.getWengineStat(attrId);
+        const perc = this.charBase[attrPercId] + this.getWengineStat(attrPercId) + this.discSet.sumStats[attrPercId];
         this[attrId] = (base * (1 + perc / 100)) + this.discSet.sumStats[attrId];
     }
 
@@ -72,5 +72,9 @@ export class Character extends StatsBase {
         this.calcAllStats();
         console.log(JSON.stringify(this));
         console.log(JSON.stringify(this.discSet.disc_sets_bonus));
+    }
+
+    private getWengineStat(attrId: AttrValues) {
+        return (attrId in this.wengine.stats) ? this.wengine.stats[attrId] : 0;
     }
 }

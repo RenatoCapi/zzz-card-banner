@@ -1,11 +1,12 @@
 import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
+
 import { SaveState } from "../lib/DB/saveState";
 import Tabs from "./Tabs";
 import { useAppStore } from "./UseAppStore";
 
-SaveState.load()
+SaveState.load();
 
 export const ExternalLayout: React.FC = () => {
 

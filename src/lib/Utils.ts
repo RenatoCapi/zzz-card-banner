@@ -61,7 +61,11 @@ export const fixPropertyId = (propertyId: AttrValues) => {
     return propertyId;
 }
 
-export const filterSuggestionsList = (word: string, fullList: string[]) => {
+export const filterSuggestionsList = (word: string, fullList: Object) => {
+
+    console.log(fullList);
+    if (fullList.hasOwnProperty("dmg")) return [];
+
     const suggStartWith = Object.keys(fullList).filter(
         option => option.startsWith(word)
     );

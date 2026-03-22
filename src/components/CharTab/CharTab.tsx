@@ -53,7 +53,7 @@ const CharTab = () => {
                           opacity-30 delay-200 duration-500 ease-in-out hover:opacity-90">
                     <Suspense>
                         <LazyPngButton refDiv={refToImage} />
-                        <LazyDownloadButton refDiv={refToImage} name={selectedCharacter.name} />
+                        <LazyDownloadButton refDiv={refToImage} charName={selectedCharacter.name} />
                     </Suspense>
                 </div>
             </div>
