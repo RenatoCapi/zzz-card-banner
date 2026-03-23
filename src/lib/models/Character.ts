@@ -32,7 +32,7 @@ export class Character extends StatsBase {
 
     public sumSecondaryStats(attrId: AttrValues) {
         if (attrId === AttributeID.NONE || attrId === AttributeID.SHIELD_EFFECT) return;
-        this[attrId] = this.charBase[attrId] + this.getWengineStat(attrId); + this.discSet.sumStats[attrId];
+        this[attrId] = this.charBase[attrId] + this.getWengineStat(attrId) + this.discSet.sumStats[attrId];
     }
 
     public sumMainStat(attrId: AttrValues) {

@@ -74,9 +74,7 @@ export class Skillkit {
             } else {
                 delete this.calculatedHits[skill_name]
             }
-        })
-
-        console.log(this.calculatedHits);
+        });
     }
 
     calcMultPerLvl(dataMult: DataMultiplier, lvl: number) {

@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
+@layer utilities, base, components;
+
 @theme {
-    --drop-shadow-white: "2px 2px 8px rgba(170, 170, 170, 0.7)";
-    --drop-shadow-primary: "1px 1px 6px rgba(0, 0, 0, 0.5)";
-    --fill-cinema-on: "var(--color-cinema-yellow)";
-    --fill-cinema-off: "var(--color-cinema-gray)";
+    --scrollbar-thumb: oklch(70.9% 0.01 56.259 / 0.7);
+    --scrollbar-track: oklch(21.6% 0.006 56.043 / 0.2);
+    --scrollbar-thumb-radius: 4px;
+    --scrollbar-track-radius: 4px;
+    --scrollbar-corner-radius: 4px;
+
+    --color-cinema-yellow: #fff000;
+    --color-cinema-gray: #b1b1b1;
+
+    --fill-cinema-on: var(--color-cinema-yellow);
+    --fill-cinema-off: var(--color-cinema-gray);
 }
 
 @layer base {
@@ -19,9 +28,13 @@
 
     @font-face {
         font-family: "paybooc";
-        font-weight: 400;
         font-weight: bold;
         src: url(./fonts/paybooc-Bold.woff);
+    }
+
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: oklch(70.9% 0.01 56.259 / 0.5);
     }
 
     :root {
@@ -32,40 +45,30 @@
 
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.85);
-        background-color: #242424;
         scrollbar-width: thin;
 
         font-synthesis: none;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+    }
 
-        --scrollbar-thumb: oklch(70.9% 0.01 56.259 / 0.7);
-        --scrollbar-track: oklch(21.6% 0.006 56.043 / 0.2);
-        --scrollbar-thumb-radius: 4px;
-        --scrollbar-track-radius: 4px;
-        --scrollbar-corner-radius: 4px;
+    body {
+        @apply bg-linear-to-t/hsl from-zinc-950 from-80% to-taupe-900;
+    }
 
-        --color-cinema-yellow: #fff000;
-        --color-cinema-gray: #b1b1b1;
+    h1 {
+        @apply text-4xl leading-none text-shadow-lg/25 capitalize;
     }
 }
 
 @layer components {
-    h1 {
-        @apply text-4xl leading-none drop-shadow-primary capitalize;
-    }
-
     .card-primary {
         @apply relative overflow-hidden border border-solid rounded-xl border-stone-700/70 bg-stone-800/60 transition-all duration-500 hover:border-stone-600/15 shadow-xl p-7;
     }
 
-    .div-input-calc {
-        @apply relative flex m-3 bg-stone-950 rounded-lg border-2 border-stone-700 h-fit hover:border-stone-900 transition duration-300;
-    }
-
-    .green-box {
-        @apply text-black/0 h-[21px] relative shadow-md rounded-md bg-lime-500/60 pointer-events-none;
+    .img-cinema-char-profile {
+        @apply absolute max-w-none top-0 -left-6 h-187.5 z-10 opacity-65 select-none;
     }
 
     .divider-base {
@@ -73,11 +76,11 @@
     }
 
     .divider-disc {
-        @apply border-[0.75px] border-solid divide-solid my-[10px] mx-auto;
+        @apply border-[0.75px] border-solid divide-solid my-2.5 mx-auto;
     }
 
     .divider-text {
-        @apply border border-dashed grow my-auto mx-[10px];
+        @apply border border-dashed grow my-auto mx-2.5;
     }
 
     .button-base {
@@ -90,19 +93,27 @@
         paint-order: stroke fill;
     }
 
-    .side-menu-content {
+    .main-menu {
         @apply inline-block overflow-hidden h-screen bg-stone-900 py-2 text-[17px] transition-all duration-500  rounded-tr-2xl  z-50;
     }
 
-    .side-menu-button {
-        @apply block hover:bg-stone-700 focus:bg-stone-800 p-1 rounded-sm float-left text-left  whitespace-nowrap;
+    .main-menu-button {
+        @apply block hover:bg-stone-700 focus:bg-stone-800  py-1 rounded-sm float-left text-left w-[stretch] whitespace-nowrap;
     }
 
     .hover-stats {
         @apply bg-stone-600/60 rounded-xl border-stone-700 transition-all duration-500 hover:border-stone-600/15 shadow-xl;
     }
-}
 
+    .div-input-calc {
+        @apply relative flex m-3 bg-stone-950 rounded-lg border-2 border-stone-700 h-fit hover:border-stone-900 transition duration-300;
+    }
+
+    .green-box {
+        @apply text-black/0 h-5.25 relative shadow-md rounded-md bg-lime-500/60 pointer-events-none;
+    }
+}
+/* 
 @layer utilities {
     .scrollbar::-webkit-scrollbar {
         width: 8px;
@@ -116,10 +127,8 @@
 
     .scrollbar::-webkit-scrollbar-thumb {
         border-radius: 4px;
-        /* border: 1px solid #1c1917; */
     }
-
     .scrollbar::-webkit-scrollbar-thumb:hover {
         background: oklch(70.9% 0.01 56.259 / 0.5);
     }
-}
+} */

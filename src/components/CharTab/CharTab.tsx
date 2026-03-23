@@ -19,10 +19,10 @@ const CharTab = () => {
 
     const MenuChars = () => {
         return (
-            <div className="flex flex-row mx-2 mt-1 max-w-[1150px] self-center overflow-x-auto scrollbar-thin over pb-[2px]">
+            <div className="flex flex-row mx-2 mt-1 max-w-287.5 self-center overflow-x-auto scrollbar-thin over pb-0.5">
                 {Object.values(DB.getCharactersById()).reverse().map((value, jsx_index) => (
                     <button key={jsx_index} type="button" onClick={() => CharacterTabController.buttonClickedListener(value)}>
-                        <img src={Assets.getRole(value.id)} className="w-auto h-[80px] max-w-none" />
+                        <img src={Assets.getRole(value.id)} className="w-auto h-20 max-w-none" />
                     </button>
                 ))}
             </div>
@@ -35,9 +35,9 @@ const CharTab = () => {
     const ContentChar = () => {
         const selectedCharacter = useCharacterTabStore((s) => s.selectedCharacter);
         return (
-            <div className="flex relative gap-2 m-2 bg-stone-900 rounded-2xl">
+            <div className="flex relative gap-2 m-2 rounded-2xl shadow-2xl">
                 <div ref={refToImage} className="flex gap-2 p-2 bg-stone-900 rounded-2xl">
-                    <div className="flex gap-2 bg-stone-900 rounded-2xl">
+                    <div className="flex gap-2 rounded-2xl">
                         <CharProfile char={selectedCharacter} />
                     </div>
 
@@ -68,7 +68,7 @@ const CharTab = () => {
     // }, [char])
 
     return (
-        <div className="w-full flex-col">
+        <div className="w-full flex-col ">
             <div className="flex m-auto w-fit">
                 <div className="flex flex-col items-start mt-2">
                     <MenuChars />

@@ -41,9 +41,9 @@ const DiscCard = ({ disc }: DiscProp) => {
     const url = Assets.getDiscSetById(disc.equipset_id)
 
     return (
-        <div className="card-primary w-[210px] h-[245px] p-6" >
+        <div className="card-primary w-52.5 h-61.25 p-6" >
             <div className="relative z-20">
-                <img src={url} className="absolute w-[200px] max-w-none -top-[80px] -right-[72px] z-10 opacity-40 blur-[2px]" />
+                <img src={url} className="absolute w-50 max-w-none -top-20 -right-18 z-10 opacity-40 blur-[2px] select-none" />
                 <DiscStatsSummary disc={disc} />
             </div>
         </div >
@@ -57,10 +57,10 @@ const DiscStatsSummary = ({ disc }: DiscProp) => {
         );
 
     return (
-        <div className="absolute z-30 w-[154px]">
+        <div className="absolute z-30 w-38.5">
             <div className="w-full h-full items-center">
                 <div className="flex justify-between items-center">
-                    <img src={Assets.getRarity(disc.rarity)} className="w-[34px] h-auto" />
+                    <img src={Assets.getRarity(disc.rarity)} className="w-8.5 h-auto" />
                     <div className="flex flex-col self-center">
                         <span className="font-['zzz'] text-[17px]">Lv.{disc.lvl}</span>
                     </div>

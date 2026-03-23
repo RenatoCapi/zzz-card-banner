@@ -32,12 +32,12 @@ const DialogBox = ({ isOpen, onClose }: DialogBoxProps) => {
 
     if (isOpen)
         return (
-            <div className="flex flex-col fixed bg-stone-200 rounded-lg py-2 z-50 justify-center w-[500px] h-[150px] p-8 gap-2 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2">
+            <div className="flex flex-col fixed bg-stone-200 rounded-lg py-2 z-50 justify-center w-125 h-37.5 p-8 gap-2 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2">
                 <span className="text-stone-900 text-[28px]">Clearing Cache</span>
                 <span className="text-stone-900">Permanently delete your data? You can't undo this.</span>
                 <div className="flex flex-row m-auto gap-4">
-                    <button onClick={onClose} className="py-1 px-2 button-base">Cancel</button>
                     <button onClick={onDelete} className="py-1 px-2 button-base">Delete</button>
+                    <button onClick={onClose} className="py-1 px-2 button-base">Cancel</button>
                 </div>
             </div>
         )

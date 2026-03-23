@@ -9,7 +9,9 @@ import { useAppStore } from "./UseAppStore";
 SaveState.load();
 
 export const ExternalLayout: React.FC = () => {
-
+    const BASE_PATH = "/zzz-card-banner";
+    const { sidebarState } = useAppStore();
+    const style = `relative main-menu ` + (sidebarState ? 'w-[140px] gap-1 px-2' : 'w-0 px-0 pointer-events-none');
 
     const MenuButton = () => {
         const { sidebarState } = useAppStore();
@@ -24,37 +26,39 @@ export const ExternalLayout: React.FC = () => {
     }
 
     const SideMenu = () => {
-        const BASE_PATH = "/zzz-card-banner";
-        const { sidebarState } = useAppStore();
-        let style = `side-menu-content `
-        style += (sidebarState ? 'w-[140px] gap-1 px-2' : 'w-0');
+
+
+
 
         return (
-            <div className="fixed top-0 left-0 z-40">
+            <div className="fixed top-0 left-0 z-40 size-0">
                 <MenuButton />
-                <nav className={style}>
-                    <Link to={BASE_PATH + "/"} className="side-menu-button">Characters</Link>
-                    <Link to={BASE_PATH + "/calc"} className="side-menu-button ">
-                        Rotation <sub className="text-[10px] text-red-500">alpha</sub>
-                    </Link>
-                    <Link to={BASE_PATH + "/import"} className="side-menu-button">Import</Link>
-                    {/* <Link to={BASE_PATH + "/test"} className="side-menu-button">Test</Link> */}
-                </nav>
+
             </div>
         )
     }
 
 
     return (
-        <div className="block bg-neutral-950 box-border min-w-full min-h-screen max-h-screen rounded-md overflow-auto scrollbar-thin">
+        <div className="block box-border min-w-full min-h-screen max-h-screen rounded-md overflow-auto">
             <div className="flex flex-col rounded-md min-h-[calc(100dvh-12px)] min-w-fit h-full w-full">
-                <SideMenu />
-                <div className="flex items-center h-12 min-w-full bg-gradient-to-r from-amber-600 to-orange-950 rounded-t-md ">
+                <div className="flex items-center h-12 min-w-full bg-linear-to-r from-amber-600 to-orange-950 rounded-t-md ">
                     <span className='text-[34px] font-["paybooc"] text-stone-100 mx-4 sticky left-16'>
                         Capi ZZZ Card Build
                     </span>
                 </div>
-                <Tabs />
+                <SideMenu />
+                <div className="flex flex-row">
+                    <nav className={style}>
+                        <Link to={BASE_PATH + "/"} className="main-menu-button">Characters</Link>
+                        <Link to={BASE_PATH + "/calc"} className="main-menu-button">
+                            Rotation <sub className="text-[10px] text-red-500">alpha</sub>
+                        </Link>
+                        <Link to={BASE_PATH + "/import"} className="main-menu-button">Import</Link>
+                        {/* <Link to={BASE_PATH + "/test"} className="main-menu-button">Test</Link> */}
+                    </nav>
+                    <Tabs />
+                </div>
             </div>
         </div>
     )

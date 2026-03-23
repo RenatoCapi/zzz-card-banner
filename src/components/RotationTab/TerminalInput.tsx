@@ -142,9 +142,9 @@ export const TerminalInputText = () => {
 
     return (
         <div className="div-input-calc">
-            <label className="p-2 text-cyan-400">Phaeton&#126;&#35;</label>
+            <label className="p-2 text-cyan-400 select-none">Phaeton&#126;&#35;</label>
             <div className="relative flex flex-col">
-                <input type="text" spellCheck="false" className="p-2 w-[600px] rounded-md justify-center bg-stone-950 focus:outline-none no" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} ref={inputRef} />
+                <input type="text" spellCheck="false" className="p-2 w-150 rounded-md justify-center bg-stone-950 focus:outline-none no" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} ref={inputRef} />
                 <div className="absolute flex top-10 left-1">
                     <ValidGreenBox />
                     <DropdownSuggestionsBox inputRef={inputRef} />
@@ -161,7 +161,7 @@ const ValidGreenBox = () => {
         return (<></>);
     }
     return (
-        <div className="green-box -top-[31px] left-[2px] p-0.5 z-30">
+        <div className="green-box -top-7.75 left-0.5 p-0.5 z-30">
             {chainInstructions.join(" ") + " "}
         </div>
     );
@@ -186,7 +186,7 @@ const DropdownSuggestionsBox = ({ inputRef }: { inputRef: RefObject<HTMLInputEle
         return (<></>);
 
     return (
-        <div className="relative flex-col top-0.5 z-30 border-2 border-stone-600/70 overflow-hidden max-h-[400px] bg-stone-950/80 ">
+        <div className="relative flex-col top-0.5 z-30 border-2 border-stone-600/70 overflow-hidden max-h-100 bg-stone-950/80 ">
             {suggestions.map((sugg, index) => (
                 <div key={index} className={isFocus(index)} onClick={() => clickHandler(sugg)}>{sugg}</div>
             ))}
