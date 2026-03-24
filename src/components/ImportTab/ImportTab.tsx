@@ -26,7 +26,7 @@ const ImportTab = () => {
                     </div>
                     <br />
                 </span>
-                <span className="self-start text-2xl my-8">Another more complicated method (It'll get your all characters):</span>
+                <span className=" text-2xl my-8">Another more complicated method (It'll get your all characters):</span>
                 <span>
                     Use
                     <a className="text-blue-500" href="https://github.com/RenatoCapi/HOYOLAB_ZZZ_scraper/releases" target="_blank"> this scraper </a>

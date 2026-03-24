@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { logHitType, logMsgCode, TerminalCmd } from './TerminalCommands';
 type CalcTabStore = {
     labelText: string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     possibleCommands: any,
     chainInstructions: string[],
     suggestions: string[],
@@ -14,6 +15,7 @@ type CalcTabStore = {
     dps: number,
 
     setLabelText: (instruction: string) => void,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setPossibleCommands: (commandsMap: any) => void,
     setChainInstructions: (instructions: string[]) => void,
     setSuggestions: (values: string[]) => void,

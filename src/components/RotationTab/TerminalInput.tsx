@@ -1,4 +1,4 @@
-import { KeyboardEvent, RefObject, SyntheticEvent, useEffect, useRef } from "react";
+import { KeyboardEvent, RefObject, SyntheticEvent, useEffect, useRef, useState } from "react";
 import { filterSuggestionsList } from "../../lib/Utils";
 import { TerminalCmd } from "./TerminalCommands";
 import { CalcTabController, CalcTabController as RotationTabController, useCalcTabStore } from "./UseCalcStore";
@@ -141,18 +141,58 @@ export const TerminalInputText = () => {
 
 
     return (
-        <div className="div-input-calc">
-            <label className="p-2 text-cyan-400 select-none">Phaeton&#126;&#35;</label>
-            <div className="relative flex flex-col">
-                <input type="text" spellCheck="false" className="p-2 w-150 rounded-md justify-center bg-stone-950 focus:outline-none no" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} ref={inputRef} />
-                <div className="absolute flex top-10 left-1">
-                    <ValidGreenBox />
-                    <DropdownSuggestionsBox inputRef={inputRef} />
-                </div>
+        <div className="relative flex flex-col">
+
+            <input type="text" spellCheck="false" className="p-2 w-150 rounded-md justify-center bg-stone-950 focus:outline-none no" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} ref={inputRef} />
+            <div className="absolute flex top-10 left-1">
+                <ValidGreenBox />
+                <DropdownSuggestionsBox inputRef={inputRef} />
             </div>
         </div>
     )
 }
+
+export const TerminalInputDiv = () => {
+    const [showTooltip, setTooltip] = useState(false);
+    const handleMouseOver = () => {
+        setTimeout(() => setTooltip(true), 400);
+    }
+
+    const handlerMouseLeave = () => {
+        setTimeout(() => setTooltip(false), 400);
+    }
+
+    return (
+        <div className="div-input-calc">
+            <label className="p-2 text-cyan-400 select-none">Phaeton&#126;&#35;</label>
+            <TerminalInputText />
+            <button className="m-2 px-1.5 cursor-pointer border-2 rounded-full text-taupe-400 border-taupe-400" onMouseOver={handleMouseOver} onMouseLeave={handlerMouseLeave}>?</button>
+            {showTooltip && Tooltip()}
+        </div>
+    );
+
+}
+
+const Tooltip = () => {
+
+
+    return (<div className="absolute w-110 h-fit bg-orange-950/80 border-2 border-orange-700 top-[450%] left-1/2 -translate-1/2 z-50 p-4 text-taupe-400">
+        <div>
+            <span># add [character name]</span><br />
+            <span> add character on the team.</span>
+        </div><br />
+        <div>
+            <span># remove [character name]</span><br />
+            <span> remove character on the team.</span>
+        </div><br />
+        <div>
+            <span># [character name] [skill] [subskill] [hit]</span><br />
+            <span> add a specific skill to this skills' rotation</span><br />
+            <span> example: banyue basic towering-peaks 1st-hit </span>
+        </div>
+    </div>);
+}
+
 
 const ValidGreenBox = () => {
     const { chainInstructions } = useCalcTabStore();
@@ -193,3 +233,5 @@ const DropdownSuggestionsBox = ({ inputRef }: { inputRef: RefObject<HTMLInputEle
         </div>
     );
 }
+
+export default TerminalInputDiv

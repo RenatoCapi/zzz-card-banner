@@ -1,5 +1,5 @@
 import { Assets } from "../../lib/assets";
-import { TerminalInputText } from "./TerminalInput";
+import TerminalInputDiv from "./TerminalInput";
 import { useCalcTabStore } from "./UseCalcStore";
 
 
@@ -12,7 +12,7 @@ const RotationTab = () => {
                 <div className="relative flex gap-2 m-2 bg-stone-900 rounded-2xl">
                     <div className="relative grid grid-rows-4 gap-2 h-210 my-2 ">
                         <div className="relative h-full row-span-2 mx-2 bg-stone-950 shadow-inner border-2 border-stone-800/75 rounded-xl ">
-                            <TerminalInputText />
+                            <TerminalInputDiv />
                             <div className="grid grid-cols-2 h-[calc(100%-70px)]">
                                 <LogHistoryLabel />
                             </div>
