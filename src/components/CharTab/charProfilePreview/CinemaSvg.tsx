@@ -13,9 +13,10 @@ export const CinemaPreview = ({ charMovie }: { charMovie: number }) => {
 
 const MoviePreview = (props: { id: number, value: string, movie: number }) => {
     const { id, value, movie } = props;
+
     const color = (movie >= id) ? "fill-cinema-on" : "fill-cinema-off";
     return (
-        <svg viewBox="0 0 80 80" className={`w-10.5 h-10.5 ${color} drop-shadow-primary`}>
+        <svg viewBox="0 0 80 80" className={`w-10.5 h-10.5 drop-shadow-[2px_2px_6px_rgba(0,0,0,0.5)] ${color}`}>
             <path d={value} />
             <path d={circle} />
         </svg>

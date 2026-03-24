@@ -4,8 +4,8 @@ import ButtonImportFile from "./ButtonLoadFile"
 
 const ImportTab = () => {
     return (
-        <div className="flex items-center justify-center w-full h-fit">
-            <div className="flex flex-col items-center justify-center min-w-200">
+        <div className="w-full h-fit p-2">
+            <div className="flex flex-col items-center justify-center ">
                 <span className="text-4xl my-8">Instructions</span>
                 <div className="flex relative flex-row gap-2 ">
                     <ButtonImportFile />

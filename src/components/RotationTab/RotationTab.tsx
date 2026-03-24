@@ -10,7 +10,7 @@ const RotationTab = () => {
         <div className="relative w-full box-border p-2 pb-0 min-h-full">
             <div className="relative flex m-auto w-fit h-full gap-2 bg-stone-900 rounded-2xl z-10">
                 <div className="relative flex gap-2 m-2 bg-stone-900 rounded-2xl">
-                    <div className="relative grid grid-rows-4 gap-2 h-[840px] my-2 ">
+                    <div className="relative grid grid-rows-4 gap-2 h-210 my-2 ">
                         <div className="relative h-full row-span-2 mx-2 bg-stone-950 shadow-inner border-2 border-stone-800/75 rounded-xl ">
                             <TerminalInputText />
                             <div className="grid grid-cols-2 h-[calc(100%-70px)]">
@@ -47,7 +47,7 @@ const LogRotationList = () => {
                         <div className="text-stone-200/50 text-[11px] ">{char}</div>
                         <div className="text-stone-200/80 text-[14px]">{hit}</div>
                     </div>
-                    <div className="p-1 self-center text-center min-w-[78px] text-orange-100/90">{dmg}%</div>
+                    <div className="p-1 self-center text-center min-w-19.5 text-orange-100/90">{dmg}%</div>
                 </div>
             ))}
         </div>
@@ -79,7 +79,7 @@ const TeammatePfp = () => {
     return (
         <>
             {teammatesId.map((id, index) => (
-                <img key={index} src={Assets.getRole(id)} className="w-auto h-[104px] max-w-none" />
+                <img key={index} src={Assets.getRole(id)} className="w-auto h-26 max-w-none" />
             ))}
         </>
 

@@ -7,8 +7,4 @@ export interface Wengine {
     rank: number;
     type: number;
     EN: string;
-    desc: string;
-    KO: string;
-    CHS: string;
-    JA: string;
 }

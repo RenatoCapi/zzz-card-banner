@@ -23,7 +23,7 @@ const DiscSetPreview = ({ discSet }: DiscSetProp) => {
     }
 
     return (
-        <div className="flex flex-col w-[428px] h-[751px] gap-2 flex-wrap">
+        <div className="flex flex-col w-107 h-187.75 gap-2 flex-wrap">
             <DiscCard disc={discSet.discs[1]} />
             <DiscCard disc={discSet.discs[2]} />
             <DiscCard disc={discSet.discs[3]} />
@@ -83,7 +83,7 @@ const DiscMainStat = ({ stat }: StatProp) => {
 
     return (
         <div className={idString + ` flex justify-between pr-1 rounded-md border-stone-700`}>
-            <img src={Assets.getStatIcon(stat)} className="w-[14px] h-[14px] m-1" />
+            <img src={Assets.getStatIcon(stat)} className="w-3.5 h-3.5 m-1" />
             <span className="font-['zzz']">
                 {StatsToReadableMin[stat.id]}
             </span >

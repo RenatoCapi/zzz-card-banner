@@ -10,10 +10,12 @@
     --scrollbar-corner-radius: 4px;
 
     --color-cinema-yellow: #fff000;
-    --color-cinema-gray: #b1b1b1;
+    --color-cinema-gray: #dad5d0;
 
     --fill-cinema-on: var(--color-cinema-yellow);
     --fill-cinema-off: var(--color-cinema-gray);
+    --drop-shadow-white: "2px 2px 8px rgba(170 170 170 / 0.7)";
+    --drop-shadow-primary: "2px 2px 6px rgba(0 0 0 / 0.5)";
 }
 
 @layer base {
@@ -66,6 +68,14 @@
     .card-primary {
         @apply relative overflow-hidden border border-solid rounded-xl border-stone-700/70 bg-stone-800/60 transition-all duration-500 hover:border-stone-600/15 shadow-xl p-7;
     }
+    /* 
+    .shadow-primary {
+        filter: drop-shadow("2px 2px 6px rgba(0 0 0 / 0.5)");
+    }
+
+    .shadow-white {
+        filter: drop-shadow("2px 2px 8px rgba(170 170 170 / 0.7)");
+    } */
 
     .img-cinema-char-profile {
         @apply absolute max-w-none top-0 -left-6 h-187.5 z-10 opacity-65 select-none;
@@ -94,11 +104,11 @@
     }
 
     .main-menu {
-        @apply inline-block overflow-hidden h-screen bg-stone-900 py-2 text-[17px] transition-all duration-500  rounded-tr-2xl  z-50;
+        @apply inline-block overflow-hidden h-screen bg-stone-900 py-2 text-[17px] transition-all duration-500  rounded-tr-2xl shrink-0 z-50 sticky top-0;
     }
 
     .main-menu-button {
-        @apply block hover:bg-stone-700 focus:bg-stone-800  py-1 rounded-sm float-left text-left w-[stretch] whitespace-nowrap;
+        @apply block hover:bg-stone-700 focus:bg-stone-800  py-1 rounded-sm float-left text-left w-full whitespace-nowrap;
     }
 
     .hover-stats {

@@ -33,6 +33,7 @@ export class TerminalCmd {
     addableChars: Record<string, number> = {}
     removableChars: Record<string, number> = {}
     hits: Record<string, number> = {}
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     possibleCommands: { [id: string]: any | (() => Record<string, number>) } = {}
     commandsMaps: { [id: string]: (param: string[]) => logMsgCode } = {}
 
@@ -149,6 +150,7 @@ export class TerminalCmd {
                 [hitLog, ...useCalcTabStore.getState().rotationList]
             );
             return msgToTerminal(MSG_CODE.SUCCESS, hitId.join(" ") + " added.");
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (e) {
             return msgToTerminal(MSG_CODE.ERROR, "invalid Skill!");
         }

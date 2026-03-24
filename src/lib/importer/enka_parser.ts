@@ -8,6 +8,7 @@ import { WEngine } from "../models/WEngine";
 import { AvatarEnka as EnkaAvatar, EnkaData, EquippedEnka, PropertyEnka, SkillLevelEnka, Weapon } from "../types/enka_types";
 import { EnkaWEngineData } from "../types/enka_wengine_types";
 import { DataCoreSkill, DataSkill } from "../types/my_char_data_types";
+import { WengineMetadata } from "../types/wengine_metadata";
 import { fixPropertyId, TRUNCATE_STATS } from "../Utils";
 import { CharacterBuilder } from "./my_data_type_parser";
 
@@ -53,7 +54,7 @@ export class ServiceEnka {
     }
 
     private getSkillSet(enkaSkills: SkillLevelEnka[]): SkillDict {
-        let skillSet: SkillDict = {} as SkillDict;
+        const skillSet: SkillDict = {} as SkillDict;
         enkaSkills.map((skill) => {
             if (skill.Index !== 5) {
                 skillSet[skill.Index] = {
@@ -93,7 +94,7 @@ class ServiceEnkaWengine {
 
     public static load_engine(weapon: Weapon): WEngine {
         const wengine = new WEngine();
-        const wengineDataObject: any = wengineLabelsData;
+        const wengineDataObject: WengineMetadata = wengineLabelsData;
         if (weapon === undefined)
             return wengine;
 

@@ -3,12 +3,19 @@ import tailwindcss from '@tailwindcss/vite'
 import react, { reactCompilerPreset } from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
     babel({ presets: [reactCompilerPreset()] })
   ],
-  base: "/zzz-card-banner"
+  base: "/zzz-card-banner",
+  server: {
+    open: true,
+    port: 3000,
+    watch: {
+      usePolling: true,
+    },
+  },
 })

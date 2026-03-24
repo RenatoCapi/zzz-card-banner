@@ -6,7 +6,7 @@ import { SkillDict } from "../../../lib/models/SkillKit";
 const CharSkillSetPreview = ({ skillSet }: { skillSet: SkillDict }) => {
 
     return (
-        <div className="flex flex-col absolute bottom-14 right-0 w-10 gap-3 z-30 drop-shadow-xl">
+        <div className="flex flex-col absolute bottom-14 right-0 w-10 gap-3 z-30 drop-shadow-md">
             <SkillPreview lvl={getCoreLvl(skillSet, HOYO_SkillID.CORE)} skillId={HOYO_SkillID.CORE} />
             <SkillPreview lvl={getSkillLvl(skillSet, HOYO_SkillID.BASIC)} skillId={HOYO_SkillID.BASIC} />
             <SkillPreview lvl={getSkillLvl(skillSet, HOYO_SkillID.DODGE)} skillId={HOYO_SkillID.DODGE} />

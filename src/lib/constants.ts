@@ -160,6 +160,8 @@ export const DiscSetID = {
     MOON_LIGHT: 334,
     WATER_BALLAD: 335,
     SHINING_ARIA: 336,
+    WONDERLAND: 337,
+    NOTES_CHAINED: 338,
 }
 
 export const HOYO_2P_DISCSET: { [id: number]: number[] } = {
@@ -187,6 +189,8 @@ export const HOYO_2P_DISCSET: { [id: number]: number[] } = {
     [DiscSetID.MOON_LIGHT]: [AttributeID.ENERGY_P, 20.0],
     [DiscSetID.WATER_BALLAD]: [AttributeID.PHYS_DMG, 10.0],
     [DiscSetID.SHINING_ARIA]: [AttributeID.ETHER_DMG, 10.0],
+    [DiscSetID.WONDERLAND]: [AttributeID.HP_P, 10.0],
+    [DiscSetID.NOTES_CHAINED]: [AttributeID.ICE_DMG, 10.0],
 
 }
 

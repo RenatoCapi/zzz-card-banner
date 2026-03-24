@@ -11,12 +11,12 @@ SaveState.load();
 export const ExternalLayout: React.FC = () => {
     const BASE_PATH = "/zzz-card-banner";
     const { sidebarState } = useAppStore();
-    const style = `relative main-menu ` + (sidebarState ? 'w-[140px] gap-1 px-2' : 'w-0 px-0 pointer-events-none');
+    const style = `main-menu ` + (sidebarState ? 'w-[140px] gap-1 px-2' : 'w-0 px-0 pointer-events-none');
 
     const MenuButton = () => {
         const { sidebarState } = useAppStore();
         const showSidebar = useAppStore((state) => state.reverseSidebarState);
-        const style = `size-10 mx-2 my-1 active:animate-spin cursor-pointer bg-orange-700/30 rounded-xl`;
+        const style = `size-10 m-1 active:animate-spin cursor-pointer bg-orange-700/30 rounded-xl`;
 
         return sidebarState ? (
             <FiX className={style} onClick={showSidebar} />
@@ -25,38 +25,25 @@ export const ExternalLayout: React.FC = () => {
         );
     }
 
-    const SideMenu = () => {
-
-
-
-
-        return (
-            <div className="fixed top-0 left-0 z-40 size-0">
-                <MenuButton />
-
-            </div>
-        )
-    }
-
-
     return (
-        <div className="block box-border min-w-full min-h-screen max-h-screen rounded-md overflow-auto">
-            <div className="flex flex-col rounded-md min-h-[calc(100dvh-12px)] min-w-fit h-full w-full">
-                <div className="flex items-center h-12 min-w-full bg-linear-to-r from-amber-600 to-orange-950 rounded-t-md ">
-                    <span className='text-[34px] font-["paybooc"] text-stone-100 mx-4 sticky left-16'>
+        <div className="block box-border min-w-screen min-h-screen max-h-screen rounded-md overflow-auto">
+            {/* <div className="flex items-stretch flex-col rounded-md min-h-[calc(100dvh-12px)] min-w-full h-full w-full"> */}
+            <div className="grid grid-cols-1 grid-rows-[48px_auto] min-w-max">
+                <div className="flex items-center h-12 bg-linear-to-r from-amber-600 to-orange-950 rounded-t-md">
+                    <MenuButton />
+                    <span className='text-[34px] font-["paybooc"] text-stone-100 mx-4 left-2 sticky'>
                         Capi ZZZ Card Build
                     </span>
                 </div>
-                <SideMenu />
-                <div className="flex flex-row">
-                    <nav className={style}>
+                <div className="flex flex-row min-w-fit">
+                    <aside className={style}>
                         <Link to={BASE_PATH + "/"} className="main-menu-button">Characters</Link>
                         <Link to={BASE_PATH + "/calc"} className="main-menu-button">
                             Rotation <sub className="text-[10px] text-red-500">alpha</sub>
                         </Link>
                         <Link to={BASE_PATH + "/import"} className="main-menu-button">Import</Link>
                         {/* <Link to={BASE_PATH + "/test"} className="main-menu-button">Test</Link> */}
-                    </nav>
+                    </aside>
                     <Tabs />
                 </div>
             </div>

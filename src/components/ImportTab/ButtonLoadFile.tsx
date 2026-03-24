@@ -20,6 +20,7 @@ const ButtonImportFile = () => {
         }, 2000);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const loadData = (json: any) => {
         const arrAux = Array.isArray(json) ? json : [json];
         let charAux: Character;

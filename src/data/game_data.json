@@ -34562,5 +34562,605 @@
                 "12101": 25
             }
         }
+    },
+    "1511": {
+        "name": "NANGONG YU",
+        "camp": "13",
+        "rarity": "4",
+        "weaponType": "2",
+        "ElementType": "205",
+        "hitType": [
+            "102"
+        ],
+        "id": "1511",
+        "growthStat": {
+            "11101": {
+                "base": 673,
+                "growth": 913559,
+                "asc": 462
+            },
+            "12101": {
+                "base": 107,
+                "growth": 63390,
+                "asc": 38
+            },
+            "13101": {
+                "base": 50,
+                "growth": 68136,
+                "asc": 34
+            }
+        },
+        "staticStats": {
+            "12201": 120,
+            "20101": 50000,
+            "21101": 500000,
+            "31401": 90,
+            "31201": 93,
+            "23101": 0,
+            "30501": 12000
+        },
+        "skillKit": {
+            "0": {
+                "skillId": 0,
+                "desc": [
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Basic Attack: Shooting Star Step<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> to activate:<br/>Perform up to three attacks forward, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> to activate:<br/>Perform up to three attacks forward, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<!-- --></span>",
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Basic Attack: Adorable Explosive Impact<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Hold <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> to launch a charged attack, dealing <span style=\"color: #FE437E\">Ether DMG</span>. Release the button at the right moment to trigger precise charging, increasing the Daze dealt by the skill by 20%.<br/>Nangong Yu can perform up to three hits. The second and third hits each must consume 50 <span style=\"color: #FFFFFF\">Downbeats</span>.<br/>After using a <span style=\"color: #FFFFFF\">Chain Attack</span>, <span style=\"color: #FFFFFF\">Ultimate</span>, or <span style=\"color: #FFFFFF\">EX Special Attack</span>, if enough <span style=\"color: #FFFFFF\">Downbeats</span> are available, hold <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> to skip the first hit and directly perform the second and third hits, which always trigger precise charging.<br/>When Nangong Yu is the active character, <span style=\"color: #FFFFFF\">Chain Attacks</span>, <span style=\"color: #FFFFFF\">Ultimates</span>, and <span style=\"color: #FFFFFF\">EX Special Attacks</span> do not interrupt the combo count of <span style=\"color: #FFFFFF\">Basic Attack: Adorable Explosive Impact</span>.<br/>While charging the first hit, Anti-Interrupt Level increases and DMG taken decreases by 60%.<br/>While charging the second and third hits, the character is Invulnerable.<br/>During the dash phase of the first hit, enemy attacks can be Blocked. On a successful Block, the attack is treated as a precise charging attack.<br/>Character is invulnerable during all attacks.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Hold <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> to launch a charged attack, dealing <span style=\"color: #FE437E\">Ether DMG</span>. Release the button at the right moment to trigger precise charging, increasing the Daze dealt by the skill by 20%.<br/>Nangong Yu can perform up to three hits. The second and third hits each must consume 50 <span style=\"color: #FFFFFF\">Downbeats</span>.<br/>After using a <span style=\"color: #FFFFFF\">Chain Attack</span>, <span style=\"color: #FFFFFF\">Ultimate</span>, or <span style=\"color: #FFFFFF\">EX Special Attack</span>, if enough <span style=\"color: #FFFFFF\">Downbeats</span> are available, hold <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> to skip the first hit and directly perform the second and third hits, which always trigger precise charging.<br/>When Nangong Yu is the active character, <span style=\"color: #FFFFFF\">Chain Attacks</span>, <span style=\"color: #FFFFFF\">Ultimates</span>, and <span style=\"color: #FFFFFF\">EX Special Attacks</span> do not interrupt the combo count of <span style=\"color: #FFFFFF\">Basic Attack: Adorable Explosive Impact</span>.<br/>While charging the first hit, Anti-Interrupt Level increases and DMG taken decreases by 60%.<br/>While charging the second and third hits, the character is Invulnerable.<br/>During the dash phase of the first hit, enemy attacks can be Blocked. On a successful Block, the attack is treated as a precise charging attack.<br/>Character is invulnerable during all attacks.<!-- --></span>"
+                ],
+                "subSkills": {
+                    "BASIC ATTACK: SHOOTING STAR STEP": {
+                        "1st-Hit": {
+                            "hitID": [
+                                "1511001"
+                            ],
+                            "dmg": {
+                                "base": 1149000,
+                                "growth": 105000
+                            },
+                            "daze": {
+                                "base": 827000,
+                                "growth": 38000
+                            },
+                            "formula": "{1511001}"
+                        },
+                        "2nd-Hit": {
+                            "hitID": [
+                                "1511002"
+                            ],
+                            "dmg": {
+                                "base": 1369000,
+                                "growth": 125000
+                            },
+                            "daze": {
+                                "base": 841000,
+                                "growth": 39000
+                            },
+                            "formula": "{1511002}"
+                        },
+                        "3rd-Hit": {
+                            "hitID": [
+                                "1511003"
+                            ],
+                            "dmg": {
+                                "base": 2638000,
+                                "growth": 240000
+                            },
+                            "daze": {
+                                "base": 1689000,
+                                "growth": 77000
+                            },
+                            "formula": "{1511003}"
+                        }
+                    },
+                    "BASIC ATTACK: ADORABLE EXPLOSIVE IMPACT": {
+                        "1st-Hit": {
+                            "hitID": [
+                                "1511004"
+                            ],
+                            "dmg": {
+                                "base": 1040000,
+                                "growth": 95000
+                            },
+                            "daze": {
+                                "base": 440000,
+                                "growth": 20000
+                            },
+                            "formula": "{1511004}"
+                        },
+                        "2nd-Hit": {
+                            "hitID": [
+                                "1511005"
+                            ],
+                            "dmg": {
+                                "base": 3044000,
+                                "growth": 277000
+                            },
+                            "daze": {
+                                "base": 2108000,
+                                "growth": 96000
+                            },
+                            "formula": "{1511005}"
+                        },
+                        "3rd-Hit": {
+                            "hitID": [
+                                "1511006"
+                            ],
+                            "dmg": {
+                                "base": 5108000,
+                                "growth": 465000
+                            },
+                            "daze": {
+                                "base": 4108000,
+                                "growth": 187000
+                            },
+                            "formula": "{1511006}"
+                        },
+                        "3rd-Hit (Coordinated)": {
+                            "hitID": [
+                                "1511006",
+                                "1511018"
+                            ],
+                            "dmg": {
+                                "base": 5875000,
+                                "growth": 535000
+                            },
+                            "daze": {
+                                "base": 4314000,
+                                "growth": 197000
+                            },
+                            "formula": "{1511006}+{1511018}"
+                        }
+                    }
+                }
+            },
+            "2": {
+                "skillId": 2,
+                "desc": [
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Dodge: Natural Dancer<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/5161803192951478865_250_13063804.webp\"/> to activate:<br/>A quick dash dodge.<br/>Character is invulnerable while using this skill.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/5161803192951478865_250_13063804.webp\"/> to activate:<br/>A quick dash dodge.<br/>Character is invulnerable while using this skill.<!-- --></span>",
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Dash Attack: Spinning Meteor<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> during a dodge to activate:<br/>Deliver a quick attack forward, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> during a dodge to activate:<br/>Deliver a quick attack forward, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<!-- --></span>",
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Dodge Counter: Asteroid Waltz<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> during a <span style=\"color: #FFFFFF\">Perfect Dodge</span> to activate:<br/>Launch a series of attacks on the target, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> during a <span style=\"color: #FFFFFF\">Perfect Dodge</span> to activate:<br/>Launch a series of attacks on the target, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span>"
+                ],
+                "subSkills": {
+                    "DASH ATTACK: SPINNING METEOR": {
+                        "DASH ATTACK: SPINNING METEOR": {
+                            "hitID": [
+                                "1511009"
+                            ],
+                            "dmg": {
+                                "base": 1907000,
+                                "growth": 174000
+                            },
+                            "daze": {
+                                "base": 257000,
+                                "growth": 12000
+                            },
+                            "formula": "{1511009}"
+                        }
+                    },
+                    "DODGE COUNTER: ASTEROID WALTZ": {
+                        "DODGE COUNTER: ASTEROID WALTZ": {
+                            "hitID": [
+                                "1511010"
+                            ],
+                            "dmg": {
+                                "base": 3553000,
+                                "growth": 323000
+                            },
+                            "daze": {
+                                "base": 2567000,
+                                "growth": 117000
+                            },
+                            "formula": "{1511010}"
+                        }
+                    }
+                }
+            },
+            "6": {
+                "skillId": 6,
+                "desc": [
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Quick Assist: Emergency Save<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->When the active character is launched, press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/2454651411643363052_250_13063804.webp\"/> to activate:<br/>Launches a series of attacks on the target, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->When the active character is launched, press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/2454651411643363052_250_13063804.webp\"/> to activate:<br/>Launches a series of attacks on the target, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span>",
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Defensive Assist: Perfected Choreography<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->When the on-field character is about to be attacked, press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/2454651411643363052_250_13063804.webp\"/> to activate:<br/>Parries the enemy's attack, dealing massive Daze.<br/>This skill excels at parrying enemy attacks and reduces the consumption of <span style=\"color: #FFFFFF\">Assist Points</span> when the character is under intense attacks.<br/>Character is invulnerable while using this skill.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->When the on-field character is about to be attacked, press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/2454651411643363052_250_13063804.webp\"/> to activate:<br/>Parries the enemy's attack, dealing massive Daze.<br/>This skill excels at parrying enemy attacks and reduces the consumption of <span style=\"color: #FFFFFF\">Assist Points</span> when the character is under intense attacks.<br/>Character is invulnerable while using this skill.<!-- --></span>",
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Assist Follow-Up: Improvised Performance<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> after a <span style=\"color: #FFFFFF\">Defensive Assist</span> to activate:<br/>Launches a series of attacks on the target, dealing massive <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/15317334708392014940_250_13063804.webp\"/> after a <span style=\"color: #FFFFFF\">Defensive Assist</span> to activate:<br/>Launches a series of attacks on the target, dealing massive <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span>"
+                ],
+                "subSkills": {
+                    "QUICK ASSIST: EMERGENCY SAVE": {
+                        "QUICK ASSIST: EMERGENCY SAVE": {
+                            "hitID": [
+                                "1511013"
+                            ],
+                            "dmg": {
+                                "base": 748000,
+                                "growth": 68000
+                            },
+                            "daze": {
+                                "base": 633000,
+                                "growth": 29000
+                            },
+                            "formula": "{1511013}"
+                        }
+                    },
+                    "DEFENSIVE ASSIST: PERFECTED CHOREOGRAPHY": {
+                        "Light Defensive": {
+                            "hitID": [
+                                "1511014"
+                            ],
+                            "dmg": {
+                                "base": 0,
+                                "growth": 0
+                            },
+                            "daze": {
+                                "base": 2713000,
+                                "growth": 124000
+                            },
+                            "formula": "{1511014}"
+                        },
+                        "Heavy Defensive": {
+                            "hitID": [
+                                "1511015"
+                            ],
+                            "dmg": {
+                                "base": 0,
+                                "growth": 0
+                            },
+                            "daze": {
+                                "base": 3428000,
+                                "growth": 156000
+                            },
+                            "formula": "{1511015}"
+                        },
+                        "Chain Defensive": {
+                            "hitID": [
+                                "1511016"
+                            ],
+                            "dmg": {
+                                "base": 0,
+                                "growth": 0
+                            },
+                            "daze": {
+                                "base": 1668000,
+                                "growth": 76000
+                            },
+                            "formula": "{1511016}"
+                        }
+                    },
+                    "ASSIST FOLLOW-UP: IMPROVISED PERFORMANCE": {
+                        "ASSIST FOLLOW-UP: IMPROVISED PERFORMANCE": {
+                            "hitID": [
+                                "1511017"
+                            ],
+                            "dmg": {
+                                "base": 5358000,
+                                "growth": 488000
+                            },
+                            "daze": {
+                                "base": 3992000,
+                                "growth": 182000
+                            },
+                            "formula": "{1511017}"
+                        }
+                    }
+                }
+            },
+            "1": {
+                "skillId": 1,
+                "desc": [
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Special Attack: The Weight of Love<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/1001669963319182284_250_13063804.webp\"/> to activate:<br/>Delivers a morning star attack, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->Press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/1001669963319182284_250_13063804.webp\"/> to activate:<br/>Delivers a morning star attack, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<!-- --></span>",
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->EX Special Attack: The Unbearable Weight of Love<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->With enough Energy, press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/2297531228866436950_250_13063804.webp\"/> to activate:<br/>Delivers a morning star attack, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->With enough Energy, press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/2297531228866436950_250_13063804.webp\"/> to activate:<br/>Delivers a morning star attack, dealing <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span>"
+                ],
+                "subSkills": {
+                    "SPECIAL ATTACK: THE WEIGHT OF LOVE": {
+                        "SPECIAL ATTACK: THE WEIGHT OF LOVE": {
+                            "hitID": [
+                                "1511007"
+                            ],
+                            "dmg": {
+                                "base": 835000,
+                                "growth": 76000
+                            },
+                            "daze": {
+                                "base": 707000,
+                                "growth": 33000
+                            },
+                            "formula": "{1511007}"
+                        }
+                    },
+                    "EX SPECIAL ATTACK: THE UNBEARABLE WEIGHT OF LOVE": {
+                        "EX SPECIAL ATTACK: THE UNBEARABLE WEIGHT OF LOVE": {
+                            "hitID": [
+                                "1511008"
+                            ],
+                            "dmg": {
+                                "base": 5330000,
+                                "growth": 485000
+                            },
+                            "daze": {
+                                "base": 4143000,
+                                "growth": 189000
+                            },
+                            "formula": "{1511008}"
+                        }
+                    }
+                }
+            },
+            "3": {
+                "skillId": 3,
+                "desc": [
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Chain Attack: Comet Gravity<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->When a <span style=\"color: #FFFFFF\">Chain Attack</span> is triggered, select the character to activate:<br/>Launch a series of attacks forward, dealing massive <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->When a <span style=\"color: #FFFFFF\">Chain Attack</span> is triggered, select the character to activate:<br/>Launch a series of attacks forward, dealing massive <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Character is invulnerable while using this skill.<!-- --></span>",
+                    "<div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Ultimate: Meteor Shower<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm leading-6 zzz-fmt\"><!-- -->When Decibel Rating is at <span style=\"color: #FFFFFF\">Maximum</span>, press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/1387329758178637252_250_13063804.webp\"/> to activate:<br/>Launch multiple attacks forward, dealing massive <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Upon activating this skill, Nangong Yu activates <span style=\"color: #FFFFFF\">Ether Veil: Delusion Reprise</span>. While <span style=\"color: #FFFFFF\">Ether Veil: Delusion Reprise</span> is active, all squad members gain an additional 50 ATK for 30s. If Nangong Yu activates <span style=\"color: #FFFFFF\">Ether Veil: Delusion Reprise</span> again, the current <span style=\"color: #FFFFFF\">Ether Veil: Delusion Reprise</span> will first deactivate.<br/>Character is invulnerable while using this skill.<!-- --></span><!--]--><!-- --></p></div>",
+                    "<span class=\"text-sm leading-6 zzz-fmt\"><!-- -->When Decibel Rating is at <span style=\"color: #FFFFFF\">Maximum</span>, press <img alt=\"\" class=\"h-6 w-auto inline zzz-inline-icon\" src=\"https://cdn.gachabase.net/prod/zzz/assets/1387329758178637252_250_13063804.webp\"/> to activate:<br/>Launch multiple attacks forward, dealing massive <span style=\"color: #FE437E\">Ether DMG</span>.<br/>Upon activating this skill, Nangong Yu activates <span style=\"color: #FFFFFF\">Ether Veil: Delusion Reprise</span>. While <span style=\"color: #FFFFFF\">Ether Veil: Delusion Reprise</span> is active, all squad members gain an additional 50 ATK for 30s. If Nangong Yu activates <span style=\"color: #FFFFFF\">Ether Veil: Delusion Reprise</span> again, the current <span style=\"color: #FFFFFF\">Ether Veil: Delusion Reprise</span> will first deactivate.<br/>Character is invulnerable while using this skill.<!-- --></span>"
+                ],
+                "subSkills": {
+                    "CHAIN ATTACK: COMET GRAVITY": {
+                        "CHAIN ATTACK: COMET GRAVITY": {
+                            "hitID": [
+                                "1511011"
+                            ],
+                            "dmg": {
+                                "base": 7982000,
+                                "growth": 726000
+                            },
+                            "daze": {
+                                "base": 2365000,
+                                "growth": 108000
+                            },
+                            "formula": "{1511011}"
+                        }
+                    },
+                    "ULTIMATE: METEOR SHOWER": {
+                        "ULTIMATE: METEOR SHOWER": {
+                            "hitID": [
+                                "1511012"
+                            ],
+                            "dmg": {
+                                "base": 21017000,
+                                "growth": 1911000
+                            },
+                            "daze": {
+                                "base": 11961000,
+                                "growth": 544000
+                            },
+                            "formula": "{1511012}"
+                        }
+                    }
+                }
+            }
+        },
+        "hitMap": {
+            "1511001": {
+                "anomalyBuildup": 593300,
+                "miasmaDepletion": 751200,
+                "dmg": {
+                    "base": 1149000,
+                    "growth": 105000
+                },
+                "daze": {
+                    "base": 827000,
+                    "growth": 38000
+                }
+            },
+            "1511002": {
+                "anomalyBuildup": 621500,
+                "miasmaDepletion": 764500,
+                "dmg": {
+                    "base": 1369000,
+                    "growth": 125000
+                },
+                "daze": {
+                    "base": 841000,
+                    "growth": 39000
+                }
+            },
+            "1511003": {
+                "anomalyBuildup": 1290700,
+                "miasmaDepletion": 1534800,
+                "dmg": {
+                    "base": 2638000,
+                    "growth": 240000
+                },
+                "daze": {
+                    "base": 1689000,
+                    "growth": 77000
+                }
+            },
+            "1511004": {
+                "anomalyBuildup": 400000,
+                "miasmaDepletion": 400000,
+                "dmg": {
+                    "base": 1040000,
+                    "growth": 95000
+                },
+                "daze": {
+                    "base": 440000,
+                    "growth": 20000
+                }
+            },
+            "1511005": {
+                "anomalyBuildup": 1916300,
+                "miasmaDepletion": 1166400,
+                "dmg": {
+                    "base": 3044000,
+                    "growth": 277000
+                },
+                "daze": {
+                    "base": 2108000,
+                    "growth": 96000
+                }
+            },
+            "1511006": {
+                "anomalyBuildup": 3733600,
+                "miasmaDepletion": 1483700,
+                "dmg": {
+                    "base": 5108000,
+                    "growth": 465000
+                },
+                "daze": {
+                    "base": 4108000,
+                    "growth": 187000
+                }
+            },
+            "1511018": {
+                "anomalyBuildup": 0,
+                "miasmaDepletion": 0,
+                "dmg": {
+                    "base": 767000,
+                    "growth": 70000
+                },
+                "daze": {
+                    "base": 206000,
+                    "growth": 10000
+                }
+            },
+            "1511009": {
+                "anomalyBuildup": 233100,
+                "miasmaDepletion": 233200,
+                "dmg": {
+                    "base": 1907000,
+                    "growth": 174000
+                },
+                "daze": {
+                    "base": 257000,
+                    "growth": 12000
+                }
+            },
+            "1511010": {
+                "anomalyBuildup": 1333000,
+                "miasmaDepletion": 2833100,
+                "dmg": {
+                    "base": 3553000,
+                    "growth": 323000
+                },
+                "daze": {
+                    "base": 2567000,
+                    "growth": 117000
+                }
+            },
+            "1511013": {
+                "anomalyBuildup": 574800,
+                "miasmaDepletion": 574900,
+                "dmg": {
+                    "base": 748000,
+                    "growth": 68000
+                },
+                "daze": {
+                    "base": 633000,
+                    "growth": 29000
+                }
+            },
+            "1511014": {
+                "anomalyBuildup": 0,
+                "miasmaDepletion": 3666400,
+                "dmg": {
+                    "base": 0,
+                    "growth": 0
+                },
+                "daze": {
+                    "base": 2713000,
+                    "growth": 124000
+                }
+            },
+            "1511015": {
+                "anomalyBuildup": 0,
+                "miasmaDepletion": 4166400,
+                "dmg": {
+                    "base": 0,
+                    "growth": 0
+                },
+                "daze": {
+                    "base": 3428000,
+                    "growth": 156000
+                }
+            },
+            "1511016": {
+                "anomalyBuildup": 0,
+                "miasmaDepletion": 1166400,
+                "dmg": {
+                    "base": 0,
+                    "growth": 0
+                },
+                "daze": {
+                    "base": 1668000,
+                    "growth": 76000
+                }
+            },
+            "1511017": {
+                "anomalyBuildup": 3874700,
+                "miasmaDepletion": 2150000,
+                "dmg": {
+                    "base": 5358000,
+                    "growth": 488000
+                },
+                "daze": {
+                    "base": 3992000,
+                    "growth": 182000
+                }
+            },
+            "1511007": {
+                "anomalyBuildup": 641800,
+                "miasmaDepletion": 641900,
+                "dmg": {
+                    "base": 835000,
+                    "growth": 76000
+                },
+                "daze": {
+                    "base": 707000,
+                    "growth": 33000
+                }
+            },
+            "1511008": {
+                "anomalyBuildup": 4632700,
+                "miasmaDepletion": 1166400,
+                "dmg": {
+                    "base": 5330000,
+                    "growth": 485000
+                },
+                "daze": {
+                    "base": 4143000,
+                    "growth": 189000
+                }
+            },
+            "1511011": {
+                "anomalyBuildup": 4144600,
+                "miasmaDepletion": 2149700,
+                "dmg": {
+                    "base": 7982000,
+                    "growth": 726000
+                },
+                "daze": {
+                    "base": 2365000,
+                    "growth": 108000
+                }
+            },
+            "1511012": {
+                "anomalyBuildup": 2933300,
+                "miasmaDepletion": 6466700,
+                "dmg": {
+                    "base": 21017000,
+                    "growth": 1911000
+                },
+                "daze": {
+                    "base": 11961000,
+                    "growth": 544000
+                }
+            }
+        },
+        "coreSkill": {
+            "desc": [
+                "<div class=\"flex flex-col gap-2.5 text-sm leading-4\"><!--[--><div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Core Passive: Prodigious Idol<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm zzz-fmt\"><!-- -->Nangong Yu's Anomaly Proficiency increases by <span style=\"color: #2BAD00\">120</span>.<br/>When Nangong Yu's initial Anomaly Mastery exceeds 110, each point of initial Anomaly Mastery above that increases her Impact by 1.<br/>When an enemy is Stunned, each time any character triggers <span style=\"color: #FFFFFF\">Abloom</span> DMG, <span style=\"color: #FFFFFF\">Disorder</span> DMG, or inflicts an Attribute Anomaly on the enemy, the enemy gains 1 stacks of <span style=\"color: #FFFFFF\">Vibrato</span>.<br/>A single enemy can have up to 4 stacks of <span style=\"color: #FFFFFF\">Vibrato</span>.<br/>If <span style=\"color: #FFFFFF\">Vibrato</span> reaches the maximum stacks and the enemy is afflicted with an <span style=\"color: #FE437E\">Ether</span>, <span style=\"color: #2EB6FF\">Electric</span>, <span style=\"color: #FF5521\">Fire</span>, <span style=\"color: #F0D12B\">Physical</span>, or <span style=\"color: #98EFF0\">Ice</span> Anomaly, or if the enemy has <span style=\"color: #FFFFFF\">Vibrato</span> and recovers from being Stunned, all <span style=\"color: #FFFFFF\">Vibrato</span> stacks will be cleared.<br/>When <span style=\"color: #FFFFFF\">Vibrato</span> is cleared, if the enemy is suffering an aforementioned Attribute Anomaly, Nangong Yu triggers an instance of <span style=\"color: #FFFFFF\">Abloom</span> DMG on the target, dealing an additional instance of Attribute Anomaly DMG equal to <span style=\"color: #FE437E\">720%</span>/<span style=\"color: #2EB6FF\">360%</span>/<span style=\"color: #FF5521\">900%</span>/<span style=\"color: #F0D12B\">63%</span>/<span style=\"color: #98EFF0\">90%</span> of the original Attribute Anomaly DMG. Each stack of <span style=\"color: #FFFFFF\">Vibrato</span> on the enemy increases this <span style=\"color: #FFFFFF\">Abloom</span> DMG ratio by an additional 25%. During the same Stun period, once <span style=\"color: #FFFFFF\">Vibrato</span> has been cleared, the enemy cannot gain <span style=\"color: #FFFFFF\">Vibrato</span> again.<br/>When Nangong Yu's <span style=\"color: #FFFFFF\">Basic Attack: Adorable Explosive Impact</span> or <span style=\"color: #FFFFFF\">EX Special Attack: The Unbearable Weight of Love</span> hits an enemy, her Anomaly Buildup Rate increases by <span style=\"color: #2BAD00\">35%</span>, and her Daze dealt increases by <span style=\"color: #2BAD00\">20%</span>, and all squad members' DMG dealt increases by <span style=\"color: #2BAD00\">25%</span> for 30s. Repeated triggers reset the duration.<br/>While in combat, Nangong Yu restores 3.8 <span style=\"color: #FFFFFF\">Downbeats</span>/s. When any squad member inflicts an Attribute Anomaly on an enemy, Nangong Yu restores an additional 12 <span style=\"color: #FFFFFF\">Downbeats</span>. This effect can trigger once every 6s.<br/>Nangong Yu can hold up to 100 <span style=\"color: #FFFFFF\">Downbeats</span>, and starts with 30 <span style=\"color: #FFFFFF\">Downbeats</span> upon entering the battlefield.<!-- --></span><!--]--><!-- --></p></div><div class=\"text-sm\"><h4 class=\"font-bold\"><!--[--><span><!-- -->Additional Ability: Angel Captain<!-- --></span><!--]--><!-- --></h4> <p><!--[--><span class=\"text-sm zzz-fmt\"><!-- -->When another character in your squad is an <span style=\"color: #FFFFFF\">Anomaly</span> character or shares the same Faction:<br/>Any squad member's attack against a Stunned enemy has 30% increased Anomaly Buildup. <span style=\"color: #FFFFFF\">Chain Attacks</span> against a Stunned enemy have an additional 30% increased Anomaly Buildup.<br/>When any squad member Stuns an enemy, Nangong Yu gains 2 stacks of <span style=\"color: #FFFFFF\">Dance Prowess</span>, up to a maximum of 2 stacks, lasting 15s, repeated triggers reset the duration. With <span style=\"color: #FFFFFF\">Dance Prowess</span>, when a heavy attack from Nangong Yu's <span style=\"color: #FFFFFF\">EX Special Attack: The Unbearable Weight of Love</span>, <span style=\"color: #FFFFFF\">Basic Attack: Adorable Explosive Impact</span>, or <span style=\"color: #FFFFFF\">Quick Assist: Emergency Save</span> hits an enemy that is both Stunned and affected by an Attribute Anomaly, 1 stack of <span style=\"color: #FFFFFF\">Dance Prowess</span> is consumed to trigger the special <span style=\"color: #FFFFFF\">Disorder</span> effect <span style=\"color: #FFFFFF\">Polarity Disorder</span> against all enemies who meet the conditions. This deals DMG equal to 25% of the original <span style=\"color: #FFFFFF\">Disorder</span> DMG, and triggers the previous squad member's <span style=\"color: #FFFFFF\">Quick Assist</span>. <span style=\"color: #FFFFFF\">Polarity Disorder</span> does not clear the target's Attribute Anomaly. If the skill fails to trigger <span style=\"color: #FFFFFF\">Polarity Disorder</span>, <span style=\"color: #FFFFFF\">Dance Prowess</span> will not be consumed. When Nangong Yu has <span style=\"color: #FFFFFF\">Dance Prowess</span>, the next time she switches to the field, she will immediately perform the first charged hit of <span style=\"color: #FFFFFF\">Basic Attack: Adorable Explosive Impact</span>, which will always trigger precise charging.<br/>When any squad member Stuns an enemy, Nangong Yu's next <span style=\"color: #FFFFFF\">EX Special Attack</span> will not consume Energy. This effect lasts 15s and can trigger once every 15s.<br/>When Nangong Yu and Aria are in the same squad, if Aria's <span style=\"color: #FFFFFF\">Basic Attack: Perfect Pitch</span> heavy attack hits an enemy that is both Stunned and affected by an Attribute Anomaly, and Nangong Yu fully participates in the attack, 1 stack of <span style=\"color: #FFFFFF\">Dance Prowess</span> will also be consumed to trigger <span style=\"color: #FFFFFF\">Polarity Disorder</span> on all enemies who meet the conditions.<br/>When the third hit of Nangong Yu's <span style=\"color: #FFFFFF\">Basic Attack: Adorable Explosive Impact</span> or <span style=\"color: #FFFFFF\">Ultimate: Meteor Shower</span> hits an enemy, the enemy suffers <span style=\"color: #FFFFFF\">Misstep</span>. Under this effect, Stun DMG Multiplier increases by 30% and when an enemy becomes Stunned, their Stun duration increases by 3s. Before recovering from Stun, <span style=\"color: #FFFFFF\">Misstep</span> can only trigger once on the same target. The increased Stun duration cannot stack with similar effects. When an enemy with <span style=\"color: #FFFFFF\">Misstep</span> recovers from Stun, the <span style=\"color: #FFFFFF\">Misstep</span> effect ends.<!-- --></span><!--]--><!-- --></p></div><!--]--><!-- --></div>"
+            ],
+            "coreGrowthStat": {
+                "31401": 12,
+                "12101": 25
+            }
+        }
     }
 }
