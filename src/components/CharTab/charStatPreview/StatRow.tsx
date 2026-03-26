@@ -14,14 +14,14 @@ type StatProp = {
 
 const StatRow = ({ stat }: StatProp) => {
     const idString = "id" + String(stat.id).slice(0, -1);
-    useEffect(() => idDOMcustom(idString), []);
+    useEffect(() => idDOMcustom(idString), [idString]);
 
     return (
-        <div className={idString + ` flex justify-between self-stretch rounded-lg pr-1`}>
+        <div className={idString + ` flex flex-rows justify-between self-stretch rounded-lg pr-1`}>
             <img className="w-4 h-4 m-1 select-none" src={Assets.getStatIcon(stat)} />
-            <span className="font-['zzz'] text-[17px]">{StatsToReadableMin[stat.id]}</span>
+            <span className="text-stat-zzz text-[17px] ">{StatsToReadableMin[stat.id]}</span>
             <div className="flex border border-dashed box-border clear-both opacity-15 grow my-auto mx-2.5 " />
-            <span className="font-['zzz'] text-[17px]"> {isFlat(stat)} </span>
+            <span className="text-stat-zzz text-[17px]"> {isFlat(stat)} </span>
         </div>
     )
 }

@@ -61,9 +61,11 @@ export const fixPropertyId = (propertyId: AttrValues) => {
     return propertyId;
 }
 
-export const filterSuggestionsList = (word: string, fullList: Object) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const filterSuggestionsList = (word: string, fullList: any) => {
 
     console.log(fullList);
+    // eslint-disable-next-line no-prototype-builtins
     if (fullList.hasOwnProperty("dmg")) return [];
 
     const suggStartWith = Object.keys(fullList).filter(

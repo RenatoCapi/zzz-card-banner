@@ -1,10 +1,31 @@
+@import url("https://fonts.googleapis.com");
 @import "tailwindcss";
 
 @layer utilities, base, components;
 
+@font-face {
+    font-family: "zzz";
+    font-stretch: 90%;
+    src:
+        local("Mont Heavy"),
+        url(./fonts/ZZZ_FR.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: "paybooc";
+    font-weight: bold;
+    src: url(./fonts/paybooc-Bold.woff) format("woff");
+}
+
 @theme {
-    --scrollbar-thumb: oklch(70.9% 0.01 56.259 / 0.7);
-    --scrollbar-track: oklch(21.6% 0.006 56.043 / 0.2);
+    --font-inter: "inter", sans-serif;
+    --font-display:
+        "paybooc", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+    --font-zzz: "zzz";
+    --font-zzz-2: "Montserrat", sans-serif;
+    --scrollbar-thumb: rgba(166, 160, 155, 0.7);
+    --scrollbar-track: rgba(28, 25, 23, 0.2);
     --scrollbar-thumb-radius: 4px;
     --scrollbar-track-radius: 4px;
     --scrollbar-corner-radius: 4px;
@@ -19,31 +40,15 @@
 }
 
 @layer base {
-    @font-face {
-        font-family: "zzz";
-        font-stretch: 90%;
-        white-space: nowrap;
-        src:
-            local("Mont Heavy"),
-            url(./fonts/ZZZ_FR.ttf) format("truetype");
-    }
-
-    @font-face {
-        font-family: "paybooc";
-        font-weight: bold;
-        src: url(./fonts/paybooc-Bold.woff);
-    }
-
     * {
         scrollbar-width: thin;
-        scrollbar-color: oklch(70.9% 0.01 56.259 / 0.5);
+        scrollbar-color: rgba(166, 160, 155, 0.5);
     }
 
     :root {
         font-family:
             "paybooc", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        /* line-height: 1.5; */
-        font-weight: 400;
+        font-weight: 700;
 
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.85);
@@ -68,14 +73,14 @@
     .card-primary {
         @apply relative overflow-hidden border border-solid rounded-xl border-stone-700/70 bg-stone-800/60 transition-all duration-500 hover:border-stone-600/15 shadow-xl p-7;
     }
-    /* 
-    .shadow-primary {
-        filter: drop-shadow("2px 2px 6px rgba(0 0 0 / 0.5)");
-    }
 
-    .shadow-white {
-        filter: drop-shadow("2px 2px 8px rgba(170 170 170 / 0.7)");
-    } */
+    .text-stat-zzz {
+        font-family: var(--font-zzz), var(--font-zzz-2);
+        font-weight: 900;
+        font-style: normal;
+        font-size: 15px;
+        white-space: nowrap;
+    }
 
     .img-cinema-char-profile {
         @apply absolute max-w-none top-0 -left-6 h-187.5 z-10 opacity-65 select-none;
@@ -123,22 +128,3 @@
         @apply text-black/0 h-5.25 relative shadow-md rounded-md bg-lime-500/60 pointer-events-none;
     }
 }
-/* 
-@layer utilities {
-    .scrollbar::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-
-    .scrollbar::-webkit-scrollbar-track {
-        border-radius: 100vh;
-        background: transparent;
-    }
-
-    .scrollbar::-webkit-scrollbar-thumb {
-        border-radius: 4px;
-    }
-    .scrollbar::-webkit-scrollbar-thumb:hover {
-        background: oklch(70.9% 0.01 56.259 / 0.5);
-    }
-} */

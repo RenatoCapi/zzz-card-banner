@@ -6,7 +6,6 @@ export class Stat {
     value: number = 0
 }
 
-
 export class Disc {
     lvl: number = -1
     pos: number = 0
@@ -15,6 +14,10 @@ export class Disc {
     main_stats: Stat = new Stat()
     substats: Stat[] = []
 }
+
+// export interface DiscSetType {
+
+// }
 
 
 export class DiscSet {

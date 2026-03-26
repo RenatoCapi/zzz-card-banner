@@ -25,7 +25,7 @@ type SkillPreviewProps = {
 const SkillPreview = ({ lvl, skillId }: SkillPreviewProps) => {
     return (
         <div className="relative flex justify-center">
-            <span className="absolute -bottom-2 font-['zzz'] text-lg text-border">
+            <span className="absolute -bottom-2 text-stat-zzz text-lg text-border">
                 {lvl}
             </span>
             <img src={Assets.getSkill(skillId)} className="w-10" />

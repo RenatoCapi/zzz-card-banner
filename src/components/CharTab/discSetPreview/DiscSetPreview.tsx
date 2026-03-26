@@ -62,7 +62,7 @@ const DiscStatsSummary = ({ disc }: DiscProp) => {
                 <div className="flex justify-between items-center">
                     <img src={Assets.getRarity(disc.rarity)} className="w-8.5 h-auto" />
                     <div className="flex flex-col self-center">
-                        <span className="font-['zzz'] text-[17px]">Lv.{disc.lvl}</span>
+                        <span className="text-stat-zzz text-[17px]">Lv.{disc.lvl}</span>
                     </div>
                 </div>
                 <div className="divider-base divider-disc" />
@@ -84,11 +84,11 @@ const DiscMainStat = ({ stat }: StatProp) => {
     return (
         <div className={idString + ` flex justify-between pr-1 rounded-md border-stone-700`}>
             <img src={Assets.getStatIcon(stat)} className="w-3.5 h-3.5 m-1" />
-            <span className="font-['zzz']">
+            <span className="text-stat-zzz">
                 {StatsToReadableMin[stat.id]}
             </span >
             <div className="divider-base divider-text" />
-            <span className="font-['zzz']">
+            <span className="text-stat-zzz">
                 {isFlat(stat)}
             </span>
         </div>
@@ -101,19 +101,19 @@ const DiscSubStat = ({ stat }: StatProp) => {
 
     return (
         <div className={idString + ` flex justify-between pr-1 rounded-md  border-stone-700`} >
-            <img src={Assets.getStatIcon(stat)} className="w-[14px] h-[14px] m-1" />
-            <span className="font-['zzz']">
+            <img src={Assets.getStatIcon(stat)} className="w-3.5 h-3.5 m-1" />
+            <span className="text-stat-zzz">
                 {StatsToReadableMin[stat.id]}
             </span >
             <div className="flex grow justify-end" >
                 <div className="flex mx-1">
-                    <span className="self-center font-['zzz'] tracking-widest text-amber-500">
+                    <span className="self-center text-stat-zzz tracking-widest text-amber-500">
                         {numUpgrades(stat)}
                     </span >
                 </div>
 
             </div>
-            <span className="font-['zzz']">
+            <span className="text-stat-zzz">
                 {isFlat(stat)}
             </span>
         </div>

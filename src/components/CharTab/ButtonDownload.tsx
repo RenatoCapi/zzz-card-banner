@@ -1,10 +1,9 @@
-import { toPng } from "html-to-image";
+import { domToPng } from 'modern-screenshot';
 import { RefObject, useState } from "react";
 import TooltipBox from "../TooltipBox";
 
 const ButtonDownload = (props: { refDiv: RefObject<HTMLDivElement | null>, charName: string }) => {
-    const { refDiv } = props;
-    const current = refDiv ? refDiv.current : null;
+    const { refDiv, charName } = props;
 
     const [msg, setMsg] = useState("");
     const [active, setActive] = useState(false);
@@ -16,32 +15,60 @@ const ButtonDownload = (props: { refDiv: RefObject<HTMLDivElement | null>, charN
         }, 2000);
     };
 
-    const png_download = () => {
-        if (current === null) {
+    const exportAsImage = async (element: RefObject<HTMLDivElement | null> | null, imageFileName: string) => {
+        if (!element?.current) {
             setMsg("Download Error!");
+            blinkTooltip();
             return;
         }
 
-        toPng(current, { cacheBust: false })
-            .then(async (dataUrl) => {
-                const link = document.createElement("a");
-                link.download = props.charName + ".png";
-                link.href = dataUrl;
-                link.click();
-                setMsg("Downloaded!");
+        const canvas = await domToPng(element.current);
+        downloadImage(canvas, imageFileName);
 
-            })
-            .catch((err) => {
-                setMsg("Download Error!");
-                console.log(err);
-            });
+    };
 
+    const downloadImage = (blob: string, fileName: string) => {
+        const fakeLink = window.document.createElement("a");
+        fakeLink.style = "display:none;";
+        fakeLink.download = fileName;
+
+        fakeLink.href = blob;
+
+        document.body.appendChild(fakeLink);
+        fakeLink.click();
+        document.body.removeChild(fakeLink);
+        fakeLink.remove();
+
+        setMsg("Downloaded!");
         blinkTooltip();
     };
 
+    // const png_download = async () => {
+    //     if (current === null) {
+    //         setMsg("Download Error!");
+    //         return;
+    //     }
+
+    //     toPng(current, { cacheBust: false })
+    //         .then(async (dataUrl) => {
+    //             const link = document.createElement("a");
+    //             link.download = props.charName + ".png";
+    //             link.href = dataUrl;
+    //             link.click();
+    //             setMsg("Downloaded!");
+
+    //         })
+    //         .catch((err) => {
+    //             setMsg("Download Error!");
+    //             console.log(err);
+    //         });
+
+    //     blinkTooltip();
+    // };
+
     return (
         <div className="flex relative w-auto items-center z-50 my-4">
-            <button type="button" onClick={png_download} className="py-1 px-2 button-base">
+            <button type="button" onClick={() => exportAsImage(refDiv, charName)} className="py-1 px-2 button-base">
                 <TooltipBox msg={msg} active={active} />
                 Download
             </button>

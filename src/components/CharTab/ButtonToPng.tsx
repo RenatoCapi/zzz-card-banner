@@ -2,6 +2,8 @@ import { toPng } from "html-to-image";
 import { RefObject, useState } from "react";
 import TooltipBox from "../TooltipBox";
 
+
+//trocar por html2canvas
 const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null> | null) }) => {
     const { refDiv } = props;
     const current = refDiv ? refDiv.current : null;
@@ -15,6 +17,8 @@ const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null> | null) 
             setActive((prev) => !prev);
         }, 2000);
     };
+
+
 
     const png_clipboard = () => {
         if (current === null) {
