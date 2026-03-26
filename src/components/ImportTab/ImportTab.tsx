@@ -1,5 +1,4 @@
 import { Assets } from "../../lib/assets"
-import ButtonClearCache from "./ButtonClearCache"
 import ButtonImportFile from "./ButtonLoadFile"
 
 const ImportTab = () => {
@@ -9,10 +8,10 @@ const ImportTab = () => {
                 <span className="text-4xl my-8">Instructions</span>
                 <div className="flex relative flex-row gap-2 ">
                     <ButtonImportFile />
-                    <ButtonClearCache />
+
                 </div>
                 <span>
-                    <div className="flex relative flex-row gap-4">
+                    <div className="flex relative flex-row gap-4 p-4">
 
                         <div className="flex flex-col gap-2 justify-center">
                             <span>You can import your characters with EnkaAPI's json format: </span>
