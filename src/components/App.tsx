@@ -28,14 +28,14 @@ export const ExternalLayout: React.FC = () => {
     return (
         <div className="block box-border min-w-screen min-h-screen max-h-screen rounded-md overflow-auto">
             {/* <div className="flex items-stretch flex-col rounded-md min-h-[calc(100dvh-12px)] min-w-full h-full w-full"> */}
-            <div className="grid grid-cols-1 grid-rows-[48px_auto] min-w-max">
+            <div className="grid grid-cols-1 grid-rows-[48px_auto] min-w-max min-h-fit">
                 <div className="flex items-center h-12 bg-linear-to-r from-amber-600 to-orange-950 rounded-t-md">
                     <MenuButton />
                     <span className='text-[34px] font-["paybooc"] text-stone-100 mx-4 left-2 sticky'>
                         Capi ZZZ Card Build
                     </span>
                 </div>
-                <div className="flex flex-row min-w-fit">
+                <div className="flex flex-row min-w-fit min-h-screen">
                     <aside className={style}>
                         <Link to={BASE_PATH + "/"} className="main-menu-button">Characters</Link>
                         <Link to={BASE_PATH + "/calc"} className="main-menu-button">

@@ -61,7 +61,7 @@
     }
 
     body {
-        @apply bg-linear-to-t/hsl from-zinc-950 from-80% to-taupe-900;
+        @apply bg-linear-to-t/hsl from-zinc-950 from-80% to-taupe-900 h-fit w-fit;
     }
 
     h1 {

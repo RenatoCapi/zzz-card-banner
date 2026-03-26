@@ -3,6 +3,7 @@ import { Assets } from "../../../lib/assets";
 import { HOYO_DISC_SUB_RATE, StatsToReadableMin } from "../../../lib/constants";
 import { Disc, DiscSet, Stat } from "../../../lib/models/DiscSet";
 import { isFlat } from "../../../lib/Utils";
+import { idDOMcustom } from "../charStatPreview/StatHoverEvent";
 
 type StatProp = {
     stat: Stat
@@ -18,8 +19,8 @@ type DiscProp = {
 
 
 const DiscSetPreview = ({ discSet }: DiscSetProp) => {
-    if (discSet === undefined) {
-        return (<div className="flex w-[428px] gap-2 flex-wrap"></div>)
+    if (!discSet) {
+        return (<div className="flex w-107 gap-2 flex-wrap"></div>)
     }
 
     return (
@@ -79,7 +80,7 @@ const DiscStatsSummary = ({ disc }: DiscProp) => {
 
 const DiscMainStat = ({ stat }: StatProp) => {
     const idString = "id" + String(stat.id).slice(0, -1);
-    useEffect(() => idDOMcustom(idString), []);
+    useEffect(() => idDOMcustom(idString), [idString]);
 
     return (
         <div className={idString + ` flex justify-between pr-1 rounded-md border-stone-700`}>
@@ -97,7 +98,7 @@ const DiscMainStat = ({ stat }: StatProp) => {
 
 const DiscSubStat = ({ stat }: StatProp) => {
     const idString = "id" + String(stat.id).slice(0, -1);
-    useEffect(() => idDOMcustom(idString), []);
+    useEffect(() => idDOMcustom(idString), [idString]);
 
     return (
         <div className={idString + ` flex justify-between pr-1 rounded-md  border-stone-700`} >
@@ -125,28 +126,5 @@ const numUpgrades = (stat: Stat) => {
     return "·".repeat(upgrades);
 }
 
-export const idDOMcustom = (idString: string) => {
-    const hoverItems = document.querySelectorAll("." + idString);
-    hoverItems.forEach(item => {
-        item.addEventListener("mouseenter", () => {
-            hoverItems.forEach((el) => {
-                el.classList.add("hover-stats"); // Adiciona a classe do hover
-            });
-        });
-
-        item.addEventListener("mouseleave", () => {
-            hoverItems.forEach((el) => {
-                el.classList.remove("hover-stats"); // Remove o hover
-            });
-        });
-    });
-
-    return () => {
-        hoverItems.forEach(item => {
-            item.removeEventListener("mouseenter", () => { });
-            item.removeEventListener("mouseleave", () => { });
-        });
-    };
-}
 
 export default DiscSetPreview

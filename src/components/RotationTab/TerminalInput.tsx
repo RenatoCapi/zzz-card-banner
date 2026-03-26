@@ -88,8 +88,6 @@ export const TerminalInputText = () => {
             return;
         }
 
-
-
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let commandLayer: any = possibleCommands;
         const instructionsAux: string[] = [];
@@ -97,7 +95,6 @@ export const TerminalInputText = () => {
 
         fullLineGroups.forEach((word) => {
             commandLayer = (typeof commandLayer === "function") ? commandLayer() : commandLayer;
-
             if (Object.keys(commandLayer).includes(word)) {
                 instructionsAux.push(word);
                 commandLayer = commandLayer[word];

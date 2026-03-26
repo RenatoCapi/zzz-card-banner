@@ -3,7 +3,7 @@ import { Assets } from "../../../lib/assets";
 import { StatsToReadableMin } from "../../../lib/constants";
 import { Stat } from "../../../lib/models/DiscSet";
 import { isFlat } from "../../../lib/Utils";
-import { idDOMcustom } from "../discSetPreview/DiscSetPreview";
+import { idDOMcustom } from "./StatHoverEvent";
 
 
 export const iconSize = 16
@@ -25,4 +25,5 @@ const StatRow = ({ stat }: StatProp) => {
         </div>
     )
 }
+
 export default StatRow

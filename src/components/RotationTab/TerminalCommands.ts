@@ -26,6 +26,7 @@ const msgToTerminal = (code: number, msg: string): logMsgCode => ({
     "cmd": undefined,
 })
 
+
 export class TerminalCmd {
     static #instance: TerminalCmd
     charsDict: Record<string, number> = {}
@@ -33,8 +34,8 @@ export class TerminalCmd {
     addableChars: Record<string, number> = {}
     removableChars: Record<string, number> = {}
     hits: Record<string, number> = {}
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    possibleCommands: { [id: string]: any | (() => Record<string, number>) } = {}
+
+    possibleCommands: Record<string, unknown> = {}
     commandsMaps: { [id: string]: (param: string[]) => logMsgCode } = {}
 
     private constructor() { }
@@ -125,7 +126,8 @@ export class TerminalCmd {
         delete instance.env.teammates[name];
         delete instance.removableChars[name];
         delete instance.commandsMaps[name];
-        delete instance.possibleCommands[name];
+        if (typeof instance.possibleCommands === 'object')
+            delete instance.possibleCommands[name];
 
         return msgToTerminal(
             MSG_CODE.SUCCESS,
@@ -150,7 +152,7 @@ export class TerminalCmd {
                 [hitLog, ...useCalcTabStore.getState().rotationList]
             );
             return msgToTerminal(MSG_CODE.SUCCESS, hitId.join(" ") + " added.");
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (e) {
             return msgToTerminal(MSG_CODE.ERROR, "invalid Skill!");
         }
