@@ -143,7 +143,7 @@ const ScrollBar = ({ children }: { children: ReactNode }) => {
             </div>
             <div role="scrollbar" className="grid g-4 grid-flow-row grid-rows-[auto_1fr_auto] grid-cols-[1fr] p-4 place-items-center">
                 <div id="track-and-thumb" className="block h-full relative w-4">
-                    <div ref={scrollTrackRef} id="track" onClick={handleTrackClick} className={`cursor-pointer absolute top-[0] bottom-[0] ` + isDragging ? `cursor-grabbing` : undefined}>
+                    <div ref={scrollTrackRef} id="track" onClick={handleTrackClick} className={`cursor-pointer absolute top-0 bottom-0 ` + isDragging ? `cursor-grabbing` : undefined}>
 
                     </div>
                     <div ref={scrollThumbRef} onMouseDown={handleThumbMousedown} id="thumb" className={thumbStyle(thumbHeight)}>

@@ -1,4 +1,3 @@
-import gameData from "../../data/game_data.json";
 import { Character } from "../models/Character";
 import { CharMetadata } from "../models/CharMetadata";
 import { SkillDict } from "../models/SkillKit";
@@ -94,11 +93,15 @@ export class CharacterBuilder {
 }
 
 export class ServiceMyDataType {
-    json: DataCharMap;
+    json!: DataCharMap;
     charBase: DataCharMap = {};
 
     constructor() {
-        this.json = <DataCharMap>gameData;
+        const dataBase = import("../../data/game_data.json");
+        dataBase
+            .then((data) =>
+                (this.json = <DataCharMap>data.default))
+            .catch(() => (this.json = {} as DataCharMap));
     }
 
     public getChar(id: number) {

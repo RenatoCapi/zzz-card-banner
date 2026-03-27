@@ -68,7 +68,7 @@ const CharTab = () => {
     // }, [char])
 
     return (
-        <div className="w-full flex-col ">
+        <div className="w-full flex-col">
             <div className="flex m-auto w-fit">
                 <div className="flex flex-col items-start mt-2">
                     <MenuChars />
