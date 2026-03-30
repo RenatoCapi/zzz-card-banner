@@ -6,7 +6,7 @@ import RotationTab from "./RotationTab/RotationTab"
 const Tabs = () => {
     const BASE_PATH = "/zzz-card-banner"
     return (
-        <div className="flex flex-row min-w-fit w-full min-h-[calc(100dvh-60px)]">
+        <div className="flex flex-row min-w-fit w-full min-h-[calc(100dvh-48px)]">
             {/* <SideMenu /> */}
             <Routes>
                 <Route path={BASE_PATH + "/"} element={<CharTab />} />

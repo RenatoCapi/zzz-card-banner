@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import DB from "../../lib/DB/db";
 import { SaveState } from "../../lib/DB/saveState";
 import { ServiceEnka } from "../../lib/importer/enka_parser";
@@ -12,6 +12,7 @@ import ButtonClearCache from "./ButtonClearCache";
 const ButtonImportFile = () => {
     const [msg, setMsg] = useState("Paste your json here!");
     const inputFile = useRef<HTMLInputElement>(null);
+    const refDivPaste = useRef<HTMLDivElement>(null);
 
     const blinkTooltip = () => {
         setTimeout(() => {
@@ -89,10 +90,14 @@ const ButtonImportFile = () => {
             inputFile.current.click();
     }
 
+    useEffect(() => {
+        refDivPaste.current?.focus();
+    }, []);
+
     return (
         <div className="relative flex flex-row gap-4">
 
-            <div tabIndex={0} onPaste={handlePaste} className="grid h-40 w-120 rounded-lg border-2 border-taupe-900/50 bg-taupe-800 hover:bg-taupe-700 pointer-events-auto focus:outline-2 focus:outline-offset-2 focus:outline-orange-600 place-content-center focus:bg-taupe-700">
+            <div ref={refDivPaste} tabIndex={0} onPaste={handlePaste} className="grid h-40 w-120 rounded-lg border-2 border-taupe-900/50 bg-taupe-800 hover:bg-taupe-700 pointer-events-auto focus:outline-2 focus:outline-offset-2 focus:outline-orange-600 place-content-center focus:bg-taupe-700">
                 <span className="text-taupe-300/80 text-2xl">{msg}</span>
 
                 <input type="file" ref={inputFile} onChange={useImportFile} accept="application/json" className=" w-full button-base file:h-full file:opacity-90 file:border-hidden hidden" title="json load" />
