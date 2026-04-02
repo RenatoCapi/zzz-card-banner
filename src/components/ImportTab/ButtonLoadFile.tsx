@@ -3,6 +3,7 @@ import DB from "../../lib/DB/db";
 import { SaveState } from "../../lib/DB/saveState";
 import { ServiceEnka } from "../../lib/importer/enka_parser";
 import { ServiceHoyolab } from "../../lib/importer/hoyolab_parser";
+import { ServiceMyDataType } from "../../lib/importer/my_data_type_parser";
 import { Character } from "../../lib/models/Character";
 import { AvatarEnka, EnkaData } from "../../lib/types/enka_types";
 import { HoyolabData } from "../../lib/types/hoyolab_types";
@@ -43,6 +44,7 @@ const ButtonImportFile = () => {
     }
 
     const useImportFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        await ServiceMyDataType.instance.loadData();
         if (!e.target.files || !e.target.files[0]) {
             setMsg("Loading error!");
             return;

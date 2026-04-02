@@ -6,6 +6,7 @@ import { BasicStatsObject } from "../types/basic_stats_object";
 import { DataCharMap, DataCharType, DataGrowthStat } from "../types/my_char_data_types";
 import { AttrValues, HOYO_SkillID, StatsFloatNumber } from './../constants';
 
+
 export class CharacterBuilder {
     character: Character
     lvl: number
@@ -16,7 +17,7 @@ export class CharacterBuilder {
         this.character = new Character();
 
         this.character.skillKit.skillDict = skillDict;
-        this.char_raw = new ServiceMyDataType().getChar(id);
+        this.char_raw = ServiceMyDataType.instance.getChar(id);
     }
 
     public build() {
@@ -93,25 +94,29 @@ export class CharacterBuilder {
 }
 
 export class ServiceMyDataType {
+    static #instance: ServiceMyDataType
     json!: DataCharMap;
     charBase: DataCharMap = {};
 
-    constructor() {
-        const dataBase = import("../../data/game_data.json");
-        dataBase
-            .then((data) =>
-                (this.json = <DataCharMap>data.default))
-            .catch(() => (this.json = {} as DataCharMap));
+    private constructor() { }
+
+    public static get instance(): ServiceMyDataType {
+        if (!ServiceMyDataType.#instance) {
+            ServiceMyDataType.#instance = new ServiceMyDataType();
+        }
+
+        return ServiceMyDataType.#instance;
     }
 
-    public getChar(id: number) {
-        return this.json[id]
+    async loadData() {
+        ServiceMyDataType.#instance.json = await loadDataChars();
     }
 
-    public load_all_characters() {
-        Object.keys(this.json).forEach((key) => {
-            const new_key = this.json[key].name;
-            this.charBase[new_key] = this.json[key];
-        });
+    getChar(id: number) {
+        return this.json[id];
     }
+}
+
+const loadDataChars = async () => {
+    return (await import("../../data/game_data.json")).default;
 }

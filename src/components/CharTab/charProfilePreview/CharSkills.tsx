@@ -35,7 +35,6 @@ const SkillPreview = ({ lvl, skillId }: SkillPreviewProps) => {
 
 
 const getSkillLvl = (skillSet: SkillDict, id: number) => {
-    console.log(skillSet)
     if (id in skillSet)
         return skillSet[id].level.toString();
 
