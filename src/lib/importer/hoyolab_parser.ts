@@ -44,7 +44,7 @@ export class ServiceHoyolab {
     }
 
     private getSkillSet(skills: Skill[]) {
-        let skillKit: SkillDict = {};
+        const skillKit: SkillDict = {};
         skills.map((skill) => {
             if (skill.skill_type !== 5) {
                 skillKit[skill.skill_type] = {

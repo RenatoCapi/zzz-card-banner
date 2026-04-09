@@ -87,4 +87,3 @@ const TeammatePfp = () => {
 }
 
 export default RotationTab
-

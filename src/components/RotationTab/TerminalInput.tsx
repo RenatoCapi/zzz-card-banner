@@ -88,7 +88,6 @@ export const TerminalInputText = () => {
             return;
         }
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let commandLayer: any = possibleCommands;
         const instructionsAux: string[] = [];
         RotationTabController.resetSuggestions();
@@ -113,7 +112,6 @@ export const TerminalInputText = () => {
         if (Object.keys(possibleCommands).length === 0)
             setPossibleCommands(TerminalCmd.instance.possibleCommands);
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let dataAux: any = possibleCommands;
         const keysAux: string[] = [];
 
@@ -123,7 +121,6 @@ export const TerminalInputText = () => {
             dataAux = typeof dataAux[word] === "function" ? dataAux[word]() : dataAux[word];
         });
 
-        // eslint-disable-next-line no-prototype-builtins
         if (dataAux.hasOwnProperty("dmg")) {
             setSuggestions([]);
             return;

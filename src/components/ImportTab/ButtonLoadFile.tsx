@@ -21,7 +21,6 @@ const ButtonImportFile = () => {
         }, 2000);
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const loadData = (json: any) => {
         const arrAux = Array.isArray(json) ? json : [json];
         let charAux: Character;
@@ -44,7 +43,6 @@ const ButtonImportFile = () => {
     }
 
     const useImportFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        await ServiceMyDataType.instance.loadData();
         if (!e.target.files || !e.target.files[0]) {
             setMsg("Loading error!");
             return;
@@ -78,10 +76,10 @@ const ButtonImportFile = () => {
             const processedText = pastedText.trim();
             loadData(JSON.parse(processedText));
             setMsg("Characters loaded!");
-            console.log('Pasted:', processedText);
         }
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
         catch (e) {
+            console.log(e);
             setMsg("Loading error!");
         }
         blinkTooltip();
@@ -94,6 +92,11 @@ const ButtonImportFile = () => {
 
     useEffect(() => {
         refDivPaste.current?.focus();
+        const fetchData = async () => {
+            await ServiceMyDataType.instance.loadData();
+        }
+
+        fetchData();
     }, []);
 
     return (
