@@ -1,0 +1,32 @@
+# disc bonus set 4pc
+ - buff direto, exemplo:
+    Dawn's Bloom 4pc - Increases Basic Attack DMG by 20%
+
+ - buff condicional próprio:
+    se o equipado for attacker, usar EX e ult aumenta em mais 20% o Basic Attack DMG
+
+ - buff condicional pro time:
+    enquanto o equipado for support, ao usar EX ou ult, aumenta o dano condicional em 18%
+
+ - o que é necessário armazenar no disco, exemplo:
+    disc4pcBuff = {
+        buff_direto:{
+            "tipoDeHitbuffado":Attr.basicAttackPercId,
+            "buff": 20.0,
+        },
+        buff_condicional_pessoal:{
+            "weaponTypeRequired":WeaponTypeID.ATTACK,
+            "skillTypeRequiredOr":[HOYO_SkillID.SPECIAL, HOYO_SkillID.CHAIN ],
+            "skillTypeRequiredAnd":[],
+            "tipoDeHitbuffado":Buffs.basicAttackPercId,
+            "buff": 20.0,
+        },
+        buff_condicional_time:{ // stats outro disco moonlight lullaby
+            "weaponTypeRequired":WeaponTypeID.SUPPORT,
+            "skillTypeRequiredOr":[HOYO_SkillID.SPECIAL, HOYO_SkillID.CHAIN ],
+            "tipoDeHitbuffado":Buffs.DmgPercId,
+            "buff": 18.0,
+        }
+    }
+    
+    

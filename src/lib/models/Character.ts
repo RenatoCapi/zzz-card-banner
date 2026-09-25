@@ -55,6 +55,7 @@ export class Character extends StatsBase {
         this.sumMainStat(AttributeID.DEF);
         this.sumSecondaryStats(AttributeID.CRIT_RATE);
         this.sumSecondaryStats(AttributeID.CRIT_DMG);
+        this.sumSecondaryStats(AttributeID.SHARP_CRIT_DMG)
         this.sumSecondaryStats(AttributeID.PEN);
         this.sumSecondaryStats(AttributeID.PEN_FLAT);
         this.sumMainStat(AttributeID.ENERGY_RATE);

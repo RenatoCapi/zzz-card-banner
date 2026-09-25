@@ -1,0 +1,1802 @@
+{
+    "12001": {
+        "name": "[LUNAR] PLENILUNA",
+        "id": "12001",
+        "rarity": 2,
+        "weaponType": 1,
+        "stats": {
+            "12101": 475,
+            "12102": 200000
+        },
+        "effect": {
+            "name": "FULL MOON",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\"><span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>, and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span> DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\"><span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>, and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span> DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12001.png"
+    },
+    "12002": {
+        "name": "[LUNAR] DECRESCENT",
+        "id": "12002",
+        "rarity": 2,
+        "weaponType": 1,
+        "stats": {
+            "12101": 475,
+            "12102": 200000
+        },
+        "effect": {
+            "name": "WANING MOON",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> increases the equipper's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> for 6s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> increases the equipper's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> for 6s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12002.png"
+    },
+    "12003": {
+        "name": "[LUNAR] NOVILUNA",
+        "id": "12003",
+        "rarity": 2,
+        "weaponType": 1,
+        "stats": {
+            "12101": 475,
+            "20101": 160000
+        },
+        "effect": {
+            "name": "NEW MOON",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> generates <span class=\"font-bold\" style=\"color: #2BAD00;\">3</span> Energy for the equipper. This effect can trigger once every 12s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> generates <span class=\"font-bold\" style=\"color: #2BAD00;\">3</span> Energy for the equipper. This effect can trigger once every 12s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12003.png"
+    },
+    "12004": {
+        "name": "[REVERB] MARK I",
+        "id": "12004",
+        "rarity": 2,
+        "weaponType": 4,
+        "stats": {
+            "12101": 475,
+            "12102": 200000
+        },
+        "effect": {
+            "name": "CHANGING TIDES",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> increases all squad members' Impact by <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> increases all squad members' Impact by <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12004.png"
+    },
+    "12005": {
+        "name": "[REVERB] MARK II",
+        "id": "12005",
+        "rarity": 2,
+        "weaponType": 4,
+        "stats": {
+            "12101": 475,
+            "30502": 400000
+        },
+        "effect": {
+            "name": "ROARING WAVES",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">10</span> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">10</span> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12005.png"
+    },
+    "12006": {
+        "name": "[REVERB] MARK III",
+        "id": "12006",
+        "rarity": 2,
+        "weaponType": 4,
+        "stats": {
+            "12101": 475,
+            "11102": 200000
+        },
+        "effect": {
+            "name": "BOOMING SOUND",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> increases all squad members' ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> increases all squad members' ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12006.png"
+    },
+    "12007": {
+        "name": "[VORTEX] REVOLVER",
+        "id": "12007",
+        "rarity": 2,
+        "weaponType": 2,
+        "stats": {
+            "12101": 475,
+            "12102": 200000
+        },
+        "effect": {
+            "name": "UNDERCURRENT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\"><span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attacks</span> inflict <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> more Daze.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\"><span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attacks</span> inflict <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> more Daze.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12007.png"
+    },
+    "12008": {
+        "name": "[VORTEX] ARROW",
+        "id": "12008",
+        "rarity": 2,
+        "weaponType": 2,
+        "stats": {
+            "12101": 475,
+            "12202": 12
+        },
+        "effect": {
+            "name": "TSUNAMI",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's attacks inflict <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span> more Daze on their main target.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's attacks inflict <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> more Daze on their main target.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12008.png"
+    },
+    "12009": {
+        "name": "[VORTEX] HATCHET",
+        "id": "12009",
+        "rarity": 2,
+        "weaponType": 2,
+        "stats": {
+            "12101": 475,
+            "30502": 400000
+        },
+        "effect": {
+            "name": "RIPTIDE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon becoming the active character in combat, the equipper's Impact increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">9%</span> for 10s. This effect can trigger once every 20s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon becoming the active character in combat, the equipper's Impact increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">13%</span> for 10s. This effect can trigger once every 20s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12009.png"
+    },
+    "12010": {
+        "name": "[MAGNETIC STORM] ALPHA",
+        "id": "12010",
+        "rarity": 2,
+        "weaponType": 3,
+        "stats": {
+            "12101": 475,
+            "12102": 200000
+        },
+        "effect": {
+            "name": "DISORDERED CURRENT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <span class=\"font-bold\" style=\"color: #2BAD00;\">25</span> for 10s. This effect can trigger once every 20s. </span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <span class=\"font-bold\" style=\"color: #2BAD00;\">40</span> for 10s. This effect can trigger once every 20s. </span>"
+            ]
+        },
+        "imgUrl": "wengine_12010.png"
+    },
+    "12011": {
+        "name": "[MAGNETIC STORM] BRAVO",
+        "id": "12011",
+        "rarity": 2,
+        "weaponType": 3,
+        "stats": {
+            "12101": 475,
+            "31201": 60
+        },
+        "effect": {
+            "name": "HIGH-VOLTAGE SURGE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">25</span> for 10s. This effect can trigger once every 20s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">25</span> for 10s. This effect can trigger once every 20s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12011.png"
+    },
+    "12012": {
+        "name": "[MAGNETIC STORM] CHARLIE",
+        "id": "12012",
+        "rarity": 2,
+        "weaponType": 3,
+        "stats": {
+            "12101": 475,
+            "23101": 160000
+        },
+        "effect": {
+            "name": "CHARGE OVERLOAD",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <span class=\"font-bold\" style=\"color: #2BAD00;\">3.5</span> Energy. This effect can trigger once every 12s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <span class=\"font-bold\" style=\"color: #2BAD00;\">3.5</span> Energy. This effect can trigger once every 12s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12012.png"
+    },
+    "12013": {
+        "name": "[IDENTITY] BASE",
+        "id": "12013",
+        "rarity": 2,
+        "weaponType": 5,
+        "stats": {
+            "12101": 475,
+            "13102": 320000
+        },
+        "effect": {
+            "name": "SINKING STRIKE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When attacked, the equipper's DEF increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 8s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When attacked, the equipper's DEF increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">29%</span> for 8s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12013.png"
+    },
+    "12014": {
+        "name": "[IDENTITY] INFLECTION",
+        "id": "12014",
+        "rarity": 2,
+        "weaponType": 5,
+        "stats": {
+            "12101": 475,
+            "13102": 320000
+        },
+        "effect": {
+            "name": "DAZZLE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When attacked, reduces the attacker's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">6%</span> for 12s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When attacked, reduces the attacker's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">6%</span> for 12s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12014.png"
+    },
+    "12015": {
+        "name": "[CINDER] COBALT",
+        "id": "12015",
+        "rarity": 2,
+        "weaponType": 6,
+        "stats": {
+            "12101": 475,
+            "11102": 200000
+        },
+        "effect": {
+            "name": "DIM FLAME",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon becoming the active character in combat, the equipper's ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">7.2%</span> for 10s. This effect can trigger once every 20s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon becoming the active character in combat, the equipper's ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">7.2%</span> for 10s. This effect can trigger once every 20s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12015.png"
+    },
+    "12016": {
+        "name": "[LUNAR] SEMILUNA",
+        "id": "12016",
+        "rarity": 2,
+        "weaponType": 7,
+        "stats": {
+            "13101": 282,
+            "13102": 320000
+        },
+        "effect": {
+            "name": "CRESCENT MOON",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, Basic Attack DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">18%</span> for 10s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, Basic Attack DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span> for 10s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_12016.png"
+    },
+    "13001": {
+        "name": "STREET SUPERSTAR",
+        "id": "13001",
+        "rarity": 3,
+        "weaponType": 1,
+        "stats": {
+            "12101": 594,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "FLAMING BARS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Whenever a squad member launches a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Whenever a squad member launches a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13001.png"
+    },
+    "13002": {
+        "name": "SLICE OF TIME",
+        "id": "13002",
+        "rarity": 3,
+        "weaponType": 4,
+        "stats": {
+            "12101": 594,
+            "23101": 200000
+        },
+        "effect": {
+            "name": "SAY CHEESE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Any squad members' <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> respectively generates <span class=\"font-bold\" style=\"color: #2BAD00;\">20</span>/<span class=\"font-bold\" style=\"color: #2BAD00;\">25</span>/<span class=\"font-bold\" style=\"color: #2BAD00;\">30</span>/<span class=\"font-bold\" style=\"color: #2BAD00;\">35</span> more Decibels and generates <span class=\"font-bold\" style=\"color: #2BAD00;\">0.7</span> Energy for the equipper. This effect can trigger once every 12s. The cooldown for each type of attack is independent of others. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Any squad members' <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> respectively generates <span class=\"font-bold\" style=\"color: #2BAD00;\">20</span>/<span class=\"font-bold\" style=\"color: #2BAD00;\">25</span>/<span class=\"font-bold\" style=\"color: #2BAD00;\">30</span>/<span class=\"font-bold\" style=\"color: #2BAD00;\">35</span> more Decibels and generates <span class=\"font-bold\" style=\"color: #2BAD00;\">0.7</span> Energy for the equipper. This effect can trigger once every 12s. The cooldown for each type of attack is independent of others. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13002.png"
+    },
+    "13003": {
+        "name": "RAINFOREST GOURMET",
+        "id": "13003",
+        "rarity": 3,
+        "weaponType": 3,
+        "stats": {
+            "12101": 594,
+            "31201": 75
+        },
+        "effect": {
+            "name": "DINNER'S READY!",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">For every 10 Energy consumed, the equipper gains a buff that increases ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">2.5%</span> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">For every 10 Energy consumed, the equipper gains a buff that increases ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">2.5%</span> for 10s, stacking up to 10 times. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13003.png"
+    },
+    "13004": {
+        "name": "STARLIGHT ENGINE",
+        "id": "13004",
+        "rarity": 3,
+        "weaponType": 1,
+        "stats": {
+            "12101": 594,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "KNIGHT'S COMBO",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Quick Assist</span> increases the equipper's ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 12s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Quick Assist</span> increases the equipper's ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 12s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13004.png"
+    },
+    "13005": {
+        "name": "STEAM OVEN",
+        "id": "13005",
+        "rarity": 3,
+        "weaponType": 2,
+        "stats": {
+            "12101": 594,
+            "30502": 500000
+        },
+        "effect": {
+            "name": "THICK BROTH",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">For every 10 Energy accumulated, the equipper's Impact is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">2%</span>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">For every 10 Energy accumulated, the equipper's Impact is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">2%</span>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13005.png"
+    },
+    "13006": {
+        "name": "PRECIOUS FOSSILIZED CORE",
+        "id": "13006",
+        "rarity": 3,
+        "weaponType": 2,
+        "stats": {
+            "12101": 594,
+            "12202": 15
+        },
+        "effect": {
+            "name": "BEHEMOTH HUNTER",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the target's HP is no lower than 50%, the equipper inflicts <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the target's HP is no lower than 50%, the equipper inflicts <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13006.png"
+    },
+    "13007": {
+        "name": "ORIGINAL TRANSMORPHER",
+        "id": "13007",
+        "rarity": 3,
+        "weaponType": 5,
+        "stats": {
+            "12101": 594,
+            "11102": 250000
+        },
+        "effect": {
+            "name": "STARLIGHT KNIGHT FLYING KICK",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases Max HP by <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span>. When attacked, the equipper's Impact is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 12s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases Max HP by <span class=\"font-bold\" style=\"color: #2BAD00;\">12.5%</span>. When attacked, the equipper's Impact is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> for 12s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13007.png"
+    },
+    "13008": {
+        "name": "WEEPING GEMINI",
+        "id": "13008",
+        "rarity": 3,
+        "weaponType": 3,
+        "stats": {
+            "12101": 594,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "LINGERING CRIES",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">30</span>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">48</span>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13008.png"
+    },
+    "13009": {
+        "name": "ELECTRO-LIP GLOSS",
+        "id": "13009",
+        "rarity": 3,
+        "weaponType": 3,
+        "stats": {
+            "12101": 594,
+            "31201": 75
+        },
+        "effect": {
+            "name": "KISS OF DEATH",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> and they deal an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> more DMG to the target.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> and they deal an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> more DMG to the target.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13009.png"
+    },
+    "13010": {
+        "name": "BUNNY BAND",
+        "id": "13010",
+        "rarity": 3,
+        "weaponType": 5,
+        "stats": {
+            "12101": 594,
+            "13102": 400000
+        },
+        "effect": {
+            "name": "PET THE BUNNY",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases Max HP by <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span>. Increases the equipper's ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> when they are shielded.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases Max HP by <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span>. Increases the equipper's ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> when they are shielded.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13010.png"
+    },
+    "13011": {
+        "name": "SPRING EMBRACE",
+        "id": "13011",
+        "rarity": 3,
+        "weaponType": 5,
+        "stats": {
+            "12101": 594,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "HOT SPRING SOUP",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Reduces DMG taken by <span class=\"font-bold\" style=\"color: #2BAD00;\">7.5%</span>. When attacked, the equipper's Energy Generation Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 12s. When the equipper switches off-field, this buff will be transferred to the new on-field character with its duration refreshed. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Reduces DMG taken by <span class=\"font-bold\" style=\"color: #2BAD00;\">7.5%</span>. When attacked, the equipper's Energy Generation Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 12s. When the equipper switches off-field, this buff will be transferred to the new on-field character with its duration refreshed. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13011.png"
+    },
+    "13012": {
+        "name": "PUZZLE SPHERE",
+        "id": "13012",
+        "rarity": 3,
+        "weaponType": 6,
+        "stats": {
+            "12101": 594,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "INGENIOUS CRAFT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the equipper's CRIT DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> for 12s. Additionally, if the target's current HP is below 50% of their Max HP, <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the equipper's CRIT DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> for 12s. Additionally, if the target's current HP is below 50% of their Max HP, <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13012.png"
+    },
+    "13013": {
+        "name": "GILDED BLOSSOM",
+        "id": "13013",
+        "rarity": 3,
+        "weaponType": 1,
+        "stats": {
+            "12101": 594,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "EXTRAORDINARY ANTI-THEFT MEASURES",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">6</span>%, and DMG dealt by <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attacks</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">6</span>%, and DMG dealt by <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attacks</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13013.png"
+    },
+    "13014": {
+        "name": "RADIOWAVE JOURNEY",
+        "id": "13014",
+        "rarity": 3,
+        "weaponType": 6,
+        "stats": {
+            "12101": 594,
+            "11102": 250000
+        },
+        "effect": {
+            "name": "EASY STRIDES",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span>, the equipper gains 1 stack of a buff effect. Each stack increases the equipper's Sheer Force by <span class=\"font-bold\" style=\"color: #2BAD00;\">80</span>, stacking up to 3 times, and lasting 12s. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span>, the equipper gains 1 stack of a buff effect. Each stack increases the equipper's Sheer Force by <span class=\"font-bold\" style=\"color: #2BAD00;\">80</span>, stacking up to 3 times, and lasting 12s. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13014.png"
+    },
+    "13015": {
+        "name": "MARCATO DESIRE",
+        "id": "13015",
+        "rarity": 3,
+        "weaponType": 1,
+        "stats": {
+            "12101": 594,
+            "20101": 200000
+        },
+        "effect": {
+            "name": "GET EVERYONE FIRED UP",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> hits an enemy, the equipper's ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">6%</span> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">6%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> hits an enemy, the equipper's ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">9.6%</span> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">9.6%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13015.png"
+    },
+    "13016": {
+        "name": "REEL PROJECTOR",
+        "id": "13016",
+        "rarity": 3,
+        "weaponType": 5,
+        "stats": {
+            "12101": 594,
+            "12202": 15
+        },
+        "effect": {
+            "name": "FLASH ENGRAVING",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When a squad member's HP is greater than or equal to 50%, they take <span class=\"font-bold\" style=\"color: #2BAD00;\">7.5%</span> less DMG, and <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> less Miasma Contamination. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When a squad member's HP is greater than or equal to 50%, they take <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> less DMG, and <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> less Miasma Contamination. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13016.png"
+    },
+    "13017": {
+        "name": "CATTY LUCK",
+        "id": "13017",
+        "rarity": 3,
+        "weaponType": 7,
+        "stats": {
+            "13101": 356,
+            "13102": 400000
+        },
+        "effect": {
+            "name": "LUCKY PAWPAD",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">DEF increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span>. When using <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, DEF increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span> for 40s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">DEF increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span>. When using <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, DEF increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 40s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13017.png"
+    },
+    "13018": {
+        "name": "BOISTEROUS ECHOES",
+        "id": "13018",
+        "rarity": 3,
+        "weaponType": 3,
+        "stats": {
+            "12101": 594,
+            "31201": 75
+        },
+        "effect": {
+            "name": "RESOUNDING DRUM",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper triggers the <span class=\"font-bold\" style=\"color: #FFFFFF;\">Vortex</span> effect, they gain <span class=\"font-bold\" style=\"color: #2BAD00;\">2</span> Energy. This effect can trigger once every 10s. When attacking enemies afflicted with an Attribute Anomaly, the equipper deals <span class=\"font-bold\" style=\"color: #2BAD00;\">11.5%</span> increased DMG.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper triggers the <span class=\"font-bold\" style=\"color: #FFFFFF;\">Vortex</span> effect, they gain <span class=\"font-bold\" style=\"color: #2BAD00;\">3.2</span> Energy. This effect can trigger once every 10s. When attacking enemies afflicted with an Attribute Anomaly, the equipper deals <span class=\"font-bold\" style=\"color: #2BAD00;\">18.4%</span> increased DMG.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13018.png"
+    },
+    "13019": {
+        "name": "CAULDRON OF CLARITY",
+        "id": "13019",
+        "rarity": 3,
+        "weaponType": 6,
+        "stats": {
+            "12101": 594,
+            "11102": 250000
+        },
+        "effect": {
+            "name": "SUMMONING ARCANUM",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper activates an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, they gain 1 stack of a buff. Each stack increases the equipper's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">4%</span>, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">6.5%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper activates an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, they gain 1 stack of a buff. Each stack increases the equipper's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">4%</span>, up to 3 stacks, and lasting 20s. This effect can trigger once every 0.5s, and repeated triggers reset the duration. At 3 stacks, the equipper's CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">6.5%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13019.png"
+    },
+    "13020": {
+        "name": "THE SIMMERING POT",
+        "id": "13020",
+        "rarity": 3,
+        "weaponType": 2,
+        "stats": {
+            "12101": 594,
+            "12202": 15
+        },
+        "effect": {
+            "name": "RED CHILI OIL HOT POT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When activating an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Follow-Up</span>, the equipper's Daze inflicted on the target increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">7.2%</span>, and DMG dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">7.2%</span> for 30s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When activating an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Follow-Up</span>, the equipper's Daze inflicted on the target increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">11.5%</span>, and DMG dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">11.5%</span> for 30s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13020.png"
+    },
+    "13021": {
+        "name": "BLOODMARROW COFFER",
+        "id": "13021",
+        "rarity": 3,
+        "weaponType": 7,
+        "stats": {
+            "13101": 356,
+            "20101": 200000
+        },
+        "effect": {
+            "name": "MOMENT OF UNSEALING",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's CRIT Rate exceeds <span class=\"font-bold\" style=\"color: #2BAD00;\">100%</span>, each 1% of CRIT Rate above 100% increases DMG dealt by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.48%</span>, up to a maximum increase of <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's CRIT Rate exceeds <span class=\"font-bold\" style=\"color: #2BAD00;\">100%</span>, each 1% of CRIT Rate above 100% increases DMG dealt by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.8%</span>, up to a maximum increase of <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13021.png"
+    },
+    "13101": {
+        "name": "DEMARA BATTERY MARK II",
+        "id": "13101",
+        "rarity": 3,
+        "weaponType": 2,
+        "stats": {
+            "12101": 624,
+            "12202": 15
+        },
+        "effect": {
+            "name": "IN A FLASH OF LIGHT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>. When the equipper hits an enemy with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Attack</span>, their Energy Generation Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">18%</span> for 8s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span>. When the equipper hits an enemy with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Attack</span>, their Energy Generation Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">27.5%</span> for 8s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13101.png"
+    },
+    "13103": {
+        "name": "THE VAULT",
+        "id": "13103",
+        "rarity": 3,
+        "weaponType": 4,
+        "stats": {
+            "12101": 624,
+            "30502": 500000
+        },
+        "effect": {
+            "name": "MONEY-LOVER",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Dealing <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span> using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> increases all units' DMG against the target by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> and increases the equipper's Energy Regen by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.5</span>/s for 2s. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Dealing <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span> using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> increases all units' DMG against the target by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> and increases the equipper's Energy Regen by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.5</span>/s for 2s. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13103.png"
+    },
+    "13106": {
+        "name": "HOUSEKEEPER",
+        "id": "13106",
+        "rarity": 3,
+        "weaponType": 1,
+        "stats": {
+            "12101": 624,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "SAFE HOUSEHOLD SAW",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.45</span>/s. When an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> hits an enemy, the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">3%</span>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.72</span>/s. When an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> hits an enemy, the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">4.8%</span>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13106.png"
+    },
+    "13108": {
+        "name": "STARLIGHT ENGINE REPLICA",
+        "id": "13108",
+        "rarity": 3,
+        "weaponType": 1,
+        "stats": {
+            "12101": 624,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "KNIGHT BEAM: CHANGE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> against the target by <span class=\"font-bold\" style=\"color: #2BAD00;\">36%</span> for 8s upon hitting an enemy at least 6 meters away with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> against the target by <span class=\"font-bold\" style=\"color: #2BAD00;\">57.5%</span> for 8s upon hitting an enemy at least 6 meters away with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13108.png"
+    },
+    "13111": {
+        "name": "DRILL RIG - RED AXIS",
+        "id": "13111",
+        "rarity": 3,
+        "weaponType": 1,
+        "stats": {
+            "12101": 624,
+            "30502": 500000
+        },
+        "effect": {
+            "name": "HELL'S GENERATOR",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> from <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attacks</span> and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attacks</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">50%</span> for 10s. This effect can trigger once every 15s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> from <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attacks</span> and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attacks</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">80%</span> for 10s. This effect can trigger once every 15s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13111.png"
+    },
+    "13112": {
+        "name": "BIG CYLINDER",
+        "id": "13112",
+        "rarity": 3,
+        "weaponType": 5,
+        "stats": {
+            "12101": 624,
+            "13102": 400000
+        },
+        "effect": {
+            "name": "TEN TON TOP",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Reduces DMG taken by <span class=\"font-bold\" style=\"color: #2BAD00;\">7.5%</span>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <span class=\"font-bold\" style=\"color: #2BAD00;\">600%</span> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Reduces DMG taken by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <span class=\"font-bold\" style=\"color: #2BAD00;\">960%</span> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13112.png"
+    },
+    "13113": {
+        "name": "BASHFUL DEMON",
+        "id": "13113",
+        "rarity": 3,
+        "weaponType": 4,
+        "stats": {
+            "12101": 624,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "VISAGE OF GREED",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>. When launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, all squad members' ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">2%</span> for 12s, stacking up to 4 times. Repeated triggers reset the duration. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span>. When launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, all squad members' ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">3.2%</span> for 12s, stacking up to 4 times. Repeated triggers reset the duration. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13113.png"
+    },
+    "13115": {
+        "name": "KABOOM THE CANNON",
+        "id": "13115",
+        "rarity": 3,
+        "weaponType": 4,
+        "stats": {
+            "12101": 624,
+            "30502": 500000
+        },
+        "effect": {
+            "name": "STAMPEDE ACCIDENT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">2.5%</span> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">2.5%</span> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13115.png"
+    },
+    "13127": {
+        "name": "PEACEKEEPER - SPECIALIZED",
+        "id": "13127",
+        "rarity": 3,
+        "weaponType": 5,
+        "stats": {
+            "12101": 624,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "STANDARD BLOCKING TECHNIQUE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While Shielded, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.4</span>/s. The Anomaly Buildup of <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attacks</span> and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Follow-Ups</span> increase by <span class=\"font-bold\" style=\"color: #2BAD00;\">36%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While Shielded, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.64</span>/s. The Anomaly Buildup of <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attacks</span>/<span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Follow-Ups</span> increase by <span class=\"font-bold\" style=\"color: #2BAD00;\">55%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13127.png"
+    },
+    "13128": {
+        "name": "ROARING RIDE",
+        "id": "13128",
+        "rarity": 3,
+        "weaponType": 3,
+        "stats": {
+            "12101": 624,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "COLLISION POTENTIAL",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:<br/>Increases the equipper's ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span>, increases the equipper's Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">40</span>, or increases the equipper's Anomaly Buildup Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:<br/>Increases the equipper's ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">12.8%</span>, increases the equipper's Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">64</span>, or increases the equipper's Anomaly Buildup Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13128.png"
+    },
+    "13135": {
+        "name": "BOX CUTTER",
+        "id": "13135",
+        "rarity": 3,
+        "weaponType": 2,
+        "stats": {
+            "12101": 624,
+            "12202": 15
+        },
+        "effect": {
+            "name": "WATCH YOUR FINGERS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span>, the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>, and Daze increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>, lasting 10s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span>, the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>, and Daze increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>, lasting 10s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13135.png"
+    },
+    "13142": {
+        "name": "TREMOR TRIGRAM VESSEL",
+        "id": "13142",
+        "rarity": 3,
+        "weaponType": 5,
+        "stats": {
+            "12101": 624,
+            "12102": 250000
+        },
+        "effect": {
+            "name": "MERIDIAN MAPPING",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span>. Whenever any squad member takes DMG or recovers HP, the equipper gains <span class=\"font-bold\" style=\"color: #2BAD00;\">2</span> Energy. This effect can trigger once every 5s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span>. Whenever any squad member takes DMG or recovers HP, the equipper gains <span class=\"font-bold\" style=\"color: #2BAD00;\">2</span> Energy. This effect can trigger once every 5s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13142.png"
+    },
+    "13144": {
+        "name": "GRILL O'WISP",
+        "id": "13144",
+        "rarity": 3,
+        "weaponType": 6,
+        "stats": {
+            "12101": 624,
+            "11102": 250000
+        },
+        "effect": {
+            "name": "CAGED FIRE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>. When the equipper's HP decreases, their CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> for 5s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>. When the equipper's HP decreases, their CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> for 5s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_13144.png"
+    },
+    "14001": {
+        "name": "CANNON ROTOR",
+        "id": "14001",
+        "rarity": 3,
+        "weaponType": 1,
+        "stats": {
+            "12101": 594,
+            "20101": 200000
+        },
+        "effect": {
+            "name": "OVERSIZED BARREL",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">7.5%</span>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <span class=\"font-bold\" style=\"color: #2BAD00;\">8</span>s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">7.5%</span>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <span class=\"font-bold\" style=\"color: #2BAD00;\">8</span>s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14001.png"
+    },
+    "14002": {
+        "name": "UNFETTERED GAME BALL",
+        "id": "14002",
+        "rarity": 3,
+        "weaponType": 4,
+        "stats": {
+            "12101": 594,
+            "30502": 500000
+        },
+        "effect": {
+            "name": "GAME START!",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Whenever the equipper's attack triggers an Attribute Counter effect, all units' CRIT Rate against the struck enemy increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 12s. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Whenever the equipper's attack triggers an Attribute Counter effect, all units' CRIT Rate against the struck enemy increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 12s. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14002.png"
+    },
+    "14003": {
+        "name": "SIX SHOOTER",
+        "id": "14003",
+        "rarity": 3,
+        "weaponType": 2,
+        "stats": {
+            "12101": 594,
+            "12202": 15
+        },
+        "effect": {
+            "name": "FIRE!",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <span class=\"font-bold\" style=\"color: #2BAD00;\">4%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <span class=\"font-bold\" style=\"color: #2BAD00;\">6.4%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14003.png"
+    },
+    "14102": {
+        "name": "STEEL CUSHION",
+        "id": "14102",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 684,
+            "20101": 240000
+        },
+        "effect": {
+            "name": "METAL CAT CLAWS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>. The equipper's DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> when hitting the enemy from behind.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>. The equipper's DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> when hitting the enemy from behind.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14102.png"
+    },
+    "14104": {
+        "name": "THE BRIMSTONE",
+        "id": "14104",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 684,
+            "12102": 300000
+        },
+        "effect": {
+            "name": "SCORCHING BREATH",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon hitting an enemy with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span>, the equipper's ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">3.5%</span> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon hitting an enemy with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dodge Counter</span>, the equipper's ATK increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">3.5%</span> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14104.png"
+    },
+    "14105": {
+        "name": "KRAKEN'S CRADLE",
+        "id": "14105",
+        "rarity": 4,
+        "weaponType": 6,
+        "stats": {
+            "12101": 713,
+            "11102": 300000
+        },
+        "effect": {
+            "name": "HEARTFELT CARESS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's HP decreases, their <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice Sheer DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">6%</span>, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of Max HP or below, CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's HP decreases, their <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice Sheer DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">6%</span>, stacking up to 3 times and lasting 25s. The duration of each stack is calculated separately. This effect can trigger once every 0.5s. When the equipper's HP falls to 50% of Max HP or below, CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14105.png"
+    },
+    "14107": {
+        "name": "TUSKS OF FURY",
+        "id": "14107",
+        "rarity": 4,
+        "weaponType": 5,
+        "stats": {
+            "12101": 713,
+            "12202": 18
+        },
+        "effect": {
+            "name": "INVINCIBLE RIDER",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The Shield value provided by the equipper increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span>. When any squad member triggers <span class=\"font-bold\" style=\"color: #FFFFFF;\">Interrupt</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Perfect Dodge</span>, all squad members' DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">18%</span> and Daze dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 20s. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The Shield value provided by the equipper increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span>. When any squad member triggers <span class=\"font-bold\" style=\"color: #FFFFFF;\">Interrupt</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Perfect Dodge</span>, all squad members' DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">18%</span> and Daze dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 20s. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14107.png"
+    },
+    "14109": {
+        "name": "HAILSTORM SHRINE",
+        "id": "14109",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 743,
+            "20101": 240000
+        },
+        "effect": {
+            "name": "FROST-STAINED STAR",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">50%</span>. When using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or when any squad member applies an Attribute Anomaly to an enemy, the equipper's <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">80%</span>. When using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or when any squad member applies an Attribute Anomaly to an enemy, the equipper's <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span>, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14109.png"
+    },
+    "14110": {
+        "name": "HELLFIRE GEARS",
+        "id": "14110",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 684,
+            "12202": 18
+        },
+        "effect": {
+            "name": "PASSIONATE CONSTRUCTION",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.6</span>/s.<br/>When using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the equipper's Impact is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">1.2</span>/s.<br/>When using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the equipper's Impact is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 10s, stacking up to 2 times. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14110.png"
+    },
+    "14114": {
+        "name": "THE RESTRAINED",
+        "id": "14114",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 684,
+            "12202": 18
+        },
+        "effect": {
+            "name": "BINDING CHAINS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When an attack hits an enemy, DMG and Daze from <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attacks</span> increase by <span class=\"font-bold\" style=\"color: #2BAD00;\">6%</span> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When an attack hits an enemy, DMG and Daze from <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attacks</span> increase by <span class=\"font-bold\" style=\"color: #2BAD00;\">6%</span> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14114.png"
+    },
+    "14116": {
+        "name": "BLAZING LAUREL",
+        "id": "14116",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 713,
+            "12202": 18
+        },
+        "effect": {
+            "name": "FLOWING FLAME",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Quick Assist</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Perfect Assist</span>, the equipper's Impact increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> for 8s. When the equipper launches and hits an enemy with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, apply <span class=\"font-bold\" style=\"color: #FFFFFF;\">Wilt</span> to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Wilt</span> applied to the target, the CRIT DMG of the <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> and <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span> dealt by that attack increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">1.5%</span>. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon launching a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Quick Assist</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Perfect Assist</span>, the equipper's Impact increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span> for 8s. When the equipper launches and hits an enemy with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, apply <span class=\"font-bold\" style=\"color: #FFFFFF;\">Wilt</span> to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Wilt</span> applied to the target, the CRIT DMG of the <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> and <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span> dealt by that attack increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">2.4%</span>. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14116.png"
+    },
+    "14117": {
+        "name": "FLAMEMAKER SHAKER",
+        "id": "14117",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 713,
+            "12102": 300000
+        },
+        "effect": {
+            "name": "FUEL ON THE ROCKS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.6</span>/s. When hitting an enemy with an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Attack</span>, the equipper's DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">3.5%</span>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">50</span>. This Anomaly Proficiency increase does not stack and lasts for 6s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">1.2</span>/s. When hitting an enemy with an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Assist Attack</span>, the equipper's DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">7%</span>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">100</span>. This Anomaly Proficiency increase does not stack and lasts for 6s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14117.png"
+    },
+    "14118": {
+        "name": "FUSION COMPILER",
+        "id": "14118",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 684,
+            "23101": 240000
+        },
+        "effect": {
+            "name": "DATA FLOOD",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span>.<br/>When using a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the equipper's Anomaly Proficiency is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">25</span> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases ATK by <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span>.<br/>When using a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the equipper's Anomaly Proficiency is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">50</span> for 8s, stacking up to 3 times. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14118.png"
+    },
+    "14119": {
+        "name": "DEEP SEA VISITOR",
+        "id": "14119",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "20101": 240000
+        },
+        "effect": {
+            "name": "LORD OF SEAS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span>. Upon hitting an enemy with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, the equipper's CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 8s. When dealing <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>, the equipper's CRIT Rate increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 15s. The duration of each effect is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">50%</span>. Upon hitting an enemy with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, the equipper's CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 8s. When dealing <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>, the equipper's CRIT Rate increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 15s. The duration of each effect is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14119.png"
+    },
+    "14120": {
+        "name": "ZANSHIN HERB CASE",
+        "id": "14120",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "21101": 480000
+        },
+        "effect": {
+            "name": "GROWTH THROUGH ADVERSITY",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>. <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span> <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 15s.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>. <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span> <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 15s.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14120.png"
+    },
+    "14121": {
+        "name": "WEEPING CRADLE",
+        "id": "14121",
+        "rarity": 4,
+        "weaponType": 4,
+        "stats": {
+            "12101": 684,
+            "23101": 240000
+        },
+        "effect": {
+            "name": "PUNISHMENT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.6</span>/s. Attacks from the equipper increase all units' DMG against a struck target by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 3 seconds. During this period, this effect is further increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">1.7%</span> every 0.5s, up to a maximum additional increase of <span class=\"font-bold\" style=\"color: #2BAD00;\">10.2%</span>. Repeated triggers only refresh the duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">1.2</span>/s. Attacks from the equipper increase all units' DMG against a struck target by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 3 seconds. During this period, this effect is further increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">3.3%</span> every 0.5s, up to a maximum additional increase of <span class=\"font-bold\" style=\"color: #2BAD00;\">19.8%</span>. Repeated triggers only refresh the duration without refreshing the DMG increase effect. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14121.png"
+    },
+    "14122": {
+        "name": "TIMEWEAVER",
+        "id": "14122",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 713,
+            "12102": 300000
+        },
+        "effect": {
+            "name": "TIME-DEVOURING STRATAGEM",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric Anomaly Buildup Rate</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span>. When <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attacks</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attacks</span> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">75</span> for 15s.<br/>When the equipper's Anomaly Proficiency is greater than or equal to 375, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Disorder</span> DMG inflicted by the equipper increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric Anomaly Buildup Rate</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">50%</span>. When <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attacks</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attacks</span> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">115</span> for 15s.<br/>When the equipper's Anomaly Proficiency is greater than or equal to 375, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Disorder</span> DMG inflicted by the equipper increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">35%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14122.png"
+    },
+    "14124": {
+        "name": "RIOT SUPPRESSOR MARK VI",
+        "id": "14124",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "21101": 480000
+        },
+        "effect": {
+            "name": "SECURITY PATROL",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>. Launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span> deals <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span>, consumes a Charge stack and increases the skill's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">35%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span>. Launching an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span> deals <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span>, consumes a Charge stack and increases the skill's DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">70%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14124.png"
+    },
+    "14125": {
+        "name": "ICE-JADE TEAPOT",
+        "id": "14125",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 713,
+            "12202": 18
+        },
+        "effect": {
+            "name": "RINGING MELODY",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> hits an enemy, gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Tea-riffic</span>. Each stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Tea-riffic</span> increases the user's Impact by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.7%</span>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <span class=\"font-bold\" style=\"color: #FFFFFF;\">Tea-riffic</span>, if the equipper possesses stacks of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Tea-riffic</span> greater than or equal to 15, all squad members' DMG is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 10s. Passive effects of the same name do not stack.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> hits an enemy, gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Tea-riffic</span>. Each stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Tea-riffic</span> increases the user's Impact by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.7%</span>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <span class=\"font-bold\" style=\"color: #FFFFFF;\">Tea-riffic</span>, if the equipper possesses stacks of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Tea-riffic</span> greater than or equal to 15, all squad members' DMG is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 10s. Passive effects of the same name do not stack.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14125.png"
+    },
+    "14126": {
+        "name": "SHARPENED STINGER",
+        "id": "14126",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 713,
+            "31201": 90
+        },
+        "effect": {
+            "name": "INDULGE IN THE HUNT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon activating a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>, gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Predatory Instinct</span>. Each stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Predatory Instinct</span> increases the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <span class=\"font-bold\" style=\"color: #FFFFFF;\">Perfect Dodge</span>, gain 3 stacks of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Predatory Instinct</span>. While <span class=\"font-bold\" style=\"color: #FFFFFF;\">Predatory Instinct</span> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Upon activating a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Dash Attack</span>, gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Predatory Instinct</span>. Each stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Predatory Instinct</span> increases the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">12%</span> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <span class=\"font-bold\" style=\"color: #FFFFFF;\">Perfect Dodge</span>, gain 3 stacks of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Predatory Instinct</span>. While <span class=\"font-bold\" style=\"color: #FFFFFF;\">Predatory Instinct</span> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14126.png"
+    },
+    "14129": {
+        "name": "MYRIAD ECLIPSE",
+        "id": "14129",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "20101": 240000
+        },
+        "effect": {
+            "name": "FALSE PERSONAS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">45%</span>. When using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> to deal <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span>, the equipper gains the <span class=\"font-bold\" style=\"color: #FFFFFF;\">Absolute Zero Death Sentence</span> effect for 3s. While <span class=\"font-bold\" style=\"color: #FFFFFF;\">Absolute Zero Death Sentence</span> is active, the character ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> of the enemy's DEF when landing a hit.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">72%</span>. When using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> to deal <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span>, the equipper gains the <span class=\"font-bold\" style=\"color: #FFFFFF;\">Absolute Zero Death Sentence</span> effect for 3s. While <span class=\"font-bold\" style=\"color: #FFFFFF;\">Absolute Zero Death Sentence</span> is active, the character ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span> of the enemy's DEF when landing a hit.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14129.png"
+    },
+    "14130": {
+        "name": "BELLICOSE BLAZE",
+        "id": "14130",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "30502": 600000
+        },
+        "effect": {
+            "name": "FLAME-DEVOURING CHOIR",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>. When the equipper triggers an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span> that deals <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span>, their attacks ignore <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span>. When the equipper triggers an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span> that deals <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span>, their attacks ignore <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span> of the target's DEF for 8s. Can stack once every 3s, up to 2 stacks. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14130.png"
+    },
+    "14131": {
+        "name": "ELEGANT VANITY",
+        "id": "14131",
+        "rarity": 4,
+        "weaponType": 4,
+        "stats": {
+            "12101": 713,
+            "12102": 300000
+        },
+        "effect": {
+            "name": "UNTOLD BEAUTY",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When any squad member enters the field through a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Quick Assist</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Defensive Assist</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Evasive Assist</span>, the equipper gains <span class=\"font-bold\" style=\"color: #2BAD00;\">5</span> Energy. This effect can trigger once every 5s. When the equipper consumes 25 or more Energy, the DMG dealt by all squad members increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>, stacking up to 2 times, and lasting 20s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When any squad member enters the field through a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Quick Assist</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Defensive Assist</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Evasive Assist</span>, the equipper gains <span class=\"font-bold\" style=\"color: #2BAD00;\">7</span> Energy. This effect can trigger once every 5s. When the equipper consumes 25 or more Energy, the DMG dealt by all squad members increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span>, stacking up to 2 times, and lasting 20s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14131.png"
+    },
+    "14132": {
+        "name": "HEARTSTRING NOCTURNE",
+        "id": "14132",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "20101": 240000
+        },
+        "effect": {
+            "name": "STRING & MELODY",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">50%</span>. When the equipper enters combat, or activates a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span>, they gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Heartstring</span>. Each stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Heartstring</span> allows the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> to ignore <span class=\"font-bold\" style=\"color: #2BAD00;\">12.5%</span> of the target's <span class=\"font-bold\" style=\"color: #FF5521;\">Fire RES</span>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">50%</span>. When the equipper enters combat, or activates a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span>, they gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Heartstring</span>. Each stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Heartstring</span> allows the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> to ignore <span class=\"font-bold\" style=\"color: #2BAD00;\">12.5%</span> of the target's <span class=\"font-bold\" style=\"color: #FF5521;\">Fire RES</span>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14132.png"
+    },
+    "14133": {
+        "name": "FLIGHT OF FANCY",
+        "id": "14133",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 713,
+            "31201": 90
+        },
+        "effect": {
+            "name": "SILVER SPIKED FEATHERS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases Anomaly Buildup Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span>. When the equipper deals <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span>, their Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20</span> for 5s, stacking up to 6 times. This effect can trigger once every 0.5s, and repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases Anomaly Buildup Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">64%</span>. When the equipper deals <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span>, their Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">32</span> for 5s, stacking up to 6 times. This effect can trigger once every 0.5s, and repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14133.png"
+    },
+    "14134": {
+        "name": "HALF-SUGAR BUNNY",
+        "id": "14134",
+        "rarity": 4,
+        "weaponType": 5,
+        "stats": {
+            "12101": 713,
+            "11102": 300000
+        },
+        "effect": {
+            "name": "FRAGILE SWEETNESS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.46</span>/s. All squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> ATK and <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ether Veil</span>, all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span> CRIT DMG for 60s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.74</span>/s. All squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> ATK and <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> Max HP. Only one instance of this effect can exist in the same squad. When the equipper activates or extends an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ether Veil</span>, all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">48%</span> CRIT DMG for 60s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14134.png"
+    },
+    "14136": {
+        "name": "SPECTRAL GAZE",
+        "id": "14136",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 713,
+            "20101": 240000
+        },
+        "effect": {
+            "name": "WIND SEEKER",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span> hits an enemy, causing <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span>, the target's DEF is reduced by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> for 5s. Passive effects of the same name do not stack. When this effect is triggered, if the equipper is not the active character, they gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Spirit Lock</span>, up to a maximum of 3 stacks. This can trigger only once per use of a skill. Each stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Spirit Lock</span> increases the equipper's Impact by <span class=\"font-bold\" style=\"color: #2BAD00;\">4%</span>, lasting 12s. The duration of each stack is calculated separately. At full stacks of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Spirit Lock</span>, the equipper's Impact increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span> hits an enemy, causing <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span>, the target's DEF is reduced by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> for 5s. Passive effects of the same name do not stack. When this effect is triggered, if the equipper is not the active character, they gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Spirit Lock</span>, up to a maximum of 3 stacks. This can trigger only once per use of a skill. Each stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Spirit Lock</span> increases the equipper's Impact by <span class=\"font-bold\" style=\"color: #2BAD00;\">4%</span>, lasting 12s. The duration of each stack is calculated separately. At full stacks of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Spirit Lock</span>, the equipper's Impact increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14136.png"
+    },
+    "14137": {
+        "name": "QINGMING BIRDCAGE",
+        "id": "14137",
+        "rarity": 4,
+        "weaponType": 6,
+        "stats": {
+            "12101": 743,
+            "11102": 300000
+        },
+        "effect": {
+            "name": "CLOUD FLOW",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>. When the equipper launches an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the character gains 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Qingming Companion</span> effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the <span class=\"font-bold\" style=\"color: #FFFFFF;\">Qingming Companion</span> effect increases the equipper's <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">8%</span>, and increases Ultimate and EX Special Attack <span class=\"font-bold\" style=\"color: #FE437E;\">Ether Sheer DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span>. When the equipper launches an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the character gains 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Qingming Companion</span> effect, stacking up to 2 times and lasting 15s. On entering combat, immediately gain 2 stacks. Repeated triggers reset the duration. Each stack of the <span class=\"font-bold\" style=\"color: #FFFFFF;\">Qingming Companion</span> effect increases the equipper's <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">12.8%</span>, and increases Ultimate and EX Special Attack <span class=\"font-bold\" style=\"color: #FE437E;\">Ether Sheer DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14137.png"
+    },
+    "14138": {
+        "name": "SEVERED INNOCENCE",
+        "id": "14138",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "21101": 480000
+        },
+        "effect": {
+            "name": "TRANQUIL BLOSSOM",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT DMG is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span>. When the equipper lands a hit with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span>, they gain 1 stack of a buff. Each stack increases the equipper's CRIT DMG by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>, stacking up to 3 times. The effect lasts for 30s, with each stack's duration calculated separately, and can only be triggered once per use of a skill. With all 3 stacks, the equipper's <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT DMG is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">48%</span>. When the equipper lands a hit with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span>, or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span>, they gain 1 stack of a buff. Each stack increases the equipper's CRIT DMG by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span>, stacking up to 3 times. The effect lasts for 30s, with each stack's duration calculated separately, and can only be triggered once per use of a skill. With all 3 stacks, the equipper's <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14138.png"
+    },
+    "14139": {
+        "name": "ROARING FUR-NACE",
+        "id": "14139",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 713,
+            "12102": 300000
+        },
+        "effect": {
+            "name": "TIGER SPIRIT RISING",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The Daze dealt by the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">28%</span>.<br/>When using a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> to deal <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span>, the DMG dealt by all squad members increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>, stacking up to 2 times and lasting 30s. The duration of each stack is calculated separately. Triggers once per use of a skill. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The Daze dealt by the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span>, and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">40.6%</span>.<br/>When using a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Chain Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> to deal <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span>, the DMG dealt by all squad members increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">14.5%</span>, stacking up to 2 times and lasting 30s. The duration of each stack is calculated separately. Triggers once per use of a skill. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14139.png"
+    },
+    "14140": {
+        "name": "PRACTICED PERFECTION",
+        "id": "14140",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 713,
+            "12102": 300000
+        },
+        "effect": {
+            "name": "GIFT OF STARDUST",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Anomaly Mastery</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">60</span>. When inflicting <span class=\"font-bold\" style=\"color: #F0D12B;\">Assault</span>, the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 20s, stacking up to 2 times. Repeated triggers reset the duration. When the equipper enters combat, immediately gain 2 stacks.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Anomaly Mastery</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">96</span>. When inflicting <span class=\"font-bold\" style=\"color: #F0D12B;\">Assault</span>, the equipper's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span> for 20s, stacking up to 2 times. Repeated triggers reset the duration. When the equipper enters combat, immediately gain 2 stacks.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14140.png"
+    },
+    "14141": {
+        "name": "METANUKIMORPHOSIS",
+        "id": "14141",
+        "rarity": 4,
+        "weaponType": 4,
+        "stats": {
+            "12101": 713,
+            "30502": 600000
+        },
+        "effect": {
+            "name": "EXQUISITELY INGENIOUS",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> deals <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span>, their <span class=\"font-bold\" style=\"color: #FFFFFF;\">Anomaly Mastery</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">30</span> for 40s. When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span> hits an enemy, all squad members' <span class=\"font-bold\" style=\"color: #FFFFFF;\">Anomaly Proficiency</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">60</span> for 40s. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> deals <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span>, their <span class=\"font-bold\" style=\"color: #FFFFFF;\">Anomaly Mastery</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">30</span> for 40s. When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Aftershock</span> hits an enemy, all squad members' <span class=\"font-bold\" style=\"color: #FFFFFF;\">Anomaly Proficiency</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">60</span> for 40s. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14141.png"
+    },
+    "14143": {
+        "name": "CLOUDCLEAVE RADIANCE",
+        "id": "14143",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 743,
+            "21101": 480000
+        },
+        "effect": {
+            "name": "JADE SOUL, FROZEN HEART",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's DMG ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> of the target's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical RES</span>. When the equipper activates an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ether Veil</span>, the equipper's DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> and CRIT DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> for 40s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's DMG ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">28%</span> of the target's <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical RES</span>. When the equipper activates an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ether Veil</span>, the equipper's DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span> and CRIT DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span> for 40s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14143.png"
+    },
+    "14145": {
+        "name": "DREAMLIT HEARTH",
+        "id": "14145",
+        "rarity": 4,
+        "weaponType": 4,
+        "stats": {
+            "12101": 713,
+            "11102": 300000
+        },
+        "effect": {
+            "name": "MOONTIDE EPIC",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.4</span>/s. When the equipper activates <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ether Veil</span> or extends its duration, all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span> increased DMG and <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.64</span>/s. When the equipper activates <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ether Veil</span> or extends its duration, all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">40%</span> increased DMG and <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span> increased Max HP for 45s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14145.png"
+    },
+    "14146": {
+        "name": "CORDIS GERMINA",
+        "id": "14146",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "20101": 240000
+        },
+        "effect": {
+            "name": "SPROUTING CORE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>. When the equipper deals DMG with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, they gain 1 stack of a buff. Each stack increases the equipper's <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">12.5%</span>, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> DMG ignore <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> of enemy DEF.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">23%</span>. When the equipper deals DMG with a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, they gain 1 stack of a buff. Each stack increases the equipper's <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>, up to 2 stacks. Each stack lasts 40s. The duration of each stack is calculated separately. Can trigger once per use of a skill. At 2 stacks, the wearer's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> and <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> DMG ignore <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span> of enemy DEF.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14146.png"
+    },
+    "14147": {
+        "name": "WRATHFUL VAJRA",
+        "id": "14147",
+        "rarity": 4,
+        "weaponType": 6,
+        "stats": {
+            "12101": 713,
+            "11102": 300000
+        },
+        "effect": {
+            "name": "PURGING KARMIC FIRE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>. When the equipper launches an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, their <span class=\"font-bold\" style=\"color: #FF5521;\">Fire Sheer DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">9%</span>, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span>. When the equipper launches an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, their <span class=\"font-bold\" style=\"color: #FF5521;\">Fire Sheer DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">14.4%</span>, stacking up to 2 times and lasting 20s. The duration of each stack is calculated separately.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14147.png"
+    },
+    "14148": {
+        "name": "YESTERDAY CALLS",
+        "id": "14148",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 713,
+            "20101": 240000
+        },
+        "effect": {
+            "name": "24/7",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">1.5</span>/s. When the equipper deals <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> with an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the Daze dealt by the equipper's attacks increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">9%</span> for 10s, stacking up to 3 times. At 3 stacks, all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span> additional CRIT DMG for 40s. Repeated triggers reset the duration. Only one instance of this CRIT DMG boost effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While off-field, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">1.5</span>/s. When the equipper deals <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span> with an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, the Daze dealt by the equipper's attacks increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">9%</span> for 10s, stacking up to 3 times. At 3 stacks, all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span> additional CRIT DMG for 40s. Repeated triggers reset the duration. Only one instance of this CRIT DMG boost effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14148.png"
+    },
+    "14149": {
+        "name": "THOUGHTBOP",
+        "id": "14149",
+        "rarity": 4,
+        "weaponType": 4,
+        "stats": {
+            "12101": 713,
+            "30502": 600000
+        },
+        "effect": {
+            "name": "DECIBEL MONOLOGUE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While not the active character, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.6</span>/s. When the equipper uses an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> and deals <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span>, all squad members gain a buff that increases DMG dealt by <span class=\"font-bold\" style=\"color: #2BAD00;\">12.5%</span> for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> ATK. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">While not the active character, the equipper's Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.96</span>/s. When the equipper uses an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> and deals <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical DMG</span>, all squad members gain a buff that increases DMG dealt by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 40s, stacking up to 2 times. Repeated triggers reset the duration. At 2 stacks, characters gain an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> ATK. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14149.png"
+    },
+    "14150": {
+        "name": "ANGEL IN THE SHELL",
+        "id": "14150",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 713,
+            "31401": 30
+        },
+        "effect": {
+            "name": "ENERGETIC STRIKE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases the equipper's Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">90</span>. When the equipper is an <span class=\"font-bold\" style=\"color: #FE437E;\">Ether</span> character, and comes on-field or uses a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, they gain a buff: DMG dealt to enemies afflicted with Attribute Anomalies increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>, and all Attribute Anomaly DMG and Disorder DMG they trigger increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>, lasting 15s. Repeated triggers reset the duration, and the effect is removed when switching off-field.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases the equipper's Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">144</span>. When the equipper is an <span class=\"font-bold\" style=\"color: #FE437E;\">Ether</span> character, and comes on-field or uses a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, they gain a buff: DMG dealt to enemies afflicted with Attribute Anomalies increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span>, and all Attribute Anomaly DMG and Disorder DMG they trigger increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span>, lasting 15s. Repeated triggers reset the duration, and the effect is removed when switching off-field.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14150.png"
+    },
+    "14151": {
+        "name": "NEON FANTASIES",
+        "id": "14151",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 713,
+            "31401": 30
+        },
+        "effect": {
+            "name": "DISCO DEMON",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">90</span>. When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> deals <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span>, all squad members' DMG dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> for 40s, stacking up to 2 times. This effect can trigger once per use of a skill and repeated triggers reset the duration. With 2 stacks, the equipper's Anomaly Proficiency increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">60</span>. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">145</span>. When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> deals <span class=\"font-bold\" style=\"color: #FE437E;\">Ether DMG</span>, all squad members' DMG dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span> for 40s, stacking up to 2 times. This effect can trigger once per use of a skill and repeated triggers reset the duration. With 2 stacks, the equipper's Anomaly Proficiency increases by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">96</span>. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14151.png"
+    },
+    "14152": {
+        "name": "SERPENTINE SEEKER",
+        "id": "14152",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "30502": 600000
+        },
+        "effect": {
+            "name": "BIOENGINEERED VENOM",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span>. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span>, ignore <span class=\"font-bold\" style=\"color: #2BAD00;\">28%</span> of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span>. When the equipper consumes at least 20 Energy in a single instance, every 20 Energy consumed grants 3s of a buff: when dealing <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span>, ignore <span class=\"font-bold\" style=\"color: #2BAD00;\">28%</span> of the target's DEF. Repeated triggers extend the duration, up to a maximum of 30s. When entering combat, gain 10s of this buff. While the equipper is not the active character, the duration no longer decreases.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14152.png"
+    },
+    "14153": {
+        "name": "STARLIGHT RIDER FACEPLATE",
+        "id": "14153",
+        "rarity": 4,
+        "weaponType": 6,
+        "stats": {
+            "12101": 713,
+            "11102": 300000
+        },
+        "effect": {
+            "name": "KNIGHT'S MORALE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>. When the equipper launches a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span>, their <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical Sheer DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases CRIT Rate by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span>. When the equipper launches a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span>, their <span class=\"font-bold\" style=\"color: #F0D12B;\">Physical Sheer DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14153.png"
+    },
+    "14154": {
+        "name": "FROSTFALL SICKLE",
+        "id": "14154",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 713,
+            "31401": 30
+        },
+        "effect": {
+            "name": "TERMINATING VERDICT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When an <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice attribute</span> equipper uses a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, their <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 40s, stacking up to 2 times, once per use of a skill. Repeated triggers refresh the duration. At 2 stacks, the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Abloom</span> DMG dealt is increased by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">35%</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When an <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice attribute</span> equipper uses a <span class=\"font-bold\" style=\"color: #FFFFFF;\">Special Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, their <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice DMG</span> is increased by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span> for 40s, stacking up to 2 times, once per use of a skill. Repeated triggers refresh the duration. At 2 stacks, the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Abloom</span> DMG dealt is increased by an additional <span class=\"font-bold\" style=\"color: #2BAD00;\">50%</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14154.png"
+    },
+    "14155": {
+        "name": "SOL EXUVIA",
+        "id": "14155",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "12102": 300000
+        },
+        "effect": {
+            "name": "ECLIPSE EFFECT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by 20%. When the equipper is Pyrois, using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> grants the Eclipse effect. When the Eclipse effect is active, DMG dealt by the equipper ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> of <span class=\"font-bold\" style=\"color: #FE437E;\">Ether RES</span>, lasting 45s. Repeated triggers reset the duration. When the equipper enters combat, they gain the Eclipse effect.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">CRIT Rate increases by 20%. When the equipper is Pyrois, using an <span class=\"font-bold\" style=\"color: #FFFFFF;\">Ultimate</span> grants the Eclipse effect. When the Eclipse effect is active, DMG dealt by the equipper ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span> of <span class=\"font-bold\" style=\"color: #FE437E;\">Ether RES</span>, lasting 45s. Repeated triggers reset the duration. When the equipper enters combat, they gain the Eclipse effect.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14155.png"
+    },
+    "14156": {
+        "name": "JOYAU DORE",
+        "id": "14156",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 713,
+            "30502": 600000
+        },
+        "effect": {
+            "name": "FLAWLESS ETIQUETTE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">70</span>. When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> deals <span class=\"font-bold\" style=\"color: #A6C5FD;\">Wind DMG</span>, the DMG dealt by their <span class=\"font-bold\" style=\"color: #FFFFFF;\">Vortex</span> and <span class=\"font-bold\" style=\"color: #A6C5FD;\">Windswept</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">7%</span> for 40s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill use. At 2 stacks, all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">60</span> Anomaly Proficiency. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Anomaly Proficiency increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">110</span>. When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> deals <span class=\"font-bold\" style=\"color: #A6C5FD;\">Wind DMG</span>, the DMG dealt by their <span class=\"font-bold\" style=\"color: #FFFFFF;\">Vortex</span> and <span class=\"font-bold\" style=\"color: #A6C5FD;\">Windswept</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">11%</span> for 40s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill use. At 2 stacks, all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">96</span> Anomaly Proficiency. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14156.png"
+    },
+    "14157": {
+        "name": "CHIEF SIDEKICK",
+        "id": "14157",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 713,
+            "20101": 240000
+        },
+        "effect": {
+            "name": "THE GENIUS'S FOLLOWER",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Impact increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">30</span>, and their DMG ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> of the target's <span class=\"font-bold\" style=\"color: #FF5521;\">Fire RES</span>. When the equipper is not the active character, Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.4</span>/s. When the equipper deals <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span> with an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, all Agents' DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">12.5%</span> for 30s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill. Only one instance of this effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's Impact increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">42</span>, and their DMG ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span> of the target's <span class=\"font-bold\" style=\"color: #FF5521;\">Fire RES</span>. When the equipper is not the active character, Energy Regen increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">0.64</span>/s. When the equipper deals <span class=\"font-bold\" style=\"color: #FF5521;\">Fire DMG</span> with an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>, all Agents' DMG increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> for 30s, stacking up to 2 times. Repeated triggers reset the duration. This effect can trigger once per skill. Only one instance of this effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14157.png"
+    },
+    "14158": {
+        "name": "ODE OF RESURRECTED WINGS",
+        "id": "14158",
+        "rarity": 4,
+        "weaponType": 3,
+        "stats": {
+            "12101": 743,
+            "12102": 360000
+        },
+        "effect": {
+            "name": "PARADISE LOST",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">96</span>. When the equipper triggers a <span class=\"font-bold\" style=\"color: #FFA9DD;\">Refringe</span> reaction, they gain <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> increased Anomaly DMG, and all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">30%</span> increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">Increases Anomaly Proficiency by <span class=\"font-bold\" style=\"color: #2BAD00;\">135</span>. When the equipper triggers a <span class=\"font-bold\" style=\"color: #FFA9DD;\">Refringe</span> reaction, they gain <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span> increased Anomaly DMG, and all squad members gain <span class=\"font-bold\" style=\"color: #2BAD00;\">48%</span> increased DMG dealt. Both effects last 30s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14158.png"
+    },
+    "14159": {
+        "name": "KNIGHT'S EXTOLMENT",
+        "id": "14159",
+        "rarity": 4,
+        "weaponType": 1,
+        "stats": {
+            "12101": 713,
+            "21101": 480000
+        },
+        "effect": {
+            "name": "KNIGHT'S RITE",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>'s heavy attack hits an enemy, they gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Battle Edge</span>, increasing CRIT DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span> for 25s. <span class=\"font-bold\" style=\"color: #FFFFFF;\">Battle Edge</span> can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all <span class=\"font-bold\" style=\"color: #FFFFFF;\">Battle Edge</span>.<br/>At 2 stacks of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Battle Edge</span>, the equipper gains <span class=\"font-bold\" style=\"color: #FFFFFF;\">Bonechill</span>: Their DMG ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> of the target's <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice RES</span>.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">When the equipper's <span class=\"font-bold\" style=\"color: #FFFFFF;\">Basic Attack</span> or <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span>'s heavy attack hits an enemy, they gain 1 stack of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Battle Edge</span>, increasing CRIT DMG by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span> for 25s. <span class=\"font-bold\" style=\"color: #FFFFFF;\">Battle Edge</span> can stack up to 2 times, and each skill type can provide up to 1 stack. Repeated triggers refresh the duration of all <span class=\"font-bold\" style=\"color: #FFFFFF;\">Battle Edge</span>.<br/>At 2 stacks of <span class=\"font-bold\" style=\"color: #FFFFFF;\">Battle Edge</span>, the equipper gains <span class=\"font-bold\" style=\"color: #FFFFFF;\">Bonechill</span>: Their DMG ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span> of the target's <span class=\"font-bold\" style=\"color: #98EFF0;\">Ice RES</span>.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14159.png"
+    },
+    "14161": {
+        "name": "CRIMSON THIRST",
+        "id": "14161",
+        "rarity": 4,
+        "weaponType": 7,
+        "stats": {
+            "13101": 431,
+            "13102": 480000
+        },
+        "effect": {
+            "name": "BLOODTHIRST",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span>, and <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>. When the equipper uses an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or triggers <span class=\"font-bold\" style=\"color: #FFFFFF;\">Maim</span>, <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric Sharp DMG</span> dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 40s. Repeated triggers reset the duration.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25%</span>, and <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric DMG</span> increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span>. When the equipper uses an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> or triggers <span class=\"font-bold\" style=\"color: #FFFFFF;\">Maim</span>, <span class=\"font-bold\" style=\"color: #2EB6FF;\">Electric Sharp DMG</span> dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">10%</span> for 40s. Repeated triggers reset the duration.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14161.png"
+    },
+    "14162": {
+        "name": "CRIMSON MOON CASKET",
+        "id": "14162",
+        "rarity": 4,
+        "weaponType": 2,
+        "stats": {
+            "12101": 713,
+            "30502": 600000
+        },
+        "effect": {
+            "name": "SLEEPLESS ETERNAL NIGHT",
+            "desc": [
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span>. DMG dealt ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">15%</span> of the target's <span class=\"font-bold\" style=\"color: #A6C5FD;\">Wind RES</span>. When the equipper uses an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> to deal <span class=\"font-bold\" style=\"color: #A6C5FD;\">Wind DMG</span>, Daze dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">16%</span>, and DMG dealt by all other squad members increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">20%</span>, for 50s. Repeated triggers reset the duration. Only one instance of the DMG increase effect can exist in the same squad.</span>",
+                "<span aria-hidden=\"false\" class=\"gb-wrap-text\">The equipper's CRIT Rate increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span>. DMG dealt ignores <span class=\"font-bold\" style=\"color: #2BAD00;\">24%</span> of the target's <span class=\"font-bold\" style=\"color: #A6C5FD;\">Wind RES</span>. When the equipper uses an <span class=\"font-bold\" style=\"color: #FFFFFF;\">EX Special Attack</span> to deal <span class=\"font-bold\" style=\"color: #A6C5FD;\">Wind DMG</span>, Daze dealt increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">25.6%</span>, and DMG dealt by all other squad members increases by <span class=\"font-bold\" style=\"color: #2BAD00;\">32%</span>, for 50s. Repeated triggers reset the duration. Only one instance of the DMG increase effect can exist in the same squad.</span>"
+            ]
+        },
+        "imgUrl": "wengine_14162.png"
+    }
+}

@@ -121,6 +121,7 @@ export const TerminalInputText = () => {
             dataAux = typeof dataAux[word] === "function" ? dataAux[word]() : dataAux[word];
         });
 
+        // eslint-disable-next-line no-prototype-builtins
         if (dataAux.hasOwnProperty("dmg")) {
             setSuggestions([]);
             return;
@@ -137,7 +138,7 @@ export const TerminalInputText = () => {
     return (
         <div className="relative flex flex-col">
 
-            <input type="text" spellCheck="false" className="p-2 w-150 rounded-md justify-center bg-stone-950 focus:outline-none no" onInput={(handleInput)} value={labelText} onKeyDown={handleKeyDown} ref={inputRef} />
+            <input type="text" spellCheck="false" className="p-2 w-150 rounded-md justify-center bg-stone-950 focus:outline-none no" onInput={handleInput} value={labelText} onKeyDown={handleKeyDown} ref={inputRef} />
             <div className="absolute flex top-10 left-1">
                 <ValidGreenBox />
                 <DropdownSuggestionsBox inputRef={inputRef} />

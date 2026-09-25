@@ -51,18 +51,19 @@ export class CharacterBuilder {
         if (core_lvl === 1) return;
 
         const core_stats = Object.entries(this.char_raw.coreSkill.coreGrowthStat);
-        const growth_attr1 = Math.floor((core_lvl) / 2)
-        const growth_attr2 = Math.floor((core_lvl - 1) / 2)
 
-        const attrId1 = <AttrValues>+core_stats[1][0]
-        const attrId2 = <AttrValues>+core_stats[0][0]
-        if (StatsFloatNumber.includes(attrId1)) {
-            core_stats[1][1] /= 10000;
-        }
+        core_stats.forEach(([key, value], index) => {
+            const num_attr_flag = core_stats.length === 2 ? index : 1;
+            const growth_attr = Math.floor((core_lvl - (1 * num_attr_flag)) / core_stats.length)
+            const attrId = <AttrValues>+key;
+            if (StatsFloatNumber.includes(attrId)) {
+                value /= 10000;
+            }
 
-        this.character.charBase[attrId1] += core_stats[1][1] * growth_attr1
-        this.character.charBase[attrId2] += core_stats[0][1] * growth_attr2
+            this.character.charBase[attrId] += value * growth_attr
+        })
     }
+
 
     private setCharMetadata() {
         const charMetadata = new CharMetadata();

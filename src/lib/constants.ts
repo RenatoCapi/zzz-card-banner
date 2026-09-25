@@ -4,6 +4,9 @@ export const AttributeID = {
     HP_P: 11102,
     HP_FLAT: 11103,
 
+    SHIELD_P: 11302,
+    SHIELD_FLAT: 11303,
+
     ATK: 12101,
     ATK_P: 12102,
     ATK_FLAT: 12103,
@@ -27,6 +30,9 @@ export const AttributeID = {
     PEN: 23101,
     PEN_P: 23103,
     PEN_FLAT: 23203,
+
+    SHARP_CRIT_DMG: 21301,
+    SHARP_CRIT_DMG_FLAT: 21303,
 
     ENERGY_RATE: 30501,
     ENERGY_P: 30502,
@@ -54,6 +60,9 @@ export const AttributeID = {
     ETHER_DMG: 31901,
     ETHER_DMG_FLAT: 31903,
 
+    WIND_DMG: 32301,
+    WIND_DMG_FLAT: 32303,
+
     ADRENALINE_ACC: 32001,
     ADRENALINE_ACC_P: 32002,
     ADRENALINE_ACC_FLAT: 32003,
@@ -72,6 +81,7 @@ export const Stats: AttrValues[] = Object.values(AttributeID)
 
 export const StatsFloatNumber: AttrValues[] = [
     AttributeID.HP_P,
+    AttributeID.SHIELD_P,
     AttributeID.ATK_P,
     AttributeID.IMPACT_P,
     AttributeID.DEF_P,
@@ -79,6 +89,8 @@ export const StatsFloatNumber: AttrValues[] = [
     AttributeID.CRIT_RATE_FLAT,
     AttributeID.CRIT_DMG,
     AttributeID.CRIT_DMG_FLAT,
+    AttributeID.SHARP_CRIT_DMG,
+    AttributeID.SHARP_CRIT_DMG_FLAT,
     AttributeID.PEN,
     AttributeID.PEN_P,
     AttributeID.ENERGY_RATE,
@@ -119,7 +131,9 @@ export const DiscStats = [
     AttributeID.ICE_DMG_FLAT,
     AttributeID.ELEC_DMG_FLAT,
     AttributeID.ETHER_DMG_FLAT,
+    AttributeID.WIND_DMG_FLAT,
     AttributeID.SHIELD_EFFECT,
+    AttributeID.SHIELD_P,
 ]
 
 export type DiscStatsID = keyof typeof DiscStats
@@ -162,6 +176,10 @@ export const DiscSetID = {
     SHINING_ARIA: 336,
     WONDERLAND: 337,
     NOTES_CHAINED: 338,
+    WUTHERING_SALON: 339,
+    SKY_ABLAZE: 340,
+    FEATHERED_FATE: 341,
+    THORNED_ROSE: 342
 }
 
 export const HOYO_2P_DISCSET: { [id: number]: number[] } = {
@@ -191,6 +209,10 @@ export const HOYO_2P_DISCSET: { [id: number]: number[] } = {
     [DiscSetID.SHINING_ARIA]: [AttributeID.ETHER_DMG, 10.0],
     [DiscSetID.WONDERLAND]: [AttributeID.HP_P, 10.0],
     [DiscSetID.NOTES_CHAINED]: [AttributeID.ICE_DMG, 10.0],
+    [DiscSetID.WUTHERING_SALON]: [AttributeID.WIND_DMG, 10.0],
+    [DiscSetID.SKY_ABLAZE]: [AttributeID.ETHER_DMG, 10.0],
+    [DiscSetID.FEATHERED_FATE]: [AttributeID.ANOMALY_PROF, 30.0],
+    [DiscSetID.THORNED_ROSE]: [AttributeID.DEF_P, 16.0],
 
 }
 
@@ -237,6 +259,7 @@ export const StatsToReadableShort: { [id: number]: string } = {
     [AttributeID.ICE_DMG]: "Ice",
     [AttributeID.ELEC_DMG]: "Electric",
     [AttributeID.ETHER_DMG]: "Ether",
+    [AttributeID.WIND_DMG]: "Wind",
     [AttributeID.SHEER_FORCE]: "Sheer",
 }
 
@@ -271,6 +294,7 @@ export const StatsToReadableMin: { [id: number]: string } = {
     [AttributeID.ICE_DMG]: "ICE",
     [AttributeID.ELEC_DMG]: "ELEC",
     [AttributeID.ETHER_DMG]: "ETHER",
+    [AttributeID.WIND_DMG]: "WIND",
     [AttributeID.SHEER_FORCE]: "SHEER"
 }
 
@@ -281,6 +305,7 @@ export const WeaponTypeID = {
     SUPPORT: 4,
     DEFENSE: 5,
     RUPTURE: 6,
+    ARMORER: 7,
 }
 
 export const HitTypeID = {
@@ -294,7 +319,9 @@ export const ElementTypeID = {
     FIRE: 201,
     ICE: 202,
     ELECTRIC: 203,
+    WIND: 204,
     ETHER: 205,
+    LUMEN: 206,
 }
 
 export const ElementTypeToAttr = {
@@ -303,6 +330,7 @@ export const ElementTypeToAttr = {
     [ElementTypeID.ICE]: AttributeID.ICE_DMG,
     [ElementTypeID.ELECTRIC]: AttributeID.ELEC_DMG,
     [ElementTypeID.ETHER]: AttributeID.ETHER_DMG,
+    [ElementTypeID.WIND]: AttributeID.WIND_DMG,
 }
 
 export const CampID = {
@@ -319,6 +347,10 @@ export const CampID = {
     SPOOK: 11,
     KRAMPUS: 12,
     ANGELS: 13,
+    PHAETHON: 14,
+    ROSCAELIFER: 15,
+    COVENANT: 16,
+    AIRSPACE: 17,
 }
 
 export const HOYO_SkillID = {

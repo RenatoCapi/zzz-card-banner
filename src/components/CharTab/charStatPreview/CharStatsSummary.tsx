@@ -1,5 +1,4 @@
 
-import { Key } from "react";
 import discset_data from "../../../data/base_discset_data.json";
 import { Assets } from "../../../lib/assets";
 import { Character } from "../../../lib/models/Character";
@@ -27,10 +26,11 @@ const WEngineStats = (props: { wengine: WEngine }) => {
     const wengine_stats = viewStats(wengine.stats);
     const wengine_lvl = (wengine.lvl === -1) ? "" : "Lv." + wengine.lvl;
     const wengine_stars = (wengine.star === 0) ? "" : "R" + wengine.star;
+
     return (
         <div className="flex flex-col justify-between gap-1.5 w-47.5 ml-2" key="wengine_stats">
             <span className="px-1 text-balance">{wengine.name}</span>
-            {wengine_stats.map((stat: Stat, reactId: Key | null | undefined) =>
+            {wengine_stats.map((stat: Stat, reactId: number) =>
                 <StatRow stat={stat} key={reactId} />
             )}
             <div className="relative flex left-6 gap-2">
@@ -41,6 +41,8 @@ const WEngineStats = (props: { wengine: WEngine }) => {
         </div>
     );
 }
+
+
 const CharStatSummary = ({ char }: { char: Character | null }) => {
     if (!char) char = new Character();
 
@@ -51,9 +53,6 @@ const CharStatSummary = ({ char }: { char: Character | null }) => {
         .filter(value => (value[1] === 2 || value[1] === 4));
 
     const discs_meta: DataDiscSetsMeta = discset_data;
-
-
-
 
     return (
         <div className="flex flex-col justify-center gap-2 items-center h-187.5">

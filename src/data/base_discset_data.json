@@ -562,5 +562,45 @@
     "EN": {
       "name": "Notes From the Chained"
     }
+  },
+  "339": {
+    "icon": "SuitWutheringSalon.webp",
+    "EN": {
+      "name": "Wuthering Salon"
+    },
+    "Name": "EquipmentSuit_33900_name",
+    "SetBonusProps": {
+      "32303": 1000
+    }
+  },
+  "340": {
+    "icon": "SuitTheSkyAblaze.webp",
+    "EN": {
+      "name": "The Sky Ablaze"
+    },
+    "Name": "EquipmentSuit_34000_name",
+    "SetBonusProps": {
+      "31903": 1000
+    }
+  },
+  "341": {
+    "icon": "SuitFeatheredFate.webp",
+    "EN": {
+      "name": "Feathered Fate"
+    },
+    "Name": "EquipmentSuit_34100_name",
+    "SetBonusProps": {
+      "31203": 30
+    }
+  },
+  "342": {
+    "icon": "SuitThornedRose.webp",
+    "EN": {
+      "name": "Thorned Rose"
+    },
+    "Name": "EquipmentSuit_34200_name",
+    "SetBonusProps": {
+      "13102": 1600
+    }
   }
 }

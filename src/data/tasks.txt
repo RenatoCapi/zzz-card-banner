@@ -1,0 +1,17 @@
+tasks
+ - update data
+ - create tests
+ - create a damage calc structure
+
+
+
+
+testes
+
+import
+calcs
+saveState
+
+
+
+

@@ -1,5 +1,5 @@
 import { Assets } from "../../lib/assets"
-import ButtonImportFile from "./ButtonLoadFile"
+import LazyImportFile from "./ButtonLoadFile"
 
 const ImportTab = () => {
     return (
@@ -7,7 +7,7 @@ const ImportTab = () => {
             <div className="flex flex-col items-center justify-center ">
                 <span className="text-4xl my-8">Instructions</span>
                 <div className="flex relative flex-row gap-2 ">
-                    <ButtonImportFile />
+                    <LazyImportFile />
 
                 </div>
                 <span>

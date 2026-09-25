@@ -2,10 +2,11 @@
 import { Stat } from "./models/DiscSet";
 
 import discset_data from "../data/base_discset_data.json";
-import wengine_data from "../data/base_wengine_data.json";
+//import wengine_data from "../data/base_wengine_data.json";
+import wengine_data from "../data/game_data_wengine.json";
 import { ICON_FROM_ELEMENT_MAPPING, ICON_FROM_SKILL_MAPPING, ICON_FROM_STAT_MAPPING } from "./constantsUI";
 import { dataDiscSetsMeta as DataDiscSetsMeta } from "./types/discs_metadata";
-import { WengineMetadata } from "./types/wengine_metadata";
+import { WengineData } from "./types/wengine_data_types";
 
 export class Assets {
     private static BASE_PATH = "/zzz-card-banner";
@@ -60,8 +61,8 @@ export class Assets {
     static getWEngine(id: number) {
         if (!id) return Assets.getBlank();
 
-        const wengine_meta: WengineMetadata = wengine_data;
-        return Assets.getImageUrl(`/icon/wengine/${wengine_meta[id]['icon']}.webp`)
+        const wengine_meta: WengineData = wengine_data;
+        return Assets.getImageUrl(`/icon/wengine/${wengine_meta[id]["imgUrl"]}`)
     }
 
     static getSkill(id: number) {

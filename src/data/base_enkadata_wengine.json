@@ -1174,5 +1174,159 @@
             "PropertyId": 31402,
             "PropertyValue": 1200
         }
+    },
+    "14151": {
+        "ItemName": "Item_Weapon_S_1511_Name",
+        "Rarity": 4,
+        "ProfessionType": "Stun",
+        "ImagePath": "/ui/zzz/Weapon_S_1511.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 48
+        },
+        "SecondaryStat": {
+            "PropertyId": 31402,
+            "PropertyValue": 1200
+        }
+    },
+    "14152": {
+        "ItemName": "Item_Weapon_S_1521_Name",
+        "Rarity": 4,
+        "ProfessionType": "Attack",
+        "ImagePath": "/ui/zzz/Weapon_S_1521.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 48
+        },
+        "SecondaryStat": {
+            "PropertyId": 30502,
+            "PropertyValue": 2400
+        }
+    },
+    "14153": {
+        "ItemName": "Item_Weapon_S_1531_Name",
+        "Rarity": 4,
+        "ProfessionType": "Rupture",
+        "ImagePath": "/ui/zzz/Weapon_S_1531.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 48
+        },
+        "SecondaryStat": {
+            "PropertyId": 11102,
+            "PropertyValue": 1200
+        }
+    },
+    "14154": {
+        "ItemName": "Item_Weapon_S_1541_Name",
+        "Rarity": 4,
+        "ProfessionType": "Anomaly",
+        "ImagePath": "/ui/zzz/Weapon_S_1541.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 48
+        },
+        "SecondaryStat": {
+            "PropertyId": 31402,
+            "PropertyValue": 1200
+        }
+    },
+    "14155": {
+        "ItemName": "Item_Weapon_S_Common_04_Name",
+        "Rarity": 4,
+        "ProfessionType": "Attack",
+        "ImagePath": "/ui/zzz/Weapon_S_Common_04.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 48
+        },
+        "SecondaryStat": {
+            "PropertyId": 12102,
+            "PropertyValue": 1200
+        }
+    },
+    "14156": {
+        "ItemName": "Item_Weapon_S_1561_Name",
+        "Rarity": 4,
+        "ProfessionType": "Anomaly",
+        "ImagePath": "/ui/zzz/Weapon_S_1561.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 48
+        },
+        "SecondaryStat": {
+            "PropertyId": 30502,
+            "PropertyValue": 2400
+        }
+    },
+    "14157": {
+        "ItemName": "Item_Weapon_S_1571_Name",
+        "Rarity": 4,
+        "ProfessionType": "Stun",
+        "ImagePath": "/ui/zzz/Weapon_S_1571.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 48
+        },
+        "SecondaryStat": {
+            "PropertyId": 20103,
+            "PropertyValue": 960
+        }
+    },
+    "14158": {
+        "ItemName": "Item_Weapon_S_1581_Name",
+        "Rarity": 4,
+        "ProfessionType": "Anomaly",
+        "ImagePath": "/ui/zzz/Weapon_S_1581.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 50
+        },
+        "SecondaryStat": {
+            "PropertyId": 12102,
+            "PropertyValue": 1440
+        }
+    },
+    "14159": {
+        "ItemName": "Item_Weapon_S_1591_Name",
+        "Rarity": 4,
+        "ProfessionType": "Attack",
+        "ImagePath": "/ui/zzz/Weapon_S_1591.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 48
+        },
+        "SecondaryStat": {
+            "PropertyId": 21103,
+            "PropertyValue": 1920
+        }
+    },
+    "14161": {
+        "ItemName": "Item_Weapon_S_1611_Name",
+        "Rarity": 4,
+        "ProfessionType": "Armorer",
+        "ImagePath": "/ui/zzz/Weapon_S_1611.png",
+        "MainStat": {
+            "PropertyId": 13101,
+            "PropertyValue": 29
+        },
+        "SecondaryStat": {
+            "PropertyId": 13102,
+            "PropertyValue": 1920
+        }
+    },
+    "14162": {
+        "ItemName": "Item_Weapon_S_1621_Name",
+        "Rarity": 4,
+        "ProfessionType": "Stun",
+        "ImagePath": "/ui/zzz/Weapon_S_1621.png",
+        "MainStat": {
+            "PropertyId": 12101,
+            "PropertyValue": 48
+        },
+        "SecondaryStat": {
+            "PropertyId": 30502,
+            "PropertyValue": 2400
+        }
     }
 }

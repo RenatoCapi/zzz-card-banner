@@ -5,8 +5,7 @@ import CharSkillSetPreview from "./CharSkills";
 import { CinemaPreview } from "./CinemaSvg";
 
 
-const CharProfile = (props: { char: Character }) => {
-    const { char } = props;
+const CharProfile = ({ char }: { char: Character }) => {
     const cardStyle = "card-primary w-[420px] h-[750px] ";
 
     if (!char.name)

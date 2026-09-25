@@ -5,7 +5,7 @@ import { Stat } from "./DiscSet";
 import { WengineStatsType } from "./WEngine";
 
 export const viewStatsChar = (charStats: Character) => {
-    let stats: Stat[] = [];
+    const stats: Stat[] = [];
 
     Object.entries(charStats).forEach(([id, value]) => {
         const stat: Stat = new Stat();
@@ -28,7 +28,7 @@ export const viewStatsChar = (charStats: Character) => {
 }
 
 export const viewStats = (wengineStats: WengineStatsType): Stat[] => {
-    let stats: Stat[] = [];
+    const stats: Stat[] = [];
 
     Object.entries(wengineStats).forEach(([id, value]) => {
         const stat: Stat = new Stat();
@@ -50,20 +50,24 @@ export class StatsBase implements BasicStatsObject {
     [AttributeID.HP]: number = 0.0;
     [AttributeID.HP_P]: number = 0.0;
     [AttributeID.HP_FLAT]: number = 0.0;
+    [AttributeID.SHIELD_P]: number = 0.0;
+    [AttributeID.SHIELD_FLAT]: number = 0.0;
     [AttributeID.ATK]: number = 0.0;
     [AttributeID.ATK_P]: number = 0.0;
     [AttributeID.ATK_FLAT]: number = 0.0;
+    [AttributeID.DEF]: number = 0.0;
+    [AttributeID.DEF_P]: number = 0.0;
+    [AttributeID.DEF_FLAT]: number = 0.0;
     [AttributeID.IMPACT]: number = 0.0;
     [AttributeID.IMPACT_P]: number = 0.0;
     [AttributeID.SHEER_FORCE]: number = 0.0;
     [AttributeID.SHEER_FORCE_FLAT]: number = 0.0;
-    [AttributeID.DEF]: number = 0.0;
-    [AttributeID.DEF_P]: number = 0.0;
-    [AttributeID.DEF_FLAT]: number = 0.0;
     [AttributeID.CRIT_RATE]: number = 0.0;
     [AttributeID.CRIT_RATE_FLAT]: number = 0.0;
     [AttributeID.CRIT_DMG]: number = 0.0;
     [AttributeID.CRIT_DMG_FLAT]: number = 0.0;
+    [AttributeID.SHARP_CRIT_DMG]: number = 0.0;
+    [AttributeID.SHARP_CRIT_DMG_FLAT]: number = 0.0;
     [AttributeID.PEN]: number = 0.0;
     [AttributeID.PEN_P]: number = 0.0;
     [AttributeID.PEN_FLAT]: number = 0.0;
@@ -85,13 +89,14 @@ export class StatsBase implements BasicStatsObject {
     [AttributeID.ELEC_DMG_FLAT]: number = 0.0;
     [AttributeID.ETHER_DMG]: number = 0.0;
     [AttributeID.ETHER_DMG_FLAT]: number = 0.0;
+    [AttributeID.WIND_DMG]: number = 0.0;
+    [AttributeID.WIND_DMG_FLAT]: number = 0.0;
     [AttributeID.ADRENALINE_ACC]: number = 0.0;
     [AttributeID.ADRENALINE_ACC_P]: number = 0.0;
     [AttributeID.ADRENALINE_ACC_FLAT]: number = 0.0;
     [AttributeID.SHEER_DMG_BONUS]: number = 0.0;
     [AttributeID.SHEER_DMG_BONUS_FLAT]: number = 0.0;
     [AttributeID.SHIELD_EFFECT]: number = 0.0;
-
 }
 
 export type StatsBaseKeys = keyof StatsBase;

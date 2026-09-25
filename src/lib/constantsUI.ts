@@ -16,6 +16,8 @@ export const ICON_FROM_STAT_MAPPING: { [id: number]: string } = {
     [AttributeID.CRIT_RATE_FLAT]: "prop-crit-rate-icon.png",
     [AttributeID.CRIT_DMG]: "prop-crit-dmg-icon.png",
     [AttributeID.CRIT_DMG_FLAT]: "prop-crit-dmg-icon.png",
+    [AttributeID.SHARP_CRIT_DMG]: "prop-sharp-dmg-icon.png",
+    [AttributeID.SHARP_CRIT_DMG_FLAT]: "prop-sharp-dmg-icon.png",
     [AttributeID.PEN]: "prop-pen-ratio-icon.png",
     [AttributeID.PEN_P]: "prop-pen-value-icon.png",
     [AttributeID.PEN_FLAT]: "prop-pen-ratio-icon.png",
@@ -30,6 +32,7 @@ export const ICON_FROM_STAT_MAPPING: { [id: number]: string } = {
     [AttributeID.ICE_DMG]: "IconIce.webp",
     [AttributeID.ELEC_DMG]: "IconElectric.webp",
     [AttributeID.ETHER_DMG]: "IconEther.webp",
+
     [AttributeID.SHEER_FORCE]: "IconSheer.webp",
 }
 
@@ -39,6 +42,8 @@ export const ICON_FROM_ELEMENT_MAPPING: { [id: number]: string } = {
     [ElementTypeID.ICE]: "IconIce.webp",
     [ElementTypeID.ELECTRIC]: "IconElectric.webp",
     [ElementTypeID.ETHER]: "IconEther.webp",
+    [ElementTypeID.WIND]: "IconEther.webp",
+    [ElementTypeID.LUMEN]: "IconEther.webp",
 }
 
 export const ICON_FROM_SKILL_MAPPING: { [id: number]: string } = {

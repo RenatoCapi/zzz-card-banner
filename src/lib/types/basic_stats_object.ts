@@ -5,6 +5,8 @@ export type BasicStatsObject = {
     [AttributeID.HP]: number
     [AttributeID.HP_P]: number
     [AttributeID.HP_FLAT]: number
+    [AttributeID.SHIELD_P]: number
+    [AttributeID.SHIELD_FLAT]: number
     [AttributeID.ATK]: number
     [AttributeID.ATK_P]: number
     [AttributeID.ATK_FLAT]: number
@@ -19,6 +21,8 @@ export type BasicStatsObject = {
     [AttributeID.CRIT_RATE_FLAT]: number
     [AttributeID.CRIT_DMG]: number
     [AttributeID.CRIT_DMG_FLAT]: number
+    [AttributeID.SHARP_CRIT_DMG]: number
+    [AttributeID.SHARP_CRIT_DMG_FLAT]: number
     [AttributeID.PEN]: number
     [AttributeID.PEN_P]: number
     [AttributeID.PEN_FLAT]: number
@@ -40,6 +44,8 @@ export type BasicStatsObject = {
     [AttributeID.ELEC_DMG_FLAT]: number
     [AttributeID.ETHER_DMG]: number
     [AttributeID.ETHER_DMG_FLAT]: number
+    [AttributeID.WIND_DMG]: number
+    [AttributeID.WIND_DMG_FLAT]: number
     [AttributeID.ADRENALINE_ACC]: number
     [AttributeID.ADRENALINE_ACC_P]: number
     [AttributeID.ADRENALINE_ACC_FLAT]: number
