@@ -79,7 +79,7 @@ const TeammatePfp = () => {
     return (
         <>
             {teammatesId.map((id, index) => (
-                <img key={index} src={Assets.getRole(id)} className="w-auto h-26 max-w-none" />
+                <img key={index} src={Assets.getRole(id)} className="w-auto h-26 max-w-none role-img" />
             ))}
         </>
 

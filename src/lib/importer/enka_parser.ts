@@ -1,6 +1,6 @@
 import wengineEnkaData from "../../data/base_enkadata_wengine.json";
-import wengineLabelsData from "../../data/base_wengine_data.json";
-import { AttributeID, AttrValues } from "../constants";
+import wengineLabelsData from "../../data/game_data_wengine.json";
+import { AttrValues } from "../constants";
 import { Character } from "../models/Character";
 import { Disc, DiscSet, Stat } from "../models/DiscSet";
 import { SkillDict } from "../models/SkillKit";
@@ -8,7 +8,7 @@ import { WEngine } from "../models/WEngine";
 import { AvatarEnka as EnkaAvatar, EnkaData, EquippedEnka, PropertyEnka, SkillLevelEnka, Weapon } from "../types/enka_types";
 import { EnkaWEngineData } from "../types/enka_wengine_types";
 import { DataCoreSkill, DataSkill } from "../types/my_char_data_types";
-import { WengineMetadata } from "../types/wengine_metadata";
+import { WengineData } from "../types/wengine_data_types";
 import { fixPropertyId, TRUNCATE_STATS } from "../Utils";
 import { CharacterBuilder } from "./my_data_type_parser";
 
@@ -94,19 +94,20 @@ class ServiceEnkaWengine {
 
     public static load_engine(weapon: Weapon): WEngine {
         const wengine = new WEngine();
-        const wengineDataObject: WengineMetadata = wengineLabelsData;
+        const wengineDataObject: WengineData = wengineLabelsData;
         if (weapon === undefined)
             return wengine;
 
         const wengineMetaData = this.json_enkadata_wengine[weapon.Id];
         wengine.id = weapon.Id;
-        wengine.name = wengineDataObject[weapon.Id].EN;
+        wengine.name = wengineDataObject[weapon.Id].name;
         wengine.lvl = weapon.Level;
         wengine.star = weapon.UpgradeLevel;
         wengine.rarity = wengineMetaData.Rarity;
 
         const weapon_coef_growth = 1 + 0.1568166666666667 * weapon.Level + 0.8922 * weapon.BreakLevel;
-        wengine.stats[AttributeID.ATK] = wengineMetaData.MainStat.PropertyValue * weapon_coef_growth;
+        const primary_Stats_id = fixPropertyId(<AttrValues>wengineMetaData.MainStat.PropertyId);
+        wengine.stats[primary_Stats_id] = wengineMetaData.MainStat.PropertyValue * weapon_coef_growth;
 
         const second_stats_id = fixPropertyId(<AttrValues>wengineMetaData.SecondaryStat.PropertyId);
         wengine.stats[second_stats_id] = wengineMetaData.SecondaryStat.PropertyValue / 100 * (1 + 0.3 * weapon.BreakLevel);
@@ -127,7 +128,6 @@ class ServiceDiscset {
             } else {
                 discSet.disc_sets_bonus[disc_set_id] = 1;
             }
-            console.log(discSet.disc_sets_bonus)
 
             discs[equip.Slot] = this.buildDisc(equip);
         }

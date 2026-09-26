@@ -48,6 +48,12 @@ export class Character extends StatsBase {
         }
     }
 
+    public sumSharpCritRateStat() {
+        if (+this.charMetadata.weapon === WeaponTypeID.ARMORER) {
+            this[AttributeID.CRIT_RATE] += this[AttributeID.CRIT_DMG] * 0.35;
+        }
+    }
+
     public calcAllStats() {
         this.sumMainStat(AttributeID.HP);
         this.sumMainStat(AttributeID.ATK);
@@ -55,7 +61,7 @@ export class Character extends StatsBase {
         this.sumMainStat(AttributeID.DEF);
         this.sumSecondaryStats(AttributeID.CRIT_RATE);
         this.sumSecondaryStats(AttributeID.CRIT_DMG);
-        this.sumSecondaryStats(AttributeID.SHARP_CRIT_DMG)
+        this.sumSecondaryStats(AttributeID.SHARP_CRIT_DMG);
         this.sumSecondaryStats(AttributeID.PEN);
         this.sumSecondaryStats(AttributeID.PEN_FLAT);
         this.sumMainStat(AttributeID.ENERGY_RATE);
@@ -66,7 +72,10 @@ export class Character extends StatsBase {
         this.sumSecondaryStats(AttributeID.ICE_DMG);
         this.sumSecondaryStats(AttributeID.ELEC_DMG);
         this.sumSecondaryStats(AttributeID.ETHER_DMG);
+        this.sumSecondaryStats(AttributeID.WIND_DMG);
         this.sumSheerStat();
+        this.sumSharpCritRateStat();
+        console.log(this);
     }
 
     public print() {

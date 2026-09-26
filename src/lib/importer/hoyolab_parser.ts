@@ -1,4 +1,4 @@
-import { AttributeID, AttrValues, RarityID, RarityTypeID } from '../constants'
+import { AttrValues, RarityID, RarityTypeID } from '../constants'
 import { Character } from '../models/Character'
 import { Disc, DiscSet, Stat } from '../models/DiscSet'
 import { SkillDict } from '../models/SkillKit'
@@ -82,7 +82,8 @@ class ServiceHoyolabWengine {
         wengine.star = this.json_wengine.star;
         wengine.rarity = RarityID[<RarityTypeID>this.json_wengine.rarity];
 
-        wengine.stats[AttributeID.ATK] = +this.json_wengine.main_properties[0].base;
+        const main_attr_id = fixPropertyId(this.json_wengine.main_properties[0].property_id);
+        wengine.stats[main_attr_id] = +this.json_wengine.main_properties[0].base;
         const second_stats = this.json_wengine.properties[0];
         const attrId = fixPropertyId(second_stats.property_id);
         wengine.stats[attrId] = readValue(second_stats.base);

@@ -127,4 +127,10 @@
     .green-box {
         @apply text-black/0 h-5.25 relative shadow-md rounded-md bg-lime-500/60 pointer-events-none;
     }
+
+    .role-img {
+        clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+        border-top-right-radius: 80px 220px;
+        border-bottom-left-radius: 80px 220px;
+    }
 }

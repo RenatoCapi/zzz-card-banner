@@ -40611,7 +40611,7 @@
     },
     "1611": {
         "name": "CLARET FLINT",
-        "camp": "15",
+        "camp": "17",
         "rarity": "4",
         "weaponType": "7",
         "ElementType": "203",
@@ -40625,6 +40625,11 @@
                 "base": 454,
                 "growth": 616441,
                 "asc": 312
+            },
+            "12101": {
+                "base": 101,
+                "growth": 58480,
+                "asc": 36
             },
             "13101": {
                 "base": 35,
@@ -41508,7 +41513,7 @@
     },
     "1621": {
         "name": "ROXY",
-        "camp": "15",
+        "camp": "17",
         "rarity": "4",
         "weaponType": "2",
         "ElementType": "204",

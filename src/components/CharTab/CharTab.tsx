@@ -18,11 +18,12 @@ const CharTab = () => {
     const refToImage = useRef<HTMLDivElement>(null);
 
     const MenuChars = () => {
+
         return (
             <div className="flex flex-row mx-2 mt-1 max-w-287.5 self-center overflow-x-auto scrollbar-thin over pb-0.5">
                 {Object.values(DB.getCharactersById()).reverse().map((value, jsx_index) => (
-                    <button key={jsx_index} type="button" onClick={() => CharacterTabController.buttonClickedListener(value)}>
-                        <img src={Assets.getRole(value.id)} className="w-auto h-20 max-w-none" />
+                    <button key={jsx_index} type="button" className="" onClick={() => CharacterTabController.buttonClickedListener(value)}>
+                        <img src={Assets.getRole(value.id)} className="w-auto h-20 max-w-none role-img" />
                     </button>
                 ))}
             </div>
