@@ -1,12 +1,7 @@
 
 import { Stat } from "./models/DiscSet";
 
-import discset_data from "../data/base_discset_data.json";
-//import wengine_data from "../data/base_wengine_data.json";
-import wengine_data from "../data/game_data_wengine.json";
-import { ICON_FROM_ELEMENT_MAPPING, ICON_FROM_SKILL_MAPPING, ICON_FROM_STAT_MAPPING } from "./constantsUI";
-import { dataDiscSetsMeta as DataDiscSetsMeta } from "./types/discs_metadata";
-import { WengineData } from "./types/wengine_data_types";
+import { ElementTypeToAttr } from "./constants";
 
 export class Assets {
     private static BASE_PATH = "/zzz-card-banner";
@@ -24,7 +19,8 @@ export class Assets {
     }
 
     public static getStatIcon(stat: Stat) {
-        return Assets.getImageUrl(`/icon/property/${ICON_FROM_STAT_MAPPING[stat.id]}`)
+        const reduc_stat_id = ~~(stat.id / 100)
+        return Assets.getImageUrl(`/icon/property/prop_${reduc_stat_id}.webp`)
     }
 
     public static getCharacterAvatarById(id: number) {
@@ -33,9 +29,7 @@ export class Assets {
 
     public static getDiscSetById(id: number) {
         if (!id) return Assets.getBlank();
-
-        const discs_meta: DataDiscSetsMeta = discset_data;
-        return Assets.getImageUrl(`/icon/disc/${discs_meta[id]['icon']}`)
+        return Assets.getImageUrl(`/icon/disc/discset_${id}00.png`)
     }
 
     public static getRarity(id: number) {
@@ -50,7 +44,9 @@ export class Assets {
     }
 
     static getElement(elementid: number) {
-        return Assets.getImageUrl(`/icon/property/${ICON_FROM_ELEMENT_MAPPING[+elementid]}`);
+        // exceção no ID por causa de lumen
+        const reduc_element_id: string = ElementTypeToAttr[elementid].toString().slice(0, 3)
+        return Assets.getImageUrl(`/icon/property/prop_${reduc_element_id}.webp`);
     }
 
     static getCamp(camp: number) {
@@ -60,13 +56,11 @@ export class Assets {
 
     static getWEngine(id: number) {
         if (!id) return Assets.getBlank();
-
-        const wengine_meta: WengineData = wengine_data;
-        return Assets.getImageUrl(`/icon/wengine/${wengine_meta[id]["imgUrl"]}`)
+        return Assets.getImageUrl(`/icon/wengine/wengine_${id}.png`)
     }
 
     static getSkill(id: number) {
-        return Assets.getImageUrl(`/icon/skill/${ICON_FROM_SKILL_MAPPING[id]}`)
+        return Assets.getImageUrl(`/icon/skill/skill_${id}.png`)
     }
 
     static getTutorialAllChars() {

@@ -122,7 +122,7 @@ class ServiceDiscset {
         const discs: Record<number, Disc> = {};
 
         for (const equip of equippedList) {
-            const disc_set_id = Math.floor(equip.Equipment.Id / 100);
+            const disc_set_id = ~~(equip.Equipment.Id / 100);
             if (disc_set_id in discSet.disc_sets_bonus) {
                 discSet.disc_sets_bonus[disc_set_id]++;
             } else {

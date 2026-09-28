@@ -26,4 +26,6 @@ html
 src/lib/importer/teste.ts
 src/data/hoyolab_character.json
 src/lib/models/tasks.txt
-src/lib/types/hakushin_types_test.ts
+src/data/data_examples/# disc bonus set 4pc.txt
+.gitignore
+src/data/data_examples/tasks.txt

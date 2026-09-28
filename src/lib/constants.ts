@@ -331,6 +331,7 @@ export const ElementTypeToAttr = {
     [ElementTypeID.ELECTRIC]: AttributeID.ELEC_DMG,
     [ElementTypeID.ETHER]: AttributeID.ETHER_DMG,
     [ElementTypeID.WIND]: AttributeID.WIND_DMG,
+    [ElementTypeID.LUMEN]: ElementTypeID.LUMEN,
 }
 
 export const CampID = {
