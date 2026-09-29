@@ -15,7 +15,7 @@ const ButtonDownload = (props: { refDiv: RefObject<HTMLDivElement | null>, charN
         }, 2000);
     };
 
-    const exportAsImage = async (element: RefObject<HTMLDivElement | null> | null, imageFileName: string) => {
+    const exportAsImage = async (element: RefObject<HTMLDivElement | null>, imageFileName: string) => {
         if (!element?.current) {
             setMsg("Download Error!");
             blinkTooltip();

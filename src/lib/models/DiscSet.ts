@@ -1,5 +1,6 @@
-import { HOYO_2P_DISCSET } from "../constants"
-import { StatsBase, StatsBaseKeys } from "./StatsBase"
+import discsetData from "../../data/discset_data.json";
+import { DiscsetData } from "../types/discset_data_types";
+import { StatsBase, StatsBaseKeys } from "./StatsBase";
 
 export class Stat {
     id: StatsBaseKeys = 0
@@ -16,11 +17,10 @@ export class Disc {
 }
 
 // export interface DiscSetType {
-
 // }
 
-
 export class DiscSet {
+    private readonly discsetData = discsetData;
     discs: Record<number, Disc> = {};
     disc_sets_bonus: { [setid: number]: number } = {};
     sumStats: StatsBase = new StatsBase();
@@ -37,13 +37,16 @@ export class DiscSet {
 
     public sumDiscs(): StatsBase {
         this.sumStats = new StatsBase()
+        const discsetData = <DiscsetData>this.discsetData;
+
         Object.values(this.discs).forEach((value) => this.sumDiscStats(value));
 
         Object.entries(this.disc_sets_bonus).forEach(([disc_id, numSet]) => {
             if (numSet >= 2) {
-                //TODO tirar a conversão
-                const statId = <StatsBaseKeys>HOYO_2P_DISCSET[+disc_id][0];
-                this.sumStats[statId] += HOYO_2P_DISCSET[+disc_id][1];
+                const [[stat_id, stat_value]] = Object.entries(discsetData[disc_id].setProp2pc);
+                const statId = <StatsBaseKeys>+stat_id;
+                this.sumStats[statId] += stat_value;
+                console.log(statId + " - " + stat_value)
             }
         })
 

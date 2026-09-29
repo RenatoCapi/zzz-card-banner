@@ -1,11 +1,11 @@
 
-import discset_data from "../../../data/base_discset_data.json";
+import discset_data from "../../../data/discset_data.json";
 import { Assets } from "../../../lib/assets";
 import { Character } from "../../../lib/models/Character";
 import { Stat } from "../../../lib/models/DiscSet";
 import { viewStats, viewStatsChar } from "../../../lib/models/StatsBase";
 import { WEngine } from "../../../lib/models/WEngine";
-import { dataDiscSetsMeta as DataDiscSetsMeta } from "../../../lib/types/discs_metadata";
+import { DiscsetData } from "../../../lib/types/discset_data_types";
 import StatRow from "./StatRow";
 
 const WEngineIcon = (props: { wengine: WEngine }) => {
@@ -52,7 +52,7 @@ const CharStatSummary = ({ char }: { char: Character | null }) => {
     const disc_set_bonus = Object.entries(char.discSet.disc_sets_bonus)
         .filter(value => (value[1] === 2 || value[1] === 4));
 
-    const discs_meta: DataDiscSetsMeta = discset_data;
+    const discs_meta: DiscsetData = discset_data;
 
     return (
         <div className="flex flex-col justify-center gap-2 items-center h-187.5">
@@ -75,7 +75,7 @@ const CharStatSummary = ({ char }: { char: Character | null }) => {
             <div key='bonusSets' className="w-68.75 px-2.5 self-center">
                 {disc_set_bonus.map(([id, value]) =>
                     <div key={id} className="flex flex-row justify-between px-2 self-stretch">
-                        <span className="text-[15px]">{discs_meta[+id].EN.name}</span>
+                        <span className="text-[15px]">{discs_meta[id].name}</span>
                         <div className="flex border border-dashed box-border clear-both opacity-15 grow my-auto mx-2.5 " />
                         <span className="text-[15px]"> {value}pc</span>
                     </div>

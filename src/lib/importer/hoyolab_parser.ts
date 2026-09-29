@@ -110,7 +110,7 @@ class ServiceHoyolabDiscset {
         for (const equip of equips) {
             const suit: Suit = equip.equip_suit;
             if (suit.own > 1)
-                discSet.disc_sets_bonus[Math.floor(suit.suit_id / 100)] = suit.own;
+                discSet.disc_sets_bonus[suit.suit_id] = suit.own;
 
             discs[equip.equipment_type] = this.buildDisc(equip);
         }
@@ -123,7 +123,7 @@ class ServiceHoyolabDiscset {
         disc.lvl = equip.level;
         disc.pos = equip.equipment_type;
         disc.rarity = RarityID[equip.rarity as RarityTypeID];
-        disc.equipset_id = Math.floor(equip.equip_suit.suit_id / 100);
+        disc.equipset_id = equip.equip_suit.suit_id;
 
         const main_stats: Stat = new Stat();
         main_stats.id = <AttrValues>fixPropertyId(equip.main_properties[0].property_id);

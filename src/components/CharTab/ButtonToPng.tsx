@@ -4,9 +4,8 @@ import TooltipBox from "../TooltipBox";
 
 
 //trocar por html2canvas
-const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null> | null) }) => {
+const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null>) }) => {
     const { refDiv } = props;
-    const current = refDiv ? refDiv.current : null;
 
     const [msg, setMsg] = useState("");
     const [active, setActive] = useState(false);
@@ -18,14 +17,11 @@ const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null> | null) 
         }, 2000);
     };
 
+    const png_clipboard = async (element: RefObject<HTMLDivElement | null>) => {
+        const current = refDiv ? refDiv.current : null;
+        if (current === null) return;
 
-
-    const png_clipboard = () => {
-        if (current === null) {
-            return
-        }
-
-        toPng(current, { cacheBust: false })
+        toPng(current, { cacheBust: true })
             .then(async (dataUrl) => {
                 const data = await fetch(dataUrl)
                 const blob = await data.blob()
@@ -40,6 +36,8 @@ const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null> | null) 
             .catch((err) => {
                 setMsg("Failed to copy!")
                 blinkTooltip();
+
+                console.log()
                 console.log(err)
             });
     }
@@ -47,7 +45,7 @@ const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null> | null) 
 
     return (
         <div className="flex relative w-auto items-center z-50 my-4">
-            <button type="button" onClick={png_clipboard} className="py-1 px-2 button-base">
+            <button type="button" onClick={() => png_clipboard(refDiv)} className="py-1 px-2 button-base">
                 <TooltipBox msg={msg} active={active} />
                 Copy to Clipboard
             </button>

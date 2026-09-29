@@ -74,7 +74,7 @@ export class ServiceEnka {
     }
 
 
-    //in development, it need a API
+    //in development, this need a API
     public async loadAgentData(): Promise<EnkaData> {
         return fetch(`https://enka.network/api/zzz/uid/${this.agent_UID}`)
             .then(response => response.json())
@@ -122,7 +122,7 @@ class ServiceDiscset {
         const discs: Record<number, Disc> = {};
 
         for (const equip of equippedList) {
-            const disc_set_id = ~~(equip.Equipment.Id / 100);
+            const disc_set_id = Math.trunc(equip.Equipment.Id / 100) * 100;
             if (disc_set_id in discSet.disc_sets_bonus) {
                 discSet.disc_sets_bonus[disc_set_id]++;
             } else {
@@ -140,9 +140,9 @@ class ServiceDiscset {
         const disc = new Disc();
         disc.lvl = equip.Equipment.Level;
         disc.pos = equip.Slot;
-        const enkaRarity = Math.floor(equip.Equipment.Id / 10) % 10;
+        const enkaRarity = Math.trunc(equip.Equipment.Id / 10) % 10;
         disc.rarity = enkaRarity;
-        disc.equipset_id = Math.floor(equip.Equipment.Id / 100);
+        disc.equipset_id = Math.trunc(equip.Equipment.Id / 100) * 100;
 
         const mainProperty = equip.Equipment.MainPropertyList[0];
 

@@ -148,74 +148,6 @@ export const HOYO_MAP_SUB = {
     [AttributeID.ANOMALY_PROF_FLAT]: [AttributeID.ANOMALY_PROF],
 }
 
-
-export const DiscSetID = {
-    WOODPECKER_ELECTRO: 310,
-    PUFFER_ELECTRO: 311,
-    SHOCKSTAR: 312,
-    FREEDOM_BLUE: 313,
-    HORMONE_PUNK: 314,
-    SOUL_ROCK: 315,
-    SWING_JAZZ: 316,
-    CHAOS_JAZZ: 318,
-    PROTO_PUNK: 319,
-    INFERNAL_METAL: 322,
-    CHAOTIC_METAL: 323,
-    THUNDER_METAL: 324,
-    POLAR_METAL: 325,
-    FANGED_METAL: 326,
-    BLADE_SONG: 327,
-    ASTRAL_VOICE: 328,
-    SHADOW_HARMONY: 329,
-    PHAETHONS_MELODY: 330,
-    YUNKUI: 331,
-    SUMMIT: 332,
-    DAWN_BLOOM: 333,
-    MOON_LIGHT: 334,
-    WATER_BALLAD: 335,
-    SHINING_ARIA: 336,
-    WONDERLAND: 337,
-    NOTES_CHAINED: 338,
-    WUTHERING_SALON: 339,
-    SKY_ABLAZE: 340,
-    FEATHERED_FATE: 341,
-    THORNED_ROSE: 342
-}
-
-export const HOYO_2P_DISCSET: { [id: number]: number[] } = {
-    [DiscSetID.WOODPECKER_ELECTRO]: [AttributeID.CRIT_RATE, 8.0],
-    [DiscSetID.PUFFER_ELECTRO]: [AttributeID.PEN, 8.0],
-    [DiscSetID.SHOCKSTAR]: [AttributeID.IMPACT_P, 6.0],
-    [DiscSetID.FREEDOM_BLUE]: [AttributeID.ANOMALY_PROF, 30.0],
-    [DiscSetID.HORMONE_PUNK]: [AttributeID.ATK_P, 10.0],
-    [DiscSetID.SOUL_ROCK]: [AttributeID.DEF_P, 16.0],
-    [DiscSetID.SWING_JAZZ]: [AttributeID.ENERGY_P, 20.0],
-    [DiscSetID.CHAOS_JAZZ]: [AttributeID.ANOMALY_PROF, 30.0],
-    [DiscSetID.PROTO_PUNK]: [AttributeID.SHIELD_EFFECT, 15.0],
-    [DiscSetID.INFERNAL_METAL]: [AttributeID.FIRE_DMG, 10.0],
-    [DiscSetID.CHAOTIC_METAL]: [AttributeID.ETHER_DMG, 10.0],
-    [DiscSetID.POLAR_METAL]: [AttributeID.ICE_DMG, 10.0],
-    [DiscSetID.THUNDER_METAL]: [AttributeID.ELEC_DMG, 10.0],
-    [DiscSetID.FANGED_METAL]: [AttributeID.PHYS_DMG, 10.0],
-    [DiscSetID.ASTRAL_VOICE]: [AttributeID.ATK_P, 10.0],
-    [DiscSetID.BLADE_SONG]: [AttributeID.CRIT_DMG, 16.0],
-    [DiscSetID.SHADOW_HARMONY]: [AttributeID.ATK_P, 0.0],
-    [DiscSetID.PHAETHONS_MELODY]: [AttributeID.ANOMALY_MAST_P, 8.0],
-    [DiscSetID.YUNKUI]: [AttributeID.HP_P, 10.0],
-    [DiscSetID.SUMMIT]: [AttributeID.NONE, 6.0],
-    [DiscSetID.DAWN_BLOOM]: [AttributeID.NONE, 15.0],
-    [DiscSetID.MOON_LIGHT]: [AttributeID.ENERGY_P, 20.0],
-    [DiscSetID.WATER_BALLAD]: [AttributeID.PHYS_DMG, 10.0],
-    [DiscSetID.SHINING_ARIA]: [AttributeID.ETHER_DMG, 10.0],
-    [DiscSetID.WONDERLAND]: [AttributeID.HP_P, 10.0],
-    [DiscSetID.NOTES_CHAINED]: [AttributeID.ICE_DMG, 10.0],
-    [DiscSetID.WUTHERING_SALON]: [AttributeID.WIND_DMG, 10.0],
-    [DiscSetID.SKY_ABLAZE]: [AttributeID.ETHER_DMG, 10.0],
-    [DiscSetID.FEATHERED_FATE]: [AttributeID.ANOMALY_PROF, 30.0],
-    [DiscSetID.THORNED_ROSE]: [AttributeID.DEF_P, 16.0],
-
-}
-
 export const HOYO_DISC_SUB_RATE: { [id: number]: number } = {
     [AttributeID.HP]: 112,
     [AttributeID.HP_P]: 3,
@@ -321,7 +253,7 @@ export const ElementTypeID = {
     ELECTRIC: 203,
     WIND: 204,
     ETHER: 205,
-    LUMEN: 206,
+    LUMEN: 300,
 }
 
 export const ElementTypeToAttr = {
@@ -333,6 +265,9 @@ export const ElementTypeToAttr = {
     [ElementTypeID.WIND]: AttributeID.WIND_DMG,
     [ElementTypeID.LUMEN]: ElementTypeID.LUMEN,
 }
+
+export type ElementTypeToAttrKeys = keyof typeof ElementTypeToAttr
+
 
 export const CampID = {
     CUNNING: 1,

@@ -7,59 +7,10 @@ import CharStatSummary from "./charStatPreview/CharStatsSummary"
 import DiscSetPreview from "./discSetPreview/DiscSetPreview.tsx"
 import { useCharacterTabStore } from "./useCharacterTabStore.ts"
 
-const CharacterTabController = {
-    buttonClickedListener: (char: Character) => {
-        useCharacterTabStore.getState().setFocusCharacter(char.id)
-    },
-
-}
+const LazyPngButton = lazy(() => import("./ButtonToPng"));
+const LazyDownloadButton = lazy(() => import("./ButtonDownload"));
 
 const CharTab = () => {
-    const refToImage = useRef<HTMLDivElement>(null);
-
-    const MenuChars = () => {
-
-        return (
-            <div className="flex flex-row mx-2 mt-1 max-w-287.5 self-center overflow-x-auto scrollbar-thin over pb-0.5">
-                {Object.values(DB.getCharactersById()).reverse().map((value, jsx_index) => (
-                    <button key={jsx_index} type="button" className="" onClick={() => CharacterTabController.buttonClickedListener(value)}>
-                        <img src={Assets.getRole(value.id)} className="w-auto h-20 max-w-none role-img" />
-                    </button>
-                ))}
-            </div>
-        );
-    }
-
-    const LazyPngButton = lazy(() => import("./ButtonToPng"));
-    const LazyDownloadButton = lazy(() => import("./ButtonDownload"));
-
-    const ContentChar = () => {
-        const selectedCharacter = useCharacterTabStore((s) => s.selectedCharacter);
-        return (
-            <div className="flex relative gap-2 m-2 rounded-2xl shadow-2xl">
-                <div ref={refToImage} className="flex gap-2 p-2 bg-stone-900 rounded-2xl">
-                    <div className="flex gap-2 rounded-2xl">
-                        <CharProfile char={selectedCharacter} />
-                    </div>
-
-                    <div className="flex flex-col">
-                        <CharStatSummary char={selectedCharacter} />
-                    </div>
-
-                    <div className="flex flex-col">
-                        <DiscSetPreview discSet={selectedCharacter.discSet} />
-                    </div>
-                </div>
-                <div className="flex absolute flex-row gap-2 m-auto w-fit z-50 right-1/2 translate-x-1/2 pr-2
-                          opacity-30 delay-200 duration-500 ease-in-out hover:opacity-90">
-                    <Suspense>
-                        <LazyPngButton refDiv={refToImage} />
-                        <LazyDownloadButton refDiv={refToImage} charName={selectedCharacter.name} />
-                    </Suspense>
-                </div>
-            </div>
-        );
-    }
 
     // useEffect(() => {
     //     if (char !== DB.getActiveChar()) {
@@ -81,5 +32,52 @@ const CharTab = () => {
     )
 }
 
+const MenuChars = () => {
+    const CharacterTabController = {
+        buttonClickedListener: (char: Character) => {
+            useCharacterTabStore.getState().setFocusCharacter(char.id)
+        },
+    }
+
+    return (
+        <div className="flex flex-row mx-2 mt-1 max-w-287.5 self-center overflow-x-auto scrollbar-thin over pb-0.5">
+            {Object.values(DB.getCharactersById()).reverse().map((value, jsx_index) => (
+                <button key={jsx_index} type="button" className="" onClick={() => CharacterTabController.buttonClickedListener(value)}>
+                    <img src={Assets.getRole(value.id)} className="w-auto h-20 max-w-none role-img" />
+                </button>
+            ))}
+        </div>
+    );
+}
+
+
+const ContentChar = () => {
+    const refToImage = useRef<HTMLDivElement>(null);
+    const selectedCharacter = useCharacterTabStore((s) => s.selectedCharacter);
+
+    return (
+        <div className="flex relative gap-2 m-2 rounded-2xl shadow-2xl">
+            <div ref={refToImage} className="flex gap-2 p-2 bg-stone-900 rounded-2xl">
+                <div className="flex gap-2 rounded-2xl">
+                    <CharProfile char={selectedCharacter} />
+                </div>
+
+                <div className="flex flex-col">
+                    <CharStatSummary char={selectedCharacter} />
+                </div>
+
+                <div className="flex flex-col">
+                    <DiscSetPreview discSet={selectedCharacter.discSet} />
+                </div>
+            </div>
+            <div className="flex absolute flex-row gap-2 m-auto w-fit z-50 right-1/2 translate-x-1/2 pr-2 opacity-30 delay-200 duration-500 ease-in-out hover:opacity-90">
+                <Suspense>
+                    {/* <LazyPngButton refDiv={refToImage} /> */}
+                    <LazyDownloadButton refDiv={refToImage} charName={selectedCharacter.name} />
+                </Suspense>
+            </div>
+        </div>
+    );
+}
 
 export default CharTab

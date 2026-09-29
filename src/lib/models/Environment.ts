@@ -2,6 +2,7 @@ import { ElementTypeToAttr, WeaponTypeID } from '../constants';
 import { AttributeID } from './../constants';
 import { Character } from './Character';
 import { CalculatedHit } from './SkillKit';
+import { StatsBaseKeys } from './StatsBase';
 
 type RotationType = ({ charName: string } & CalculatedHit)
 
@@ -37,7 +38,7 @@ export class Environment {
                 mainStats = AttributeID.ATK;
             }
 
-            const elementId = ElementTypeToAttr[char.charMetadata.elementId];
+            const elementId = <StatsBaseKeys>ElementTypeToAttr[char.charMetadata.elementId];
             const elementDmgMult = (anomalyBuildup) ? (1 + char[elementId] / 100) : 1;
             //const elementDmgMult = 1 + char[elementId] / 100;
             this.dps +=
