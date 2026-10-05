@@ -1,7 +1,8 @@
 
-import { Stat } from "./models/DiscSet";
 
-import { ElementTypeToAttr } from "./constants";
+import { AttrValues, ElementTypeToAttr } from "./constants";
+import { MainStat, SubStat } from "./models/DiscSet";
+import { Stat } from "./models/StatsBase";
 
 export class Assets {
     private static BASE_PATH = "/zzz-card-banner";
@@ -18,8 +19,8 @@ export class Assets {
         return Assets.getImageUrl('/misc/Enka_logo.png');
     }
 
-    public static getStatIcon(stat: Stat) {
-        const reduc_stat_id = ~~(stat.id / 100)
+    public static getStatIcon(stat: Stat | MainStat | SubStat) {
+        const reduc_stat_id = ~~(<AttrValues>stat.id / 100)
         return Assets.getImageUrl(`/icon/property/prop_${reduc_stat_id}.webp`)
     }
 
@@ -29,7 +30,7 @@ export class Assets {
 
     public static getDiscSetById(id: number) {
         if (!id) return Assets.getBlank();
-        return Assets.getImageUrl(`/icon/disc/discset_${id}00.png`)
+        return Assets.getImageUrl(`/icon/disc/discset_${id}.png`)
     }
 
     public static getRarity(id: number) {

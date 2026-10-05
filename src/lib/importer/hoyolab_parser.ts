@@ -1,6 +1,6 @@
 import { AttrValues, RarityID, RarityTypeID } from '../constants'
 import { Character } from '../models/Character'
-import { Disc, DiscSet, Stat } from '../models/DiscSet'
+import { Disc, DiscSet, SubStat } from '../models/DiscSet'
 import { SkillDict } from '../models/SkillKit'
 import { WEngine } from '../models/WEngine'
 import { Avatar, Equip, HoyolabData, Property, Skill, Suit, Weapon } from '../types/hoyolab_types'
@@ -125,7 +125,7 @@ class ServiceHoyolabDiscset {
         disc.rarity = RarityID[equip.rarity as RarityTypeID];
         disc.equipset_id = equip.equip_suit.suit_id;
 
-        const main_stats: Stat = new Stat();
+        const main_stats: SubStat = new SubStat();
         main_stats.id = <AttrValues>fixPropertyId(equip.main_properties[0].property_id);
         main_stats.value = readValue(equip.main_properties[0].base);
 
@@ -136,9 +136,9 @@ class ServiceHoyolabDiscset {
     }
 
     private buildSubStats(properties: Property[]) {
-        const substats: Stat[] = [];
+        const substats: SubStat[] = [];
         for (const prop of properties) {
-            const stat: Stat = new Stat();
+            const stat: SubStat = new SubStat();
             stat.id = <AttrValues>fixPropertyId(prop.property_id);
             stat.value = readValue(prop.base);
             substats.push(stat);

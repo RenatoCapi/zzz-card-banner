@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { Assets } from "../../../lib/assets";
-import { HOYO_DISC_SUB_RATE, StatsToReadableMin } from "../../../lib/constants";
-import { Disc, DiscSet, Stat } from "../../../lib/models/DiscSet";
+import { AttrValues, HOYO_DISC_SUB_RATE, StatsToReadableMin } from "../../../lib/constants";
+import { Disc, DiscSet, MainStat, SubStat } from "../../../lib/models/DiscSet";
+import { Stat } from "../../../lib/models/StatsBase";
 import { isFlat } from "../../../lib/Utils";
 import { idDOMcustom } from "../charStatPreview/StatHoverEvent";
 
 type StatProp = {
-    stat: Stat
+    stat: SubStat
 }
 
 type DiscSetProp = {
@@ -78,15 +79,15 @@ const DiscStatsSummary = ({ disc }: DiscProp) => {
 };
 
 
-const DiscMainStat = ({ stat }: StatProp) => {
+const DiscMainStat = ({ stat }: { stat: MainStat }) => {
     const idString = "id" + String(stat.id).slice(0, -1);
     useEffect(() => idDOMcustom(idString), [idString]);
 
     return (
         <div className={idString + ` flex justify-between pr-1 rounded-md border-stone-700`}>
-            <img src={Assets.getStatIcon(stat)} className="w-3.5 h-3.5 m-1" />
+            <img src={Assets.getStatIcon(stat as Stat)} className="w-3.5 h-3.5 m-1" />
             <span className="text-stat-zzz">
-                {StatsToReadableMin[stat.id]}
+                {StatsToReadableMin[stat.id as AttrValues]}
             </span >
             <div className="divider-base divider-text" />
             <span className="text-stat-zzz">
@@ -96,7 +97,7 @@ const DiscMainStat = ({ stat }: StatProp) => {
     )
 }
 
-const DiscSubStat = ({ stat }: StatProp) => {
+const DiscSubStat = ({ stat }: { stat: SubStat }) => {
     const idString = "id" + String(stat.id).slice(0, -1);
     useEffect(() => idDOMcustom(idString), [idString]);
 
@@ -104,7 +105,7 @@ const DiscSubStat = ({ stat }: StatProp) => {
         <div className={idString + ` flex justify-between pr-1 rounded-md  border-stone-700`} >
             <img src={Assets.getStatIcon(stat)} className="w-3.5 h-3.5 m-1" />
             <span className="text-stat-zzz">
-                {StatsToReadableMin[stat.id]}
+                {StatsToReadableMin[stat.id as AttrValues]}
             </span >
             <div className="flex grow justify-end" >
                 <div className="flex mx-1">
@@ -121,8 +122,8 @@ const DiscSubStat = ({ stat }: StatProp) => {
     )
 }
 
-const numUpgrades = (stat: Stat) => {
-    const upgrades = (stat.value / HOYO_DISC_SUB_RATE[stat.id]) - 1;
+const numUpgrades = (stat: SubStat) => {
+    const upgrades = (stat.value / HOYO_DISC_SUB_RATE[stat.id as AttrValues]) - 1;
     return "·".repeat(upgrades);
 }
 

@@ -2,7 +2,7 @@ import wengineEnkaData from "../../data/base_enkadata_wengine.json";
 import wengineLabelsData from "../../data/game_data_wengine.json";
 import { AttrValues } from "../constants";
 import { Character } from "../models/Character";
-import { Disc, DiscSet, Stat } from "../models/DiscSet";
+import { Disc, DiscSet, SubStat } from "../models/DiscSet";
 import { SkillDict } from "../models/SkillKit";
 import { WEngine } from "../models/WEngine";
 import { AvatarEnka as EnkaAvatar, EnkaData, EquippedEnka, PropertyEnka, SkillLevelEnka, Weapon } from "../types/enka_types";
@@ -146,11 +146,11 @@ class ServiceDiscset {
 
         const mainProperty = equip.Equipment.MainPropertyList[0];
 
-        const mainStat = new Stat();
+        const mainStat = new SubStat();
         mainStat.id = <AttrValues>fixPropertyId(mainProperty.PropertyId);
         mainStat.value = mainProperty.PropertyValue + (mainProperty.PropertyValue * disc.lvl * rarityScale[enkaRarity as rarityScaleKeys]);
 
-        if (!(Object.values(TRUNCATE_STATS).includes(mainStat.id))) {
+        if (!(Object.values(TRUNCATE_STATS).includes(mainStat.id as AttrValues))) {
             mainStat.value /= 100;
         }
 
@@ -161,14 +161,14 @@ class ServiceDiscset {
         return disc;
     }
 
-    private static buildStats(substats: PropertyEnka[]): Stat[] {
-        const subStats: Stat[] = [];
+    private static buildStats(substats: PropertyEnka[]): SubStat[] {
+        const subStats: SubStat[] = [];
         substats.forEach((stat) => {
-            const subStat = new Stat();
+            const subStat = new SubStat();
             subStat.id = <AttrValues>fixPropertyId(stat.PropertyId);
             subStat.value = stat.PropertyValue * stat.PropertyLevel;
 
-            if (!(Object.values(TRUNCATE_STATS).includes(subStat.id))) {
+            if (!(Object.values(TRUNCATE_STATS).includes(subStat.id as AttrValues))) {
                 subStat.value /= 100;
             }
 

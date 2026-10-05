@@ -1,5 +1,6 @@
 import { AttributeID, AttrValues, Stats } from "./constants"
-import { Stat } from "./models/DiscSet"
+import { MainStat, SubStat } from "./models/DiscSet"
+import { Stat } from "./models/StatsBase"
 
 
 export const TRUNCATE_STATS: AttrValues[] = [
@@ -23,8 +24,8 @@ export const precisionRound = (num: number, precision = 5) => {
     return Math.round(num * factor) / factor;
 }
 
-export const isFlat = (stat: Stat) => {
-    if (Object.values(TRUNCATE_STATS).includes(stat.id))
+export const isFlat = (stat: Stat | MainStat | SubStat) => {
+    if (Object.values(TRUNCATE_STATS).includes(stat.id as AttrValues))
         return Math.round(stat.value);
 
 

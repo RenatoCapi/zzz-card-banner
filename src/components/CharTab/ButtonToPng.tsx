@@ -17,7 +17,7 @@ const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null>) }) => {
         }, 2000);
     };
 
-    const png_clipboard = async (element: RefObject<HTMLDivElement | null>) => {
+    const png_clipboard = async () => {
         const current = refDiv ? refDiv.current : null;
         if (current === null) return;
 
@@ -45,7 +45,7 @@ const ButtonToPng = (props: { refDiv: (RefObject<HTMLDivElement | null>) }) => {
 
     return (
         <div className="flex relative w-auto items-center z-50 my-4">
-            <button type="button" onClick={() => png_clipboard(refDiv)} className="py-1 px-2 button-base">
+            <button type="button" onClick={png_clipboard} className="py-1 px-2 button-base">
                 <TooltipBox msg={msg} active={active} />
                 Copy to Clipboard
             </button>

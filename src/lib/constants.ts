@@ -108,9 +108,9 @@ export const StatsFloatNumber: AttrValues[] = [
     AttributeID.ETHER_DMG_FLAT,
     AttributeID.ADRENALINE_ACC_P,
     AttributeID.SHIELD_EFFECT,
-]
+] as const
 
-export const DiscStats = [
+export const DiscMainStats = [
     AttributeID.NONE,
     AttributeID.HP_P,
     AttributeID.HP_FLAT,
@@ -134,9 +134,24 @@ export const DiscStats = [
     AttributeID.WIND_DMG_FLAT,
     AttributeID.SHIELD_EFFECT,
     AttributeID.SHIELD_P,
-]
+] as const
+export type DiscMainStatsID = keyof typeof DiscMainStats
 
-export type DiscStatsID = keyof typeof DiscStats
+
+export const DiscSubStats = [
+    AttributeID.HP_P,
+    AttributeID.HP_FLAT,
+    AttributeID.ATK_P,
+    AttributeID.ATK_FLAT,
+    AttributeID.DEF_P,
+    AttributeID.DEF_FLAT,
+    AttributeID.CRIT_RATE_FLAT,
+    AttributeID.CRIT_DMG_FLAT,
+    AttributeID.PEN_FLAT,
+    AttributeID.ANOMALY_PROF_FLAT,
+] as const
+export type DiscSubStatsID = keyof typeof DiscSubStats
+
 
 export const HOYO_MAP_SUB = {
     [AttributeID.HP_FLAT]: [AttributeID.HP],
@@ -146,7 +161,7 @@ export const HOYO_MAP_SUB = {
     [AttributeID.CRIT_RATE_FLAT]: [AttributeID.CRIT_RATE],
     [AttributeID.PEN_P]: [AttributeID.PEN],
     [AttributeID.ANOMALY_PROF_FLAT]: [AttributeID.ANOMALY_PROF],
-}
+} as const
 
 export const HOYO_DISC_SUB_RATE: { [id: number]: number } = {
     [AttributeID.HP]: 112,
@@ -159,7 +174,7 @@ export const HOYO_DISC_SUB_RATE: { [id: number]: number } = {
     [AttributeID.CRIT_DMG]: 4.8,
     [AttributeID.PEN_FLAT]: 9,
     [AttributeID.ANOMALY_PROF]: 9,
-}
+} as const
 
 export const StatsToReadableShort: { [id: number]: string } = {
     [AttributeID.HP]: "HP",
@@ -193,7 +208,7 @@ export const StatsToReadableShort: { [id: number]: string } = {
     [AttributeID.ETHER_DMG]: "Ether",
     [AttributeID.WIND_DMG]: "Wind",
     [AttributeID.SHEER_FORCE]: "Sheer",
-}
+} as const
 
 
 export const StatsToReadableMin: { [id: number]: string } = {
@@ -228,7 +243,7 @@ export const StatsToReadableMin: { [id: number]: string } = {
     [AttributeID.ETHER_DMG]: "ETHER",
     [AttributeID.WIND_DMG]: "WIND",
     [AttributeID.SHEER_FORCE]: "SHEER"
-}
+} as const
 
 export const WeaponTypeID = {
     ATTACK: 1,

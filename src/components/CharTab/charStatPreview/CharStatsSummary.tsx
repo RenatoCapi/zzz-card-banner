@@ -2,8 +2,7 @@
 import discset_data from "../../../data/discset_data.json";
 import { Assets } from "../../../lib/assets";
 import { Character } from "../../../lib/models/Character";
-import { Stat } from "../../../lib/models/DiscSet";
-import { viewStats, viewStatsChar } from "../../../lib/models/StatsBase";
+import { Stat, viewStats, viewStatsChar } from "../../../lib/models/StatsBase";
 import { WEngine } from "../../../lib/models/WEngine";
 import { DiscsetData } from "../../../lib/types/discset_data_types";
 import StatRow from "./StatRow";
@@ -31,7 +30,7 @@ const WEngineStats = (props: { wengine: WEngine }) => {
         <div className="flex flex-col justify-between gap-1.5 w-47.5 ml-2" key="wengine_stats">
             <span className="px-1 text-balance">{wengine.name}</span>
             {wengine_stats.map((stat: Stat, reactId: number) =>
-                <StatRow stat={stat} key={reactId} />
+                <StatRow stat={stat as Stat} key={reactId} />
             )}
             <div className="relative flex left-6 gap-2">
 
@@ -68,7 +67,7 @@ const CharStatSummary = ({ char }: { char: Character | null }) => {
             <div className="w-68.75 p-2.5 self-center" key='mainStats'>
                 <div className="flex flex-col justify-stretch gap-1" key={char.id}>
                     {total_stats.map((stat: Stat, reactId) =>
-                        <StatRow stat={stat} key={reactId} />
+                        <StatRow stat={stat as Stat} key={reactId} />
                     )}
                 </div>
             </div>

@@ -1,23 +1,23 @@
 import { AttributeID, AttrValues, WeaponTypeID } from "../constants";
-import { BasicStatsObject } from "../types/basic_stats_object";
 import { CharMetadata } from "./CharMetadata";
 import { DiscSet } from "./DiscSet";
 import { Skillkit } from './SkillKit';
-import { StatsBase } from "./StatsBase";
+import { createEmptyStatBaseObject, StatBaseType } from "./StatsBase";
 import { WEngine } from "./WEngine";
 
-export class Character extends StatsBase {
+export class Character {
     id: number = 0
     name: string = ""
     lvl: number = 60
     rank: number = 0
-    charBase: BasicStatsObject = new StatsBase()
     charMetadata: CharMetadata = new CharMetadata()
+    charBase: StatBaseType = createEmptyStatBaseObject()
+    charSum: StatBaseType = createEmptyStatBaseObject()
     skillKit: Skillkit = new Skillkit({}, {})
     wengine: WEngine = new WEngine()
     discSet: DiscSet = new DiscSet()
 
-    public setCharBase(charBase: BasicStatsObject) {
+    public setCharBase(charBase: StatBaseType) {
         this.charBase = charBase;
     }
 
@@ -32,25 +32,25 @@ export class Character extends StatsBase {
 
     public sumSecondaryStats(attrId: AttrValues) {
         if (attrId === AttributeID.NONE || attrId === AttributeID.SHIELD_EFFECT) return;
-        this[attrId] = this.charBase[attrId] + this.getWengineStat(attrId) + this.discSet.sumStats[attrId];
+        this.charSum[attrId] = this.charBase[attrId] + this.getWengineStat(attrId) + this.discSet.sumStats[attrId];
     }
 
     public sumMainStat(attrId: AttrValues) {
         const attrPercId = <AttrValues>(attrId + 1);
         const base = this.charBase[attrId] + this.getWengineStat(attrId);
         const perc = this.charBase[attrPercId] + this.getWengineStat(attrPercId) + this.discSet.sumStats[attrPercId];
-        this[attrId] = (base * (1 + perc / 100)) + this.discSet.sumStats[attrId];
+        this.charSum[attrId] = (base * (1 + perc / 100)) + this.discSet.sumStats[attrId];
     }
 
     public sumSheerStat() {
         if (+this.charMetadata.weapon === WeaponTypeID.RUPTURE) {
-            this[AttributeID.SHEER_FORCE] = Math.floor(this[AttributeID.ATK] * 0.3 + this[AttributeID.HP] * 0.1);
+            this.charSum[AttributeID.SHEER_FORCE] = Math.floor(this.charSum[AttributeID.ATK] * 0.3 + this.charSum[AttributeID.HP] * 0.1);
         }
     }
 
     public sumSharpCritRateStat() {
         if (+this.charMetadata.weapon === WeaponTypeID.ARMORER) {
-            this[AttributeID.CRIT_RATE] += this[AttributeID.CRIT_DMG] * 0.35;
+            this.charSum[AttributeID.CRIT_RATE] += this.charSum[AttributeID.CRIT_DMG] * 0.35;
         }
     }
 

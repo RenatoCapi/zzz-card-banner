@@ -7,7 +7,7 @@ import CharStatSummary from "./charStatPreview/CharStatsSummary"
 import DiscSetPreview from "./discSetPreview/DiscSetPreview.tsx"
 import { useCharacterTabStore } from "./useCharacterTabStore.ts"
 
-const LazyPngButton = lazy(() => import("./ButtonToPng"));
+// const LazyPngButton = lazy(() => import("./ButtonToPng"));
 const LazyDownloadButton = lazy(() => import("./ButtonDownload"));
 
 const CharTab = () => {

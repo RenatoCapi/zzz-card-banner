@@ -1,8 +1,7 @@
 import { Character } from "../models/Character";
 import { CharMetadata } from "../models/CharMetadata";
 import { SkillDict } from "../models/SkillKit";
-import { StatsBase } from "../models/StatsBase";
-import { BasicStatsObject } from "../types/basic_stats_object";
+import { createEmptyStatBaseObject, StatBaseType } from "../models/StatsBase";
 import { DataCharMap, DataCharType, DataGrowthStat } from "../types/my_char_data_types";
 import { AttrValues, HOYO_SkillID, StatsFloatNumber } from './../constants';
 
@@ -29,7 +28,7 @@ export class CharacterBuilder {
     }
 
     private setStatsBase() {
-        const base_char: BasicStatsObject = new StatsBase();
+        const base_char: StatBaseType = createEmptyStatBaseObject();
         Object.entries(this.char_raw.growthStat).forEach(([key_raw, value]) => {
             const key = <AttrValues>+key_raw;
             base_char[key] = this.calc_stat_growth(value, this.lvl);

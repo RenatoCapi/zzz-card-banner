@@ -1,18 +1,14 @@
 import { useEffect } from "react";
 import { Assets } from "../../../lib/assets";
 import { StatsToReadableMin } from "../../../lib/constants";
-import { Stat } from "../../../lib/models/DiscSet";
+import { Stat } from "../../../lib/models/StatsBase";
 import { isFlat } from "../../../lib/Utils";
 import { idDOMcustom } from "./StatHoverEvent";
 
 
 export const iconSize = 16
 
-type StatProp = {
-    stat: Stat
-}
-
-const StatRow = ({ stat }: StatProp) => {
+const StatRow = ({ stat }: { stat: Stat }) => {
     const idString = "id" + String(stat.id).slice(0, -1);
     useEffect(() => idDOMcustom(idString), [idString]);
 
