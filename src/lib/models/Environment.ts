@@ -1,8 +1,7 @@
-import { ElementTypeToAttr, WeaponTypeID } from '../constants';
+import { AttrValues, ElementTypeToAttr, WeaponTypeID } from '../constants';
 import { AttributeID } from './../constants';
 import { Character } from './Character';
 import { CalculatedHit } from './SkillKit';
-import { StatsBaseKeys } from './StatsBase';
 
 type RotationType = ({ charName: string } & CalculatedHit)
 
@@ -30,6 +29,7 @@ export class Environment {
         this.dps = 0;
         this.rotationList.forEach(({ charName, dmg, anomalyBuildup }) => {
             const char: Character = this.teammates[charName];
+            const charSum = char.charSum;
             let mainStats;
 
             if (char.charMetadata.weapon === WeaponTypeID.RUPTURE) {
@@ -38,17 +38,17 @@ export class Environment {
                 mainStats = AttributeID.ATK;
             }
 
-            const elementId = <StatsBaseKeys>ElementTypeToAttr[char.charMetadata.elementId];
-            const elementDmgMult = (anomalyBuildup) ? (1 + char[elementId] / 100) : 1;
+            const elementId = <AttrValues>ElementTypeToAttr[char.charMetadata.elementId];
+            const elementDmgMult = (anomalyBuildup) ? (1 + charSum[elementId] / 100) : 1;
             //const elementDmgMult = 1 + char[elementId] / 100;
             this.dps +=
-                char[mainStats] *
+                char.charSum[mainStats] *
                 dmg / 100 *
-                (1 + char[AttributeID.CRIT_RATE] / 100 * char[AttributeID.CRIT_DMG] / 100) *
+                (1 + charSum[AttributeID.CRIT_RATE] / 100 * charSum[AttributeID.CRIT_DMG] / 100) *
                 elementDmgMult;
 
-            const resultString = `main_stats (${char[mainStats]}) * skill_dmg% (${dmg} / 100) *` +
-                ` crit_avg ((1 + (${char[AttributeID.CRIT_RATE]}% * ${char[AttributeID.CRIT_DMG]}%)))` +
+            const resultString = `main_stats (${charSum[mainStats]}) * skill_dmg% (${dmg} / 100) *` +
+                ` crit_avg ((1 + (${charSum[AttributeID.CRIT_RATE]}% * ${charSum[AttributeID.CRIT_DMG]}%)))` +
                 ` * anomalyDmg% (${elementDmgMult})`;
 
             console.log(resultString);

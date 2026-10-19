@@ -6,10 +6,6 @@ import { Stat } from "../../../lib/models/StatsBase";
 import { isFlat } from "../../../lib/Utils";
 import { idDOMcustom } from "../charStatPreview/StatHoverEvent";
 
-type StatProp = {
-    stat: SubStat
-}
-
 type DiscSetProp = {
     discSet: DiscSet
 }
