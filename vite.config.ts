@@ -22,5 +22,5 @@ export default defineConfig({
       usePolling: true,
     },
   },
-  base: "/zzz-card-banner",
+  base: "/zzz-card-banner/",
 })
