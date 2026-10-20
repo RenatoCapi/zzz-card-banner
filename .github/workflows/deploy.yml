@@ -30,8 +30,8 @@ jobs:
         with:
           node-version: '24'
           cache: 'npm'
-        run: npm ci
-        run: npm run build
+      - run: npm ci
+      - run: npm run build
 
       - name: Upload production-ready build files
         uses: actions/upload-pages-artifact@v3
